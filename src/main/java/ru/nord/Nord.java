@@ -1,5 +1,8 @@
 package ru.nord;
 
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -9,7 +12,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import ru.nord.common.CommonProxy;
+import ru.nord.common.items.ItemBase;
 import ru.nord.common.lib.events.GuiHandler;
+import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.network.PacketPipeline;
 import ru.nord.common.lib.utils.Fuel;
 
@@ -27,6 +32,10 @@ public class Nord {
 
         public static final PacketPipeline packetPipeline = new PacketPipeline();
 
+        public static Item tutorialItem;
+
+        public static Block tutorialBlock;
+
         @Instance(value = Nord.MODID)
         public static Nord instance;
 
@@ -37,15 +46,20 @@ public class Nord {
         @EventHandler
         public void preInit(final FMLPreInitializationEvent event) {
             Fuel.init();
+//            tutorialBlock = new BlockBase();
+            //items
+            tutorialItem = new ItemBase().setUnlocalizedName("itemBase"). setCreativeTab(CreativeTabs.tabMisc);
+
 
         }
 
         @EventHandler
         public void init(final FMLInitializationEvent event) {
-                Nord.proxy.registerRenderers();
-                Nord.proxy.init();
-                packetPipeline.initialise();
-                NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+            RegisterHelper.registerSingleItem(tutorialItem, "itemBase");
+            Nord.proxy.registerRenderers();
+            Nord.proxy.init();
+            packetPipeline.initialise();
+            NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         }
 
         @EventHandler

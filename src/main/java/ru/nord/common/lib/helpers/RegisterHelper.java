@@ -6,11 +6,12 @@ import net.minecraft.item.Item;
 import ru.nord.Nord;
 
 public class RegisterHelper {
-        public static void registerBlock(Block block) {
-                GameRegistry.registerBlock(block, Nord.MODID + block.getUnlocalizedName().substring(5));
+        public static void registerBlock(Block block, String name) {
+                GameRegistry.registerBlock(block, Nord.MODID + name);
         }
 
-        public static void registerItem(Item item) {
-                GameRegistry.registerItem(item, Nord.MODID + item.getUnlocalizedName().substring(5));
+        public static void registerSingleItem(Item item, String name) {
+                GameRegistry.registerItem(item, name);
+                Nord.proxy.registerItemRender(item,0,name);
         }
 }

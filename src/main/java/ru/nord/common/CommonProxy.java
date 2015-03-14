@@ -1,5 +1,7 @@
 package ru.nord.common;
 
+import net.minecraft.item.Item;
+
 public class CommonProxy {
 
         // Client stuff
@@ -9,4 +11,6 @@ public class CommonProxy {
 
         public void init() {
         }
+
+    public void registerItemRender(Item item, int sub, String name){}
 }
