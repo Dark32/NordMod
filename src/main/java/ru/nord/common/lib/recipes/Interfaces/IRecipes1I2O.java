@@ -16,35 +16,35 @@ import net.minecraft.item.ItemStack;
  */
 public interface IRecipes1I2O extends IAbstractRecipes {
 
-        /**
-         * Получаем сингелтон
-         *
-         * @return Себя
-         */
-        //IRecipes1I2O INSTANCE();
+    /**
+     * Получаем сингелтон
+     *
+     * @return Себя
+     */
+    //IRecipes1I2O INSTANCE();
 
-        /**
-         * Получаем рецепт по предмету
-         *
-         * @param item из чего
-         * @return рецепт
-         */
-        IRecipe1I2O getRecipe(ItemStack item);
+    /**
+     * Получаем рецепт по предмету
+     *
+     * @param item из чего
+     * @return рецепт
+     */
+    IRecipe1I2O getRecipe(ItemStack item);
 
-        /**
-         * Получаем рецепт по индексу
-         *
-         * @param index - индекс
-         * @return рецепт
-         */
-        IRecipe1I2O getRecipe(int index);
+    /**
+     * Получаем рецепт по индексу
+     *
+     * @param index - индекс
+     * @return рецепт
+     */
+    IRecipe1I2O getRecipe(int index);
 
-        /**
-         * Получаем индекс рецепта по предмету
-         *
-         * @param item предмет
-         * @return индекс
-         */
-        int getIndexRecipe(ItemStack item);
+    /**
+     * Получаем индекс рецепта по предмету
+     *
+     * @param item предмет
+     * @return индекс
+     */
+    int getIndexRecipe(ItemStack item);
 
 }

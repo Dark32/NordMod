@@ -2,21 +2,23 @@ package ru.nord.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.nord.Nord;
+import ru.nord.common.lib.utils.Version;
 
 public class BlockBase extends Block {
-    private final String name = "tutorialBlock";
+    private String unlocalizedName;
 
     public BlockBase() {
         super(Material.rock);
-        GameRegistry.registerBlock(this, name);
-        setUnlocalizedName(Nord.MODID + "_" + name);
-        setCreativeTab(CreativeTabs.tabBlock);
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public String getUnlocalizedName() {
+        return "item." + Version.MODID + "." + this.unlocalizedName;
+    }
+
+    @Override
+    public Block setUnlocalizedName(String unlocalizedName) {
+        this.unlocalizedName = unlocalizedName;
+        return this;
     }
 }

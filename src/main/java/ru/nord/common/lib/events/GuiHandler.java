@@ -1,23 +1,22 @@
 package ru.nord.common.lib.events;
 
-import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {
 
-        @Override
-        public Object getServerGuiElement(int ID, EntityPlayer player, World world,
-                                          int x, int y, int z) {
-
-                return getServerGui(ID, player, world, x, y, z);
-        }
-
-        public Container getServerGui(int ID, EntityPlayer player, World world,
+    @Override
+    public Object getServerGuiElement(int ID, EntityPlayer player, World world,
                                       int x, int y, int z) {
+
+        return getServerGui(ID, player, world, x, y, z);
+    }
+
+    public Container getServerGui(int ID, EntityPlayer player, World world,
+                                  int x, int y, int z) {
 //                TileEntity tileEntity = world.getTileEntity(x, y, z);
 //                switch (ID) {
 //                        case Nord.guiIDSmelter:
@@ -38,17 +37,17 @@ public class GuiHandler implements IGuiHandler {
 //                        case Nord.guiIDBag:
 //                                return new ContainerBag(player, player.inventory, new InventoryBag(player.getHeldItem()));
 //                }
-                return null;
-        }
+        return null;
+    }
 
-        @Override
-        public Object getClientGuiElement(int ID, EntityPlayer player, World world,
-                                          int x, int y, int z) {
-                return getClientGui(ID, player, world, x, y, z);
-        }
-
-        public GuiScreen getClientGui(int ID, EntityPlayer player, World world,
+    @Override
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world,
                                       int x, int y, int z) {
+        return getClientGui(ID, player, world, x, y, z);
+    }
+
+    public GuiScreen getClientGui(int ID, EntityPlayer player, World world,
+                                  int x, int y, int z) {
 //                TileEntity tileEntity = world.getTileEntity(x, y, z);
 //
 //                switch (ID) {
@@ -69,7 +68,7 @@ public class GuiHandler implements IGuiHandler {
 //                        case Nord.guiIDBag:
 //                                return new GuiBag((ContainerBag) new ContainerBag(player, player.inventory, new InventoryBag(player.getHeldItem())));
 //                }
-                return null;
-        }
+        return null;
+    }
 
 }
