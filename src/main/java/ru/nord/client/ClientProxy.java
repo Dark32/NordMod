@@ -2,8 +2,10 @@ package ru.nord.client;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import ru.nord.NordBloks;
 import ru.nord.common.CommonProxy;
 import ru.nord.common.lib.utils.Version;
 
@@ -27,9 +29,10 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void registerBlockRender(Block block, int sub, String name) {
+    public void registerBlockRender(Block block, int sub, String model) {
+        ModelBakery.addVariantName(Item.getItemFromBlock(block),Version.MODID + ":" + model);
         ModelResourceLocation itemModelResourceLocation =
-                new ModelResourceLocation(Version.MODID + ":" + name, "inventory");
+                new ModelResourceLocation(Version.MODID + ":" + model, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
     }
 }

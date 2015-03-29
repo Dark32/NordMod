@@ -13,7 +13,7 @@ public class BlockBase extends Block {
 
     @Override
     public String getUnlocalizedName() {
-        return "item." + Version.MODID + "." + this.unlocalizedName;
+        return "tile." + Version.MODID + "." + this.unlocalizedName;
     }
 
     @Override

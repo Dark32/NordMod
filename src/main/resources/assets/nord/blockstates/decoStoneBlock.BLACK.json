@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "type=burnt"        : { "model": "nord:decoStoneBlock.burnt"  },
+        "type=smooth"       : { "model": "nord:decoStoneBlock.smooth" },
+        "type=vert_double"  : { "model": "nord:decoStoneBlock.vert_double" },
+        "type=vert_line"    : { "model": "nord:decoStoneBlock.vert_line" },
+        "type=spiral"       : { "model": "nord:decoStoneBlock.spiral" },
+        "type=vortex"       : { "model": "nord:decoStoneBlock.vortex" },
+        "type=double_small" : { "model": "nord:decoStoneBlock.double_small" },
+        "type=creep"        : { "model": "nord:decoStoneBlock.creep" },
+        "type=light"        : { "model": "nord:decoStoneBlock.light" },
+        "type=dark"         : { "model": "nord:decoStoneBlock.dark" },
+        "type=gem"          : { "model": "nord:decoStoneBlock.gem" },
+        "type=double"       : { "model": "nord:decoStoneBlock.double" },
+        "type=line"         : { "model": "nord:decoStoneBlock.line" },
+        "type=vert_small"   : { "model": "nord:decoStoneBlock.vert_small" },
+        "type=double_half"  : { "model": "nord:decoStoneBlock.double_half" },
+        "type=small"        : { "model": "nord:decoStoneBlock.small" }
+    }
+}

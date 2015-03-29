@@ -1,0 +1,6 @@
+{
+    "parent": "nord:block/block_colored",
+    "textures": {
+        "all": "nord:blocks/stone/stone.double"
+    }
+}
