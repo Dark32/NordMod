@@ -44,4 +44,5 @@ public interface IRecipe1I2O {
      * @return
      */
     float getPercent();
+
 }
