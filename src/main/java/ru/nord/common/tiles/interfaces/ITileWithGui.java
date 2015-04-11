@@ -1,7 +1,13 @@
 package ru.nord.common.tiles.interfaces;
 
-/**
- * Created by andrew on 11.04.15.
- */
-public class ITileWithGui {
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Container;
+
+public interface ITileWithGui {
+
+    public Container getContainer(EntityPlayer player);
+
+    public GuiContainer getGui(EntityPlayer player);
 }

@@ -1,5 +1,5 @@
 {
-    "parent": "block/furnace",
+    "parent": "nord:block/flowingBlock",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

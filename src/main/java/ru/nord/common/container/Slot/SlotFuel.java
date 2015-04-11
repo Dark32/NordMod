@@ -1,7 +1,19 @@
 package ru.nord.common.container.Slot;
 
-/**
- * Created by andrew on 11.04.15.
- */
-public class SlotFuel {
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
+import ru.nord.common.lib.utils.Fuel;
+
+public class SlotFuel extends Slot {
+
+    public SlotFuel(IInventory inventoryIn, int slotIndex, int xPosition, int yPosition)
+    {
+        super(inventoryIn, slotIndex, xPosition, yPosition);
+    }
+    public boolean isItemValid(ItemStack stack)
+    {
+        return Fuel.getInstance().isFuel(stack);
+    }
+
 }

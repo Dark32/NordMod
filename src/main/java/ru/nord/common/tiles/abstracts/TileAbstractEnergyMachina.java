@@ -6,7 +6,8 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumFacing;
@@ -25,9 +26,9 @@ import ru.nord.common.tiles.interfaces.IMachine;
 public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         implements IMachine {
 
-    private static final int[] slotsTop = new int[] {0};
-    private static final int[] slotsBottom = new int[] {2, 3};
-    private static final int[] slotsSides = new int[] {1};
+    private static final int[] slotsTop = new int[]{1};
+    private static final int[] slotsBottom = new int[]{2, 3};
+    private static final int[] slotsSides = new int[]{0, 1};
     private ItemStack[] inventory = new ItemStack[4];
     /**
      * inv[0] - fuel
@@ -51,8 +52,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * Returns the number of slots in the inventory.
      */
     @Override
-    public int getSizeInventory()
-    {
+    public int getSizeInventory() {
         return this.inventory.length;
     }
 
@@ -60,41 +60,33 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * Returns the stack in slot i
      */
     @Override
-    public ItemStack getStackInSlot(int index)
-    {
+    public ItemStack getStackInSlot(int index) {
         return this.inventory[index];
     }
+
     /**
      * Removes from an inventory slot (first arg) up to a specified number (second arg) of items and returns them in a
      * new stack.
      */
     @Override
-    public ItemStack decrStackSize(int index, int count)
-    {
-        if (getStackInSlot(index) != null)
-        {
+    public ItemStack decrStackSize(int index, int count) {
+        if (getStackInSlot(index) != null) {
             ItemStack itemstack;
 
-            if (getStackInSlot(index).stackSize <= count)
-            {
+            if (getStackInSlot(index).stackSize <= count) {
                 itemstack = getStackInSlot(index);
-                setInventorySlotContents(index,null);
+                setInventorySlotContents(index, null);
                 return itemstack;
-            }
-            else
-            {
+            } else {
                 itemstack = getStackInSlot(index).splitStack(count);
 
-                if (getStackInSlot(index).stackSize == 0)
-                {
-                    setInventorySlotContents(index,null);
+                if (getStackInSlot(index).stackSize == 0) {
+                    setInventorySlotContents(index, null);
                 }
 
                 return itemstack;
             }
-        }
-        else
-        {
+        } else {
             return null;
         }
     }
@@ -105,12 +97,10 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * like when you close a workbench GUI.
      */
     @Override
-    public ItemStack getStackInSlotOnClosing(int index)
-    {
+    public ItemStack getStackInSlotOnClosing(int index) {
         ItemStack itemstack = getStackInSlot(index);
-        if (itemstack != null)
-        {
-            setInventorySlotContents(index,null);
+        if (itemstack != null) {
+            setInventorySlotContents(index, null);
         }
         return itemstack;
 
@@ -120,21 +110,18 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
      */
     @Override
-    public void setInventorySlotContents(int index, ItemStack stack)
-    {
+    public void setInventorySlotContents(int index, ItemStack stack) {
         boolean flag = stack != null
                 && stack.isItemEqual(getStackInSlot(index))
                 && ItemStack.areItemStackTagsEqual(stack,
                 getStackInSlot(index));
         this.inventory[index] = stack;
 
-        if (stack != null && stack.stackSize > this.getInventoryStackLimit())
-        {
+        if (stack != null && stack.stackSize > this.getInventoryStackLimit()) {
             stack.stackSize = this.getInventoryStackLimit();
         }
 
-        if (index == input_slot && !flag)
-        {
+        if (index == input_slot && !flag) {
             //todo Выяснить значение этого действия
 //            this.totalCookTime = 200;
 //            this.cookTime = 0;
@@ -143,6 +130,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             this.markDirty();
         }
     }
+
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
@@ -153,34 +141,30 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
 *        return this.hasCustomName() ? this.machineCustomName : "nord.tile.abstractEnergyMachina";
 *    }
 */
+
     /**
      * Returns true if this thing is named
      */
     @Override
-    public boolean hasCustomName()
-    {
+    public boolean hasCustomName() {
         return this.machineCustomName != null && this.machineCustomName.length() > 0;
     }
 
-    public void setCustomInventoryName(String name)
-    {
+    public void setCustomInventoryName(String name) {
         this.machineCustomName = name;
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound compound)
-    {
+    public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
         NBTTagList tagList = compound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
         this.inventory = new ItemStack[this.getSizeInventory()];
 
-        for (int i = 0; i < tagList.tagCount(); ++i)
-        {
+        for (int i = 0; i < tagList.tagCount(); ++i) {
             NBTTagCompound tag = tagList.getCompoundTagAt(i);
             byte b0 = tag.getByte("Slot");
 
-            if (b0 >= 0 && b0 < this.inventory.length)
-            {
+            if (b0 >= 0 && b0 < this.inventory.length) {
                 this.inventory[b0] = ItemStack.loadItemStackFromNBT(tag);
             }
         }
@@ -191,14 +175,13 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         currentItemEnergyProgress = compound.getShort("curEnergyProg");
         currentItemEnergyNeed = compound.getShort("curEnergyNeed");
 
-        if (compound.hasKey("CustomName", Constants.NBT.TAG_STRING))
-        {
+        if (compound.hasKey("CustomName", Constants.NBT.TAG_STRING)) {
             this.machineCustomName = compound.getString("CustomName");
         }
     }
+
     @Override
-    public void writeToNBT(NBTTagCompound compound)
-    {
+    public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
 
         compound.setShort("energy", (short) this.getEnergy());
@@ -207,13 +190,11 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         compound.setShort("curCookTime", (short) currentItemEnergyNeed);
 
         NBTTagList itemList = new NBTTagList();
-        for (int i = 0; i < this.inventory.length; ++i)
-        {
+        for (int i = 0; i < this.inventory.length; ++i) {
             ItemStack stack = inventory[i];
-            if (stack != null)
-            {
+            if (stack != null) {
                 NBTTagCompound tag = new NBTTagCompound();
-                tag.setByte("Slot", (byte)i);
+                tag.setByte("Slot", (byte) i);
                 stack.writeToNBT(tag);
                 itemList.appendTag(tag);
             }
@@ -221,8 +202,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
 
         compound.setTag("Items", itemList);
 
-        if (this.hasCustomName())
-        {
+        if (this.hasCustomName()) {
             compound.setString("CustomName", this.machineCustomName);
         }
     }
@@ -232,8 +212,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * this more of a set than a get?*
      */
     @Override
-    public int getInventoryStackLimit()
-    {
+    public int getInventoryStackLimit() {
         return 64;
     }
 
@@ -242,15 +221,14 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
     }
 
     @SideOnly(Side.CLIENT)
-    public static boolean isBurning(IInventory inv)
-    {
+    public static boolean isBurning(IInventory inv) {
         return inv.getField(0) > 0;
     }
+
     /**
      * Updates the JList with a new model.
      */
-    public void update()
-    {
+    public void update() {
 
         boolean updated = false;
 
@@ -298,31 +276,30 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         return Fuel.getInstance().getEnergy(stack);
     }
 
-    public static boolean isItemFuel(ItemStack item)
-    {
+    public static boolean isItemFuel(ItemStack item) {
         return getItemBurnTime(item) > 0;
     }
 
     /**
      * Do not make give this method the name canInteractWith because it clashes with Container
      */
-    public boolean isUseableByPlayer(EntityPlayer player)
-    {
+    public boolean isUseableByPlayer(EntityPlayer player) {
         return this.worldObj.getTileEntity(this.pos) == this
                 && player.getDistanceSq((double) this.pos.getX() + 0.5D,
-                                        (double) this.pos.getY() + 0.5D,
-                                        (double) this.pos.getZ() + 0.5D) <= 64.0D;
+                (double) this.pos.getY() + 0.5D,
+                (double) this.pos.getZ() + 0.5D) <= 64.0D;
     }
 
-    public void openInventory(EntityPlayer player) {}
+    public void openInventory(EntityPlayer player) {
+    }
 
-    public void closeInventory(EntityPlayer player) {}
+    public void closeInventory(EntityPlayer player) {
+    }
 
     /**
      * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
      */
-    public boolean isItemValidForSlot(int index, ItemStack stack)
-    {
+    public boolean isItemValidForSlot(int index, ItemStack stack) {
         if (index == fuel_slot && getItemBurnTime(stack) == 0) {
             return false;
         }
@@ -334,17 +311,22 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         return rec != null;
     }
 
-    public int[] getSlotsForFace(EnumFacing side)
-    {
-        return side == EnumFacing.DOWN ? slotsBottom : (side == EnumFacing.UP ? slotsTop : slotsSides);
+    public int[] getSlotsForFace(EnumFacing side) {
+        switch (side) {
+            case DOWN:
+                return slotsBottom;
+            case UP:
+                return slotsTop;
+            default:
+                return slotsSides;
+        }
     }
 
     /**
      * Returns true if automation can insert the given item in the given slot from the given side. Args: slot, item,
      * side
      */
-    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction)
-    {
+    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
         return this.isItemValidForSlot(index, itemStackIn);
     }
 
@@ -352,35 +334,30 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * Returns true if automation can extract the given item in the given slot from the given side. Args: slot, item,
      * side
      */
-    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction)
-    {
-        if (direction == EnumFacing.DOWN && index == 1)
-        {
+    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+        if (direction == EnumFacing.DOWN && index == 1) {
             Item item = stack.getItem();
 
-            if (item != Items.water_bucket && item != Items.bucket)
-            {
+            if (item != Items.water_bucket && item != Items.bucket) {
                 return false;
             }
         }
 
         return true;
     }
-//todo abstract
-    public String getGuiID()
-    {
+
+    //todo abstract
+    public String getGuiID() {
         return "nord:abstractEnegyMachina";
     }
+
     //todo abstract
-    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)
-    {
+    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
         return new ContainerFurnace(playerInventory, this);
     }
 
-    public int getField(int id)
-    {
-        switch (id)
-        {
+    public int getField(int id) {
+        switch (id) {
             case 0:
                 return this.fuelBurnTime;
             case 1:
@@ -394,10 +371,8 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         }
     }
 
-    public void setField(int id, int value)
-    {
-        switch (id)
-        {
+    public void setField(int id, int value) {
+        switch (id) {
             case 0:
                 this.fuelBurnTime = value;
                 break;
@@ -412,15 +387,12 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         }
     }
 
-    public int getFieldCount()
-    {
+    public int getFieldCount() {
         return 4;
     }
 
-    public void clear()
-    {
-        for (int i = 0; i < this.inventory.length; ++i)
-        {
+    public void clear() {
+        for (int i = 0; i < this.inventory.length; ++i) {
             this.setInventorySlotContents(i, null);
         }
     }
@@ -439,12 +411,14 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
 
             this.burnTime = getItemBurnTime(fuel);
             this.fuelBurnTime = this.burnTime;
-            setInventorySlotContents(fuel_slot,Fuel.getInstance().burn(fuel));
+            setInventorySlotContents(fuel_slot, Fuel.getInstance().burn(fuel));
         }
     }
+
     public boolean isWork() {
         return currentItemEnergyNeed > 0 && this.getEnergy() > 0;
     }
+
     public boolean canStartWorking() {
         IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot));
         if (rec == null) {
@@ -452,11 +426,11 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             currentItemEnergyNeed = 0;
             return false;
         }
-        ItemStack input         = getStackInSlot(input_slot);
-        ItemStack result        = getStackInSlot(result_slot);
-        ItemStack secondResult  = getStackInSlot(second_result_slot);
-        ItemStack out1          = rec.getResult();
-        ItemStack out2          = rec.getSecondResult();
+        ItemStack input = getStackInSlot(input_slot);
+        ItemStack result = getStackInSlot(result_slot);
+        ItemStack secondResult = getStackInSlot(second_result_slot);
+        ItemStack out1 = rec.getResult();
+        ItemStack out2 = rec.getSecondResult();
 
         if (input.stackSize < rec.getInput().stackSize) { // не достаточно входных вещей
             return false;
@@ -485,6 +459,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
 
         return ret;
     }
+
     public boolean canWorkResult() {
         IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot));
         if (rec == null) { // нет рецепта
@@ -496,6 +471,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         return currentItemEnergyProgress >= rec.getEnergy() && canStartWorking();
 
     }
+
     /**
      * Обработать предмет
      */
@@ -505,9 +481,9 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             return;
         }
 
-        ItemStack input         = getStackInSlot(input_slot);
-        ItemStack result        = getStackInSlot(result_slot);
-        ItemStack secondResult  = getStackInSlot(second_result_slot);
+        ItemStack input = getStackInSlot(input_slot);
+        ItemStack result = getStackInSlot(result_slot);
+        ItemStack secondResult = getStackInSlot(second_result_slot);
         ItemStack out1 = rec.getResult();
         ItemStack out2 = rec.getSecondResult();
 
@@ -522,12 +498,12 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         }
 
         if (out2 != null && second) {
-            if (secondResult!= null) {
+            if (secondResult != null) {
                 secondResult.stackSize += out2.stackSize;
             } else {
                 secondResult = out2.copy();
             }
-            setInventorySlotContents(result_slot, secondResult);
+            setInventorySlotContents(second_result_slot, secondResult);
         }
 
         input.stackSize -= rec.getInput().stackSize;
@@ -538,7 +514,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         setInventorySlotContents(input_slot, input);
 
         IRecipe1I2O recNext = getRecipe(input);
-        currentItemEnergyNeed = recNext != null ?  recNext.getEnergy() : 0;
+        currentItemEnergyNeed = recNext != null ? recNext.getEnergy() : 0;
         currentItemEnergyProgress = 0;
     }
 
@@ -586,4 +562,18 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         return fuelBurnTime;
     }
 
+    @SideOnly(Side.CLIENT)
+    public int getEnergyProgressScaled(int val) {
+        return this.getEnergy() * val / this.getMaxEnergy();
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getProgressScaled(int val) {
+        return currentItemEnergyNeed == 0 ? 0 : currentItemEnergyProgress * val / currentItemEnergyNeed;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getBurnTimeRemainingScaled(int val) {
+        return fuelBurnTime == 0 ? 0 : burnTime * val / fuelBurnTime;
+    }
 }

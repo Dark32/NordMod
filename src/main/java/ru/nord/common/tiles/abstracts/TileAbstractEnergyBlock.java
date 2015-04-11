@@ -4,9 +4,10 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntityLockable;
 import ru.nord.common.tiles.interfaces.IEnergyTile;
+import ru.nord.common.tiles.interfaces.ITileWithGui;
 
 public abstract class TileAbstractEnergyBlock extends TileEntityLockable implements
-        IUpdatePlayerListBox, ISidedInventory ,IEnergyTile {
+        IUpdatePlayerListBox, ISidedInventory ,IEnergyTile,ITileWithGui {
         private int energy;
 
         @Override

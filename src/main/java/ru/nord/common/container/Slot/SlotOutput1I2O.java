@@ -2,15 +2,11 @@ package ru.nord.common.container.Slot;
 
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.MathHelper;
 import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
-import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.tiles.interfaces.IMachine;
 
 public class SlotOutput1I2O extends Slot {
@@ -69,8 +65,7 @@ public class SlotOutput1I2O extends Slot {
         if (!this.thePlayer.worldObj.isRemote)
         {
             int i = this.field_75228_b;
-            float f = ((IRecipes1I2O)this.tile.getRecipes()).getRecipe(stack)
-            //FurnaceRecipes.instance().getSmeltingExperience(stack);
+            float f =0; //((IRecipes1I2O)this.tile.getRecipes()).getRecipe(stack).getExpirince();
             int j;
 
             if (f == 0.0F)

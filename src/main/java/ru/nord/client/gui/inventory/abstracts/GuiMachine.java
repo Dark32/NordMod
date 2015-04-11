@@ -24,9 +24,9 @@ public abstract class GuiMachine extends GuiContainer {
 
     @Override
     protected void drawHoveringText(List list, int x, int y) {
-        GL11.glPushAttrib(GL11.GL_ENABLE_BIT + GL11.GL_LIGHTING_BIT);
+//        GL11.glPushAttrib(GL11.GL_ENABLE_BIT + GL11.GL_LIGHTING_BIT);
         super.drawHoveringText(list, x, y);
-        GL11.glPopAttrib();
+//        GL11.glPopAttrib();
     }
 
     protected void drawOverText(int x, int y, int dx, int dy, int posX,

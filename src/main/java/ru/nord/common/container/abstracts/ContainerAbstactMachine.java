@@ -1,17 +1,20 @@
 package ru.nord.common.container.abstracts;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
-import ru.nordwest.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
-import ru.nordwest.nord.common.lib.utils.Fuel;
-import ru.nordwest.nord.common.tiles.interfaces.IMachine;
+import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.common.container.Slot.SlotFuel;
+import ru.nord.common.container.Slot.SlotOutput1I2O;
+import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
+import ru.nord.common.lib.utils.Fuel;
+import ru.nord.common.tiles.interfaces.IMachine;
 
 abstract public class ContainerAbstactMachine extends Container {
         protected IMachine tileEntity;
@@ -30,11 +33,10 @@ abstract public class ContainerAbstactMachine extends Container {
         public void init(InventoryPlayer invPlayer, IMachine ent) {
                 tileEntity = ent;
 
-                addSlotToContainer(new Slot(tileEntity, slot_fuel, 18, 58)); // fuel
+                addSlotToContainer(new SlotFuel(tileEntity, slot_fuel, 18, 58)); // fuel
                 addSlotToContainer(new Slot(tileEntity, slot_input, 53, 38)); // item to work
-                addSlotToContainer(new SlotFurnace(invPlayer.player, tileEntity, slot_result1, 107, 39)); // result1
-                addSlotToContainer(new SlotFurnace(invPlayer.player, tileEntity, slot_result2, 128, 39)); // result2
-
+                addSlotToContainer(new SlotOutput1I2O(invPlayer.player, tileEntity, slot_result1, 107, 39)); // result1
+                addSlotToContainer(new SlotOutput1I2O(invPlayer.player, tileEntity, slot_result2, 128, 39)); // result2
                 bindPlayerInventory(invPlayer);
         }
 

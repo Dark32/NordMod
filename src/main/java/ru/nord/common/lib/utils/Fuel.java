@@ -24,7 +24,7 @@ public class Fuel {
     public static final int METADATA = 2;  // 2
     public static final int SIMPLE = 3;    // 3
     public static final int MATERIAL = 4;  // 4
-    public static final int NOT_METAL = -1;      // 5
+    public static final int NOT_FUEL = -1;      // 5
 
     private final Map<Item, Integer> itemFuel = new HashMap<Item, Integer>();
     private final Map<Material, Integer> itemFuelMaterial = new HashMap<Material, Integer>();
@@ -179,7 +179,7 @@ public class Fuel {
                 return MATERIAL;
             }
         }
-        return NOT_METAL;
+        return NOT_FUEL;
     }
 
     /**
@@ -189,7 +189,7 @@ public class Fuel {
      * @return истина - является, ложь - не является
      */
     public boolean isFuel(ItemStack itemStack) {
-        return isFuelCode(itemStack) != NOT_METAL;
+        return isFuelCode(itemStack) != NOT_FUEL;
     }
 
     private boolean getDamagableFuelFullBurn(ItemStack itemStack) {
