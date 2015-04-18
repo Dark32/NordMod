@@ -205,9 +205,32 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
         boolean updated = false;
 
         //Если горит топливо
+        if (burnFuel()) {
+            updated = true;
+        }
+
+        if (chargeFromFuel()) {
+            updated = true;
+        }
+
+        if (isChargeability() && canStartCharge()) {
+            charge();
+        }
+        if (updated) { // если поменчено на обновление
+            this.markDirty(); // обновляем
+        }
+    }
+
+    private boolean burnFuel(){
+        boolean updated = false;
         if (isBurning()) {
-            burnTime -= getBurnPacketEnergy(); // убавляем на пакет время горения
-            this.addEnergy(getBurnPacketEnergy()); // прибавляем энергию на пакет
+            if (burnTime>=getBurnPacketEnergy()) { // есть ли пакет в горение
+                burnTime -= getBurnPacketEnergy(); // убавляем на пакет время горения
+                this.addEnergy(getBurnPacketEnergy()); // прибавляем энергию на пакет
+            }else{ // если нет, то просто
+                this.addEnergy(burnTime); // прибавляем остатки
+                burnTime = 0;  // и обнуляем горение
+            }
             updated = true; // помечаем на обновление
             if (burnTime <= 0) { // если сгорело
                 if (canBurn()) { // можно ли произвести сжеть ещё?
@@ -221,17 +244,7 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
                 burn(); //сжигаем топливо
             }
         }
-
-        if (chargeFromFuel()) {
-            updated = true;
-        }
-
-        if (isChargeability() && canStartCharge()) {
-            charge();
-        }
-        if (updated) { // если поменчено на обновление
-            this.markDirty(); // обновляем
-        }
+        return updated;
     }
 
     private boolean chargeFromFuel() {

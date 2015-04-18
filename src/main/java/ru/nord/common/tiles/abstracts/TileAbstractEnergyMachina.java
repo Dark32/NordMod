@@ -234,21 +234,8 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         boolean updated = false;
 
         //Если горит топливо
-        if (isBurning()) {
-            burnTime -= getBurnPacketEnergy(); // убавляем на пакет время горения
-            this.addEnergy(getBurnPacketEnergy()); // прибавляем энергию на пакет
-            updated = true; // помечаем на обновление
-            if (burnTime <= 0) { // если сгорело
-                if (canBurn()) { // можно ли произвести сжеть ещё?
-                    burn(); //сжигаем ещё
-                }
-            }
-        } else {
-            setFuelBurnTime(0); // время горения на 0
-            if (canBurn()) { // можем ли сжечь топливо?
-                updated = true; //помечаем на обновление
-                burn(); //сжигаем топливо
-            }
+        if (burnFuel()) {
+            updated = true;
         }
 
         if(chargeFromFuel()){updated = true;}
@@ -274,7 +261,31 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             this.markDirty(); // обновляем
         }
     }
-
+    private boolean burnFuel(){
+        boolean updated = false;
+        if (isBurning()) {
+            if (burnTime>=getBurnPacketEnergy()) { // есть ли пакет в горение
+                burnTime -= getBurnPacketEnergy(); // убавляем на пакет время горения
+                this.addEnergy(getBurnPacketEnergy()); // прибавляем энергию на пакет
+            }else{ // если нет, то просто
+                this.addEnergy(burnTime); // прибавляем остатки
+                burnTime = 0;  // и обнуляем горение
+            }
+            updated = true; // помечаем на обновление
+            if (burnTime <= 0) { // если сгорело
+                if (canBurn()) { // можно ли произвести сжеть ещё?
+                    burn(); //сжигаем ещё
+                }
+            }
+        } else {
+            setFuelBurnTime(0); // время горения на 0
+            if (canBurn()) { // можем ли сжечь топливо?
+                updated = true; //помечаем на обновление
+                burn(); //сжигаем топливо
+            }
+        }
+        return updated;
+    }
     public static int getItemBurnTime(ItemStack stack) {
         return Fuel.getInstance().getEnergy(stack);
     }
@@ -419,7 +430,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
     }
 
     public boolean isWork() {
-        return currentItemEnergyNeed > 0 && this.getEnergy() > 0;
+        return currentItemEnergyNeed > 0 && this.getEnergy() >= this.getPacketEnergy();
     }
 
     public boolean canStartWorking() {
