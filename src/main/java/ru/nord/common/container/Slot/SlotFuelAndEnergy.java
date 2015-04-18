@@ -6,15 +6,15 @@ import net.minecraft.item.ItemStack;
 import ru.nord.common.items.interfaces.IEnergyCharges;
 import ru.nord.common.lib.utils.Fuel;
 
-public class SlotFuel extends Slot {
+public class SlotFuelAndEnergy extends Slot {
 
-    public SlotFuel(IInventory inventoryIn, int slotIndex, int xPosition, int yPosition)
+    public SlotFuelAndEnergy(IInventory inventoryIn, int slotIndex, int xPosition, int yPosition)
     {
         super(inventoryIn, slotIndex, xPosition, yPosition);
     }
     public boolean isItemValid(ItemStack stack)
     {
-        return Fuel.getInstance().isFuel(stack);
+        return Fuel.getInstance().isFuel(stack) || stack.getItem() instanceof IEnergyCharges;
     }
 
 }

@@ -33,7 +33,7 @@ abstract public class BlockAbstractMachina extends BlockRotatebleContainer {
         super.breakBlock(worldIn, pos, state);
     }
 
-    private boolean getWork(IBlockAccess world, BlockPos pos) {
+    protected boolean getWork(IBlockAccess world, BlockPos pos) {
         TileAbstractEnergyMachina tile = (TileAbstractEnergyMachina) world.getTileEntity(pos);
         return tile != null && tile.isWork();
     }

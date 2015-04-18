@@ -70,7 +70,7 @@ public interface IEnergyTile {
     public boolean hasAddEnergy(int energy);
 
     /**
-     * Размер пакета энергии
+     * Размер пакета энергии для расхода на зарядку и передачу
      * @return int
      */
     public int getPacketEnergy();

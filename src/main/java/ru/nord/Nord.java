@@ -30,7 +30,6 @@ public class Nord {
 
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
-        Fuel.init();
         NordMachine.preInit();
         NordDecoration.preInit();
     }
@@ -51,5 +50,6 @@ public class Nord {
         NordTabs.postInit();
         NordMachine.postInit();
         NordDecoration.postInit();
+        Fuel.postInit();
     }
 }

@@ -9,4 +9,5 @@ public class NordBloks {
     public static Block[] decoStoneBlock = new Block[16];
 
     public static Block flowingBlock;
+    public static Block generatorBlock;
 }

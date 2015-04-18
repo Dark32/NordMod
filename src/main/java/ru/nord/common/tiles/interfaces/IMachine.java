@@ -52,13 +52,13 @@ public interface IMachine extends IInventory, IEnergyTile {
     IAbstractRecipes getRecipes();
 
     /**
-     *Пакет энергии для обработки
+     * Пакет энергии для обработки предмета. Сколько энергии отнять за тик работы.
      * workSpeed
      */
     int getWorkPacketEnergy();
 
     /**
-     *Пакет энергии для горения
+     * Пакет энергии для горения
      * burnSpeed
      */
     int getBurnPacketEnergy();

@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import ru.nord.NordItems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,7 +44,7 @@ public class Fuel {
         return INSTANCE;
     }
 
-    public static void init() {
+    public static void postInit() {
         Fuel.getInstance().addFuel(Blocks.wooden_slab, 150);
         Fuel.getInstance().addFuel(Blocks.coal_block, 16000);
         Fuel.getInstance().addFuel(Material.wood, 300);
@@ -52,6 +53,8 @@ public class Fuel {
         Fuel.getInstance().addFuel(Items.lava_bucket, 20000);
         Fuel.getInstance().addFuel(Blocks.sapling, 100);
         Fuel.getInstance().addFuel(Items.blaze_rod, 2400);
+//        Fuel.getInstance().addFuel(NordItems.energyStorageItem, 16, 16, true);
+
     }
 
     /**
@@ -114,37 +117,34 @@ public class Fuel {
             if (check) {
                 itemFuelMetadata.set(i, fuel.setEnergy(energy));
                 return false;
-            } else {
-                itemFuelMetadata.add(new FuelMetadata(itemStack.getItem(),
-                        itemStack.getItemDamage(), energy));
-                return true;
             }
         }
-        return false;
+        itemFuelMetadata.add(new FuelMetadata(itemStack.getItem(),
+                itemStack.getItemDamage(), energy));
+        return true;
+
     }
 
     /**
      * Добавляем повреждаемое топливо
      *
-     * @param itemStack - повреждаемое топливо
-     * @param energy    - энергия заряда
-     * @param last      - сгорает до конца
+     * @param item   - повреждаемое топливо
+     * @param energy - энергия заряда
+     * @param last   - сгорает до конца
      * @return истина, если новое, ложь, если перезапись
      */
-    public boolean addFuel(ItemStack itemStack, int energy, boolean last) {
-        for (int i = 0; i < itemFuelMetadata.size(); i++) {
+    public boolean addFuel(Item item, int energy, int packet,boolean last) {
+        for (int i = 0; i < itemFuelDamagable.size(); i++) {
             FuelDamagable fuel = itemFuelDamagable.get(i);
-            boolean check = fuel.item == itemStack.getItem();
+            boolean check = fuel.item == item;
             if (check) {
-                itemFuelDamagable.set(i, fuel.setEnergy(energy).setLast(last));
+                itemFuelDamagable.set(i, fuel.setEnergy(energy).setLast(last).setPacket(packet));
                 return false;
-            } else {
-                itemFuelDamagable.add(new FuelDamagable(itemStack.getItem(),
-                        energy, last));
-                return true;
             }
         }
-        return false;
+        itemFuelDamagable.add(new FuelDamagable(item, energy,packet, last));
+        return true;
+
     }
 
     /**
@@ -154,17 +154,11 @@ public class Fuel {
      * @return индекс оплива
      */
     public int isFuelCode(ItemStack itemStack) {
+        if (itemStack == null) return NOT_FUEL;
         Item item = itemStack.getItem();
         int metadata = itemStack.getItemDamage();
-        for (int i = 0; i < itemFuelDamagable.size(); i++) {
-            FuelDamagable fuel = itemFuelDamagable.get(i);
-            if (fuel.item == item) {
-                return DAMAGABLE;
-            }
-
-        }
-        for (int i = 0; i < itemFuelMetadata.size(); i++) {
-            FuelMetadata fuel = itemFuelMetadata.get(i);
+        if (getFuelDamagable(itemStack)!=null) return DAMAGABLE;
+        for (FuelMetadata fuel : itemFuelMetadata) {
             if (fuel.item == item && fuel.metadata == metadata) {
                 return METADATA;
             }
@@ -193,20 +187,30 @@ public class Fuel {
     }
 
     private boolean getDamagableFuelFullBurn(ItemStack itemStack) {
-        for (int i = 0; i < itemFuelMetadata.size(); i++) {
-            FuelDamagable fuel = itemFuelDamagable.get(i);
-            if (fuel.item == itemStack.getItem()) {
-                return fuel.last;
-            }
-        }
-        return false;
+        FuelDamagable fuel = getFuelDamagable(itemStack);
+        return fuel != null && fuel.last;
     }
 
     /**
-     * Может ли топливогореть
+     * Получаем повреждаемое топливо
+     * @param itemStack предмет
+     * @return топливо
+     */
+    private FuelDamagable getFuelDamagable(ItemStack itemStack){
+        if(itemStack == null) return null;
+        for (FuelDamagable fuel : itemFuelDamagable) {
+            if (fuel.item == itemStack.getItem()) {
+                return fuel;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Может ли топливо гореть
      *
      * @param itemStack - топливо
-     * @return стини - может, ложь - не может
+     * @return истини - может, ложь - не может
      */
     public boolean hasBurn(ItemStack itemStack) {
         if (isFuel(itemStack)) {
@@ -214,7 +218,7 @@ public class Fuel {
                 if (getDamagableFuelFullBurn(itemStack)) {
                     return true;
                 } else {
-                    return itemStack.getItemDamage() < itemStack.getMaxDamage();
+                    return itemStack.getItemDamage() > 0;
                 }
             }
             return true;
@@ -232,8 +236,10 @@ public class Fuel {
     public ItemStack burn(ItemStack itemStack) {
         if (itemStack == null)
             return null;
-        if (isFuelCode(itemStack) == DAMAGABLE) {
-            itemStack.setItemDamage(itemStack.getItemDamage() + 1);
+        if (isFuelCode(itemStack) == DAMAGABLE && hasBurn(itemStack)) {
+            FuelDamagable fuel = getFuelDamagable(itemStack);
+            burn(itemStack,fuel);
+            //itemStack.setItemDamage(itemStack.getItemDamage() + fuel.packet);
         } else {
             itemStack.stackSize--;
             if (itemStack.stackSize == 0) {
@@ -242,7 +248,17 @@ public class Fuel {
         }
         return itemStack;
     }
-
+    /**
+     * Сжигаем повреждаемое топливо
+     */
+    public ItemStack burn(ItemStack itemStack, FuelDamagable fuel) {
+         if(itemStack.getItemDamage()> fuel.packet){
+             itemStack.setItemDamage(itemStack.getItemDamage() + fuel.packet);
+         }else{
+             itemStack.setItemDamage(itemStack.getMaxDamage());
+         }
+        return itemStack;
+    }
     /**
      * Энергия от сгорания
      *
@@ -250,17 +266,14 @@ public class Fuel {
      * @return сколько энергии выделится
      */
     public int getEnergy(ItemStack itemStack) {
+        if (itemStack == null) return 0;
         Item item = itemStack.getItem();
         int metadata = itemStack.getItemDamage();
-        for (int i = 0; i < itemFuelDamagable.size(); i++) {
-            FuelDamagable fuel = itemFuelDamagable.get(i);
-            if (fuel.item == item) {
-                return fuel.energy;
-            }
 
-        }
-        for (int i = 0; i < itemFuelMetadata.size(); i++) {
-            FuelMetadata fuel = itemFuelMetadata.get(i);
+        FuelDamagable fuel_d = getFuelDamagable(itemStack);
+        if (fuel_d!=null) return fuel_d.energy;
+
+        for (FuelMetadata fuel : itemFuelMetadata) {
             if (fuel.item == item && fuel.metadata == metadata) {
                 return fuel.energy;
             }
@@ -309,11 +322,13 @@ public class Fuel {
     private static class FuelDamagable {
         public final Item item;
         public int energy;
+        public int packet;
         public boolean last;
 
-        public FuelDamagable(Item item, int energy, boolean last) {
+        public FuelDamagable(Item item, int energy, int packet,boolean last) {
             this.item = item;
             this.energy = energy;
+            this.packet = packet;
             this.last = last;
         }
 
@@ -332,6 +347,14 @@ public class Fuel {
          */
         public FuelDamagable setLast(boolean last) {
             this.last = last;
+            return this;
+        }
+        /**
+         * @param packet сколько урона наносить предмету за тик сгорания
+         * @return себя же
+         */
+        public FuelDamagable setPacket(int packet) {
+            this.packet = packet;
             return this;
         }
     }

@@ -11,6 +11,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.container.Slot.SlotFuel;
+import ru.nord.common.container.Slot.SlotFuelAndEnergy;
 import ru.nord.common.container.Slot.SlotOutput1I2O;
 import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
 import ru.nord.common.lib.utils.Fuel;
@@ -33,7 +34,7 @@ abstract public class ContainerAbstactMachine extends Container {
         public void init(InventoryPlayer invPlayer, IMachine ent) {
                 tileEntity = ent;
 
-                addSlotToContainer(new SlotFuel(tileEntity, slot_fuel, 18, 58)); // fuel
+                addSlotToContainer(new SlotFuelAndEnergy(tileEntity, slot_fuel, 18, 58)); // fuel
                 addSlotToContainer(new Slot(tileEntity, slot_input, 53, 38)); // item to work
                 addSlotToContainer(new SlotOutput1I2O(invPlayer.player, tileEntity, slot_result1, 107, 39)); // result1
                 addSlotToContainer(new SlotOutput1I2O(invPlayer.player, tileEntity, slot_result2, 128, 39)); // result2
