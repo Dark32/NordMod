@@ -28,11 +28,20 @@ public class GuiGenerator extends GuiMachine {
             int y = (height - ySize) / 2;
             int k = (this.width - this.xSize) / 2;
             int l = (this.height - this.ySize) / 2;
+
             this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 
             int progress = this.tileEntity.getEnergyProgressScaled(52);
             this.drawTexturedModalRect(k + 11, l + 22, 183, 37, 3, 52); // Отрисовать полную текстуру огня
             this.drawTexturedModalRect(k + 11, l + 22, 11, 22, 3, 52 - progress); // А поверх нее рисовать обычную текстуру (без огня)
+
+            boolean charge = this.tileEntity.getCharge(1);
+            if (charge)
+                 this.drawTexturedModalRect(k + 133, l + 43, 182, 39, 5, 11);
+
+            charge = this.tileEntity.getCharge(2);
+            if (charge)
+                 this.drawTexturedModalRect(k + 153, l + 43, 182, 39, 5, 11);
 
             progress = this.tileEntity.getBurnTimeRemainingScaled(14);
             this.drawTexturedModalRect(k + 19, l + 41, 176, 2, 14, 14);
@@ -52,9 +61,10 @@ public class GuiGenerator extends GuiMachine {
             int maxEnergy = this.tileEntity.getMaxEnergy() / 16;
             this.fontRendererObj.drawString(name, 16, 6, 4210752);
             drawOverText(9, 20, 4, 54, xAxis, yAxis, String.valueOf(energy) + "/" + String.valueOf(maxEnergy) + " share" + (energy > 1 ? "s" : ""));
+            this.fontRendererObj.drawString("X: " + xAxis + " Y: " + yAxis, xAxis, yAxis, 4210752);
 //            this.fontRendererObj.drawString("X: " + xAxis + " Y: " + yAxis, xAxis, yAxis, 4210752);
-            this.fontRendererObj.drawString("Скорость горения: " + tileEntity.getBurnPacketEnergy() / 16, 50, 29, 4210752);
-            this.fontRendererObj.drawString("Энергия топлива: " + Fuel.getInstance().getEnergy(tileEntity.getStackInSlot(0)) / 16, 50, 43, 4210752);
+//            this.fontRendererObj.drawString("Скорость горения: " + tileEntity.getBurnPacketEnergy() / 16, 50, 29, 4210752);
+//            this.fontRendererObj.drawString("Энергия топлива: " + Fuel.getInstance().getEnergy(tileEntity.getStackInSlot(0)) / 16, 50, 43, 4210752);
         }
 
 

@@ -28,13 +28,18 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
     private static final int[] slotsTop = new int[]{0};
     private static final int[] slotsBottom = new int[]{1};
     private static final int[] slotsSides = new int[]{0, 1};
-    private ItemStack[] inventory = new ItemStack[2];
+    private ItemStack[] inventory = new ItemStack[3];
     /**
      * inv[0] - fuel
      * inv[1] - charge item
+     * inv[2] - charge item
      */
     private final int fuel_slot = 0;
-    private final int charge_slot = 1;
+    private final int charge_slot1 = 1;
+    private final int charge_slot2 = 2;
+
+    private boolean charge1 = false;
+    private boolean charge2 = false;
 
     protected int burnTime; // текущие время горения
     protected int fuelBurnTime; // время горения
@@ -213,9 +218,19 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
             updated = true;
         }
 
-        if (isChargeability() && canStartCharge()) {
-            charge();
+        if (isChargeability(charge_slot1) && canStartCharge(charge_slot1)) {
+            charge(charge_slot1);
+            charge1 = true;
+        }else{
+            charge1 = false;
         }
+        if (isChargeability(charge_slot2) && canStartCharge(charge_slot2)) {
+            charge(charge_slot2);
+            charge2 = true;
+        }else{
+            charge2 = false;
+        }
+
         if (updated) { // если поменчено на обновление
             this.markDirty(); // обновляем
         }
@@ -273,14 +288,14 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
         return false;
     }
 
-    private void charge() {
+    private void charge(int charge_slot) {
         ItemStack item = getStackInSlot(charge_slot);
         IEnergyCharges charge = ((IEnergyCharges) item.getItem());
         charge.addEnergy(item, this.getPacketEnergy());
         this.subEnergy(this.getPacketEnergy());
     }
 
-    private boolean canStartCharge() {
+    private boolean canStartCharge(int charge_slot) {
         ItemStack item = getStackInSlot(charge_slot);
         IEnergyCharges charge = ((IEnergyCharges) item.getItem());
         return charge.currectEnergy(item) <= (charge.maxEnergy(item) - this.getPacketEnergy())
@@ -288,7 +303,7 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
     }
 
 
-    private boolean isChargeability() {
+    private boolean isChargeability(int charge_slot) {
         ItemStack item = getStackInSlot(charge_slot);
         if (item == null) return false;
         if (item.getItem() instanceof IEnergyCharges) return true;
@@ -326,7 +341,10 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
         if (index == fuel_slot && getItemBurnTime(stack) == 0) {
             return false;
         }
-        if (index == charge_slot && isChargeability()) {
+        if (index == charge_slot1 && isChargeability(charge_slot1)) {
+            return true;
+        }
+        if (index == charge_slot2 && isChargeability(charge_slot2)) {
             return true;
         }
         return false;
@@ -451,7 +469,10 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
     public int getEnergyProgressScaled(int val) {
         return this.getEnergy() * val / this.getMaxEnergy();
     }
-
+    @SideOnly(Side.CLIENT)
+    public boolean getCharge(int charge_slot) {
+        return charge_slot==1 ? charge1 :charge2;
+    }
     @SideOnly(Side.CLIENT)
     public int getBurnTimeRemainingScaled(int val) {
         return fuelBurnTime == 0 ? 0 : burnTime * val / fuelBurnTime;

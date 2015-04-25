@@ -23,7 +23,7 @@ public class TileGenerator extends TileAbstractEnergyGenerator {
 
     @Override
     public int getBurnPacketEnergy() {
-        return 16;
+        return 32;
     }
     @Override
     public int getPacketEnergy() {

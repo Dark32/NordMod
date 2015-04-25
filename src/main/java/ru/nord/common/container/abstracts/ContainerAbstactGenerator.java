@@ -20,13 +20,15 @@ abstract public class ContainerAbstactGenerator extends Container {
     private int lastFuelBurnTime;
 
     protected int slot_fuel = 0;
-    protected int slot_charge = 1;
+    protected int slot_charge1 = 1;
+    protected int slot_charge2 = 2;
 
     public void init(InventoryPlayer invPlayer, IGenerator ent) {
         tileEntity = ent;
 
         addSlotToContainer(new SlotFuel(tileEntity, slot_fuel, 18, 58)); // fuel
-        addSlotToContainer(new Slot(tileEntity, slot_charge, 18, 23)); // item to work
+        addSlotToContainer(new Slot(tileEntity, slot_charge1, 128, 23)); // item to work
+        addSlotToContainer(new Slot(tileEntity, slot_charge2, 148, 23)); // item to work
         bindPlayerInventory(invPlayer);
     }
 
@@ -102,17 +104,17 @@ abstract public class ContainerAbstactGenerator extends Container {
 
             //boolean check = false;
 
-            if (slot != slot_charge && slot != slot_fuel) {
+            if (slot != slot_charge1 && slot != slot_charge2 && slot != slot_fuel) {
                if (Fuel.getInstance().getEnergy(stackInSlot) > 0 && (fuelSlot.getStack() == null || fuelSlot.getStack().stackSize < 64)) {
                     if (!this.mergeItemStack(stackInSlot, 0, 1, false))
                         return null;
-                } else if (slot >= 2 && slot <= 28) {
-                    if (!this.mergeItemStack(stackInSlot, 29, 38, false))
+                } else if (slot >= 3 && slot <= 27) {
+                    if (!this.mergeItemStack(stackInSlot, 30, 39, false))
                         return null;
-                } else if (slot >= 29 && slot < 38 && !this.mergeItemStack(stackInSlot, 2, 29, false))
+                } else if (slot >= 30 && slot < 39 && !this.mergeItemStack(stackInSlot, 2, 30, false))
                     return null;
 
-            } else if (!this.mergeItemStack(stackInSlot, 2, 38, false))
+            } else if (!this.mergeItemStack(stackInSlot, 3, 39, false))
                 return null;
 
             if (stackInSlot.stackSize == 0) {
