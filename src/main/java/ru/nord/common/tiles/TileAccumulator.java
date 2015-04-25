@@ -9,9 +9,10 @@ import ru.nord.client.gui.inventory.GuiFlowing;
 import ru.nord.common.container.ContainerFlowing;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
+import ru.nord.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 import ru.nord.common.tiles.abstracts.TileAbstractEnergyMachina;
 
-public class TileFlowing extends TileAbstractEnergyMachina {
+public class TileAccumulator extends TileAbstractEnergyAccumulator {
 
     @Override
     public String getName() {
@@ -22,18 +23,7 @@ public class TileFlowing extends TileAbstractEnergyMachina {
     public int getMaxEnergy() {
         return 12800;
     }
-    @Override
-    public IRecipes1I2O getRecipes() {
-        return FlowingRecipes1I2O.INSTANCE();
-    }
-    @Override
-    public int getWorkPacketEnergy() {
-        return 4;
-    }
-    @Override
-    public int getBurnPacketEnergy() {
-        return 16;
-    }
+
     @Override
     public int getPacketEnergy() {
         return 16;
@@ -41,11 +31,16 @@ public class TileFlowing extends TileAbstractEnergyMachina {
 
     @Override
     public Container getContainer(EntityPlayer player) {
-        return new ContainerFlowing(player.inventory,this);
+        return null;
     }
 
     @Override
     public GuiContainer getGui(EntityPlayer player) {
-        return new GuiFlowing(player,this);
+        return null;
+    }
+
+    @Override
+    public int getLineOnEnergy() {
+        return 4;
     }
 }

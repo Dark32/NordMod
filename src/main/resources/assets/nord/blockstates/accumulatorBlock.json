@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "nord:accumulatorBlock" },
+        "facing=south": { "model": "nord:accumulatorBlock", "y": 180 },
+        "facing=west":  { "model": "nord:accumulatorBlock", "y": 270 },
+        "facing=east":  { "model": "nord:accumulatorBlock", "y": 90 }
+    }
+}

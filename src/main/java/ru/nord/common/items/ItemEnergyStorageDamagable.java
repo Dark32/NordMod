@@ -70,6 +70,17 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
         return 16;
     }
 
+    @Override
+    public int setEnergy(ItemStack itemStack, int energy) {
+        itemStack.setItemDamage(maxEnergy(itemStack) - energy);
+        return currectEnergy(itemStack);
+    }
+
+    @Override
+    public int getDeficient(ItemStack itemStack) {
+        return maxEnergy(itemStack)-currectEnergy(itemStack);
+    }
+
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
         tooltip.add("Energy: " + EnumChatFormatting.RED + currectEnergy(stack) / 16 + "/" + maxEnergy(stack) / 16);

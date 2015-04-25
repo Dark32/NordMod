@@ -31,13 +31,11 @@ public class TileGenerator extends TileAbstractEnergyGenerator {
     }
 
     @Override
-    @NotNull
     public Container getContainer(EntityPlayer player) {
         return new ContainerGenerator(player.inventory,this);
     }
 
     @Override
-    @NotNull
     public GuiContainer getGui(EntityPlayer player) {
         return new GuiGenerator(player,this);
     }

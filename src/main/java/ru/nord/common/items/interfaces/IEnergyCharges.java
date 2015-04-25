@@ -78,4 +78,14 @@ public interface IEnergyCharges {
      * @return значение
      */
     int packetEnergy(ItemStack itemStack);
+
+    /**
+     * Установить энергию
+     * @param itemStack предмет
+     * @param energy значение
+     * @return новое значение
+     */
+    int setEnergy(ItemStack itemStack, int energy);
+
+    int getDeficient(ItemStack itemStack);
 }

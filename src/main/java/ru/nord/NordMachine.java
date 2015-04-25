@@ -5,8 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.nord.common.blocks.BlockFlowing;
-import ru.nord.common.blocks.BlockGenerator;
+import ru.nord.common.blocks.*;
 import ru.nord.common.items.ItemEnergyStorageDamagable;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
@@ -38,6 +37,7 @@ public class NordMachine {
     private static void createBlock() {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabGeneral);
         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabGeneral);
+        NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabGeneral);
 
     }
 
@@ -48,6 +48,7 @@ public class NordMachine {
     private static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
 
     }
 
