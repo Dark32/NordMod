@@ -15,6 +15,7 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.items.interfaces.IEnergyCharges;
+import ru.nord.common.lib.utils.ChargeHelper;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.tiles.interfaces.IGenerator;
 
@@ -267,10 +268,10 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = (IEnergyCharges) item.getItem();
-                if (charge.hasEnergy(item)
+                if (ChargeHelper.hasEnergy(item)
                         && this.getEnergy() <= (this.getMaxEnergy() - charge.packetEnergy(item))) {
                     this.addEnergy(charge.packetEnergy(item));
-                    charge.subEnergy(item);
+                    ChargeHelper.subEnergy(item);
                     return true; // помечаем на обновление
                 }
             }
@@ -290,15 +291,14 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
 
     private void charge(int charge_slot) {
         ItemStack item = getStackInSlot(charge_slot);
-        IEnergyCharges charge = ((IEnergyCharges) item.getItem());
-        charge.addEnergy(item, this.getPacketEnergy());
+        ChargeHelper.addEnergy(item, this.getPacketEnergy());
         this.subEnergy(this.getPacketEnergy());
     }
 
     private boolean canStartCharge(int charge_slot) {
         ItemStack item = getStackInSlot(charge_slot);
         IEnergyCharges charge = ((IEnergyCharges) item.getItem());
-        return charge.getDeficient(item) >= this.getPacketEnergy()
+        return ChargeHelper.getDeficient(item) >= this.getPacketEnergy()
                 && this.hasSubEnergy(this.getPacketEnergy());
     }
 

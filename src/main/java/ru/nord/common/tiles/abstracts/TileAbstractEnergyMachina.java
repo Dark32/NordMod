@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.items.interfaces.IEnergyCharges;
 import ru.nord.common.lib.recipes.Interfaces.IRecipe1I2O;
 import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
+import ru.nord.common.lib.utils.ChargeHelper;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.tiles.interfaces.IMachine;
 
@@ -536,10 +537,10 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = (IEnergyCharges) item.getItem();
-                if (charge.hasEnergy(item, charge.packetEnergy(item))
+                if (ChargeHelper.hasEnergy(item, charge.packetEnergy(item))
                         && this.getEnergy() <= (this.getMaxEnergy() - charge.packetEnergy(item))) {
                     this.addEnergy(charge.packetEnergy(item));
-                    charge.subEnergy(item, charge.packetEnergy(item));
+                    ChargeHelper.subEnergy(item, charge.packetEnergy(item));
                     return true; // помечаем на обновление
                 }
             }

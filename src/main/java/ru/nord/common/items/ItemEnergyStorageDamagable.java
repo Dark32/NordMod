@@ -32,40 +32,6 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
     }
 
     @Override
-    public int addEnergy(ItemStack itemStack, int add) {
-        if (currectEnergy(itemStack) <= (maxEnergy(itemStack)) - add)
-            itemStack.setItemDamage(itemStack.getItemDamage() - add);
-        return currectEnergy(itemStack);
-    }
-
-    @Override
-    public int subEnergy(ItemStack itemStack, int sub) {
-        if (currectEnergy(itemStack) >= sub)
-            itemStack.setItemDamage(itemStack.getItemDamage() + sub);
-        return currectEnergy(itemStack);
-    }
-
-    @Override
-    public int addEnergy(ItemStack itemStack) {
-        return addEnergy(itemStack, packetEnergy(itemStack));
-    }
-
-    @Override
-    public int subEnergy(ItemStack itemStack) {
-        return subEnergy(itemStack, packetEnergy(itemStack));
-    }
-
-    @Override
-    public boolean hasEnergy(ItemStack itemStack, int energy) {
-        return currectEnergy(itemStack) > energy;
-    }
-
-    @Override
-    public boolean hasEnergy(ItemStack itemStack) {
-        return hasEnergy(itemStack, packetEnergy(itemStack));
-    }
-
-    @Override
     public int packetEnergy(ItemStack itemStack) {
         return 16;
     }
@@ -76,10 +42,6 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
         return currectEnergy(itemStack);
     }
 
-    @Override
-    public int getDeficient(ItemStack itemStack) {
-        return maxEnergy(itemStack)-currectEnergy(itemStack);
-    }
 
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
