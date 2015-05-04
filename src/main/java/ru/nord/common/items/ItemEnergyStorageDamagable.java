@@ -8,6 +8,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.items.interfaces.IEnergyCharges;
+import ru.nord.common.lib.utils.Constants;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
 
     @Override
     public int currectEnergy(ItemStack itemStack) {
-        return _maxEnergy - itemStack.getItemDamage() + 1;
+        return _maxEnergy - itemStack.getItemDamage();
     }
 
     @Override
@@ -33,7 +34,7 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
 
     @Override
     public int packetEnergy(ItemStack itemStack) {
-        return 16;
+        return Constants.SHARE_MULTIPLE;
     }
 
     @Override
@@ -45,13 +46,13 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
 
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
-        tooltip.add("Energy: " + EnumChatFormatting.RED + currectEnergy(stack) / 16 + "/" + maxEnergy(stack) / 16);
-        tooltip.add("dEnergy: " + EnumChatFormatting.RED + currectEnergy(stack) % 16 + " /16");
+        tooltip.add("Energy: " + EnumChatFormatting.RED + currectEnergy(stack) / Constants.SHARE_MULTIPLE + "/" + maxEnergy(stack) / Constants.SHARE_MULTIPLE + " " +Constants.ENERGY);
+        tooltip.add("dEnergy: " + EnumChatFormatting.RED + currectEnergy(stack) % Constants.SHARE_MULTIPLE +  " " +Constants.ENERGY);
     }
 
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List subItems) {
-        subItems.add(new ItemStack(itemIn, 1, this.getMaxDamage()));
+        subItems.add(new ItemStack(itemIn, 1,_maxEnergy));
         subItems.add(new ItemStack(itemIn, 1, 0));
     }
 }

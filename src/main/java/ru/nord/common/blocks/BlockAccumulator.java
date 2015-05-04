@@ -13,8 +13,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.Nord;
 import ru.nord.common.blocks.abstracts.BlockAbstractMachina;
-import ru.nord.common.tiles.TileGenerator;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyGenerator;
+import ru.nord.common.tiles.TileAccumulator;
+import ru.nord.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 
 public class BlockAccumulator extends BlockAbstractMachina {
 
@@ -36,13 +36,13 @@ public class BlockAccumulator extends BlockAbstractMachina {
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileGenerator();
+        return new TileAccumulator();
     }
 
     @Override
     protected boolean getWork(IBlockAccess world, BlockPos pos) {
-        TileAbstractEnergyGenerator tile = (TileAbstractEnergyGenerator) world.getTileEntity(pos);
-        return tile != null && tile.isBurning();
+        TileAbstractEnergyAccumulator tile = (TileAbstractEnergyAccumulator) world.getTileEntity(pos);
+        return tile != null && (tile.getCharge() || tile.getDisCharge());
     }
     public boolean isFullCube()
     {

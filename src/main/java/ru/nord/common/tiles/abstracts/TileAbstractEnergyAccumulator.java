@@ -11,6 +11,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.items.interfaces.IEnergyCharges;
 import ru.nord.common.lib.utils.ChargeHelper;
 import ru.nord.common.tiles.interfaces.IAccumulator;
@@ -144,9 +146,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
                 this.inventory[b0] = ItemStack.loadItemStackFromNBT(tag);
             }
         }
-
-
-        this.setEnergy(compound.getShort("energy"));
+        this.setEnergy(compound.getInteger("energy"));
         if (compound.hasKey("CustomName", Constants.NBT.TAG_STRING)) {
             this.machineCustomName = compound.getString("CustomName");
         }
@@ -155,8 +155,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
     @Override
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
-
-        compound.setShort("energy", (short) this.getEnergy());
+        compound.setInteger("energy", (short) this.getEnergy());
         NBTTagList itemList = new NBTTagList();
         for (int i = 0; i < this.inventory.length; ++i) {
             ItemStack stack = inventory[i];
@@ -205,7 +204,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
             discharge = false;
         }
 
-        if (aline()){
+        if (conserved()) {
             updated = true;
         }
 
@@ -214,12 +213,19 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         }
     }
 
+    public boolean getCharge() {
+        return charge;
+    }
+
+    public boolean getDisCharge() {
+        return discharge;
+    }
 
     private void charge() {
         ItemStack item = getStackInSlot(charge_slot_in);
         ChargeHelper.addEnergy(item, this.getPacketEnergy());
         this.subEnergy(this.getPacketEnergy());
-        if (!canStartCharge()) {
+        if (!canStartCharge() && getStackInSlot(charge_slot_out) == null) {
             setInventorySlotContents(charge_slot_out, item);
             setInventorySlotContents(charge_slot_in, null);
         }
@@ -242,12 +248,12 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
     private void discharge() {
         ItemStack item = getStackInSlot(dis_charge_slot_in);
         ChargeHelper.subEnergy(item, this.getPacketEnergy());
-        if ( this.hasAddEnergy(this.getPacketEnergy())){
+        if (this.hasAddEnergy(this.getPacketEnergy())) {
             this.addEnergy(this.getPacketEnergy());
-        }else{
+        } else {
             this.addBonusEnergy(this.getPacketEnergy());
         }
-        if (!canStartDisCharge()) {
+        if (!canStartDisCharge() && getStackInSlot(dis_charge_slot_out) == null) {
             setInventorySlotContents(dis_charge_slot_out, item);
             setInventorySlotContents(dis_charge_slot_in, null);
         }
@@ -258,7 +264,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         IEnergyCharges charge = ((IEnergyCharges) item.getItem());
         return charge.currectEnergy(item) >= this.getPacketEnergy()
                 && (this.hasAddEnergy(this.getPacketEnergy())
-                ||hasAddBonusEnergy(this.getPacketEnergy()));
+                || hasAddBonusEnergy(this.getPacketEnergy()));
     }
 
 
@@ -390,7 +396,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         if (energy > getBonusMaxEnergy()) energy = getBonusMaxEnergy();
         for (int anUpgrade : upgrade) {
             ItemStack item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = ((IEnergyCharges) item.getItem());
                 charge.setEnergy(item, charge.maxEnergy(item));
                 energy -= charge.maxEnergy(item);
@@ -405,7 +411,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         ItemStack item;
         for (int anUpgrade : upgrade) {
             item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = ((IEnergyCharges) item.getItem());
                 energy += charge.maxEnergy(item);
             }
@@ -419,7 +425,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         ItemStack item;
         for (int anUpgrade : upgrade) {
             item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = ((IEnergyCharges) item.getItem());
                 energy += charge.currectEnergy(item);
             }
@@ -432,12 +438,12 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         ItemStack item;
         for (int anUpgrade : upgrade) {
             item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 int _energyDeficient = ChargeHelper.getDeficient(item);
                 if (energy >= _energyDeficient) {
                     ChargeHelper.addEnergy(item, _energyDeficient);
                     energy -= _energyDeficient;
-                }else{
+                } else {
                     ChargeHelper.addEnergy(item, energy);
                     break;
                 }
@@ -451,13 +457,13 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         ItemStack item;
         for (int anUpgrade : upgrade) {
             item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = ((IEnergyCharges) item.getItem());
                 int _energyProficit = charge.currectEnergy(item);
                 if (energy >= _energyProficit) {
                     ChargeHelper.subEnergy(item, _energyProficit);
                     energy -= _energyProficit;
-                }else{
+                } else {
                     ChargeHelper.subEnergy(item, energy);
                     break;
                 }
@@ -471,29 +477,12 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
         ItemStack item;
         for (int anUpgrade : upgrade) {
             item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = ((IEnergyCharges) item.getItem());
                 int _energyProficit = charge.currectEnergy(item);
                 if (energy >= _energyProficit) {
                     energy -= _energyProficit;
-                }else{
-                    return true;
-                }
-            }
-        }
-        return energy==0;
-    }
-
-    @Override
-    public boolean hasAddBonusEnergy(int energy) {
-        ItemStack item;
-        for (int anUpgrade : upgrade) {
-            item = getStackInSlot(anUpgrade);
-            if (item.getItem() instanceof IEnergyCharges) {
-                int _energyDeficient = ChargeHelper.getDeficient(item);
-                if (energy >= _energyDeficient) {
-                    energy -= _energyDeficient;
-                }else{
+                } else {
                     return true;
                 }
             }
@@ -502,14 +491,38 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
     }
 
     @Override
-    public boolean aline() {
-        int bonus = getBonusEnergy()>getPacketEnergy() ? getPacketEnergy() : getBonusEnergy();
-        if (hasAddEnergy(bonus)){
+    public boolean hasAddBonusEnergy(int energy) {
+        ItemStack item;
+        for (int anUpgrade : upgrade) {
+            item = getStackInSlot(anUpgrade);
+            if (item != null && item.getItem() instanceof IEnergyCharges) {
+                int _energyDeficient = ChargeHelper.getDeficient(item);
+                if (energy >= _energyDeficient) {
+                    energy -= _energyDeficient;
+                } else {
+                    return true;
+                }
+            }
+        }
+        return energy == 0;
+    }
+
+    @Override
+    public boolean conserved() {
+        int bonus = getBonusEnergy() > getPacketEnergy() ? getPacketEnergy() : getBonusEnergy();
+        if (hasAddEnergy(bonus)) {
             addEnergy(bonus);
             subBonusEnergy(bonus);
             return true;
         }
-    return false;
+        return false;
     }
 
+    @SideOnly(Side.CLIENT)
+    public int getEnergyProgressScaled(int line, int val) {
+        int energyInLine = this.getEnergy()-this.getEnergyByLine()*(line-1);
+        energyInLine = energyInLine > 0 ? energyInLine : 0;
+        energyInLine = energyInLine < this.getEnergyByLine() ? energyInLine : this.getEnergyByLine();
+        return energyInLine * val / this.getEnergyByLine();
+    }
 }

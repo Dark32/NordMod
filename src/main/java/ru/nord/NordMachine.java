@@ -9,6 +9,7 @@ import ru.nord.common.blocks.*;
 import ru.nord.common.items.ItemEnergyStorageDamagable;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
+import ru.nord.common.tiles.TileAccumulator;
 import ru.nord.common.tiles.TileFlowing;
 import ru.nord.common.tiles.TileGenerator;
 
@@ -55,6 +56,7 @@ public class NordMachine {
     private static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
+        GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
     }
 
 

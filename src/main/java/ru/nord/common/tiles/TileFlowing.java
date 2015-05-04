@@ -9,6 +9,7 @@ import ru.nord.client.gui.inventory.GuiFlowing;
 import ru.nord.common.container.ContainerFlowing;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
+import ru.nord.common.lib.utils.Constants;
 import ru.nord.common.tiles.abstracts.TileAbstractEnergyMachina;
 
 public class TileFlowing extends TileAbstractEnergyMachina {
@@ -32,11 +33,11 @@ public class TileFlowing extends TileAbstractEnergyMachina {
     }
     @Override
     public int getBurnPacketEnergy() {
-        return 16;
+        return Constants.SHARE_MULTIPLE;
     }
     @Override
     public int getPacketEnergy() {
-        return 16;
+        return Constants.SHARE_MULTIPLE;
     }
 
     @Override

@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import ru.nord.client.gui.inventory.abstracts.GuiMachine;
 import ru.nord.common.container.ContainerFlowing;
+import ru.nord.common.lib.utils.Constants;
 import ru.nord.common.lib.utils.Version;
 import ru.nord.common.tiles.TileFlowing;
 
@@ -46,10 +47,10 @@ public class GuiFlowing extends GuiMachine {
                     ? this.tileEntity.getName()
                     : I18n.format(this.tileEntity.getName());
 
-            int energy = this.tileEntity.getEnergy() / 16;
-            int maxEnergy = this.tileEntity.getMaxEnergy() / 16;
+            int energy = this.tileEntity.getEnergy() / Constants.SHARE_MULTIPLE;
+            int maxEnergy = this.tileEntity.getMaxEnergy() / Constants.SHARE_MULTIPLE;
             this.fontRendererObj.drawString(name, 16, 6, 4210752);
-            drawOverText(9, 20, 4, 54, xAxis, yAxis, String.valueOf(energy) + "/" + String.valueOf(maxEnergy) + " share" + (energy > 1 ? "s" : ""));
+            drawOverText(9, 20, 4, 54, xAxis, yAxis, String.valueOf(energy) + "/" + String.valueOf(maxEnergy) +  " " +Constants.ENERGY);
         }
 
 

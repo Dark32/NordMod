@@ -73,5 +73,5 @@ public interface IAccumulator extends IInventory, IEnergyTile {
     /**
      * Выравнять энергию из бонусных в обычную. Выравнивается по пакету с каждого бонуса
      */
-    boolean aline ();
+    boolean conserved ();
 }

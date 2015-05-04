@@ -172,7 +172,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         }
 
 
-        this.setEnergy(compound.getShort("energy"));
+        this.setEnergy(compound.getInteger("energy"));
         burnTime = compound.getShort("burnTime");
         currentItemEnergyProgress = compound.getShort("curEnergyProg");
         currentItemEnergyNeed = compound.getShort("curEnergyNeed");
@@ -186,7 +186,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
 
-        compound.setShort("energy", (short) this.getEnergy());
+        compound.setInteger("energy", (short) this.getEnergy());
         compound.setShort("burnTime", (short) burnTime);
         compound.setShort("curBurnTime", (short) currentItemEnergyProgress);
         compound.setShort("curCookTime", (short) currentItemEnergyNeed);

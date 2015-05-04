@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import ru.nord.client.gui.inventory.GuiGenerator;
 import ru.nord.common.container.ContainerGenerator;
+import ru.nord.common.lib.utils.Constants;
 import ru.nord.common.tiles.abstracts.TileAbstractEnergyGenerator;
 
 public class TileGenerator extends TileAbstractEnergyGenerator {
@@ -22,11 +23,11 @@ public class TileGenerator extends TileAbstractEnergyGenerator {
 
     @Override
     public int getBurnPacketEnergy() {
-        return 32;
+        return Constants.SHARE_MULTIPLE*2;
     }
     @Override
     public int getPacketEnergy() {
-        return 16;
+        return Constants.SHARE_MULTIPLE;
     }
 
     @Override

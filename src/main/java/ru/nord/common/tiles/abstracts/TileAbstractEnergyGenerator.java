@@ -154,7 +154,7 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
         }
 
 
-        this.setEnergy(compound.getShort("energy"));
+        this.setEnergy(compound.getInteger("energy"));
         burnTime = compound.getShort("burnTime");
         if (compound.hasKey("CustomName", Constants.NBT.TAG_STRING)) {
             this.machineCustomName = compound.getString("CustomName");
@@ -165,7 +165,7 @@ public abstract class TileAbstractEnergyGenerator extends TileAbstractEnergyBloc
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
 
-        compound.setShort("energy", (short) this.getEnergy());
+        compound.setInteger("energy", (short) this.getEnergy());
         compound.setShort("burnTime", (short) burnTime);
         NBTTagList itemList = new NBTTagList();
         for (int i = 0; i < this.inventory.length; ++i) {
