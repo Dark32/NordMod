@@ -26,11 +26,11 @@ public class NordDecoration {
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
             NordBloks.decoStoneBlock[i] = new BlockDecoStone(color.getSecondColor()).
-                    setUnlocalizedName("decoStoneBlock."+color.name()).setCreativeTab(NordTabs.tabGeneral);
+                    setUnlocalizedName("decoStoneBlock."+color.name()).setCreativeTab(NordTabs.tabDecoration);
         }
     }
     public static void createItem(){
-        NordItems.tutorialItem = new ItemBase().setUnlocalizedName("itemBase").setCreativeTab(NordTabs.tabGeneral);
+        NordItems.tutorialItem = new ItemBase().setUnlocalizedName("itemBase").setCreativeTab(NordTabs.tabDecoration);
     }
 
     public static void registerBlock(){

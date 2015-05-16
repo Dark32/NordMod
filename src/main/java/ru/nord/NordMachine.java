@@ -10,6 +10,7 @@ import ru.nord.common.items.ItemEnergyStorageDamagable;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.tiles.TileAccumulator;
+import ru.nord.common.tiles.TileEnergyCable;
 import ru.nord.common.tiles.TileFlowing;
 import ru.nord.common.tiles.TileGenerator;
 
@@ -31,14 +32,15 @@ public class NordMachine {
     }
 
     private static void createItem() {
-        NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabGeneral);
+        NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
 
     }
 
     private static void createBlock() {
-        NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabGeneral);
-        NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabGeneral);
-        NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabGeneral);
+        NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -50,6 +52,7 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
 
     }
 
@@ -57,6 +60,7 @@ public class NordMachine {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
+        GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");
     }
 
 
