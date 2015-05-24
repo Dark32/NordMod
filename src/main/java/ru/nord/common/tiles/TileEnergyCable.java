@@ -21,7 +21,7 @@ public class TileEnergyCable extends TileAbstractEnergyCable {
 
     @Override
     public int getPacketEnergy() {
-        return Constants.SHARE_MULTIPLE/4;
+        return Constants.SHARE_MULTIPLE;
     }
 
     @Override

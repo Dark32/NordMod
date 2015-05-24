@@ -28,14 +28,6 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
     private static final int[] slotsBottom = new int[]{0};
     private static final int[] slotsSides = new int[]{0};
 
-    //    private Vec3i[] _neighbors = new Vec3i[]{
-//            EnumFacing.DOWN.getDirectionVec(),  // 0
-//            EnumFacing.UP.getDirectionVec(),    // 1
-//            EnumFacing.NORTH.getDirectionVec(), // 2
-//            EnumFacing.SOUTH.getDirectionVec(), // 3
-//            EnumFacing.EAST.getDirectionVec(),  // 4
-//            EnumFacing.WEST.getDirectionVec()   // 5
-//    };
     private ItemStack[] inventory = new ItemStack[1];
     private final int upgrade = 0;
     protected String machineCustomName;
@@ -320,11 +312,11 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
 
             } else if (__neighbor == EnumNeighbors.CABLE) {
                 sendCABLE(energyTile);
-            }else if (__neighbor == EnumNeighbors.ACCUMULATOR_ACCEPTOR) {
-                IAccumulator accumulatorTile =  (IAccumulator)energyTile;
+            } else if (__neighbor == EnumNeighbors.ACCUMULATOR_ACCEPTOR) {
+                IAccumulator accumulatorTile = (IAccumulator) energyTile;
                 sendACCUMULATOR_ACCEPTOR(accumulatorTile);
 
-            }else if (__neighbor == EnumNeighbors.ACCUMULATOR_DISPENSER) {
+            } else if (__neighbor == EnumNeighbors.ACCUMULATOR_DISPENSER) {
                 sendDISPENSER(energyTile);
             }
             flag = true;
@@ -339,15 +331,17 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
             this.addEnergy(this.getPacketEnergy());
         }
     }
+
     private void sendACCUMULATOR_ACCEPTOR(IAccumulator accumulatorTile) {
         if (accumulatorTile.hasAddBonusEnergy(this.getPacketEnergy())
-                && this.hasSubEnergy(this.getPacketEnergy())){
+                && this.hasSubEnergy(this.getPacketEnergy())) {
             accumulatorTile.addBonusEnergy(this.getPacketEnergy());
             this.subEnergy(this.getPacketEnergy());
-        }else{
+        } else {
             sendACCEPTOR(accumulatorTile);
         }
     }
+
     private void sendACCEPTOR(IEnergyTile energyTile) {
         if (energyTile.hasAddEnergy(this.getPacketEnergy())
                 && this.hasSubEnergy(this.getPacketEnergy())) {
@@ -357,12 +351,24 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
     }
 
     private void sendCABLE(IEnergyTile energyTile) {
-        if (energyTile.hasAddEnergy(this.getPacketEnergy())
-                && this.hasSubEnergy(this.getPacketEnergy())
-                && this.getEnergy() + this.getPacketEnergy() > energyTile.getEnergy()) {
-            energyTile.addEnergy(this.getPacketEnergy());
-            this.subEnergy(this.getPacketEnergy());
+//        if (energyTile.hasAddEnergy(this.getPacketEnergy())
+//                && this.hasSubEnergy(this.getPacketEnergy())
+//                && this.getEnergy() + this.getPacketEnergy() > energyTile.getEnergy()) {
+//            energyTile.addEnergy(this.getPacketEnergy());
+//            this.subEnergy(this.getPacketEnergy());
+//        }
+        if (this.getEnergy() > energyTile.getEnergy()) {
+            int summ = this.getEnergy() + energyTile.getEnergy();
+            summ = summ % 2 == 0 ? summ : summ - 1;
+            int half = summ / 2;
+            int dificite = half - energyTile.getEnergy();
+            int proficite = this.getEnergy() - half;
+            if (energyTile.hasAddEnergy(dificite) && this.hasSubEnergy(proficite)) {
+                energyTile.addEnergy(dificite);
+                this.subEnergy(proficite);
+            }
         }
+
     }
 
     @Override
