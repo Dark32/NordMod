@@ -24,6 +24,7 @@ public class BlockGenerator extends BlockAbstractMachina {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (tileEntity == null || playerIn.isSneaking()) {
             return false;
@@ -42,4 +43,5 @@ public class BlockGenerator extends BlockAbstractMachina {
         TileAbstractEnergyGenerator tile = (TileAbstractEnergyGenerator) world.getTileEntity(pos);
         return tile != null && tile.isBurning();
     }
+
 }

@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.items.ItemEnergyStorageDamagable;
+import ru.nord.common.items.ItemWrench;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.tiles.TileAccumulator;
@@ -33,6 +34,7 @@ public class NordMachine {
 
     private static void createItem() {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
+        NordItems.wrench = new ItemWrench().setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -46,6 +48,7 @@ public class NordMachine {
 
     private static void registerItem() {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
+        RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
     }
 
     private static void registerBlock() {

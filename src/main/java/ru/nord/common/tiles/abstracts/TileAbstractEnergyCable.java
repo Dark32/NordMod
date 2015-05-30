@@ -329,6 +329,12 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
                 && this.hasAddEnergy(this.getPacketEnergy())) {
             energyTile.subEnergy(this.getPacketEnergy());
             this.addEnergy(this.getPacketEnergy());
+            return;
+        }
+        if (energyTile.hasSubEnergy(1) && this.hasAddEnergy(1)) {
+            energyTile.subEnergy(1);
+            this.addEnergy(1);
+            return;
         }
     }
 
@@ -347,28 +353,32 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
                 && this.hasSubEnergy(this.getPacketEnergy())) {
             energyTile.addEnergy(this.getPacketEnergy());
             this.subEnergy(this.getPacketEnergy());
+            return;
+        } if (energyTile.hasAddEnergy(1)
+                && this.hasSubEnergy(1)) {
+            energyTile.addEnergy(1);
+            this.subEnergy(1);
         }
     }
 
     private void sendCABLE(IEnergyTile energyTile) {
-//        if (energyTile.hasAddEnergy(this.getPacketEnergy())
-//                && this.hasSubEnergy(this.getPacketEnergy())
-//                && this.getEnergy() + this.getPacketEnergy() > energyTile.getEnergy()) {
-//            energyTile.addEnergy(this.getPacketEnergy());
-//            this.subEnergy(this.getPacketEnergy());
-//        }
-        if (this.getEnergy() > energyTile.getEnergy()) {
-            int summ = this.getEnergy() + energyTile.getEnergy();
-            summ = summ % 2 == 0 ? summ : summ - 1;
-            int half = summ / 2;
-            int dificite = half - energyTile.getEnergy();
-            int proficite = this.getEnergy() - half;
-            if (energyTile.hasAddEnergy(dificite) && this.hasSubEnergy(proficite)) {
-                energyTile.addEnergy(dificite);
-                this.subEnergy(proficite);
+        if (this.getEnergy() - this.getPacketEnergy() > energyTile.getEnergy()){
+            if(energyTile.hasAddEnergy(this.getPacketEnergy())
+                    && this.hasSubEnergy(this.getPacketEnergy())){
+                energyTile.addEnergy(this.getPacketEnergy());
+                this.subEnergy(this.getPacketEnergy());
+                return;
+
             }
         }
-
+        if (this.getEnergy() - 1 > energyTile.getEnergy()){
+            if(energyTile.hasAddEnergy(1)
+                    && this.hasSubEnergy(1)){
+                energyTile.addEnergy(1);
+                this.subEnergy(1);
+                return;
+            }
+        }
     }
 
     @Override

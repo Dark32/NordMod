@@ -2,21 +2,25 @@ package ru.nord.common.blocks.abstracts;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.common.blocks.interfaces.IWrenchable;
 import ru.nord.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord.common.tiles.interfaces.IEnergoCable;
 
 import java.util.Random;
 
-abstract public class BlockAbstractMachina extends BlockRotatebleContainer {
+abstract public class BlockAbstractMachina extends BlockRotatebleContainer implements IWrenchable {
 
     protected BlockAbstractMachina(Material mat) {
         super(mat);
@@ -31,6 +35,11 @@ abstract public class BlockAbstractMachina extends BlockRotatebleContainer {
             worldIn.updateComparatorOutputLevel(pos, this);
         }
         super.breakBlock(worldIn, pos, state);
+    }
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+//        this.wrenche(worldIn,pos,state,playerIn,side,hitX,hitY,hitZ);
+        return true;
     }
 
     protected boolean getWork(IBlockAccess world, BlockPos pos) {
@@ -68,5 +77,9 @@ abstract public class BlockAbstractMachina extends BlockRotatebleContainer {
                     worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
             }
         }
+    }
+    @Override
+    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        return false;
     }
 }

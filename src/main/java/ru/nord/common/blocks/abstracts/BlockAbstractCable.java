@@ -7,18 +7,24 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.Sys;
+import ru.nord.common.blocks.interfaces.IWrenchable;
+import ru.nord.common.items.interfaces.IWrench;
+import ru.nord.common.tiles.interfaces.IEnergoCable;
 
 import java.util.List;
 
-public class BlockAbstractCable extends BlockAbstractContainer  {
+public abstract class BlockAbstractCable extends BlockAbstractContainer implements IWrenchable {
     /** radius of the pipe model, in meters (0.0625 per pixel) */
     private final float pipeRadius; // in fraction of a block (aka meters)
     protected BlockAbstractCable() {
@@ -199,5 +205,28 @@ public class BlockAbstractCable extends BlockAbstractContainer  {
     public int getRenderType()
     {
         return 3;
+    }
+
+    @Override
+    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (playerIn.isSneaking() ){
+            this.removedByPlayer(worldIn,pos,playerIn,true);
+            this.dropBlockAsItem(worldIn, pos, state, 0);
+        }else{
+            TileEntity tileEntity = worldIn.getTileEntity(pos);
+            if (tileEntity == null) {
+                return false;
+            }
+            if (tileEntity instanceof IEnergoCable) {
+                int energy = ((IEnergoCable) tileEntity).getEnergy();
+                int maxenergy = ((IEnergoCable) tileEntity).getMaxEnergy();
+                int packet = ((IEnergoCable) tileEntity).getPacketEnergy();
+                if(!worldIn.isRemote) {
+                    playerIn.addChatComponentMessage(new ChatComponentTranslation("energy " + energy+"/"+maxenergy +"("+packet+")"));
+                }
+            }
+            return true;
+        }
+        return true;
     }
 }

@@ -20,24 +20,6 @@ public class BlockEnergoCable extends BlockAbstractCable {
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-        TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (tileEntity == null || playerIn.isSneaking()) {
-            return false;
-        }
-        if (tileEntity instanceof IEnergoCable) {
-            int energy = ((IEnergoCable) tileEntity).getEnergy();
-            int maxenergy = ((IEnergoCable) tileEntity).getMaxEnergy();
-            int packet = ((IEnergoCable) tileEntity).getPacketEnergy();
-            if(!worldIn.isRemote) {
-                playerIn.addChatComponentMessage(new ChatComponentTranslation("energy " + energy+"/"+maxenergy +"("+packet+")"));
-            }
-         }
-            //playerIn.openGui(Nord.instance, 2, worldIn, pos.getX(), pos.getY(), pos.getZ());
-        return true;
-    }
-
-    @Override
     public TileEntity createNewTileEntity(World world, int meta) {
         return new TileEnergyCable();
     }
@@ -47,4 +29,6 @@ public class BlockEnergoCable extends BlockAbstractCable {
     {
         return super.onBlockPlaced(worldIn,pos,facing,hitX,hitY,hitZ,meta,placer);
     }
+
+
 }
