@@ -1,7 +1,0 @@
-{
-    "parent": "nord:block/energy_cable/base/pipe2_ensw",
-    "textures": {
-        "texture": "nord:blocks/energy_cable",
-        "particle": "nord:blocks/stone/stone.burnt"
-    }
-}

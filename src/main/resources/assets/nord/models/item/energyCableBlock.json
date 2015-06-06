@@ -1,5 +1,5 @@
 {
-    "parent": "nord:block/energy_cable_ns",
+    "parent": "nord:block/cable/energy_cable_n",
     "ambientocclusion": false,
     "display": {
         "thirdperson": {

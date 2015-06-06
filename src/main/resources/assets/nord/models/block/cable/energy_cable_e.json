@@ -1,0 +1,39 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+               "texture": "nord:blocks/energy_cable",
+               "particle": "nord:blocks/stone/stone.burnt"
+    },
+    "elements": [
+        {
+            "from": [10,6,6],
+            "to": [16,10,10],
+            "faces": {
+                "up": {
+                    "uv": [8,2,14,6],
+                    "texture": "#texture"
+                },
+                "down": {
+                    "uv": [8,2,14,6],
+                    "texture": "#texture"
+                },
+                "west": {
+                    "uv": [2,10,6,14],
+                    "texture": "#texture"
+                },
+                "east": {
+                    "uv": [10,10,14,14],
+                    "texture": "#texture"
+                },
+                "north": {
+                    "uv": [10,2,16,6],
+                    "texture": "#texture"
+                },
+                "south": {
+                    "uv": [8,2,14,6],
+                    "texture": "#texture"
+                }
+            }
+        }
+    ]
+}
