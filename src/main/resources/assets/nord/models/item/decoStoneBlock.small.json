@@ -1,5 +1,5 @@
 {
-    "parent": "nord:block/decoStoneBlock.small",
+    "parent": "nord:block/decoStoneBlock/small",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

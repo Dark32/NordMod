@@ -2,17 +2,14 @@ package ru.nord.common.blocks;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import ru.nord.common.blocks.abstracts.BlockAbstractCable;
+import ru.nord.common.blocks.abstracts.BlockAbstractEnergyCable;
 import ru.nord.common.tiles.TileEnergyCable;
-import ru.nord.common.tiles.interfaces.IEnergoCable;
 
-public class BlockEnergoCable extends BlockAbstractCable {
+public class BlockEnergoCable extends BlockAbstractEnergyCable {
 
     public BlockEnergoCable() {
         setHardness(2.0F);

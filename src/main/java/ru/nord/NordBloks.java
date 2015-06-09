@@ -12,4 +12,5 @@ public class NordBloks {
     public static Block generatorBlock;
     public static Block accumulatorBlock;
     public static Block energyCableBlock;
+    public static Block energyCableBlock2;
 }

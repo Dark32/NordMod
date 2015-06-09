@@ -5,7 +5,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import ru.nord.NordBloks;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
+import ru.nord.client.lib.events.NordModelLoader;
 import ru.nord.common.CommonProxy;
 import ru.nord.common.lib.utils.Version;
 
@@ -14,6 +15,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerRenderers() {
 
+        ModelLoaderRegistry.registerLoader(new NordModelLoader());
     }
 
     @Override
