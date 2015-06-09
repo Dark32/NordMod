@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "type=fat": { "model": "nord:paperlantern.fat" }
+        "type=slim": { "model": "nord:paperlantern.slim" }
+    }
+}
