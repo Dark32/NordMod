@@ -13,4 +13,8 @@ public class NordBloks {
     public static Block accumulatorBlock;
     public static Block energyCableBlock;
     public static Block energyCableBlock2;
+    public static Block empireLamp1;
+    public static Block oilLamp;
+    public static Block empireFloorLamp1;
+    public static Block floorLamp1;
 }

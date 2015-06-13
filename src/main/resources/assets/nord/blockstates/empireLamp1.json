@@ -1,0 +1,21 @@
+{
+    "variants": {
+        "type=magenta"      : { "model": "nord:empirelamp1" },
+        "type=red"          : { "model": "nord:empirelamp1" },
+        "type=pink"         : { "model": "nord:empirelamp1" },
+        "type=lime"         : { "model": "nord:empirelamp1" },
+        "type=light_blue"   : { "model": "nord:empirelamp1" },
+        "type=green"        : { "model": "nord:empirelamp1" },
+        "type=light_gray"   : { "model": "nord:empirelamp1" },
+        "type=brown"        : { "model": "nord:empirelamp1" },
+        "type=cyan"         : { "model": "nord:empirelamp1" },
+        "type=magenta"      : { "model": "nord:empirelamp1" },
+        "type=orange"       : { "model": "nord:empirelamp1" },
+        "type=black"        : { "model": "nord:empirelamp1" },
+        "type=gray"         : { "model": "nord:empirelamp1" },
+        "type=white"        : { "model": "nord:empirelamp1" },
+        "type=purple"       : { "model": "nord:empirelamp1" },
+        "type=blue"         : { "model": "nord:empirelamp1" },
+        "type=yellow"       : { "model": "nord:empirelamp1" }
+    }
+}

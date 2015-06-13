@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "type=on"           : { "model": "nord:floorlamp1_on" },
+        "type=off"          : { "model": "nord:floorlamp1_off" },
+        "type=inverted_on"  : { "model": "nord:floorlamp1_on" },
+        "type=inverted_off" : { "model": "nord:floorlamp1_off" }
+    }
+}

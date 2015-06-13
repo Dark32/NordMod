@@ -1,6 +1,0 @@
-{
-    "parent": "nord:block/block/paperlantern",
-    "textures": {
-        "all": "nord:blocks/paperlantern/paperlantern.fat"
-    }
-}

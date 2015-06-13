@@ -1,0 +1,129 @@
+{
+    "__createdwith": "opl's Model Creator",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "nord:blocks/lamp/empirelamp1_2",
+        "empirelamp1_2": "nord:blocks/lamp/empirelamp1_2"
+    },
+    "elements": [
+        {
+            "from": [4,0,3],
+            "to": [5,1,13],
+            "faces": {
+                "up": {
+                    "uv": [4.0,5.0,5.0,15.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "west": {
+                    "uv": [4.0,5.0,5.0,15.0],
+                    "texture": "#empirelamp1_2",
+                    "rotation": 90
+                },
+                "east": {
+                    "uv": [4.0,5.0,5.0,15.0],
+                    "texture": "#empirelamp1_2",
+                    "rotation": 90
+                },
+                "north": {
+                    "uv": [4.0,5.0,5.0,6.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "south": {
+                    "uv": [4.0,14.0,5.0,15.0],
+                    "texture": "#empirelamp1_2"
+                }
+            }
+        },
+        {
+            "from": [11,0,3],
+            "to": [12,1,13],
+            "faces": {
+                "up": {
+                    "uv": [11.0,5.0,12.0,15.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "west": {
+                    "uv": [11.0,5.0,12.0,15.0],
+                    "texture": "#empirelamp1_2",
+                    "rotation": 90
+                },
+                "east": {
+                    "uv": [11.0,5.0,12.0,14.0],
+                    "texture": "#empirelamp1_2",
+                    "rotation": 90
+                },
+                "north": {
+                    "uv": [11.0,5.0,12.0,6.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "south": {
+                    "uv": [11.0,14.0,12.0,15.0],
+                    "texture": "#empirelamp1_2"
+                }
+            }
+        },
+        {
+            "from": [3,0,4],
+            "to": [13,1,5],
+            "faces": {
+                "up": {
+                    "uv": [3.0,6.0,13.0,7.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "west": {
+                    "uv": [3.0,6.0,4.0,7.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "east": {
+                    "uv": [12.0,6.0,13.0,7.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "north": {
+                    "uv": [3.0,6.0,13.0,7.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "south": {
+                    "uv": [3.0,6.0,13.0,7.0],
+                    "texture": "#empirelamp1_2"
+                }
+            }
+        },
+        {
+            "from": [3,0,11],
+            "to": [13,1,12],
+            "faces": {
+                "up": {
+                    "uv": [3.0,13.0,13.0,14.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "west": {
+                    "uv": [3.0,13.0,4.0,14.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "east": {
+                    "uv": [12.0,13.0,13.0,14.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "north": {
+                    "uv": [3.0,13.0,13.0,14.0],
+                    "texture": "#empirelamp1_2"
+                },
+                "south": {
+                    "uv": [3.0,13.0,13.0,14.0],
+                    "texture": "#empirelamp1_2"
+                }
+            }
+        },
+        {
+            "from": [5,1,5],
+            "to": [11,1,11],
+            "faces": {
+                "up": {
+                    "uv": [5.0,7.0,11.0,13.0],
+                    "texture": "#empirelamp1_2",
+                    "tintindex": 0
+                }
+            }
+        }
+    ]
+}
