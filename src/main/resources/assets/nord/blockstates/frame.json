@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "nord:frame"
+    },
+    "variants": {
+        "type":{
+            "wood": {
+                "textures": {
+                    "base": "nord:blocks/frame/frame_wood",
+                    "particle": "nord:blocks/frame/frame_wood"
+                 }
+            },
+            "iron": {
+                "textures": {
+                    "base": "nord:blocks/frame/frame_metall",
+                    "particle": "nord:blocks/frame/frame_metall"
+                }
+            }
+        }
+    }
+}

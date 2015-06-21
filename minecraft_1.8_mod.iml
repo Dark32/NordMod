@@ -16,8 +16,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: _home_andrew__gradle_caches_minecraft_net_minecraftforge_forge_1_8_11_14_1_1334_start" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: forgeSrc-1.8-11.14.1.1334" level="project" />
     <orderEntry type="library" exported="" name="Gradle: launchwrapper-1.11" level="project" />
     <orderEntry type="library" exported="" name="Gradle: asm-debug-all-5.0.3" level="project" />
     <orderEntry type="library" exported="" name="Gradle: akka-actor_2.11-2.3.3" level="project" />
@@ -61,8 +59,6 @@
     <orderEntry type="library" exported="" name="Gradle: lwjgl_util-2.9.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: twitch-6.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: scala-actors-2.11.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: scala-xml_2.11-1.0.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: scala-parser-combinators_2.11-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jinput-platform-2.0.5-natives-linux" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jinput-platform-2.0.5-natives-windows" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jinput-platform-2.0.5-natives-osx" level="project" />
@@ -75,6 +71,8 @@
     <orderEntry type="library" exported="" name="Gradle: lwjgl-platform-2.9.1-natives-linux" level="project" />
     <orderEntry type="library" exported="" name="Gradle: lwjgl-platform-2.9.1-natives-osx" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jsr305-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: forgeSrc-1.8-11.14.3.1446" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: _home_andrew__gradle_caches_minecraft_net_minecraftforge_forge_1_8_11_14_3_1446_start" level="project" />
   </component>
 </module>
 

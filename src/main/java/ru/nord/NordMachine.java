@@ -7,10 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.blocks.abstracts.BlockAbstractEnergyCable;
+import ru.nord.common.items.ItemBlockFrame;
+import ru.nord.common.items.ItemBlockRoofLamp;
 import ru.nord.common.items.ItemEnergyStorageDamagable;
 import ru.nord.common.items.ItemWrench;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
+import ru.nord.common.lib.utils.enums.EnumFrame;
+import ru.nord.common.lib.utils.enums.EnumStone;
 import ru.nord.common.tiles.TileAccumulator;
 import ru.nord.common.tiles.TileEnergyCable;
 import ru.nord.common.tiles.TileFlowing;
@@ -44,7 +48,7 @@ public class NordMachine {
         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
-//        NordBloks.energyCableBlock2 = new BlockAbstractEnergyCable().setUnlocalizedName("energyCableBlock2").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -58,7 +62,13 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
-//        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.frame,
+                ItemBlockFrame.class,
+                "frame",
+                "frame",
+                EnumFrame.getNames()
+                );
 
     }
 
