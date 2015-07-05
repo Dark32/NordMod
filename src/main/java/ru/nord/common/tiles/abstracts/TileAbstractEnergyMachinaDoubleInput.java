@@ -15,33 +15,29 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.items.interfaces.IEnergyCharges;
-import ru.nord.common.lib.recipes.Interfaces.IRecipe1I2O;
-import ru.nord.common.lib.recipes.Interfaces.IRecipes1I2O;
+import ru.nord.common.lib.recipes.Interfaces.IRecipe2I2O;
+import ru.nord.common.lib.recipes.Interfaces.IRecipes2I2O;
 import ru.nord.common.lib.utils.ChargeHelper;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.tiles.interfaces.IMachine;
 
 /**
  * @author andrew
- *         Абстрактная машина с 1 входом, 2 выходами и энергией
+ *         Абстрактная машина с 2 входами, 2 выходами и энергией
  */
-public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
+public abstract class TileAbstractEnergyMachinaDoubleInput extends TileAbstractEnergyBlock
         implements IMachine {
 
-    private static final int[] slotsTop = new int[]{1};
-    private static final int[] slotsBottom = new int[]{2, 3};
-    private static final int[] slotsSides = new int[]{0, 1};
+    private static final int[] slotsTop = new int[]{0};
+    private static final int[] slotsBottom = new int[]{3, 4};
+    private static final int[] slotsSides = new int[]{1,2};
     private ItemStack[] inventory = new ItemStack[4];
-    /**
-     * inv[0] - fuel
-     * inv[1] - item to work
-     * inv[2] - result 1
-     * inv[3] - result 2
-     */
+
     private final int fuel_slot = 0;
     private final int input_slot = 1;
-    private final int result_slot = 2;
-    private final int second_result_slot = 3;
+    private final int input_slot2 = 2;
+    private final int result_slot = 3;
+    private final int second_result_slot = 4;
 
     protected int burnTime; // текущие время горения
     protected int fuelBurnTime; // время горения
@@ -123,7 +119,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             stack.stackSize = this.getInventoryStackLimit();
         }
 
-        if (index == input_slot && !flag) {
+        if ((index == input_slot || index == input_slot2 ) && !flag) {
             //todo Выяснить значение этого действия
 //            this.totalCookTime = 200;
 //            this.cookTime = 0;
@@ -249,7 +245,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
                 work(); // работаем
             }
         } else if (canStartWorking()) { // можем ли начать работать
-            IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot)); // получаем рецепт
+            IRecipe2I2O rec = getRecipe(getStackInSlot(input_slot),getStackInSlot(input_slot2)); // получаем рецепт
             if (rec != null) { // если есть рецепт
                 currentItemEnergyNeed = rec.getEnergy(); // устанавливаем требование энергии из рецепта
                 updated = true; // помечаем на обновление
@@ -322,7 +318,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
             return false;
         }
 
-        IRecipe1I2O rec = getRecipe(stack);
+        IRecipe2I2O rec = getPartRecipe(stack);
         return rec != null;
     }
 
@@ -435,19 +431,23 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
     }
 
     public boolean canStartWorking() {
-        IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot));
+        IRecipe2I2O rec = getRecipe(getStackInSlot(input_slot),getStackInSlot(input_slot2));
         if (rec == null) {
             currentItemEnergyProgress = 0;
             currentItemEnergyNeed = 0;
             return false;
         }
         ItemStack input = getStackInSlot(input_slot);
+        ItemStack input2 = getStackInSlot(input_slot2);
         ItemStack result = getStackInSlot(result_slot);
         ItemStack secondResult = getStackInSlot(second_result_slot);
         ItemStack out1 = rec.getResult();
         ItemStack out2 = rec.getSecondResult();
 
         if (input.stackSize < rec.getInput().stackSize) { // не достаточно входных вещей
+            return false;
+        }
+        if (input2.stackSize < rec.getSecondInput().stackSize) { // не достаточно входных вещей
             return false;
         }
 
@@ -476,7 +476,7 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
     }
 
     public boolean canWorkResult() {
-        IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot));
+        IRecipe2I2O rec = getRecipe(getStackInSlot(input_slot),getStackInSlot(input_slot2));
         if (rec == null) { // нет рецепта
             currentItemEnergyProgress = 0;
             currentItemEnergyNeed = 0;
@@ -491,12 +491,13 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
      * Обработать предмет
      */
     public void work() {
-        IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot));
+        IRecipe2I2O rec = getRecipe(getStackInSlot(input_slot),getStackInSlot(input_slot2));
         if (rec == null) {
             return;
         }
 
         ItemStack input = getStackInSlot(input_slot);
+        ItemStack input2 = getStackInSlot(input_slot2);
         ItemStack result = getStackInSlot(result_slot);
         ItemStack secondResult = getStackInSlot(second_result_slot);
         ItemStack out1 = rec.getResult();
@@ -522,16 +523,17 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         }
 
         input.stackSize -= rec.getInput().stackSize;
+        input2.stackSize -= rec.getSecondInput().stackSize;
 
         if (input.stackSize == 0) {
             input = null;
         }
         setInventorySlotContents(input_slot, input);
 
-        IRecipe1I2O recNext = getRecipe(input);
+        IRecipe2I2O recNext = getRecipe(input,input2);
         currentItemEnergyNeed = recNext != null ? recNext.getEnergy() : 0;
         currentItemEnergyProgress = 0;
-    }
+   }
     private boolean chargeFromFuel(){
         if (isEnergyStorage()) {
             ItemStack item = getStackInSlot(fuel_slot);
@@ -558,10 +560,12 @@ public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
         return false;
     }
 
-    private IRecipe1I2O getRecipe(ItemStack stack) {
-        return ((IRecipes1I2O) getRecipes()).getRecipe(stack);
+    private IRecipe2I2O getPartRecipe(ItemStack stack) {
+        return ((IRecipes2I2O) getRecipes()).getPartRecipe(stack,0);
     }
-
+    protected IRecipe2I2O getRecipe(ItemStack stack, ItemStack stack2) {
+        return ((IRecipes2I2O) this.getRecipes()).getRecipe(stack, stack2);
+    }
     @Override
     public int getBurnTime() {
         return burnTime;

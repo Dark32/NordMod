@@ -30,7 +30,7 @@ public interface IRecipes2I2O extends IRecipes1I2O {
      * @param slot номер слота
      * @return рецепт
      */
-    IRecipe1I2O getPartRecipe(ItemStack item, int slot);
+    IRecipe2I2O getPartRecipe(ItemStack item, int slot);
 
     /**
      * Получаем рецепт по индексу

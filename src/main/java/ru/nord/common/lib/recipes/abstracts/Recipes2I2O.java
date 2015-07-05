@@ -17,12 +17,12 @@ abstract public class Recipes2I2O extends Recipes1I2O implements IRecipes2I2O {
     }
 
     @Override
-    public IRecipe1I2O getPartRecipe(ItemStack item, int slot) {
+    public IRecipe2I2O getPartRecipe(ItemStack item, int slot) {
         return getPartRecipe(getIndexPartRecipe(item, slot), slot);
     }
 
     @Override
-    public IRecipe1I2O getPartRecipe(int index, int slot) {
+    public IRecipe2I2O getPartRecipe(int index, int slot) {
         if (index > -1 && (slot == 1 || slot == 2))
             return recipes.get(index);
         else
