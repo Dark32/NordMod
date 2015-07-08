@@ -72,7 +72,7 @@ public class GuiAccumulator extends GuiMachine {
 
             int energy;
             int maxEnergy = this.tileEntity.getEnergyByLine() / Constants.SHARE_MULTIPLE;
-            this.fontRendererObj.drawString(name, 16, 6, 4210752);
+            this.fontRendererObj.drawString(name, 8, 6, 4210752);
 
             energy = this.tileEntity.getEnergyProgressScaled(1,this.tileEntity.getEnergyByLine())/ Constants.SHARE_MULTIPLE;
             drawOverText(9, 20, 4, 54, xAxis, yAxis, String.valueOf(energy) + "/" + String.valueOf(maxEnergy) +  " " +Constants.ENERGY);

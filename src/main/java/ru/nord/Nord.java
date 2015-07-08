@@ -1,5 +1,6 @@
 package ru.nord;
 
+import ibxm.Player;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import ru.nord.common.CommonProxy;
 import ru.nord.common.lib.events.GuiHandler;
 import ru.nord.common.lib.network.PacketPipeline;
+import ru.nord.common.lib.recipes.Recipe;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.lib.utils.Version;
 
@@ -51,5 +53,6 @@ public class Nord {
         NordMachine.postInit();
         NordDecoration.postInit();
         Fuel.postInit();
+        Recipe.addAll();
     }
 }

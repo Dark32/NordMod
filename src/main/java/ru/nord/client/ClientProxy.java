@@ -27,7 +27,7 @@ public class ClientProxy extends CommonProxy {
         ModelResourceLocation itemModelResourceLocation =
                 new ModelResourceLocation(Version.MODID + ":" + name, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, sub, itemModelResourceLocation);
-
+        ModelBakery.addVariantName(item,Version.MODID + ":" + name);
     }
 
     @Override
