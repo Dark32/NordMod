@@ -1,0 +1,6 @@
+{
+ "parent": "block/grass",
+ "textures": {
+ "all": "nord:blocks/metal/brass"
+ }
+}

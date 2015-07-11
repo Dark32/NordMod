@@ -14,7 +14,7 @@ public class TileAccumulator extends TileAbstractEnergyAccumulator {
 
     @Override
     public String getName() {
-        return this.hasCustomName() ? this.machineCustomName : "nord.tile.flowing";
+        return this.hasCustomName() ? this.machineCustomName : "nord.tile.accumulator";
     }
 
     @Override

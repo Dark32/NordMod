@@ -48,6 +48,17 @@ public class RegisterHelper {
         }
 
     }
+    public static void registerMetadataItem(
+            Item itemVar,
+            String name,
+            String model,
+            String[] additionals
+    ){
+        GameRegistry.registerItem(itemVar,name);
+        for (int i=0; i< additionals.length; i++){
+            Nord.proxy.registerItemRender(itemVar,i,model+"."+additionals[i]);
+        }
+    }
 
     public static void registerMetadataBlock(
             Block block,
