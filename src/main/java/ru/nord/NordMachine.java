@@ -7,10 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.blocks.abstracts.BlockAbstractEnergyCable;
-import ru.nord.common.items.ItemBlockFrame;
-import ru.nord.common.items.ItemBlockRoofLamp;
-import ru.nord.common.items.ItemEnergyStorageDamagable;
-import ru.nord.common.items.ItemWrench;
+import ru.nord.common.items.*;
 import ru.nord.common.lib.helpers.RegisterHelper;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.lib.recipes.Recipe;
@@ -23,13 +20,13 @@ import ru.nord.common.tiles.TileGenerator;
 
 public class NordMachine {
     public static void preInit() {
-        createBlock();
         createItem();
+        createBlock();
     }
 
     public static void init() {
-        registerBlock();
         registerItem();
+        registerBlock();
         registerTileEntity();
         addRecipe();
     }
@@ -73,7 +70,6 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
         RegisterHelper.registerMetadataBlock(NordBloks.metalBlock,ItemBlockMetal.class,"metalblock","metalblock",ItemIngot.nameIngot);
-        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock,ItemBlockMetal.class,"metalblock","metalblock",BlockMetal.nameMetal);
         RegisterHelper.registerMetadataBlock(
                 NordBloks.frame,
                 ItemBlockFrame.class,
@@ -97,11 +93,6 @@ public class NordMachine {
                 'x', new ItemStack(Blocks.stone, 1));
         Recipe.addAll();
 
-        FlowingRecipes1I2O.addRecipe(
-                new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
-                new ItemStack(Item.getItemFromBlock(Blocks.dirt), 2),
-                new ItemStack(Items.diamond, 5),
-                60, 30, 5);
     }
 
 }
