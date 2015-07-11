@@ -19,4 +19,5 @@ public class NordBloks {
     public static Block floorLamp1;
     public static Block frame;
     public static Block metalBlock;
+    public static Block metalOre;
 }

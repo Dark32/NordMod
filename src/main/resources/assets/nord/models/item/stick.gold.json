@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "nord:items/goldstick"
+		"layer0": "nord:items/metal/stick/gold"
 	},
 	"display": {
 		"thirdperson": {

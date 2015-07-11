@@ -1,18 +1,16 @@
 package ru.nord;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
-import ru.nord.common.blocks.abstracts.BlockAbstractEnergyCable;
 import ru.nord.common.items.*;
 import ru.nord.common.lib.helpers.RegisterHelper;
-import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.lib.recipes.Recipe;
+import ru.nord.common.lib.utils.enums.EnumDust;
 import ru.nord.common.lib.utils.enums.EnumFrame;
-import ru.nord.common.lib.utils.enums.EnumStone;
+import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord.common.lib.utils.enums.EnumOre;
 import ru.nord.common.tiles.TileAccumulator;
 import ru.nord.common.tiles.TileEnergyCable;
 import ru.nord.common.tiles.TileFlowing;
@@ -28,22 +26,19 @@ public class NordMachine {
         registerItem();
         registerBlock();
         registerTileEntity();
-        addRecipe();
     }
 
     public static void postInit() {
-
+        addRecipe();
     }
 
     private static void createItem() {
-        ItemIngot.getArray();
-        ItemDust.createArray();
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench().setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
-        NordItems.dustItem = new ItemDust().setUnlocalizedName("dust");
-        NordItems.itemStick = new ItemStick().setUnlocalizedName("stick");
-        NordItems.itemBlades = new ItemBlades().setUnlocalizedName("blades");
-        NordItems.itemIngot =new ItemIngot().setUnlocalizedName("ingotmod");
+        NordItems.itemDust = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("dust").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemStick = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("stick").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemIngot =new ItemMetaData(EnumMetal.getNames()).setUnlocalizedName("ingotmod").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemBlades = new ItemBase().setUnlocalizedName("blades");
     }
 
     private static void createBlock() {
@@ -52,16 +47,17 @@ public class NordMachine {
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.metalBlock = new BlockMetal().setUnlocalizedName("metalblock").setCreativeTab(NordTabs.tabMetallurgy);
+        NordBloks.metalBlock = new BlockMetal(EnumMetal.getNames()).setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
+        NordBloks.metalOre = new BlockMetalOre(EnumOre.getNames()).setUnlocalizedName("metalOre").setCreativeTab(NordTabs.tabMetallurgy);
     }
 
     private static void registerItem() {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
-        RegisterHelper.registerMetadataItem(NordItems.dustItem, "dust", "dust", ItemDust.namedust);
-        RegisterHelper.registerMetadataItem(NordItems.itemStick,"stick","stick", ItemStick.nameStick);
+        RegisterHelper.registerMetadataItem(NordItems.itemDust, "dust", "dust", EnumDust.getNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemStick,"stick","stick", EnumDust.getNames());
         RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
-        RegisterHelper.registerMetadataItem(NordItems.itemIngot,"ingotmod","ingotmod",ItemIngot.nameIngot);
+        RegisterHelper.registerMetadataItem(NordItems.itemIngot, "ingotmod", "ingotmod", EnumMetal.getNames());
     }
 
     private static void registerBlock() {
@@ -69,7 +65,8 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
-        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock,ItemBlockMetal.class,"metalblock","metalblock",ItemIngot.nameIngot);
+        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetal.class, "metalBlock", "metalBlock", EnumMetal.getNames());
+        RegisterHelper.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetalOre.class, "metalOre", "metalOre", EnumOre.getNames());
         RegisterHelper.registerMetadataBlock(
                 NordBloks.frame,
                 ItemBlockFrame.class,
@@ -89,8 +86,8 @@ public class NordMachine {
 
 
     private static void addRecipe() {
-        GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", // TODO fix recipe
-                'x', new ItemStack(Blocks.stone, 1));
+//        GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", // TODO fix recipe
+//                'x', new ItemStack(Blocks.stone, 1));
         Recipe.addAll();
 
     }

@@ -3,10 +3,10 @@ package ru.nord.common.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord.common.lib.utils.enums.EnumOre;
 
-public class ItemBlockMetal extends ItemBlock {
-    public ItemBlockMetal(Block block)
+public class ItemBlockMetalOre extends ItemBlock {
+    public ItemBlockMetalOre(Block block)
     {
         super(block);
         this.setMaxDamage(0);
@@ -22,8 +22,8 @@ public class ItemBlockMetal extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         int meta = stack.getMetadata();
-        if (meta < EnumMetal.getNames().length) {
-            return super.getUnlocalizedName() + "." + EnumMetal.byMetadata(stack.getMetadata()).getName();
+        if (meta < EnumOre.getNames().length) {
+            return super.getUnlocalizedName() + "." + EnumOre.byMetadata(stack.getMetadata()).getName();
         } else {
             return super.getUnlocalizedName() + ".errorData";
         }

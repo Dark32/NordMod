@@ -1,0 +1,58 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "nord:block_colored"
+    },
+    "variants": {
+        "type":{
+            "copper"    : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/copper",
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+            },
+            "silver"    : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/silver",
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+            },
+            "tin"       : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/tin",
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+            },
+            "zinc"      : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/zinc",
+                    "particle": "nord:blocks/metal/ore/tin"
+                 }
+            },
+            "bronze"    : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/bronze",
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+             },
+            "electrum"  : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/electrum",
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+             },
+            "steel"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/steel",
+                    "particle": "nord:blocks/metal/ore/tin"
+               }
+           },
+            "brass"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/brass",
+                    "particle": "nord:blocks/metal/ore/tin"
+              }
+          }
+        }
+    }
+}

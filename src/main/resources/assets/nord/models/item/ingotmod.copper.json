@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "nord:items/ingot.copper"
+		"layer0": "nord:items/metal/ingot/copper"
 	},
 	"display": {
 		"thirdperson": {

@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "nord:items/dust.silver"
+		"layer0": "nord:items/metal/dust/silver"
 	},
 	"display": {
 		"thirdperson": {

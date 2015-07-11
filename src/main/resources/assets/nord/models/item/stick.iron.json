@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "nord:items/ironstick"
+		"layer0": "nord:items/metal/stick/iron"
 	},
 	"display": {
 		"thirdperson": {

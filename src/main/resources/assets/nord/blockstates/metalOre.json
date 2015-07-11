@@ -1,0 +1,34 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "nord:block_colored"
+    },
+    "variants": {
+        "type":{
+            "copper"    : {
+                "textures": {
+                    "all": "nord:blocks/metal/ore/copper",
+                    "particle": "nord:blocks/metal/ore/copper"
+               }
+           },
+            "silver"    : {
+                "textures": {
+                    "all": "nord:blocks/metal/ore/silver",
+                    "particle": "nord:blocks/metal/ore/silver"
+               }
+           },
+            "tin"       : {
+                "textures": {
+                    "all": "nord:blocks/metal/ore/tin" ,
+                    "particle": "nord:blocks/metal/ore/tin"
+                }
+            },
+            "zinc"      : {
+                "textures": {
+                    "all": "nord:blocks/metal/ore/zinc",
+                    "particle": "nord:blocks/metal/ore/zinc"
+                 }
+            }
+        }
+    }
+}

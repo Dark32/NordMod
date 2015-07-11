@@ -56,6 +56,7 @@ public class BlockFrame extends Block {
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
         list.add(new ItemStack(itemIn, 1, 0));
         list.add(new ItemStack(itemIn, 1, 1));
+        list.add(new ItemStack(itemIn, 1, 2));
     }
 
     /**

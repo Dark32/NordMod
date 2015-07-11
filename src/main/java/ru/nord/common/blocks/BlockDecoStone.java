@@ -30,25 +30,19 @@ public class BlockDecoStone extends Block {
         super(Material.rock);
         this.color = color;
     }
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
-
-
+    @Override
     public IBlockState getStateFromMeta(int meta)
     {
         return this.getDefaultState().withProperty(TYPE, EnumStone.byMetadata(meta));
     }
 
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
+    @Override
     public int getMetaFromState(IBlockState state)
     {
 
         return ((EnumStone)state.getValue(TYPE)).getMetadata();
     }
-
+    @Override
     protected BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[] {TYPE});
@@ -61,9 +55,7 @@ public class BlockDecoStone extends Block {
             list.add(new ItemStack(itemIn, 1, i));
         }
     }
-    /**
-     * Get the damage value that this Block should drop
-     */
+    @Override
     public int damageDropped(IBlockState state)
     {
         return ((EnumStone)state.getValue(TYPE)).getMetadata();

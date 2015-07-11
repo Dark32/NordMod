@@ -16,6 +16,12 @@
                     "base": "nord:blocks/frame/frame_metall",
                     "particle": "nord:blocks/frame/frame_metall"
                 }
+            },
+            "gold": {
+                "textures": {
+                    "base": "nord:blocks/frame/frame_gold",
+                    "particle": "nord:blocks/frame/frame_gold"
+                }
             }
         }
     }

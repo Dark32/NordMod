@@ -4,7 +4,8 @@ import net.minecraft.util.IStringSerializable;
 
 public enum EnumFrame implements IStringSerializable {
     IRON(0, "IRON","nord:frame_wood"),
-    WOOD(1, "WOOD","nord:frame_metall");
+    WOOD(1, "WOOD","nord:frame_metall"),
+    GOLD(2, "GOLD","nord:frame_gold");
     private final int meta;
     private final String name;
     private final String model;

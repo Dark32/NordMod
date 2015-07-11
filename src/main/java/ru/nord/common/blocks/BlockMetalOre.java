@@ -12,15 +12,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.lib.utils.Version;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord.common.lib.utils.enums.EnumOre;
 
 import java.util.List;
 
-public class BlockMetal extends Block {
+public class BlockMetalOre extends Block {
     private final String[] names;
     private String unlocalizedName;
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumMetal.class);
-    public BlockMetal(String[] names){
+    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumOre.class);
+    public BlockMetalOre(String[] names){
         super(Material.iron);
         this.names = names;
     }
@@ -38,14 +38,14 @@ public class BlockMetal extends Block {
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(TYPE, EnumMetal.byMetadata(meta));
+        return this.getDefaultState().withProperty(TYPE, EnumOre.byMetadata(meta));
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
 
-        return ((EnumMetal)state.getValue(TYPE)).getMetadata();
+        return ((EnumOre)state.getValue(TYPE)).getMetadata();
     }
     @Override
     protected BlockState createBlockState()
@@ -65,7 +65,7 @@ public class BlockMetal extends Block {
     @Override
     public int damageDropped(IBlockState state)
     {
-        return ((EnumMetal)state.getValue(TYPE)).getMetadata();
+        return ((EnumOre)state.getValue(TYPE)).getMetadata();
     }
 
 }

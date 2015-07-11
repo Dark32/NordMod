@@ -17,23 +17,18 @@ public class ItemBlockDecoStone extends ItemBlock{
         this.setHasSubtypes(true);
     }
 
-    /**
-     * Converts the given ItemStack damage value into a metadata value to be placed in the world when this Item is
-     * placed as a Block (mostly used with ItemBlocks).
-     */
+    @Override
     public int getMetadata(int damage)
     {
         return damage;
     }
 
-    /**
-     * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
-     * different names based on their damage or NBT.
-     */
+    @Override
     public String getUnlocalizedName(ItemStack stack)
     {
         return super.getUnlocalizedName() + "." + EnumStone.byMetadata(stack.getMetadata()).getName();
     }
+    @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int renderPass)
     {
