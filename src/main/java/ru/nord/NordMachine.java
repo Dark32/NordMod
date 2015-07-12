@@ -47,6 +47,8 @@ public class NordMachine {
         NordBloks.metalBlock = new BlockMetal(EnumMetal.getNames()).setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
         NordBloks.metalOre = new BlockMetalOre(EnumOre.getNames()).setUnlocalizedName("metalOre").setCreativeTab(NordTabs.tabMetallurgy);
         NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabDecoration);
+        NordBloks.diggerWell = new BlockDiggerWell().setUnlocalizedName("digger_well").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -74,6 +76,8 @@ public class NordMachine {
                 EnumFrame.getNames()
                 );
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.diggerWell,"digger_well");
+        RegisterHelper.registerSingleBlock(NordBloks.placeDeco,"deco_placer");
     }
 
     private static void registerTileEntity() {

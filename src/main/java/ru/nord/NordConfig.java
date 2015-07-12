@@ -15,24 +15,26 @@ public class NordConfig {
     }
     public static void createConfig(){
         File configFile = new File(Loader.instance().getConfigDir(), "Nord.cfg");
-        config = new Configuration(configFile,"0.0.5");
-        config.addCustomCategoryComment("Metall","You can disable or enable other metall. On 'true' will create ingot,metall block,dust and ore.");
-        config.getBoolean("cooper","Metall",true,"Disable or enable cooper ore");
-        config.getBoolean("tin", "Metall", true, "Disable or enable tin ore");
+        config = new Configuration(configFile,"0.0.6");
+        config.getBoolean("Enable_Ore", "Cooper", true, "Disable or enable cooper ore");
+        config.get("Cooper","MinY", 40);
+        config.get("Cooper","MaxY",72);
+        config.getBoolean("Enable_Ore", "Tin", true, "Disable or enable tin ore");
+        config.get("Tin","MinY",40);
+        config.get("Tin","MaxY",72);
+        config.getBoolean("Enable_Ore", "Zinc", true, "Disable or enable tin ore");
+        config.get("Zinc","MinY",40);
+        config.get("Zinc","MaxY",72);
+        config.getBoolean("Enable_Ore", "Silver", true, "Disable or enable tin ore");
+        config.get("Silver","MinY",40);
+        config.get("Silver","MaxY",72);
         config.save();
         loadConfig();
     }
     public static void loadConfig(){
     config.load();
     }
-    public static boolean getCooper(){
-        loadConfig();
-        return config.getBoolean("cooper","Metall",true,"Disable or enable cooper ore");
-    }
-    public static boolean getTin(){
-        loadConfig();
-        return config.getBoolean("tin", "Metall", true, "Disable or enable tin ore");
-    }
+
     public static Configuration getConfig(){
         return config;
     }

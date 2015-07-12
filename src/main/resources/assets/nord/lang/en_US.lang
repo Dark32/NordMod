@@ -10,6 +10,10 @@ nord.tile.accumulator=Accumulator
 nord.tile.generator=Generator
 tile.frame.IRON.name=Iron Frame
 tile.frame.WOOD.name=Wood Frame
+tile.frame.GOLD.name=Gold Frame
+tile.digger_well.name=[WIP]Digger
+tile.nord.smelterBlock.name=Smelter
+nord.tile.smelter=Smelter
 item.nord.itemWrench.name=Wrench
 item.blades.name=Blades
 
@@ -39,3 +43,12 @@ tile.metalblock.silver.name=Silver Block
 tile.metalblock.steel.name=Steel Block
 tile.metalblock.tin.name=Tin Block
 tile.metalblock.brass.name=Brass Block
+
+itemGroup.tabLamp=Lamp
+
+itemGroup.tabDecoration=Decoration
+tile.deco_placer.name=[DEBUG] Decoration Block Placer
+
+itemGroup.tabGeneral=Temp Tab
+
+
