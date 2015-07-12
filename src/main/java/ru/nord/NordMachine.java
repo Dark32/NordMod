@@ -11,10 +11,7 @@ import ru.nord.common.lib.utils.enums.EnumDust;
 import ru.nord.common.lib.utils.enums.EnumFrame;
 import ru.nord.common.lib.utils.enums.EnumMetal;
 import ru.nord.common.lib.utils.enums.EnumOre;
-import ru.nord.common.tiles.TileAccumulator;
-import ru.nord.common.tiles.TileEnergyCable;
-import ru.nord.common.tiles.TileFlowing;
-import ru.nord.common.tiles.TileGenerator;
+import ru.nord.common.tiles.*;
 
 public class NordMachine {
     public static void preInit() {
@@ -49,6 +46,8 @@ public class NordMachine {
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
         NordBloks.metalBlock = new BlockMetal(EnumMetal.getNames()).setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
         NordBloks.metalOre = new BlockMetalOre(EnumOre.getNames()).setUnlocalizedName("metalOre").setCreativeTab(NordTabs.tabMetallurgy);
+        NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
+
     }
 
     private static void registerItem() {
@@ -74,11 +73,12 @@ public class NordMachine {
                 "frame",
                 EnumFrame.getNames()
                 );
-
+        RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
     }
 
     private static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
+        GameRegistry.registerTileEntity(TileSmelter.class, "TileEntitySmelter");
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
         GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");

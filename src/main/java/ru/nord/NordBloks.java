@@ -20,4 +20,5 @@ public class NordBloks {
     public static Block frame;
     public static Block metalBlock;
     public static Block metalOre;
+    public static Block smelterBlock;
 }

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import ru.nord.common.tiles.interfaces.ITileWithGui;
 
@@ -17,7 +18,7 @@ public class GuiHandler implements IGuiHandler {
             if (tileWithGui.getContainer(player) != null) {
                 return tileWithGui.getContainer(player);
             } else {
-                System.err.print(tileWithGui.toString() + " Container not set");
+                FMLLog.warning(tileWithGui.toString() + " Container not set");
             }
         }
         return null;
@@ -31,7 +32,7 @@ public class GuiHandler implements IGuiHandler {
             if (tileWithGui.getContainer(player) != null) {
                 return tileWithGui.getGui(player);
             } else {
-                System.err.print(tileWithGui.toString() + " GUI not set");
+                FMLLog.warning(tileWithGui.toString() + " GUI not set");
             }
         }
         return null;

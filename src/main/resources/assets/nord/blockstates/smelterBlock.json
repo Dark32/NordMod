@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "nord:smelterBlock" },
+        "facing=south": { "model": "nord:smelterBlock", "y": 180 },
+        "facing=west":  { "model": "nord:smelterBlock", "y": 270 },
+        "facing=east":  { "model": "nord:smelterBlock", "y": 90 }
+    }
+}

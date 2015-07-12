@@ -19,6 +19,7 @@ public class Recipe {
     public static void addAll(){
         addAllRecipeVanilla();
         addAllRecipeMacerator();
+        addAllRecipeSmelter();
     }
     public static void addAllRecipeVanilla(){
         //GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", 'x', new ItemStack(Blocks.stone, 1));
@@ -106,5 +107,12 @@ public class Recipe {
                     new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                     ,80,0,0);
         }
+    }
+    public static void addAllRecipeSmelter(){
+        SmelterRecipes2I2O.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
+                new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
+                new ItemStack(Item.getItemFromBlock(Blocks.dirt), 1),
+                new ItemStack(Items.diamond, 5),
+                400, 30, 5, true);
     }
 }
