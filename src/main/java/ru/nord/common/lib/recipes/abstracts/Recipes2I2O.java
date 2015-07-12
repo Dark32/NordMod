@@ -75,14 +75,14 @@ abstract public class Recipes2I2O extends Recipes1I2O implements IRecipes2I2O {
             return -1;
         }
 
-        boolean check = true;
+        boolean check;
         IRecipe2I2O recipe;
         for (int i = 0; i < recipes.size(); i++) {
             recipe = recipes.get(i);
             ItemStack input = recipe.getInput();
             ItemStack input2 = recipe.getSecondInput();
             boolean soft = recipe.getSoft();
-            check &= compare(input, item) && compare(input2, item2);
+            check = compare(input, item) && compare(input2, item2);
             if (soft) {
                 check |= compare(input, item2) && compare(input2, item);
             }
