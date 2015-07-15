@@ -1,12 +1,18 @@
 package ru.nord.common.lib.helpers;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.Nord;
+import ru.nord.NordConfig;
+import ru.nord.common.lib.utils.generator.NordOre;
+import ru.nord.common.lib.utils.generator.Ore;
 
 public class RegisterHelper {
+
+
     public static void registerSingleBlock(Block block, String name) {
         registerSingleBlock(block, name, name);
     }
@@ -32,7 +38,7 @@ public class RegisterHelper {
 
     public static void registerMetadataBlock(Block block, Class<? extends ItemBlock> itemBlock,
                                              String name,int count) {
-        registerMetadataBlock(block, itemBlock, name, name,count);
+        registerMetadataBlock(block, itemBlock, name, name, count);
     }
 
     public static void registerMetadataBlock(
@@ -54,9 +60,9 @@ public class RegisterHelper {
             String model,
             String[] additionals
     ){
-        GameRegistry.registerItem(itemVar,name);
+        GameRegistry.registerItem(itemVar, name);
         for (int i=0; i< additionals.length; i++){
-            Nord.proxy.registerItemRender(itemVar,i,model+"."+additionals[i]);
+            Nord.proxy.registerItemRender(itemVar, i, model + "." + additionals[i]);
         }
     }
 
@@ -72,4 +78,15 @@ public class RegisterHelper {
         }
 
     }
+    public static void registerOre(boolean enableOre,int minY,int maxY,int veinSize,int frequencyOre,IBlockState block, int dimId){
+        if(enableOre){
+            NordOre.listOre[NordOre.thisPos]=new Ore(minY,maxY,block,frequencyOre, dimId,veinSize);
+            NordOre.thisPos++;
+        }
+    }
+    public static void registerOreInOverWithString(String ore,IBlockState block){
+        registerOre(NordConfig.getEnableOre(ore),NordConfig.getMinY(ore),NordConfig.getMaxY(ore),NordConfig.getVeinSize(ore),NordConfig.getVeinSize(ore),block,0);
+
+    }
+
 }

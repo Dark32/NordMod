@@ -23,6 +23,8 @@ public class BlockMetalOre extends Block {
     public BlockMetalOre(String[] names){
         super(Material.iron);
         this.names = names;
+        this.setHardness(3F);
+        this.setHarvestLevel("pickaxe", 1);
     }
 
     @Override
@@ -67,5 +69,6 @@ public class BlockMetalOre extends Block {
     {
         return ((EnumOre)state.getValue(TYPE)).getMetadata();
     }
+
 
 }

@@ -1,20 +1,22 @@
 package ru.nord;
 
-import ibxm.Player;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.CommonProxy;
 import ru.nord.common.lib.events.GuiHandler;
 import ru.nord.common.lib.network.PacketPipeline;
 import ru.nord.common.lib.recipes.Recipe;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.lib.utils.Version;
+import ru.nord.common.lib.utils.generator.NordOre;
 
 import java.util.Random;
 
@@ -35,6 +37,7 @@ public class Nord {
         NordConfig.preInit();
         NordMachine.preInit();
         NordDecoration.preInit();
+
     }
 
     @EventHandler
@@ -45,6 +48,7 @@ public class Nord {
         Nord.proxy.init();
         packetPipeline.initialise();
         NetworkRegistry.INSTANCE.registerGuiHandler(Nord.instance, new GuiHandler());
+        GameRegistry.registerWorldGenerator(new NordOre(), 2);
     }
 
     @EventHandler
@@ -55,5 +59,8 @@ public class Nord {
         NordDecoration.postInit();
         Fuel.postInit();
         Recipe.addAll();
+    }
+    public void setupModInfo(ModMetadata meta){
+        Version.setupModInfo(meta);
     }
 }

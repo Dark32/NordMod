@@ -80,6 +80,29 @@ public class Recipe {
                 'x',new ItemStack(NordItems.itemIngot,1,i));
             GameRegistry.addSmelting(new ItemStack(NordItems.itemDust, 1, i+2), new ItemStack(NordItems.itemIngot,1,i), 0);
         }
+        GameRegistry.addRecipe(new ItemStack(NordBloks.oilLamp),"wfw","sts","www",
+                'w', new ItemStack(Blocks.planks),
+                's', new ItemStack(NordItems.itemStick,1,0),
+                'f', new ItemStack(Items.flint_and_steel),
+                't', new ItemStack(Items.string));
+        GameRegistry.addRecipe(new ItemStack(NordBloks.floorLamp1),"xxx","ysy",
+                'x',new ItemStack(Blocks.glass),
+                'y',new ItemStack(Blocks.planks),
+                's',new ItemStack(Blocks.redstone_lamp));
+        GameRegistry.addRecipe(new ItemStack(NordBloks.floorLamp1,1,1),"xy",
+                'x',new ItemStack(NordBloks.floorLamp1,1,0),
+                'y',new ItemStack(Blocks.redstone_torch));
+        for(int i=0;i<15;i++){
+            GameRegistry.addRecipe(new ItemStack(NordBloks.empireLamp1,1,i),"xyx","ysy","xyx",
+                    'x',new ItemStack(NordItems.itemStick,1,0),
+                    'y',new ItemStack(Blocks.stained_glass,1,i),
+                    's',new ItemStack(Blocks.torch)
+            );
+            GameRegistry.addRecipe(new ItemStack(NordBloks.empireFloorLamp1,1,i),"xxx","ysy",
+                    'x',new ItemStack(Blocks.stained_glass,1,i),
+                    'y',new ItemStack(Blocks.planks),
+                    's',new ItemStack(Blocks.torch));
+        }
 
     }
     public static void addAllRecipeMacerator(){
