@@ -16,7 +16,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.lib.models.iSmartBlockModel.SmartEnergyCable;
 
-import java.io.IOException;
 import java.util.Collection;
 
 @SideOnly(Side.CLIENT)
@@ -30,7 +29,7 @@ public class ModelEnergyCable implements IModel {
     public static final ModelResourceLocation MODEL_NORTH = new ModelResourceLocation("nord:block/cable/energy_cable_n");
     public static final ModelResourceLocation MODEL_SOUTH = new ModelResourceLocation("nord:block/cable/energy_cable_s");
     public static final ModelResourceLocation MODEL_EAST = new ModelResourceLocation("nord:block/cable/energy_cable_e");
-    public static final ModelResourceLocation MODEL_WEST = new ModelResourceLocation("nord:block/cable/energy_cable_w");
+    public static final ModelResourceLocation MODEL_WEST  = new ModelResourceLocation("nord:block/cable/energy_cable_w");
 
     public ModelEnergyCable(IResourceManager resourceManager) {
 
@@ -46,39 +45,34 @@ public class ModelEnergyCable implements IModel {
     public Collection<ResourceLocation> getTextures() {
         return ImmutableList.copyOf(new ResourceLocation[]{TEXTURE_SHEET});
     }
-    @SuppressWarnings("deprecation")
+
     @Override
     public IFlexibleBakedModel bake(IModelState state, VertexFormat format, Function<ResourceLocation, TextureAtlasSprite> bakedTextureGetter) {
+        IModel subComponent = ModelLoaderRegistry.getModel(MODEL_CORE);
+        IBakedModel bakedModelCore = subComponent.bake(state, format, bakedTextureGetter);
 
-        IModel subComponent = null;
-        try {
-            subComponent = ModelLoaderRegistry.getModel(MODEL_CORE);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_UP);
+        IBakedModel bakedModelUp = subComponent.bake(state, format, bakedTextureGetter);
 
-            IBakedModel bakedModelCore = subComponent.bake(state, format, bakedTextureGetter);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_DOWN);
+        IBakedModel bakedModelDown = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_UP);
-            IBakedModel bakedModelUp = subComponent.bake(state, format, bakedTextureGetter);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_WEST);
+        IBakedModel bakedModelWest = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_DOWN);
-            IBakedModel bakedModelDown = subComponent.bake(state, format, bakedTextureGetter);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_EAST);
+        IBakedModel bakedModelEast = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_WEST);
-            IBakedModel bakedModelWest = subComponent.bake(state, format, bakedTextureGetter);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_NORTH);
+        IBakedModel bakedModelNorth = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_EAST);
-            IBakedModel bakedModelEast = subComponent.bake(state, format, bakedTextureGetter);
+        subComponent = ModelLoaderRegistry.getModel(MODEL_SOUTH);
+        IBakedModel bakedModelSouth = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_NORTH);
-            IBakedModel bakedModelNorth = subComponent.bake(state, format, bakedTextureGetter);
 
-            subComponent = ModelLoaderRegistry.getModel(MODEL_SOUTH);
-            IBakedModel bakedModelSouth = subComponent.bake(state, format, bakedTextureGetter);
-            return new SmartEnergyCable(bakedModelCore, bakedModelUp, bakedModelDown,
-                    bakedModelWest, bakedModelEast, bakedModelNorth, bakedModelSouth);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return new SmartEnergyCable(bakedModelCore, bakedModelUp, bakedModelDown,
+                bakedModelWest, bakedModelEast, bakedModelNorth, bakedModelSouth);
+
     }
 
     @Override
