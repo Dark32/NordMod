@@ -115,14 +115,16 @@ public class Recipe {
                 new ItemStack(NordItems.itemDust,2,0),
                 new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                 ,80,90,0);
-
+/*
         for (EnumOre ore : EnumOre.values()) {
+
             FlowingRecipes1I2O.addRecipe(
                     new ItemStack(NordBloks.metalOre,1,ore.getMetadata()),
                     new ItemStack(NordItems.itemDust,2,ore.getDust().getMetadata()),
                     new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                     ,80,90,0);
         }
+        */
         for (EnumMetal metal : EnumMetal.values()) {
             FlowingRecipes1I2O.addRecipe(
                     new ItemStack(NordItems.itemIngot,1,metal.getMetadata()),

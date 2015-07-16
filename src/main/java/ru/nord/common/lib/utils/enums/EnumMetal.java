@@ -3,25 +3,105 @@ package ru.nord.common.lib.utils.enums;
 import net.minecraft.util.IStringSerializable;
 
 public enum EnumMetal implements IStringSerializable {
-    SILVER      (0, "silver",   false,  2),
-    COPPER      (1, "copper",   false,  3),
-    TIN         (2, "tin",      false,  4),
-    ZINC        (3, "zinc",     false,  5),
-    BRONZE      (4, "bronze",   true,   6),
-    ELECTRUM    (5, "electrum", true,   7),
-    STEEL       (6, "steel",    true,   8),
-    BRASS       (7, "brass",    true,   9);
-
+    SILVER      (0, "silver",   false) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.SILVER;
+        }
+    },
+    COPPER      (1, "copper",   false) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.COPPER;
+        }
+    },
+    TIN         (2, "tin",      false) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.TIN;
+        }
+    },
+    ZINC        (3, "zinc",     false) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.ZINC;
+        }
+    },
+    BRONZE      (4, "bronze",   true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.BRONZE;
+        }
+    },
+    ELECTRUM    (5, "electrum", true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.ELECTRUM;
+        }
+    },
+    STEEL       (6, "steel",    true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.STEEL;
+        }
+    },
+    BRASS       (7, "brass",    true ) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.BRASS;
+        }
+    },
+    ALUMINUM    (8, "aluminum", false ) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.ALUMINUM;
+        }
+    },
+    CHROM       (9, "chrom",    false ) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.CHROM;
+        }
+    },
+    NICEL       (10, "nicel",    false) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.NICEL;
+        }
+    },
+    NICHROME    (11, "nichrome", true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.NICHROME;
+        }
+    },
+    INVAR       (12, "invar",    true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.INVAR;
+        }
+    },
+    DURALUMIN   (13, "duralumin",true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.DURALUMIN;
+        }
+    },
+    CAST_IRON   (14, "cast_iron",true) {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.CAST_IRON;
+        }
+    },
+    ;
     private final String name;
     private final int meta;
     private final boolean alloy;
-    private final int dust;
 
-    EnumMetal(int _meta, String _name, boolean _alloy, int _dust) {
+    EnumMetal(int _meta, String _name, boolean _alloy) {
         this.name = _name;
         this.meta = _meta;
         this.alloy = _alloy;
-        this.dust = _dust;
     }
 
     public static EnumMetal byMetadata(int meta) {
@@ -45,8 +125,6 @@ public enum EnumMetal implements IStringSerializable {
     public boolean getAlloy() {
         return this.alloy;
     }
-    public EnumDust getDust() {
-        return EnumDust.byMetadata(this.dust);
-    }
+    abstract public EnumDust getDust();
 
 }

@@ -3,20 +3,33 @@ package ru.nord.common.lib.utils.enums;
 import net.minecraft.util.IStringSerializable;
 
 public enum EnumOre implements IStringSerializable {
-    SILVER      (0, "silver",     2),
-    COPPER      (1, "copper",     3),
-    TIN         (2, "tin",        4),
-    ZINC        (3, "zinc",       5);
+    SILVER      (0,  "silver",      "silver"),
+    GALENA      (1,  "galena",      "silver"),
+    TIN         (2,  "tin",         "tin"),
+    ZINCITE     (3,  "zincite",     "zinc"),
+    BAUXITE     (4,  "bauxite",     "aluminum"),
+    UVAROVITE   (5,  "uvarovite",   "chrom"),
+    CROCOITE    (6,  "crocoite",    "chrom"),
+    COPPER      (7,  "copper",      "copper"),
+    OLIVINE     (9,  "olivine",     "iron"),
+    MAGNETITE   (10, "magnetite",   "iron"),
+    LIMONITE    (11, "limonite",    "iron"),
+    ALMANDINE   (12, "almandine",   "iron"),
+    PENTLANDITE (13, "pentlandite", "nicel"),
+    MILLERITE   (14, "millerite",   "nicel"),
+    MERCURY     (15, "mercury",     "mercury");
+
 
     private final String name;
+    private final String metal;
     private final int meta;
-    private final int dust;
 
-    EnumOre(int _meta, String _name,  int _dust) {
-        this.name = _name;
+    EnumOre(int _meta, String _name, String metal) {
         this.meta = _meta;
-        this.dust = _dust;
+        this.name = _name;
+        this.metal = metal;
     }
+
 
     public static EnumOre byMetadata(int meta) {
         return meta < EnumOre.values().length ? EnumOre.values()[meta] : EnumOre.values()[0];
@@ -33,11 +46,13 @@ public enum EnumOre implements IStringSerializable {
     public String getName() {
         return this.name;
     }
+
+    public String getMetal() {
+        return this.metal;
+    }
+
     public int getMetadata() {
         return this.meta;
-    }
-    public EnumDust getDust() {
-        return EnumDust.byMetadata(this.dust);
     }
 
 }
