@@ -176,6 +176,7 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
     /**
      * Updates the JList with a new model.
      */
+    @Override
     public void update() {
         boolean updated = false;
         if (sendEnergy()) {
@@ -191,22 +192,24 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
     /**
      * Do not make give this method the name canInteractWith because it clashes with Container
      */
+    @Override
     public boolean isUseableByPlayer(EntityPlayer player) {
         return this.worldObj.getTileEntity(this.pos) == this
                 && player.getDistanceSq((double) this.pos.getX() + 0.5D,
                 (double) this.pos.getY() + 0.5D,
                 (double) this.pos.getZ() + 0.5D) <= 64.0D;
     }
-
+    @Override
     public void openInventory(EntityPlayer player) {
     }
-
+    @Override
     public void closeInventory(EntityPlayer player) {
     }
 
     /**
      * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
      */
+    @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
 
         if (index == upgrade) {
@@ -214,7 +217,7 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
         }
         return false;
     }
-
+    @Override
     public int[] getSlotsForFace(EnumFacing side) {
         switch (side) {
             case DOWN:
@@ -230,6 +233,7 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
      * Returns true if automation can insert the given item in the given slot from the given side. Args: slot, item,
      * side
      */
+    @Override
     public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
         return this.isItemValidForSlot(index, itemStackIn);
     }
@@ -238,31 +242,33 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
      * Returns true if automation can extract the given item in the given slot from the given side. Args: slot, item,
      * side
      */
+    @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
         return false;
     }
 
-    //todo abstract
+
+    @Override
     public String getGuiID() {
         return "nord:abstractEnegyMachina";
     }
 
-    //todo abstract
+    @Override
     public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
         return new ContainerFurnace(playerInventory, this);
     }
-
+    @Override
     public int getField(int id) {
         return 0;
     }
-
+    @Override
     public void setField(int id, int value) {
     }
-
+    @Override
     public int getFieldCount() {
         return 0;
     }
-
+    @Override
     public void clear() {
         for (int i = 0; i < this.inventory.length; ++i) {
             this.setInventorySlotContents(i, null);
@@ -402,12 +408,44 @@ public abstract class TileAbstractEnergyCable extends TileAbstractEnergyBlock
 
     @Override
     public BlockPos getNeighborACoordinate(int index) {
-        if (index > EnumFacing.values().length) index = 0;
-        Vec3i coord = EnumFacing.values()[index].getDirectionVec();
+        if (index > Facing.values().length) index = 0;
+        Vec3i coord = Facing.values()[index].getDirectionVec();
         return new BlockPos(
                 pos.getX() + coord.getX(),
                 pos.getY() + coord.getY(),
                 pos.getZ() + coord.getZ()
         );
+    }
+
+    enum Facing{
+
+        /** Ordering index for D-U-N-S-W-E */
+        DOWN(0, "down",  new Vec3i(0, -1, 0)),
+        UP(1,  "up", new Vec3i(0, 1, 0)),
+        NORTH(2, "north",  new Vec3i(0, 0, -1)),
+        SOUTH(3, "south", new Vec3i(0, 0, 1)),
+        WEST(4, "west", new Vec3i(-1, 0, 0)),
+        EAST(5, "east", new Vec3i(1, 0, 0));
+        private final int index;
+        private final String name;
+        private final Vec3i directionVec;
+
+        Facing(int indexIn, String nameIn, Vec3i directionVecIn) {
+            this.index = indexIn;
+            this.name = nameIn;
+            this.directionVec = directionVecIn;
+        }
+        public int getIndex()
+        {
+            return this.index;
+        }
+        public String getName2()
+        {
+            return this.name;
+        }
+        public Vec3i getDirectionVec()
+        {
+            return this.directionVec;
+        }
     }
 }
