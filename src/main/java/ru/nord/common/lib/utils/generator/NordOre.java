@@ -6,13 +6,14 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import ru.nord.common.lib.utils.generator.Ore;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 /**
  * Created by lionzxy on 13.07.15.
  */
 public class NordOre implements IWorldGenerator {
-    public static Ore[] listOre = new Ore[16];;
-    public static int thisPos=0;
+    public static List<Ore> listOre = new ArrayList<Ore>();;
     // Which dimension to generate in by dimension ID (Nether -1, Overworld 0, End 1, etc)
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -29,55 +30,55 @@ public class NordOre implements IWorldGenerator {
         }
     }
     private void generateAllOverworldOre(World world, Random rand, int chunkX, int chunkZ){
-    for(int i=0;i< thisPos;i++){
-        if(listOre[i].dimId==0){
-            for (int k = 0; k < listOre[i].frequencyOre; k++)
+    for(int i=0;i< listOre.size();i++){
+        if(listOre.get(i).dimId==0){
+            for (int k = 0; k < listOre.get(i).frequencyOre; k++)
             {
                 int firstBlockXCoord = chunkX + rand.nextInt(16);
                 int firstBlockZCoord = chunkZ + rand.nextInt(16);
                 int quisqueY=-1;
-                while (listOre[i].minY>quisqueY||listOre[i].maxY<quisqueY){
-                    quisqueY=rand.nextInt(listOre[i].minY+listOre[i].maxY);
+                while (listOre.get(i).minY>quisqueY||listOre.get(i).maxY<quisqueY){
+                    quisqueY=rand.nextInt(listOre.get(i).minY+listOre.get(i).maxY);
                 }
                 BlockPos quisquePos = new BlockPos(firstBlockXCoord, quisqueY, firstBlockZCoord);
                     //The listOre[i].veinSize as the second parameter sets the maximum vein size
-                    (new WorldGenMinable(listOre[i].block,listOre[i].veinSize)).generate(world, rand, quisquePos);
+                    (new WorldGenMinable(listOre.get(i).block,listOre.get(i).veinSize)).generate(world, rand, quisquePos);
             }
         }
     }
     }
     private void generateAllNetherOre(World world, Random rand, int chunkX, int chunkZ){
-        for(int i=0;i< thisPos;i++){
-            if(listOre[i].dimId==-1){
-                for (int k = 0; k < listOre[i].frequencyOre; k++)
+        for(int i=0;i< listOre.size();i++){
+            if(listOre.get(i).dimId==-1){
+                for (int k = 0; k < listOre.get(i).frequencyOre; k++)
                 {
                     int firstBlockXCoord = chunkX + rand.nextInt(16);
                     int firstBlockZCoord = chunkZ + rand.nextInt(16);
                     int quisqueY=-1;
-                    while (listOre[i].minY>quisqueY||listOre[i].maxY<quisqueY){
-                        quisqueY=rand.nextInt(listOre[i].minY+listOre[i].maxY);
+                    while (listOre.get(i).minY>quisqueY||listOre.get(i).maxY<quisqueY){
+                        quisqueY=rand.nextInt(listOre.get(i).minY+listOre.get(i).maxY);
                     }
                     BlockPos quisquePos = new BlockPos(firstBlockXCoord, quisqueY, firstBlockZCoord);
                     //The listOre[i].veinSize as the second parameter sets the maximum vein size
-                    (new WorldGenMinable(listOre[i].block,listOre[i].veinSize)).generate(world, rand, quisquePos);
+                    (new WorldGenMinable(listOre.get(i).block,listOre.get(i).veinSize)).generate(world, rand, quisquePos);
                 }
             }
         }
     }
     private void generateAllEndOre(World world, Random rand, int chunkX, int chunkZ){
-        for(int i=0;i< thisPos;i++){
-            if(listOre[i].dimId==1){
-                for (int k = 0; k < listOre[i].frequencyOre; k++)
+        for(int i=0;i< listOre.size();i++){
+            if(listOre.get(i).dimId==1){
+                for (int k = 0; k < listOre.get(i).frequencyOre; k++)
                 {
                     int firstBlockXCoord = chunkX + rand.nextInt(16);
                     int firstBlockZCoord = chunkZ + rand.nextInt(16);
                     int quisqueY=-1;
-                    while (listOre[i].minY>quisqueY||listOre[i].maxY<quisqueY){
-                        quisqueY=rand.nextInt(listOre[i].minY+listOre[i].maxY);
+                    while (listOre.get(i).minY>quisqueY||listOre.get(i).maxY<quisqueY){
+                        quisqueY=rand.nextInt(listOre.get(i).minY+listOre.get(i).maxY);
                     }
                     BlockPos quisquePos = new BlockPos(firstBlockXCoord, quisqueY, firstBlockZCoord);
                     //The listOre[i].veinSize as the second parameter sets the maximum vein size
-                    (new WorldGenMinable(listOre[i].block,listOre[i].veinSize)).generate(world, rand, quisquePos);
+                    (new WorldGenMinable(listOre.get(i).block,listOre.get(i).veinSize)).generate(world, rand, quisquePos);
                 }
             }
         }

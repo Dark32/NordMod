@@ -7,10 +7,12 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.NordConfig;
 import ru.nord.common.lib.utils.Version;
 import ru.nord.common.lib.utils.enums.EnumOre;
 
@@ -70,5 +72,12 @@ public class BlockMetalOre extends Block {
         return ((EnumOre)state.getValue(TYPE)).getMetadata();
     }
 
-
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
+    {
+       /* list.add("Generation in overworld");
+        list.add("Max Y:         "+ NordConfig.getMaxY(names[stack.getMetadata()]));
+        list.add("Min Y:         "+ NordConfig.getMinY(names[stack.getMetadata()]));
+        list.add("Max Vein Size: "+ NordConfig.getVeinSize(names[stack.getMetadata()]));
+        list.add("Frequency:     "+ NordConfig.getFrequencyOre(names[stack.getMetadata()]));
+    */}
 }

@@ -72,14 +72,13 @@ public class NordMachine {
                 "frame",
                 "frame",
                 EnumFrame.getNames()
-                );
+        );
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
         RegisterHelper.registerSingleBlock(NordBloks.diggerWell,"digger_well");
-        RegisterHelper.registerSingleBlock(NordBloks.placeDeco,"deco_placer");
-        RegisterHelper.registerOreInOverWithString("silver", NordBloks.metalOre.getStateFromMeta(0));
-        RegisterHelper.registerOreInOverWithString("copper",NordBloks.metalOre.getStateFromMeta(1));
-        RegisterHelper.registerOreInOverWithString("tin",NordBloks.metalOre.getStateFromMeta(2));
-        RegisterHelper.registerOreInOverWithString("zinc",NordBloks.metalOre.getStateFromMeta(3));
+        RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
+        for(int i=0;i<EnumOre.getNames().length;i++){
+            RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));
+        }
     }
 
     private static void registerTileEntity() {

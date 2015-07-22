@@ -80,8 +80,7 @@ public class RegisterHelper {
     }
     public static void registerOre(boolean enableOre,int minY,int maxY,int veinSize,int frequencyOre,IBlockState block, int dimId){
         if(enableOre){
-            NordOre.listOre[NordOre.thisPos]=new Ore(minY,maxY,block,frequencyOre, dimId,veinSize);
-            NordOre.thisPos++;
+            NordOre.listOre.add(new Ore(minY,maxY,block,frequencyOre, dimId,veinSize));
         }
     }
     public static void registerOreInOverWithString(String ore,IBlockState block){
