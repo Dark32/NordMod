@@ -36,6 +36,7 @@ public class Nord {
     public void preInit(final FMLPreInitializationEvent event) {
         NordConfig.preInit();
         NordMachine.preInit();
+        NordMetalgury.preInit();
         NordDecoration.preInit();
 
     }
@@ -43,6 +44,7 @@ public class Nord {
     @EventHandler
     public void init(final FMLInitializationEvent event) {
         NordMachine.init();
+        NordMetalgury.init();
         NordDecoration.init();
         Nord.proxy.registerRenderers();
         Nord.proxy.init();
@@ -56,6 +58,7 @@ public class Nord {
         packetPipeline.postInitialise();
         NordTabs.postInit();
         NordMachine.postInit();
+        NordMetalgury.postInit();
         NordDecoration.postInit();
         Fuel.postInit();
         Recipe.addAll();

@@ -1,0 +1,35 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "type":{
+        
+             "olivine"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/crystal/olivine",
+                    "particle": "nord:blocks/metal/crystal/olivine"
+                }
+            },
+             "almandine"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/crystal/almandine",
+                    "particle": "nord:blocks/metal/crystal/almandine"
+                }
+            },
+             "crocoite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/crystal/crocoite",
+                    "particle": "nord:blocks/metal/crystal/crocoite"
+                }
+            },
+             "uvarovite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/crystal/uvarovite",
+                    "particle": "nord:blocks/metal/crystal/uvarovite"
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,6 @@ import ru.nord.NordBloks;
 import ru.nord.NordItems;
 import ru.nord.common.lib.utils.enums.EnumDust;
 import ru.nord.common.lib.utils.enums.EnumMetal;
-import ru.nord.common.lib.utils.enums.EnumOre;
 
 
 /**
@@ -23,15 +22,15 @@ public class Recipe {
     }
     public static void addAllRecipeVanilla(){
         //GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", 'x', new ItemStack(Blocks.stone, 1));
-        GameRegistry.addSmelting(new ItemStack(NordItems.itemDust, 1, EnumDust.IRON.getMetadata()), new ItemStack(Items.iron_ingot), 0);
-        GameRegistry.addSmelting(new ItemStack(NordItems.itemDust, 1, EnumDust.GOLD.getMetadata()), new ItemStack(Items.gold_ingot), 0);
+        GameRegistry.addSmelting(new ItemStack(NordItems.itemOreDrop, 1, EnumDust.IRON.getMetadata()), new ItemStack(Items.iron_ingot), 0);
+        GameRegistry.addSmelting(new ItemStack(NordItems.itemOreDrop, 1, EnumDust.GOLD.getMetadata()), new ItemStack(Items.gold_ingot), 0);
         GameRegistry.addRecipe(new ItemStack(NordItems.itemStick,2,EnumDust.IRON.getMetadata()),"x","x",
                 'x',new ItemStack(Items.iron_ingot,1));
         GameRegistry.addRecipe(new ItemStack(NordItems.itemStick,2,EnumDust.GOLD.getMetadata()),"x","x",
                 'x',new ItemStack(Items.gold_ingot,1));
         for (EnumMetal metal : EnumMetal.values()) {
             GameRegistry.addSmelting(
-                    new ItemStack(NordItems.itemDust, 1, metal.getDust().getMetadata()),
+                    new ItemStack(NordItems.itemOreDrop, 1, metal.getDust().getMetadata()),
                     new ItemStack(NordItems.itemIngot,1, metal.getMetadata()),
                     1);
             GameRegistry.addRecipe(new ItemStack(NordItems.itemStick,2,metal.getMetadata()),"x","x",
@@ -78,7 +77,7 @@ public class Recipe {
         for(int i = 0;i< EnumMetal.values().length;i++){
         GameRegistry.addRecipe(new ItemStack(NordBloks.metalBlock,1,i),"xxx","xxx","xxx",
                 'x',new ItemStack(NordItems.itemIngot,1,i));
-            GameRegistry.addSmelting(new ItemStack(NordItems.itemDust, 1, i+2), new ItemStack(NordItems.itemIngot,1,i), 0);
+            GameRegistry.addSmelting(new ItemStack(NordItems.itemOreDrop, 1, i+2), new ItemStack(NordItems.itemIngot,1,i), 0);
         }
         GameRegistry.addRecipe(new ItemStack(NordBloks.oilLamp),"wfw","sts","www",
                 'w', new ItemStack(Blocks.planks),
@@ -108,11 +107,11 @@ public class Recipe {
     public static void addAllRecipeMacerator(){
         //FlowingRecipes1I2O.addRecipe(ItemStack input, ItemStack output1,ItemStack output2, int needEnergy, float percent, float exp)
         FlowingRecipes1I2O.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.gold_ore),1),
-                new ItemStack(NordItems.itemDust,2,1),
+                new ItemStack(NordItems.itemOreDrop,2,1),
                 new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                 ,80,90,0);
         FlowingRecipes1I2O.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.iron_ore),1),
-                new ItemStack(NordItems.itemDust,2,0),
+                new ItemStack(NordItems.itemOreDrop,2,0),
                 new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                 ,80,90,0);
 /*
@@ -120,7 +119,7 @@ public class Recipe {
 
             FlowingRecipes1I2O.addRecipe(
                     new ItemStack(NordBloks.metalOre,1,ore.getMetadata()),
-                    new ItemStack(NordItems.itemDust,2,ore.getDust().getMetadata()),
+                    new ItemStack(NordItems.itemOreDrop,2,ore.getDust().getMetadata()),
                     new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                     ,80,90,0);
         }
@@ -128,7 +127,7 @@ public class Recipe {
         for (EnumMetal metal : EnumMetal.values()) {
             FlowingRecipes1I2O.addRecipe(
                     new ItemStack(NordItems.itemIngot,1,metal.getMetadata()),
-                    new ItemStack(NordItems.itemDust,1,metal.getDust().getMetadata()),
+                    new ItemStack(NordItems.itemOreDrop,1,metal.getDust().getMetadata()),
                     new ItemStack(Item.getItemFromBlock(Blocks.cobblestone),1)
                     ,80,0,0);
         }

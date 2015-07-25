@@ -2,6 +2,9 @@ package ru.nord.common.lib.utils.enums;
 
 import net.minecraft.util.IStringSerializable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum EnumOre implements IStringSerializable {
     SILVER(0, "silver", "silver") {
         @Override
@@ -76,6 +79,16 @@ public enum EnumOre implements IStringSerializable {
             array[i] = EnumOre.values()[i].getName();
         }
         return array;
+    }
+
+    public static String[] getDropNames() {
+        List<String> list = new ArrayList<String>(EnumOre.values().length);
+        for (int i = 0; i < EnumOre.values().length; i++) {
+            if (EnumOre.values()[i].getNugget() == null) {
+                list.add(EnumOre.values()[i].getName());
+            }
+        }
+        return list.toArray(new String[0]);
     }
 
     public String getName() {

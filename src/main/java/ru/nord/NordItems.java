@@ -6,8 +6,14 @@ public class NordItems {
     public static Item tutorialItem;
     public static Item energyStorageItem;
     public static Item wrench;
-    public static Item itemDust;
+    public static Item itemOreDrop;
     public static Item itemStick;
     public static Item itemBlades;
     public static Item itemIngot;
+    public static Item itemOreDirtyPowder;
+    public static Item itemOreClearPowder;
+    public static Item itemOreNugget;
+    public static Item itemMetalDust;
+    public static Item itemOreCrystal;
+    public static Item itemClearIngot;
 }

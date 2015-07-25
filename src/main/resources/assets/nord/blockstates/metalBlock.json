@@ -8,51 +8,94 @@
             "copper"    : {
                 "textures": {
                     "all": "nord:blocks/metal/block/copper",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/copper"
                 }
             },
             "silver"    : {
                 "textures": {
                     "all": "nord:blocks/metal/block/silver",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/silver"
                 }
             },
             "tin"       : {
                 "textures": {
                     "all": "nord:blocks/metal/block/tin",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/tin"
                 }
             },
             "zinc"      : {
                 "textures": {
                     "all": "nord:blocks/metal/block/zinc",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/zinc"
                  }
             },
             "bronze"    : {
                 "textures": {
                     "all": "nord:blocks/metal/block/bronze",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/bronze"
                 }
              },
             "electrum"  : {
                 "textures": {
                     "all": "nord:blocks/metal/block/electrum",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/electrum"
                 }
              },
             "steel"     : {
                 "textures": {
                     "all": "nord:blocks/metal/block/steel",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/steel"
                }
            },
             "brass"     : {
                 "textures": {
                     "all": "nord:blocks/metal/block/brass",
-                    "particle": "nord:blocks/metal/ore/tin"
+                    "particle": "nord:blocks/metal/block/brass"
+              }
+          },
+            "nicel"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/nicel",
+                    "particle": "nord:blocks/metal/block/nicel"
+              }
+          },
+            "cast_iron"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/cast_iron",
+                    "particle": "nord:blocks/metal/block/cast_iron"
+              }
+          },
+            "invar"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/invar",
+                    "particle": "nord:blocks/metal/block/invar"
+              }
+          },
+            "aluminum"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/aluminum",
+                    "particle": "nord:blocks/metal/block/aluminum"
+              }
+          },
+            "nichrome"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/nichrome",
+                    "particle": "nord:blocks/metal/block/nichrome"
+              }
+          },
+            "chrom"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/chrom",
+                    "particle": "nord:blocks/metal/block/chrom"
+              }
+          },
+            "duralumin"     : {
+                "textures": {
+                    "all": "nord:blocks/metal/block/duralumin",
+                    "particle": "nord:blocks/metal/block/duralumin"
               }
           }
+
         }
     }
 }

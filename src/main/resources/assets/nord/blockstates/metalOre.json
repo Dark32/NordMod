@@ -1,33 +1,100 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "model": "nord:block_colored"
-    },
-    "variants": {
-        "type":{
-            "copper"    : {
-                "textures": {
-                    "all": "nord:blocks/metal/ore/copper",
-                    "particle": "nord:blocks/metal/ore/copper"
-               }
-           },
-            "silver"    : {
-                "textures": {
-                    "all": "nord:blocks/metal/ore/silver",
-                    "particle": "nord:blocks/metal/ore/silver"
-               }
-           },
-            "tin"       : {
-                "textures": {
-                    "all": "nord:blocks/metal/ore/tin" ,
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "type":{
+        
+             "almandine"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/almandine",
+                    "particle": "nord:blocks/metal/ore/almandine"
+                }
+            },
+             "limonite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/limonite",
+                    "particle": "nord:blocks/metal/ore/limonite"
+                }
+            },
+             "uvarovite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/uvarovite",
+                    "particle": "nord:blocks/metal/ore/uvarovite"
+                }
+            },
+             "bauxite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/bauxite",
+                    "particle": "nord:blocks/metal/ore/bauxite"
+                }
+            },
+             "crocoite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/crocoite",
+                    "particle": "nord:blocks/metal/ore/crocoite"
+                }
+            },
+             "galena"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/galena",
+                    "particle": "nord:blocks/metal/ore/galena"
+                }
+            },
+             "millerite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/millerite",
+                    "particle": "nord:blocks/metal/ore/millerite"
+                }
+            },
+             "pentlandite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/pentlandite",
+                    "particle": "nord:blocks/metal/ore/pentlandite"
+                }
+            },
+             "zincite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/zincite",
+                    "particle": "nord:blocks/metal/ore/zincite"
+                }
+            },
+             "mercury"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/mercury",
+                    "particle": "nord:blocks/metal/ore/mercury"
+                }
+            },
+             "olivine"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/olivine",
+                    "particle": "nord:blocks/metal/ore/olivine"
+                }
+            },
+             "magnetite"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/magnetite",
+                    "particle": "nord:blocks/metal/ore/magnetite"
+                }
+            },
+             "tin"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/tin",
                     "particle": "nord:blocks/metal/ore/tin"
                 }
             },
-            "zinc"      : {
-                "textures": {
-                    "all": "nord:blocks/metal/ore/zinc",
-                    "particle": "nord:blocks/metal/ore/zinc"
-                 }
+             "copper"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/copper",
+                    "particle": "nord:blocks/metal/ore/copper"
+                }
+            },
+             "silver"     : {
+               "textures": {
+                    "all": "nord:blocks/metal/ore/silver",
+                    "particle": "nord:blocks/metal/ore/silver"
+                }
             }
         }
     }
