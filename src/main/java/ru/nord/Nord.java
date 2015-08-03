@@ -51,8 +51,8 @@ public class Nord {
         Nord.proxy.registerRenderers();
         Nord.proxy.init();
         packetPipeline.initialise();
-        NetworkRegistry.INSTANCE.registerGuiHandler(Nord.instance, new GuiHandler());
-        MinecraftForge.EVENT_BUS.register(new OreDropEvent());
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+//        MinecraftForge.EVENT_BUS.register(new OreDropEvent());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
     }
 

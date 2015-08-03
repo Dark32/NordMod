@@ -3,6 +3,8 @@ package ru.nord.common.tiles;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiSmelter;
 import ru.nord.common.container.ContainerSmelter;
 import ru.nord.common.lib.recipes.Interfaces.IAbstractRecipes;
@@ -47,6 +49,7 @@ public class TileSmelter extends TileAbstractEnergyMachinaDoubleInput {
         return new ContainerSmelter(player.inventory,this);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public GuiContainer getGui(EntityPlayer player) {
         return new GuiSmelter(player,this);

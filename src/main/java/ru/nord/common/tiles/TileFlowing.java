@@ -3,6 +3,8 @@ package ru.nord.common.tiles;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiFlowing;
 import ru.nord.common.container.ContainerFlowing;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
@@ -43,6 +45,7 @@ public class TileFlowing extends TileAbstractEnergyMachina {
         return new ContainerFlowing(player.inventory,this);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public GuiContainer getGui(EntityPlayer player) {
         return new GuiFlowing(player,this);

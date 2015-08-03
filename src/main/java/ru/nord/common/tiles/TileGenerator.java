@@ -4,6 +4,8 @@ package ru.nord.common.tiles;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiGenerator;
 import ru.nord.common.container.ContainerGenerator;
 import ru.nord.common.lib.utils.Constants;
@@ -35,6 +37,7 @@ public class TileGenerator extends TileAbstractEnergyGenerator {
         return new ContainerGenerator(player.inventory,this);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public GuiContainer getGui(EntityPlayer player) {
         return new GuiGenerator(player,this);

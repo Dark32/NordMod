@@ -4,6 +4,8 @@ package ru.nord.common.tiles;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.lib.utils.Constants;
 import ru.nord.common.tiles.abstracts.TileAbstractEnergyCable;
 
@@ -29,6 +31,7 @@ public class TileEnergyCable extends TileAbstractEnergyCable {
         return null;
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public GuiContainer getGui(EntityPlayer player) {
         return null;
