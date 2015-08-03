@@ -1,5 +1,6 @@
 package ru.nord;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -11,7 +12,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.CommonProxy;
-import ru.nord.common.lib.events.GuiHandler;
+import ru.nord.common.lib.events.OreDropEvent;
+import ru.nord.common.lib.handler.GuiHandler;
 import ru.nord.common.lib.network.PacketPipeline;
 import ru.nord.common.lib.recipes.Recipe;
 import ru.nord.common.lib.utils.Fuel;
@@ -50,6 +52,7 @@ public class Nord {
         Nord.proxy.init();
         packetPipeline.initialise();
         NetworkRegistry.INSTANCE.registerGuiHandler(Nord.instance, new GuiHandler());
+        MinecraftForge.EVENT_BUS.register(new OreDropEvent());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
     }
 

@@ -2,9 +2,6 @@ package ru.nord.common.lib.utils.enums;
 
 import net.minecraft.util.IStringSerializable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum EnumOre implements IStringSerializable {
     SILVER(0, "silver", "silver") {
         @Override
@@ -12,19 +9,38 @@ public enum EnumOre implements IStringSerializable {
             return EnumNugget.SILVER;
         }
     },
-    GALENA(1, "galena", "silver"),
+    GALENA(1, "galena", "silver") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.GALENA;
+        }
+    },
     TIN(2, "tin", "tin") {
         @Override
         public EnumNugget getNugget() {
             return EnumNugget.TIN;
         }
     },
-    ZINCITE(3, "zincite", "zinc"),
-    BAUXITE(4, "bauxite", "aluminum"),
+    ZINCITE(3, "zincite", "zinc") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.ZINCITE;
+        }
+    },
+    BAUXITE(4, "bauxite", "aluminum") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.BAUXITE;
+        }
+    },
     UVAROVITE(5, "uvarovite", "chrom") {
         @Override
         public EnumCrystal getCrystal() {
             return EnumCrystal.UVAROVITE;
+        }
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.UVAROVITE;
         }
     },
     CROCOITE(6, "crocoite", "chrom") {
@@ -32,25 +48,62 @@ public enum EnumOre implements IStringSerializable {
         public EnumCrystal getCrystal() {
             return EnumCrystal.CROCOITE;
         }
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.CROCOITE;
+        }
     },
-    COPPER(7, "copper", "copper"),
-    OLIVINE(9, "olivine", "iron") {
+    COPPER(7, "copper", "copper") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.COPPER;
+        }
+    },
+    OLIVINE(8, "olivine", "iron") {
         @Override
         public EnumCrystal getCrystal() {
             return EnumCrystal.OLIVINE;
         }
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.OLIVINE;
+        }
     },
-    MAGNETITE(10, "magnetite", "iron"),
-    LIMONITE(11, "limonite", "iron"),
-    ALMANDINE(12, "almandine", "iron") {
+    MAGNETITE(9, "magnetite", "iron") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.MAGNETITE;
+        }
+    },
+    LIMONITE(10, "limonite", "iron") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.LIMONITE;
+        }
+    },
+    ALMANDINE(11, "almandine", "iron") {
         @Override
         public EnumCrystal getCrystal() {
             return EnumCrystal.ALMANDINE;
         }
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.ALMANDINE;
+        }
     },
-    PENTLANDITE(13, "pentlandite", "nicel"),
-    MILLERITE(14, "millerite", "nicel"),
-    MERCURY(15, "mercury", "mercury") {
+    PENTLANDITE(12, "pentlandite", "nicel") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.PENTLANDITE;
+        }
+    },
+    MILLERITE(13, "millerite", "nicel") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.MILLERITE;
+        }
+    },
+    MERCURY(14, "mercury", "mercury") {
         @Override
         public EnumNugget getNugget() {
             return EnumNugget.MERCURY;
@@ -81,16 +134,6 @@ public enum EnumOre implements IStringSerializable {
         return array;
     }
 
-    public static String[] getDropNames() {
-        List<String> list = new ArrayList<String>(EnumOre.values().length);
-        for (int i = 0; i < EnumOre.values().length; i++) {
-            if (EnumOre.values()[i].getNugget() == null) {
-                list.add(EnumOre.values()[i].getName());
-            }
-        }
-        return list.toArray(new String[0]);
-    }
-
     public String getName() {
         return this.name;
     }
@@ -108,6 +151,9 @@ public enum EnumOre implements IStringSerializable {
     }
 
     public EnumCrystal getCrystal() {
+        return null;    }
+
+    public EnumOreDrop getOreDrop() {
         return null;
     }
 }

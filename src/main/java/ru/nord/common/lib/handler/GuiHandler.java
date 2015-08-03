@@ -1,4 +1,4 @@
-package ru.nord.common.lib.events;
+package ru.nord.common.lib.handler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;

@@ -22,9 +22,9 @@ public class NordMetalgury {
     }
 
     private static void createItem() {
-        NordItems.itemOreDrop = new ItemMetaData(EnumOre.getDropNames()).setUnlocalizedName("oreDrop").setCreativeTab(NordTabs.tabMetallurgy);
-        NordItems.itemOreDirtyPowder = new ItemMetaData(EnumOre.getDropNames()).setUnlocalizedName("oreDirtyPowder").setCreativeTab(NordTabs.tabMetallurgy);
-        NordItems.itemOreClearPowder = new ItemMetaData(EnumOre.getDropNames()).setUnlocalizedName("oreClearPowder").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemOreDrop = new ItemMetaData(EnumOreDrop.getNames()).setUnlocalizedName("oreDrop").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemOreDirtyPowder = new ItemMetaData(EnumOreDrop.getNames()).setUnlocalizedName("oreDirtyPowder").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemOreClearPowder = new ItemMetaData(EnumOreDrop.getNames()).setUnlocalizedName("oreClearPowder").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemOreNugget = new ItemMetaData(EnumNugget.getNames()).setUnlocalizedName("oreNugget").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemMetalDust = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("metalDust").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemOreCrystal = new ItemMetaData(EnumCrystal.getNames()).setUnlocalizedName("oreCrystal").setCreativeTab(NordTabs.tabMetallurgy);
@@ -42,9 +42,9 @@ public class NordMetalgury {
     }
 
     private static void registerItem() {
-        RegisterHelper.registerMetadataItem(NordItems.itemOreDrop, "oreDrop", "oreDrop", EnumOre.getDropNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder", "oreDirtyPowder", EnumOre.getDropNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreClearPowder, "oreClearPowder", "oreClearPowder", EnumOre.getDropNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemOreDrop, "oreDrop", "oreDrop", EnumOreDrop.getNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder", "oreDirtyPowder", EnumOreDrop.getNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemOreClearPowder, "oreClearPowder", "oreClearPowder", EnumOreDrop.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemOreNugget, "oreNugget", "oreNugget", EnumNugget.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemMetalDust, "metalDust", "metalDust", EnumDust.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemOreCrystal, "oreCrystal", "oreCrystal", EnumCrystal.getNames());
