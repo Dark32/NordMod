@@ -4,11 +4,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.items.*;
 import ru.nord.common.lib.helpers.RegisterHelper;
-import ru.nord.common.lib.recipes.Recipe;
-import ru.nord.common.lib.utils.enums.EnumDust;
-import ru.nord.common.lib.utils.enums.EnumFrame;
-import ru.nord.common.lib.utils.enums.EnumMetal;
-import ru.nord.common.lib.utils.enums.EnumOre;
+import ru.nord.common.recipes.Recipes;
 import ru.nord.common.tiles.*;
 
 public class NordMachine {
@@ -74,7 +70,7 @@ public class NordMachine {
     private static void addRecipe() {
 //        GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", // TODO fix recipe
 //                'x', new ItemStack(Blocks.stone, 1));
-        Recipe.addAll();
+        Recipes.addAll();
 
     }
 

@@ -8,8 +8,6 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
@@ -88,8 +86,8 @@ public class BlockMetalOre extends Block {
     @Override
     public int quantityDroppedWithBonus(int fortune, Random random) {
         if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped((IBlockState) this.getBlockState().getValidStates().iterator().next(), random, fortune)) {
-            int j = random.nextInt(fortune + 1);
-            return this.quantityDropped(random) * (j + 1);
+            int j = random.nextInt(fortune + 1) + 1;
+            return this.quantityDropped(random) * j;
         } else {
             return this.quantityDropped(random);
         }
@@ -101,10 +99,10 @@ public class BlockMetalOre extends Block {
     }
 
     @Override
-    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos, EntityPlayer player)
-    {
-        return new ItemStack(this,1,((EnumOre)world.getBlockState(pos).getValue(TYPE)).getMetadata());
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos, EntityPlayer player) {
+        return new ItemStack(this, 1, ((EnumOre) world.getBlockState(pos).getValue(TYPE)).getMetadata());
     }
+
     @Override
     public int getDamageValue(World worldIn, BlockPos pos) {
         return 0;
@@ -119,9 +117,9 @@ public class BlockMetalOre extends Block {
             return status.getOreDrop().getMetadata();
         }
     }
+
     @Override
-    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player)
-    {
+    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         return true;
     }
 }

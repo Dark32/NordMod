@@ -15,7 +15,7 @@ import ru.nord.common.CommonProxy;
 import ru.nord.common.lib.events.OreDropEvent;
 import ru.nord.common.lib.handler.GuiHandler;
 import ru.nord.common.lib.network.PacketPipeline;
-import ru.nord.common.lib.recipes.Recipe;
+import ru.nord.common.recipes.Recipes;
 import ru.nord.common.lib.utils.Fuel;
 import ru.nord.common.lib.utils.Version;
 import ru.nord.common.lib.utils.generator.NordOre;
@@ -40,7 +40,7 @@ public class Nord {
         NordMachine.preInit();
         NordMetalgury.preInit();
         NordDecoration.preInit();
-
+        Recipes.preInit();
     }
 
     @EventHandler
@@ -52,8 +52,9 @@ public class Nord {
         Nord.proxy.init();
         packetPipeline.initialise();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-//        MinecraftForge.EVENT_BUS.register(new OreDropEvent());
+        MinecraftForge.EVENT_BUS.register(new OreDropEvent());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
+        Recipes.init();
     }
 
     @EventHandler
@@ -64,7 +65,7 @@ public class Nord {
         NordMetalgury.postInit();
         NordDecoration.postInit();
         Fuel.postInit();
-        Recipe.addAll();
+        Recipes.postInit();
     }
     public void setupModInfo(ModMetadata meta){
         Version.setupModInfo(meta);
