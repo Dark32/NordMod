@@ -2,8 +2,9 @@ package ru.nord;
 
 import ru.nord.common.blocks.*;
 import ru.nord.common.items.*;
-import ru.nord.common.lib.helpers.RegisterHelper;
-import ru.nord.common.lib.utils.enums.*;
+import ru.nord_core.common.helpers.RegisterHelper;
+import ru.nord_core.common.items.ItemMetaData;
+import ru.nord_core.common.utils.enums.*;
 
 public class NordMetalgury {
     public static void preInit() {

@@ -3,7 +3,7 @@ package ru.nord.common.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class ItemBlockMetal extends ItemBlock {
     public ItemBlockMetal(Block block)

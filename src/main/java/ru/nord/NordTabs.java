@@ -3,8 +3,8 @@ package ru.nord;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.tabs.TabNord;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord_core.common.tabs.TabNord;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 import java.util.Random;
 

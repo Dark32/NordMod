@@ -3,10 +3,7 @@ package ru.nord.common.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.enums.EnumColors;
-import ru.nord.common.lib.utils.enums.EnumFrame;
+import ru.nord_core.common.utils.enums.EnumFrame;
 
 public class ItemBlockFrame extends ItemBlock{
     public ItemBlockFrame(Block block)

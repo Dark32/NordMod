@@ -7,10 +7,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiSmelter;
 import ru.nord.common.container.ContainerSmelter;
-import ru.nord.common.lib.recipes.Interfaces.IAbstractRecipes;
-import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
-import ru.nord.common.lib.utils.Constants;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyMachinaDoubleInput;
+import ru.nord_core.common.recipes.Interfaces.IAbstractRecipes;
+import ru.nord.common.recipes.SmelterRecipes2I2O;
+import ru.nord_core.common.utils.Constants;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachinaDoubleInput;
 
 public class TileSmelter extends TileAbstractEnergyMachinaDoubleInput {
     @Override

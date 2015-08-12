@@ -6,8 +6,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.Constants;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyCable;
+import ru.nord_core.common.utils.Constants;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyCable;
 
 public class TileEnergyCable extends TileAbstractEnergyCable {
 

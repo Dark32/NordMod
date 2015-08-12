@@ -8,7 +8,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord.Nord;
-import ru.nord.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
 import ru.nord.common.tiles.TileFlowing;
 
 public class BlockFlowing extends BlockAbstractMachina {

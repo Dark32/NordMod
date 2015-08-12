@@ -8,8 +8,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiGenerator;
 import ru.nord.common.container.ContainerGenerator;
-import ru.nord.common.lib.utils.Constants;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyGenerator;
+import ru.nord_core.common.utils.Constants;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyGenerator;
 
 public class TileGenerator extends TileAbstractEnergyGenerator {
 

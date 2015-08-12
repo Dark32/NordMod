@@ -11,8 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.Version;
-import ru.nord.common.lib.utils.enums.EnumCrystal;
+import ru.nord.common.utils.Version;
+import ru.nord_core.common.utils.enums.EnumCrystal;
 
 import java.util.List;
 

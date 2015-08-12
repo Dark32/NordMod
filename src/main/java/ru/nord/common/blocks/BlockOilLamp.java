@@ -4,7 +4,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
-import ru.nord.common.blocks.abstracts.BlockAbstractRoofLamp;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractRoofLamp;
 
 import java.util.Random;
 

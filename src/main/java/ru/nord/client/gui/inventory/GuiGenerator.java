@@ -1,16 +1,12 @@
 package ru.nord.client.gui.inventory;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
-import ru.nord.client.gui.inventory.abstracts.GuiMachine;
-import ru.nord.common.container.ContainerFlowing;
+import ru.nord_core.client.gui.inventory.abstracts.GuiMachine;
 import ru.nord.common.container.ContainerGenerator;
-import ru.nord.common.lib.utils.Constants;
-import ru.nord.common.lib.utils.Fuel;
-import ru.nord.common.lib.utils.Version;
-import ru.nord.common.tiles.TileFlowing;
+import ru.nord_core.common.utils.Constants;
+import ru.nord.common.utils.Version;
 import ru.nord.common.tiles.TileGenerator;
 
 public class GuiGenerator extends GuiMachine {

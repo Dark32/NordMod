@@ -12,9 +12,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.Nord;
-import ru.nord.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
 import ru.nord.common.tiles.TileAccumulator;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyAccumulator;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 
 public class BlockAccumulator extends BlockAbstractMachina {
 

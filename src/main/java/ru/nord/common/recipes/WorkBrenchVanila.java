@@ -7,8 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.NordBloks;
 import ru.nord.NordItems;
-import ru.nord.common.lib.utils.enums.EnumDust;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord_core.common.utils.enums.EnumDust;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 /**
  * Created by andrew on 03.08.15.

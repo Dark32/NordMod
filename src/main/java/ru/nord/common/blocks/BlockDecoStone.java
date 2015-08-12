@@ -10,13 +10,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.Version;
-import ru.nord.common.lib.utils.enums.EnumStone;
+import ru.nord.common.utils.Version;
+import ru.nord_core.common.utils.enums.EnumStone;
 
 import java.util.List;
 

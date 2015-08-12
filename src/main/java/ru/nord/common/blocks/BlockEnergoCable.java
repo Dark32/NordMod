@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import ru.nord.common.blocks.abstracts.BlockAbstractEnergyCable;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractEnergyCable;
 import ru.nord.common.tiles.TileEnergyCable;
 
 public class BlockEnergoCable extends BlockAbstractEnergyCable {

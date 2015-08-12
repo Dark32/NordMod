@@ -1,28 +1,21 @@
 package ru.nord;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.ModMetadata;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.nord.common.CommonProxy;
-import ru.nord.common.lib.events.OreDropEvent;
-import ru.nord.common.lib.handler.GuiHandler;
-import ru.nord.common.lib.network.PacketPipeline;
-import ru.nord.common.recipes.Recipes;
-import ru.nord.common.lib.utils.Fuel;
-import ru.nord.common.lib.utils.Version;
-import ru.nord.common.lib.utils.generator.NordOre;
+import net.minecraftforge.common.*;
+import net.minecraftforge.fml.common.Mod.*;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.registry.*;
+import ru.nord.common.*;
+import ru.nord.common.events.*;
+import ru.nord.common.network.*;
+import ru.nord.common.recipes.*;
+import ru.nord.common.utils.*;
+import ru.nord.common.utils.generator.*;
 
 import java.util.Random;
 
-@Mod(modid = Version.MODID, name = Version.NAME, version = Version.VERSION)
+@Mod(modid = Version.MODID, name = Version.NAME, version = Version.VERSION,
+        dependencies = "required-after:nord_core")
 public class Nord {
 
     public static final PacketPipeline packetPipeline = new PacketPipeline();
@@ -51,7 +44,6 @@ public class Nord {
         Nord.proxy.registerRenderers();
         Nord.proxy.init();
         packetPipeline.initialise();
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new OreDropEvent());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
         Recipes.init();

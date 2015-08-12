@@ -4,8 +4,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import ru.nord.NordItems;
-import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 /**
  * Created by andrew on 03.08.15.

@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordItems;
-import ru.nord.common.lib.utils.Version;
-import ru.nord.common.lib.utils.enums.EnumOre;
+import ru.nord.common.utils.Version;
+import ru.nord_core.common.utils.enums.EnumOre;
 
 import java.util.List;
 import java.util.Random;

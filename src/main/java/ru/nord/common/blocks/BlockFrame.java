@@ -18,7 +18,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.enums.EnumFrame;
+import ru.nord_core.common.utils.enums.EnumFrame;
 
 import java.util.List;
 

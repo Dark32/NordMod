@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.utils.enums.EnumOre;
+import ru.nord_core.common.utils.enums.EnumOre;
 
 import java.util.List;
 

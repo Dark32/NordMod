@@ -3,9 +3,8 @@ package ru.nord.common.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.utils.enums.EnumClearMetal;
-import ru.nord.common.lib.utils.enums.EnumCrystal;
-import ru.nord.common.lib.utils.enums.EnumMetal;
+import ru.nord_core.common.utils.enums.EnumCrystal;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class ItemBlockCrystall extends ItemBlock {
     public ItemBlockCrystall(Block block)

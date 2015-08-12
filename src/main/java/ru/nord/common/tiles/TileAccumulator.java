@@ -9,8 +9,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiAccumulator;
 import ru.nord.common.container.ContainerAccumulator;
-import ru.nord.common.lib.utils.Constants;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyAccumulator;
+import ru.nord_core.common.utils.Constants;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 
 public class TileAccumulator extends TileAbstractEnergyAccumulator {
 

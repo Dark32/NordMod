@@ -5,7 +5,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.enums.EnumColors;
+import ru.nord_core.common.utils.enums.EnumColors;
 
 public class ItemBlockRoofLamp extends ItemBlock{
     public ItemBlockRoofLamp(Block block)

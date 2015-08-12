@@ -4,7 +4,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
 
 /**
  * Created by andrew on 03.08.15.

@@ -4,7 +4,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.NordItems;
-import ru.nord.common.lib.utils.enums.EnumDust;
+import ru.nord_core.common.utils.enums.EnumDust;
 
 /**
  * Created by andrew on 03.08.15.

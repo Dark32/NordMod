@@ -1,13 +1,11 @@
 package ru.nord.common.items;
 
-import com.google.common.base.Function;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStone;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.lib.utils.enums.EnumStone;
+import ru.nord_core.common.utils.enums.EnumStone;
 
 public class ItemBlockDecoStone extends ItemBlock{
     public ItemBlockDecoStone(Block block)

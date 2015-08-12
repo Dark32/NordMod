@@ -2,10 +2,12 @@ package ru.nord;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
-import ru.nord.common.items.*;
-import ru.nord.common.lib.helpers.RegisterHelper;
+import ru.nord_core.common.helpers.RegisterHelper;
 import ru.nord.common.recipes.Recipes;
 import ru.nord.common.tiles.*;
+import ru.nord_core.common.items.ItemBase;
+import ru.nord_core.common.items.ItemEnergyStorageDamagable;
+import ru.nord_core.common.items.ItemWrench;
 
 public class NordMachine {
     public static void preInit() {

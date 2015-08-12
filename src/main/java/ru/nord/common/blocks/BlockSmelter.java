@@ -9,10 +9,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import ru.nord.Nord;
-import ru.nord.common.blocks.abstracts.BlockAbstractMachina;
-import ru.nord.common.tiles.TileFlowing;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
 import ru.nord.common.tiles.TileSmelter;
-import ru.nord.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
 
 public class BlockSmelter extends BlockAbstractMachina {
 

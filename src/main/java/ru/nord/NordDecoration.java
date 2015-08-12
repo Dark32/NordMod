@@ -1,14 +1,14 @@
 package ru.nord;
 
 import ru.nord.common.blocks.*;
-import ru.nord.common.items.ItemBase;
+import ru.nord_core.common.items.ItemBase;
 import ru.nord.common.items.ItemBlockDecoStone;
 import ru.nord.common.items.ItemBlockFloorLamp;
 import ru.nord.common.items.ItemBlockRoofLamp;
-import ru.nord.common.lib.helpers.RegisterHelper;
-import ru.nord.common.lib.utils.enums.EnumColors;
-import ru.nord.common.lib.utils.enums.EnumState;
-import ru.nord.common.lib.utils.enums.EnumStone;
+import ru.nord_core.common.blocks.BlockBase;
+import ru.nord_core.common.helpers.RegisterHelper;
+import ru.nord_core.common.utils.enums.EnumColors;
+import ru.nord_core.common.utils.enums.EnumStone;
 
 public class NordDecoration {
     public static void preInit() {

@@ -6,9 +6,9 @@ import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
-import ru.nord.client.lib.events.NordModelLoader;
+import ru.nord.client.events.NordModelLoader;
 import ru.nord.common.CommonProxy;
-import ru.nord.common.lib.utils.Version;
+import ru.nord.common.utils.Version;
 
 public class ClientProxy extends CommonProxy {
 

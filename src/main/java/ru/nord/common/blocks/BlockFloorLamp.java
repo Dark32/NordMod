@@ -13,8 +13,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.blocks.abstracts.BlockAbstractRoofLamp;
-import ru.nord.common.lib.utils.enums.EnumState;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractRoofLamp;
+import ru.nord_core.common.utils.enums.EnumState;
 
 import java.util.List;
 
