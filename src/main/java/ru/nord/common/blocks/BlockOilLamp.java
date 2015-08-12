@@ -4,6 +4,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractRoofLamp;
 
 import java.util.Random;
@@ -11,7 +12,7 @@ import java.util.Random;
 
 public class BlockOilLamp extends BlockAbstractRoofLamp {
     public BlockOilLamp() {
-        super();
+        super(Version.MODID);
         this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
     }
 

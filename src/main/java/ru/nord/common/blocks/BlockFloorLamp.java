@@ -13,6 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractRoofLamp;
 import ru.nord_core.common.utils.enums.EnumState;
 
@@ -23,7 +24,7 @@ public class BlockFloorLamp extends BlockAbstractRoofLamp {
     public static final PropertyEnum STATUS = PropertyEnum.create("type", EnumState.class);
 
     public BlockFloorLamp() {
-        super();
+        super(Version.MODID);
         this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 0.1F, 0.812F);
 //        setLightLevel(0.9375F);
         setStepSound(soundTypeWood);

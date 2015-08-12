@@ -10,12 +10,4 @@ public class CommonProxy {
         // Nothing here as the server doesn't render graphics or entities!
     }
 
-    public void init() {
-    }
-
-    public void registerItemRender(Item item, int sub, String name) {
-    }
-
-    public void registerBlockRender(Block block, int i, String name) {
-    }
 }

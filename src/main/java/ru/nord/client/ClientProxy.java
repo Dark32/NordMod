@@ -1,6 +1,9 @@
 package ru.nord.client;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import ru.nord.client.events.NordModelLoader;
@@ -16,17 +19,4 @@ public class ClientProxy extends CommonProxy {
         ModelLoaderRegistry.registerLoader(new NordModelLoader());
     }
 
-    @Override
-    public void init() {
-    }
-
-    @Override
-    public void registerItemRender(Item item, int sub, String name) {
-        NordCore.proxy.registerItemRender(item, sub, name, Version.MODID);
-    }
-
-    @Override
-    public void registerBlockRender(Block block, int sub, String model) {
-        NordCore.proxy.registerBlockRender(block, sub, model, Version.MODID);
-    }
 }

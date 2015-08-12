@@ -19,6 +19,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerBlockRender(Block block, int sub, String model,String modid) {
+        System.err.print(Item.getItemFromBlock(block));
         ModelBakery.addVariantName(Item.getItemFromBlock(block),modid + ":" + model);
         ModelResourceLocation itemModelResourceLocation =
                 new ModelResourceLocation(modid + ":" + model, "inventory");

@@ -25,7 +25,7 @@ public class NordCore {
 
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
-
+        FMLLog.info("Core Nord Mod start init");
     }
 
     @EventHandler

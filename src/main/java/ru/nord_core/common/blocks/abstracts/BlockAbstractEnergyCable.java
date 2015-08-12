@@ -19,6 +19,7 @@ import net.minecraftforge.common.property.IUnlistedProperty;
 import net.minecraftforge.common.property.Properties;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.interfaces.IEnergoCable;
 
@@ -37,7 +38,7 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
     private final float pipeRadius; // in fraction of a block (aka meters)
 
     public BlockAbstractEnergyCable() {
-        super(Material.iron, modid);
+        super(Material.iron, Version.MODID);
         setHardness(2.0F);
         setResistance(5.0F);
         this.pipeRadius = 0.0625f * 2;

@@ -9,6 +9,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
@@ -18,7 +19,7 @@ import java.util.List;
 public abstract class BlockMetadata extends Block {
     private final String[] names;
     private String unlocalizedName;
-    public final PropertyEnum TYPE;
+//    public static final PropertyEnum TYPE;
     protected Class enums;
     protected String modid;
 
@@ -27,7 +28,7 @@ public abstract class BlockMetadata extends Block {
         this.names = names;
         this.enums =enums;
         this.modid=modid;
-        TYPE = PropertyEnum.create("type", enums);
+//        TYPE = PropertyEnum.create("type", enums);
     }
 
     @Override
@@ -44,15 +45,7 @@ public abstract class BlockMetadata extends Block {
 //        return this.getDefaultState().withProperty(TYPE,   enums.byMetadata(meta));
 //    }
 
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
-    }
 
-    @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{TYPE});
-    }
 
     @Override
     public String getUnlocalizedName() {
@@ -65,10 +58,5 @@ public abstract class BlockMetadata extends Block {
         return this;
     }
 
-    @Override
-    public int damageDropped(IBlockState state)
-    {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
-    }
 
 }

@@ -20,12 +20,14 @@ import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.abstracts.BlockMetadata;
 import ru.nord_core.common.utils.enums.EnumClearMetal;
 import ru.nord_core.common.utils.enums.EnumOre;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.List;
 import java.util.Random;
 
 public class BlockMetalOre extends BlockMetadata {
 
+    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumOre.class);
     public BlockMetalOre(String[] names) {
         super(Material.iron,names, EnumOre.class,Version.MODID);
         this.setHardness(3F);
@@ -90,4 +92,14 @@ public class BlockMetalOre extends BlockMetadata {
     public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         return true;
     }
+    @Override
+    protected BlockState createBlockState() {
+        return new BlockState(this, new IProperty[]{TYPE});
+    }
+
+   @Override
+    public int getMetaFromState(IBlockState state) {
+        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
+    }
+
 }

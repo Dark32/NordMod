@@ -30,6 +30,7 @@ public class Nord {
 
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
+        FMLLog.info("Nord Mod start init");
         NordConfig.preInit();
         NordMachine.preInit();
         NordMetalgury.preInit();
@@ -43,7 +44,6 @@ public class Nord {
         NordMetalgury.init();
         NordDecoration.init();
         Nord.proxy.registerRenderers();
-        Nord.proxy.init();
         packetPipeline.initialise();
         MinecraftForge.EVENT_BUS.register(new OreDropEvent());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);

@@ -12,6 +12,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
 
@@ -20,7 +21,7 @@ import java.util.Random;
 abstract public class BlockAbstractMachina extends BlockRotatebleContainer implements IWrenchable {
 
     protected BlockAbstractMachina(Material mat) {
-        super(mat);
+        super(mat, Version.MODID);
     }
 
     @Override
