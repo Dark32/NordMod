@@ -5,9 +5,6 @@ import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
 import ru.nord_core.common.recipes.abstracts.Recipe2I2O;
 import ru.nord_core.common.recipes.abstracts.Recipes2I2O;
 
-/**
- * Created by andrew on 07.12.14.
- */
 public class SmelterRecipes2I2O extends Recipes2I2O {
     public static void addRecipe(ItemStack input, ItemStack input2,
                                  ItemStack output1,
@@ -15,7 +12,7 @@ public class SmelterRecipes2I2O extends Recipes2I2O {
             , boolean soft) {
         Recipe2I2O recipe = new Recipe2I2O(input, input2, output1, output2, needEnergy,
                 percent, exp, soft);
-        recipes.add(recipe);
+        INSTANCE().getRecipes().add(recipe);
     }
 
     private static IRecipes1I2O INSTANCE;

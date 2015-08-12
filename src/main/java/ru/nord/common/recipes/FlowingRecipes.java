@@ -3,6 +3,7 @@ package ru.nord.common.recipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 import ru.nord.NordItems;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord_core.common.utils.enums.EnumMetal;
@@ -37,5 +38,6 @@ public class FlowingRecipes {
                     new ItemStack(Item.getItemFromBlock(Blocks.cobblestone), 1)
                     , 80, 0, 0);
         }
+
     }
 }

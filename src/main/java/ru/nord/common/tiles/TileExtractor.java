@@ -7,6 +7,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiExtractor;
 import ru.nord.common.container.ContainerExtractor;
+import ru.nord.common.lib.recipes.ExtractorRecipes1I2O;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
@@ -25,7 +26,7 @@ public class TileExtractor extends TileAbstractEnergyMachina {
     }
     @Override
     public IRecipes1I2O getRecipes() {
-        return FlowingRecipes1I2O.INSTANCE();
+        return ExtractorRecipes1I2O.INSTANCE();
     }
     @Override
     public int getWorkPacketEnergy() {

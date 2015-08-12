@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Recipes1I2O implements IRecipes1I2O {
-    protected static final List<Recipe1I2O> recipes = new ArrayList<Recipe1I2O>(64);
+    protected final List<Recipe1I2O> recipes = new ArrayList<Recipe1I2O>(64);
+
+    @Override
+    public List<Recipe1I2O> getRecipes(){
+        return recipes;
+    }
 
     @Override
     public IRecipe1I2O getRecipe(ItemStack item) {
@@ -39,7 +44,8 @@ abstract public class Recipes1I2O implements IRecipes1I2O {
         for (int i = 0; i < recipes.size(); i++) {
             recipe = recipes.get(i);
             check = (recipe.getInput().getItem() == item.getItem());
-            check &= (recipe.getInput().getItemDamage() == item.getItemDamage());
+            check &= recipe.getInput().getItemDamage() == item.getItemDamage()
+                    || recipe.getInput().getItemDamage() == 32767;
             check &= (recipe.getInput().stackSize <= item.stackSize);
             if (check) {
                 return i;
