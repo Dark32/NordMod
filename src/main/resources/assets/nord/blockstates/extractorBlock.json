@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "nord:extractorBlock" },
+        "facing=south": { "model": "nord:extractorBlock", "y": 180 },
+        "facing=west":  { "model": "nord:extractorBlock", "y": 270 },
+        "facing=east":  { "model": "nord:extractorBlock", "y": 90 }
+    }
+}

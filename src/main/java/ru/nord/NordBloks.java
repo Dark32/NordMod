@@ -25,4 +25,5 @@ public class NordBloks {
     public static Block placeDeco;
     public static Block metalClearBlock;
     public static Block metalCrystal;
+    public static Block extractorBlock;
 }

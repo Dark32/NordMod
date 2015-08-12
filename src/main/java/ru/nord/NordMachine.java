@@ -34,13 +34,14 @@ public class NordMachine {
 
     private static void createBlock() {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
+         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
         NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.diggerWell = new BlockDiggerWell().setUnlocalizedName("digger_well").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.extractorBlock = new BlockExtractor().setUnlocalizedName("extractorBlock").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -58,11 +59,12 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
         RegisterHelper.registerSingleBlock(NordBloks.diggerWell,"digger_well");
         RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
-
+        RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
     }
 
     private static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
+        GameRegistry.registerTileEntity(TileExtractor.class, "TileEntityExtractor");
         GameRegistry.registerTileEntity(TileSmelter.class, "TileEntitySmelter");
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");

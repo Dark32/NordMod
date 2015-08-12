@@ -1,4 +1,4 @@
-package ru.nord.common.recipes;
+package ru.nord.common.lib.recipes;
 
 import net.minecraft.item.ItemStack;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;

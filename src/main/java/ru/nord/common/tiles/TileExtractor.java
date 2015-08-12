@@ -5,18 +5,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.client.gui.inventory.GuiFlowing;
-import ru.nord.common.container.ContainerFlowing;
+import ru.nord.client.gui.inventory.GuiExtractor;
+import ru.nord.common.container.ContainerExtractor;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
-import ru.nord_core.common.utils.Constants;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.utils.Constants;
 
-public class TileFlowing extends TileAbstractEnergyMachina {
+public class TileExtractor extends TileAbstractEnergyMachina {
 
     @Override
     public String getName() {
-        return this.hasCustomName() ? this.machineCustomName : "nord.tile.flowing";
+        return this.hasCustomName() ? this.machineCustomName : "nord.tile.extractor";
     }
 
     @Override
@@ -42,12 +42,12 @@ public class TileFlowing extends TileAbstractEnergyMachina {
 
     @Override
     public Container getContainer(EntityPlayer player) {
-        return new ContainerFlowing(player.inventory,this);
+        return new ContainerExtractor(player.inventory,this);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public GuiContainer getGui(EntityPlayer player) {
-        return new GuiFlowing(player,this);
+        return new GuiExtractor(player,this);
     }
 }
