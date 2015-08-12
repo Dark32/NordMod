@@ -1,14 +1,13 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumCrystal implements IStringSerializable {
+public enum EnumCrystal implements IMetadataEnum {
 
-    UVAROVITE   (0,  "uvarovite"),
-    OLIVINE     (1,  "olivine"),
-    CROCOITE    (2,  "crocoite"),
-    ALMANDINE   (3, "almandine"),
-    ;
+    UVAROVITE(0, "uvarovite"),
+    OLIVINE(1, "olivine"),
+    CROCOITE(2, "crocoite"),
+    ALMANDINE(3, "almandine"),;
     private final String name;
     private final int meta;
 
@@ -29,9 +28,12 @@ public enum EnumCrystal implements IStringSerializable {
         return array;
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
+
+    @Override
     public int getMetadata() {
         return this.meta;
     }

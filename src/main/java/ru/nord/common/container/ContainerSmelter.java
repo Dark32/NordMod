@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import ru.nord_core.common.container.slot.SlotOutput1I2O;
 import ru.nord_core.common.container.abstracts.ContainerAbstactMachine;
 import ru.nord_core.common.recipes.Interfaces.IRecipes2I2O;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 import ru.nord.common.tiles.TileSmelter;
 import ru.nord_core.common.tiles.interfaces.IMachine;
 

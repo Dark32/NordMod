@@ -1,4 +1,4 @@
-package ru.nord.common.blocks;
+package ru.nord_core.common.blocks.abstracts;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -11,51 +11,53 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.utils.Version;
-import ru.nord_core.common.utils.enums.EnumClearMetal;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.List;
 
-public class BlockClearMetal extends Block {
+public abstract class BlockMetadata extends Block {
     private final String[] names;
     private String unlocalizedName;
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumClearMetal.class);
-    public BlockClearMetal(String[] names){
+    public final PropertyEnum TYPE;
+    protected Class<IMetadataEnum> enums;
+    protected String modid;
+
+    public BlockMetadata(String[] names, Class<IMetadataEnum> enums, String modid) {
         super(Material.iron);
         this.names = names;
+        this.setHardness(3F);
+        this.enums =enums;
+        this.modid=modid;
+        TYPE = PropertyEnum.create("type", enums);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
-    {
-        for (int i = 0; i < names.length; ++i)
-        {
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
+        for (int i = 0; i < names.length; ++i) {
             list.add(new ItemStack(itemIn, 1, i));
         }
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(TYPE, IMetadataEnum.byMetadata(meta));
+    public abstract IBlockState getStateFromMeta(int meta);
+//    {
+//        return this.getDefaultState().withProperty(TYPE,   enums.byMetadata(meta));
+//    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    protected BlockState createBlockState() {
+        return new BlockState(this, new IProperty[]{TYPE});
+    }
 
-        return ((EnumClearMetal)state.getValue(TYPE)).getMetadata();
-    }
-    @Override
-    protected BlockState createBlockState()
-    {
-        return new BlockState(this, new IProperty[] {TYPE});
-    }
     @Override
     public String getUnlocalizedName() {
-        return "tile." + Version.MODID + "." + this.unlocalizedName;
+        return "tile." + modid + "." + this.unlocalizedName;
     }
 
     @Override
@@ -63,10 +65,11 @@ public class BlockClearMetal extends Block {
         this.unlocalizedName = unlocalizedName;
         return this;
     }
+
     @Override
     public int damageDropped(IBlockState state)
     {
-        return ((EnumClearMetal)state.getValue(TYPE)).getMetadata();
+        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
     }
 
 }

@@ -12,7 +12,8 @@ import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.interfaces.IWrench;
 
 public class ItemWrench extends ItemBase implements IWrench {
-    public ItemWrench() {
+    public ItemWrench(String modid) {
+        super(modid);
     }
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)

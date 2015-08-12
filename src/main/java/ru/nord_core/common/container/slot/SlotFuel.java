@@ -3,7 +3,7 @@ package ru.nord_core.common.container.slot;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 
 public class SlotFuel extends Slot {
 

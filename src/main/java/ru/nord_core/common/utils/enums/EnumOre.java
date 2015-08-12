@@ -1,8 +1,8 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumOre implements IStringSerializable {
+public enum EnumOre implements IMetadataEnum {
     SILVER(0, "silver", "silver") {
         @Override
         public EnumNugget getNugget() {
@@ -38,6 +38,7 @@ public enum EnumOre implements IStringSerializable {
         public EnumCrystal getCrystal() {
             return EnumCrystal.UVAROVITE;
         }
+
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.UVAROVITE;
@@ -48,6 +49,7 @@ public enum EnumOre implements IStringSerializable {
         public EnumCrystal getCrystal() {
             return EnumCrystal.CROCOITE;
         }
+
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.CROCOITE;
@@ -64,6 +66,7 @@ public enum EnumOre implements IStringSerializable {
         public EnumCrystal getCrystal() {
             return EnumCrystal.OLIVINE;
         }
+
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.OLIVINE;
@@ -86,6 +89,7 @@ public enum EnumOre implements IStringSerializable {
         public EnumCrystal getCrystal() {
             return EnumCrystal.ALMANDINE;
         }
+
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.ALMANDINE;
@@ -134,6 +138,7 @@ public enum EnumOre implements IStringSerializable {
         return array;
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
@@ -142,6 +147,7 @@ public enum EnumOre implements IStringSerializable {
         return this.metal;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }
@@ -151,7 +157,8 @@ public enum EnumOre implements IStringSerializable {
     }
 
     public EnumCrystal getCrystal() {
-        return null;    }
+        return null;
+    }
 
     public EnumOreDrop getOreDrop() {
         return null;

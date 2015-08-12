@@ -1,12 +1,12 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumState implements IStringSerializable {
-    ON(0,   "ON",1),
-    OFF(1,  "OFF",1),
-    INVERTED_ON(2,  "INVERTED_ON",2),
-    INVERTED_OFF(3, "INVERTED_OFF",2);
+public enum EnumState implements IMetadataEnum {
+    ON(0, "ON", 1),
+    OFF(1, "OFF", 1),
+    INVERTED_ON(2, "INVERTED_ON", 2),
+    INVERTED_OFF(3, "INVERTED_OFF", 2);
     private final int meta;
     private final int drop;
     private final String name;
@@ -26,17 +26,19 @@ public enum EnumState implements IStringSerializable {
         return name;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }
+
     public int getDrop() {
         return this.drop;
     }
 
-    public static String[] getNames(){
+    public static String[] getNames() {
         String[] array = new String[EnumState.values().length];
         for (int i = 0; i < EnumState.values().length; i++) {
-            array[i]= EnumState.values()[i].getName();
+            array[i] = EnumState.values()[i].getName();
         }
         return array;
     }

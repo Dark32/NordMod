@@ -15,7 +15,8 @@ import java.util.List;
 public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharges {
     private int _maxEnergy;
 
-    public ItemEnergyStorageDamagable(int maxEnergy) {
+    public ItemEnergyStorageDamagable(int maxEnergy,String modid) {
+        super(modid);
         this._maxEnergy = maxEnergy;
         this.setMaxStackSize(1);
         this.setHasSubtypes(false);

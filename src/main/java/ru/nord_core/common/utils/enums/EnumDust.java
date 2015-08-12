@@ -1,16 +1,16 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumDust implements IStringSerializable {
+public enum EnumDust implements IMetadataEnum {
 
-    IRON        (0, "iron",     false) {
+    IRON(0, "iron", false) {
         @Override
         public EnumMetal getMetal() {
             return null;
         }
     },
-    GOLD        (1, "gold",     false) {
+    GOLD(1, "gold", false) {
         @Override
         public EnumMetal getMetal() {
             return null;
@@ -129,10 +129,12 @@ public enum EnumDust implements IStringSerializable {
         return array;
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }

@@ -11,6 +11,7 @@ import ru.nord.common.network.*;
 import ru.nord.common.recipes.*;
 import ru.nord.common.utils.*;
 import ru.nord.common.utils.generator.*;
+import ru.nord_core.common.utils.Fuel;
 
 import java.util.Random;
 

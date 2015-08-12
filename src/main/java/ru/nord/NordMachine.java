@@ -2,9 +2,10 @@ package ru.nord;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
-import ru.nord_core.common.helpers.RegisterHelper;
+import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.recipes.Recipes;
 import ru.nord.common.tiles.*;
+import ru.nord.common.utils.Version;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.ItemEnergyStorageDamagable;
 import ru.nord_core.common.items.ItemWrench;
@@ -22,13 +23,13 @@ public class NordMachine {
     }
 
     public static void postInit() {
-        addRecipe();
+
     }
 
     private static void createItem() {
-        NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
-        NordItems.wrench = new ItemWrench().setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
-        NordItems.itemBlades = new ItemBase().setUnlocalizedName("blades");
+        NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
+        NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
+        NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
     }
 
     private static void createBlock() {
@@ -66,14 +67,6 @@ public class NordMachine {
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
         GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");
-    }
-
-
-    private static void addRecipe() {
-//        GameRegistry.addRecipe(new ItemStack(NordBloks.flowingBlock, 1), "xxx", "x x", "xxx", // TODO fix recipe
-//                'x', new ItemStack(Blocks.stone, 1));
-        Recipes.addAll();
-
     }
 
 }

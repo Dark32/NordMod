@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
-import ru.nord.Nord;
+import ru.nord_core.NordCore;
 
 public class GetTaggedItem {
     /**
@@ -53,15 +53,15 @@ public class GetTaggedItem {
     }
 
     public static ItemStack getRandomFirework() {
-        int[] colors = new int[1 + Nord.rand.nextInt(3)];
+        int[] colors = new int[1 + NordCore.rand.nextInt(3)];
         for (int c : colors) {
-            colors[c] = Things.getColor(Nord.rand.nextInt(16));
+            colors[c] = Things.getColor(NordCore.rand.nextInt(16));
         }
-        int[] fadeColors = new int[1 + Nord.rand.nextInt(1)];
+        int[] fadeColors = new int[1 + NordCore.rand.nextInt(1)];
         for (int c : fadeColors) {
-            fadeColors[c] = Things.getColor(Nord.rand.nextInt(16));
+            fadeColors[c] = Things.getColor(NordCore.rand.nextInt(16));
         }
-        return GetTaggedItem.getFirework(1 + Nord.rand.nextInt(2), Nord.rand.nextInt(5),
-                Nord.rand.nextInt(2) == 1, Nord.rand.nextInt(2) == 1, colors, fadeColors);
+        return GetTaggedItem.getFirework(1 + NordCore.rand.nextInt(2), NordCore.rand.nextInt(5),
+                NordCore.rand.nextInt(2) == 1, NordCore.rand.nextInt(2) == 1, colors, fadeColors);
     }
 }

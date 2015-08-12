@@ -1,8 +1,8 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumColors implements IStringSerializable {
+public enum EnumColors implements IMetadataEnum {
     WHITE(0, 0xDDDDDD, 0xF0F0F0, "WHITE"),
     ORANGE(1, 0xDB7D3E, 0xEB8844, "ORANGE"),
     MAGENTA(2, 0xB350BC, 0xC354CD, "MAGENTA"),
@@ -48,14 +48,15 @@ public enum EnumColors implements IStringSerializable {
         return name;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }
 
-    public static String[] getNames(){
+    public static String[] getNames() {
         String[] array = new String[EnumColors.values().length];
         for (int i = 0; i < EnumColors.values().length; i++) {
-            array[i]=EnumColors.values()[i].getName();
+            array[i] = EnumColors.values()[i].getName();
         }
         return array;
     }

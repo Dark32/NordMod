@@ -12,8 +12,8 @@ import java.util.List;
 
 public class ItemEnergyStorageNBT extends ItemEnergyStorageDamagable implements IEnergyCharges {
 
-    public ItemEnergyStorageNBT(int maxEnergy) {
-        super(maxEnergy);
+    public ItemEnergyStorageNBT(int maxEnergy,String modid) {
+        super(maxEnergy,modid);
         this.setMaxStackSize(1);
         this.setHasSubtypes(false);
 //        this.setMaxDamage(maxEnergy + 1);

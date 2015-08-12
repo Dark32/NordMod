@@ -4,7 +4,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 
 public class SlotFuelAndEnergy extends Slot {
 

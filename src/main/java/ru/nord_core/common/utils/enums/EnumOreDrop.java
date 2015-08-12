@@ -1,8 +1,8 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumOreDrop implements IStringSerializable {
+public enum EnumOreDrop implements IMetadataEnum {
     GALENA(0, "galena", "silver") {
         @Override
         public EnumDust getDust() {
@@ -100,6 +100,7 @@ public enum EnumOreDrop implements IStringSerializable {
         return array;
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
@@ -108,6 +109,7 @@ public enum EnumOreDrop implements IStringSerializable {
         return this.metal;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }

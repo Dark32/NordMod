@@ -1,8 +1,8 @@
 package ru.nord_core.common.utils.enums;
 
-import net.minecraft.util.IStringSerializable;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumClearMetal implements IStringSerializable {
+public enum EnumClearMetal implements IMetadataEnum {
 
     IRON        (0, "iron",     false) {
         @Override
@@ -111,6 +111,7 @@ public enum EnumClearMetal implements IStringSerializable {
         this.alloy = alloy;
     }
 
+
     public static EnumClearMetal byMetadata(int meta) {
         return meta < EnumClearMetal.values().length ? EnumClearMetal.values()[meta] : EnumClearMetal.values()[0];
     }
@@ -122,11 +123,12 @@ public enum EnumClearMetal implements IStringSerializable {
         }
         return array;
     }
-
+    @Override
     public String getName() {
         return this.name;
     }
 
+    @Override
     public int getMetadata() {
         return this.meta;
     }

@@ -18,7 +18,7 @@ import ru.nord_core.common.items.interfaces.IEnergyCharges;
 import ru.nord_core.common.recipes.Interfaces.IRecipe1I2O;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
 import ru.nord_core.common.utils.ChargeHelper;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IMachine;
 
 /**

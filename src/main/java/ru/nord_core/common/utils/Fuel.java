@@ -1,4 +1,4 @@
-package ru.nord.common.utils;
+package ru.nord_core.common.utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

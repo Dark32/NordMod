@@ -1,8 +1,14 @@
 package ru.nord;
 
-import ru.nord.common.blocks.*;
-import ru.nord.common.items.*;
-import ru.nord_core.common.helpers.RegisterHelper;
+import ru.nord.common.blocks.BlockClearMetal;
+import ru.nord.common.blocks.BlockCrystal;
+import ru.nord.common.blocks.BlockMetal;
+import ru.nord.common.blocks.BlockMetalOre;
+import ru.nord.common.helpers.RegisterHelper;
+import ru.nord.common.items.ItemBlockClearMetal;
+import ru.nord.common.items.ItemBlockCrystall;
+import ru.nord.common.items.ItemBlockMetal;
+import ru.nord.common.items.ItemBlockMetalOre;
 import ru.nord_core.common.items.ItemMetaData;
 import ru.nord_core.common.utils.enums.*;
 
@@ -29,10 +35,10 @@ public class NordMetalgury {
         NordItems.itemOreNugget = new ItemMetaData(EnumNugget.getNames()).setUnlocalizedName("oreNugget").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemMetalDust = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("metalDust").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemOreCrystal = new ItemMetaData(EnumCrystal.getNames()).setUnlocalizedName("oreCrystal").setCreativeTab(NordTabs.tabMetallurgy);
-        NordItems.itemIngot =new ItemMetaData(EnumMetal.getNames()).setUnlocalizedName("ingot").setCreativeTab(NordTabs.tabMetallurgy);
-        NordItems.itemClearIngot =new ItemMetaData(EnumClearMetal.getNames()).setUnlocalizedName("clearIngot").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemIngot = new ItemMetaData(EnumMetal.getNames()).setUnlocalizedName("ingot").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemClearIngot = new ItemMetaData(EnumClearMetal.getNames()).setUnlocalizedName("clearIngot").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemStick = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("stick").setCreativeTab(NordTabs.tabMetallurgy);
-       }
+    }
 
     private static void createBlock() {
         NordBloks.metalBlock = new BlockMetal(EnumMetal.getNames()).setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
@@ -60,14 +66,13 @@ public class NordMetalgury {
         RegisterHelper.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockClearMetal.class, "metalClearBlock", "metalClearBlock", EnumClearMetal.getNames());
         RegisterHelper.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockCrystall.class, "metalCrystal", "metalCrystal", EnumCrystal.getNames());
 
-        for(int i=0;i<EnumOre.getNames().length;i++){
+        for (int i = 0; i < EnumOre.getNames().length; i++) {
             RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));
         }
-       }
+    }
 
     private static void registerTileEntity() {
-        }
-
+    }
 
 
 }

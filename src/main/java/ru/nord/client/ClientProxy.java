@@ -1,14 +1,12 @@
 package ru.nord.client;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import ru.nord.client.events.NordModelLoader;
 import ru.nord.common.CommonProxy;
 import ru.nord.common.utils.Version;
+import ru.nord_core.NordCore;
 
 public class ClientProxy extends CommonProxy {
 
@@ -22,19 +20,13 @@ public class ClientProxy extends CommonProxy {
     public void init() {
     }
 
-
+    @Override
     public void registerItemRender(Item item, int sub, String name) {
-        ModelResourceLocation itemModelResourceLocation =
-                new ModelResourceLocation(Version.MODID + ":" + name, "inventory");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, sub, itemModelResourceLocation);
-        ModelBakery.addVariantName(item,Version.MODID + ":" + name);
+        NordCore.proxy.registerItemRender(item, sub, name, Version.MODID);
     }
 
     @Override
     public void registerBlockRender(Block block, int sub, String model) {
-        ModelBakery.addVariantName(Item.getItemFromBlock(block),Version.MODID + ":" + model);
-        ModelResourceLocation itemModelResourceLocation =
-                new ModelResourceLocation(Version.MODID + ":" + model, "inventory");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
+        NordCore.proxy.registerBlockRender(block, sub, model, Version.MODID);
     }
 }

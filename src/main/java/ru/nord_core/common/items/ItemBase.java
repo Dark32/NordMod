@@ -2,22 +2,23 @@ package ru.nord_core.common.items;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import ru.nord.common.utils.Version;
 
 public class ItemBase extends Item {
-    public ItemBase() {
-    }
-
+    private final String modid;
     private String unlocalizedName;
+
+    public ItemBase(String modid) {
+        this.modid = modid;
+    }
 
     @Override
     public String getUnlocalizedName() {
-        return "item." + Version.MODID + "." + this.unlocalizedName;
+        return "item." + modid + "." + this.unlocalizedName;
     }
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return "item." + Version.MODID + "." + this.unlocalizedName;
+        return "item." + modid + "." + this.unlocalizedName;
     }
 
     @Override

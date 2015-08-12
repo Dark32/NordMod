@@ -7,17 +7,18 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.utils.Version;
 
 public class BlockAbstractRoofLamp extends Block {
+    private final String modid;
     private String unlocalizedName;
 
-    public BlockAbstractRoofLamp() {
+    public BlockAbstractRoofLamp(String modid) {
         super(Material.circuits);
         this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
         setLightLevel(0.9375F);
         setStepSound(soundTypeWood);
         setHardness(0.0F);
+        this.modid=modid;
     }
 
     @SideOnly(Side.CLIENT)
@@ -28,7 +29,7 @@ public class BlockAbstractRoofLamp extends Block {
 
     @Override
     public String getUnlocalizedName() {
-        return "tile." + Version.MODID + "." + this.unlocalizedName;
+        return "tile." + modid + "." + this.unlocalizedName;
     }
 
     @Override

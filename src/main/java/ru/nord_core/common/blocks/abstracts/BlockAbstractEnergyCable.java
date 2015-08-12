@@ -37,7 +37,7 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
     private final float pipeRadius; // in fraction of a block (aka meters)
 
     public BlockAbstractEnergyCable() {
-        super(Material.iron);
+        super(Material.iron, modid);
         setHardness(2.0F);
         setResistance(5.0F);
         this.pipeRadius = 0.0625f * 2;

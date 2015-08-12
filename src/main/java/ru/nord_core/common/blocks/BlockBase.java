@@ -2,18 +2,18 @@ package ru.nord_core.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import ru.nord.common.utils.Version;
 
 public class BlockBase extends Block {
     private String unlocalizedName;
-
-    public BlockBase() {
+    protected String modid;
+    public BlockBase(String modid) {
         super(Material.rock);
+        this.modid=modid;
     }
 
     @Override
     public String getUnlocalizedName() {
-        return "tile." + Version.MODID + "." + this.unlocalizedName;
+        return "tile." +modid + "." + this.unlocalizedName;
     }
 
     @Override

@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.container.slot.SlotFuelAndEnergy;
 import ru.nord_core.common.container.slot.SlotOutput1I2O;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IMachine;
 
 abstract public class ContainerAbstactMachine extends Container {

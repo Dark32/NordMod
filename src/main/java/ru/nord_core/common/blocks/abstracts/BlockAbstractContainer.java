@@ -6,23 +6,26 @@ import net.minecraft.block.material.Material;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import ru.nord.common.utils.Version;
 
 public abstract class BlockAbstractContainer  extends BlockContainer {
 
     private String unlocalizedName;
+    private final String modid;
 
-    protected BlockAbstractContainer(Material mat) {
+    protected BlockAbstractContainer(Material mat, String modid) {
         super(mat);
+        this.modid = modid;
     }
+
     @Override
     public String getUnlocalizedName() {
-        return "tile." + Version.MODID + "." + this.unlocalizedName;
+        return "tile." + modid + "." + this.unlocalizedName;
     }
 
     @Override
     public Block setUnlocalizedName(String unlocalizedName) {
         this.unlocalizedName = unlocalizedName;
+
         return this;
     }
     public boolean hasComparatorInputOverride()

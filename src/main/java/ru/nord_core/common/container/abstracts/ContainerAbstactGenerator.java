@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.container.slot.SlotFuel;
-import ru.nord.common.utils.Fuel;
+import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IGenerator;
 
 abstract public class ContainerAbstactGenerator extends Container {

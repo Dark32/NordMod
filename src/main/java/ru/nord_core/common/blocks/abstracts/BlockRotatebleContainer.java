@@ -20,8 +20,8 @@ public abstract class BlockRotatebleContainer extends BlockAbstractContainer {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    protected BlockRotatebleContainer(Material mat) {
-        super(mat);
+    protected BlockRotatebleContainer(Material mat, String modid) {
+        super(mat, modid);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 
