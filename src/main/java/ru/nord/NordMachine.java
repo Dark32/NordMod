@@ -3,7 +3,6 @@ package ru.nord;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.helpers.RegisterHelper;
-import ru.nord.common.recipes.Recipes;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.items.ItemBase;
@@ -34,7 +33,7 @@ public class NordMachine {
 
     private static void createBlock() {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
-         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
@@ -42,6 +41,7 @@ public class NordMachine {
         NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.diggerWell = new BlockDiggerWell().setUnlocalizedName("digger_well").setCreativeTab(NordTabs.tabMachine);
         NordBloks.extractorBlock = new BlockExtractor().setUnlocalizedName("extractorBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.furnaceBlock = new BlockFurnace().setUnlocalizedName("furnaceBlock").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -49,7 +49,7 @@ public class NordMachine {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
         RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
-        }
+    }
 
     private static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
@@ -57,14 +57,16 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.diggerWell,"digger_well");
+        RegisterHelper.registerSingleBlock(NordBloks.diggerWell, "digger_well");
         RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
         RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
     }
 
     private static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
         GameRegistry.registerTileEntity(TileExtractor.class, "TileEntityExtractor");
+        GameRegistry.registerTileEntity(TileFurnace.class, "TileEntityFurnace");
         GameRegistry.registerTileEntity(TileSmelter.class, "TileEntitySmelter");
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
