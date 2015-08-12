@@ -1,11 +1,8 @@
 package ru.nord_core.common.items.abstracts;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-
-import java.util.List;
 
 public abstract class ItemBlockMetadata extends ItemBlock {
     public ItemBlockMetadata(Block block)
@@ -31,8 +28,8 @@ public abstract class ItemBlockMetadata extends ItemBlock {
 //            return super.getUnlocalizedName() + ".errorData";
 //        }
 //    }
-    @Override
-    public abstract void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4);
+//    @Override
+//    public abstract void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4);
 //    {
 //        list.add(EnumOre.byMetadata(stack.getMetadata()).getMetal());
 //    }

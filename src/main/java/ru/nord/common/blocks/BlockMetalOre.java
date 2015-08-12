@@ -17,56 +17,24 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordItems;
 import ru.nord.common.utils.Version;
+import ru.nord_core.common.blocks.abstracts.BlockMetadata;
+import ru.nord_core.common.utils.enums.EnumClearMetal;
 import ru.nord_core.common.utils.enums.EnumOre;
 
 import java.util.List;
 import java.util.Random;
 
-public class BlockMetalOre extends Block {
-    private final String[] names;
-    private String unlocalizedName;
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumOre.class);
+public class BlockMetalOre extends BlockMetadata {
 
     public BlockMetalOre(String[] names) {
-        super(Material.iron);
-        this.names = names;
+        super(Material.iron,names, EnumOre.class,Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        for (int i = 0; i < names.length; ++i) {
-            list.add(new ItemStack(itemIn, 1, i));
-        }
-    }
-
-    @Override
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(TYPE, EnumOre.byMetadata(meta));
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-
-        return ((EnumOre) state.getValue(TYPE)).getMetadata();
-    }
-
-    @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{TYPE});
-    }
-
-    @Override
-    public String getUnlocalizedName() {
-        return "tile." + Version.MODID + "." + this.unlocalizedName;
-    }
-
-    @Override
-    public Block setUnlocalizedName(String unlocalizedName) {
-        this.unlocalizedName = unlocalizedName;
-        return this;
     }
 
     @Override

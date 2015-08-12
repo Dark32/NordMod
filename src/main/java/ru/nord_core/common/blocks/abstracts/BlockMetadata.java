@@ -19,13 +19,12 @@ public abstract class BlockMetadata extends Block {
     private final String[] names;
     private String unlocalizedName;
     public final PropertyEnum TYPE;
-    protected Class<IMetadataEnum> enums;
+    protected Class enums;
     protected String modid;
 
-    public BlockMetadata(String[] names, Class<IMetadataEnum> enums, String modid) {
-        super(Material.iron);
+    public BlockMetadata(Material mat, String[] names, Class enums, String modid) {
+        super(mat);
         this.names = names;
-        this.setHardness(3F);
         this.enums =enums;
         this.modid=modid;
         TYPE = PropertyEnum.create("type", enums);
