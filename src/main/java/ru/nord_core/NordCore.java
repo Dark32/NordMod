@@ -30,7 +30,6 @@ public class NordCore {
 
     @EventHandler
     public void init(final FMLInitializationEvent event) {
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 
     @EventHandler

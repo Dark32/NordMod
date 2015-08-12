@@ -4,6 +4,7 @@ import net.minecraftforge.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.*;
 import ru.nord.common.*;
 import ru.nord.common.events.*;
@@ -11,6 +12,7 @@ import ru.nord.common.network.*;
 import ru.nord.common.recipes.*;
 import ru.nord.common.utils.*;
 import ru.nord.common.utils.generator.*;
+import ru.nord_core.common.handler.GuiHandler;
 import ru.nord_core.common.utils.Fuel;
 
 import java.util.Random;
@@ -46,6 +48,7 @@ public class Nord {
         Nord.proxy.registerRenderers();
         packetPipeline.initialise();
         MinecraftForge.EVENT_BUS.register(new OreDropEvent());
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
         Recipes.init();
     }
