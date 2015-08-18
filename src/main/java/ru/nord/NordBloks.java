@@ -27,4 +27,5 @@ public class NordBloks {
     public static Block metalCrystal;
     public static Block extractorBlock;
     public static Block furnaceBlock;
+    public static Block washerBlock;
 }

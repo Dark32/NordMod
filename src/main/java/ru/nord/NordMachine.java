@@ -42,6 +42,7 @@ public class NordMachine {
         NordBloks.diggerWell = new BlockDiggerWell().setUnlocalizedName("digger_well").setCreativeTab(NordTabs.tabMachine);
         NordBloks.extractorBlock = new BlockExtractor().setUnlocalizedName("extractorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.furnaceBlock = new BlockFurnace().setUnlocalizedName("furnaceBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.washerBlock = new BlockWasher().setUnlocalizedName("washerBlock").setCreativeTab(NordTabs.tabMachine);
 
     }
 
@@ -61,6 +62,7 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
         RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
     }
 
     private static void registerTileEntity() {
@@ -68,6 +70,8 @@ public class NordMachine {
         GameRegistry.registerTileEntity(TileExtractor.class, "TileEntityExtractor");
         GameRegistry.registerTileEntity(TileFurnace.class, "TileEntityFurnace");
         GameRegistry.registerTileEntity(TileSmelter.class, "TileEntitySmelter");
+        GameRegistry.registerTileEntity(TileWasher.class, "TileEntityWasher");
+
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
         GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");

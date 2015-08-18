@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "nord:washerBlock" },
+        "facing=south": { "model": "nord:washerBlock", "y": 180 },
+        "facing=west":  { "model": "nord:washerBlock", "y": 270 },
+        "facing=east":  { "model": "nord:washerBlock", "y": 90 }
+    }
+}

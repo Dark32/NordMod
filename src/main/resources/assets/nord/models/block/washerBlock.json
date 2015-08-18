@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "nord:blocks/washer/top",
+        "front": "nord:blocks/washer/front",
+        "side": "nord:blocks/washer/side"
+    }
+}
