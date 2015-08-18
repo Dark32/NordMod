@@ -5,17 +5,14 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.client.gui.inventory.GuiFlowing;
 import ru.nord.client.gui.inventory.GuiFurnace;
-import ru.nord.common.container.ContainerFlowing;
 import ru.nord.common.container.ContainerFurnace;
-import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.lib.recipes.FurnaceRecipes1I2O;
 import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.Constants;
 
-public class TileFurnace extends TileAbstractEnergyMachina {
+public class TileFurnace extends TileAbstractEnergyMachine {
 
     @Override
     public String getName() {

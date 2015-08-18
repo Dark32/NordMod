@@ -3,8 +3,10 @@ package ru.nord.common.blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
@@ -12,11 +14,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.Nord;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord.common.tiles.TileAccumulator;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyAccumulator;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
+import ru.nord_core.common.tiles.interfaces.IEnergoCable;
 
-public class BlockAccumulator extends BlockAbstractMachina {
+public class BlockAccumulator extends BlockAbstractMachine {
 
     public BlockAccumulator() {
         super(Material.rock);
@@ -64,4 +68,18 @@ public class BlockAccumulator extends BlockAbstractMachina {
         return true;
     }
 
+    @Override
+    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (playerIn.isSneaking()) {
+            this.harvesters.set(playerIn);
+            TileAbstractEnergyAccumulator tile = (TileAbstractEnergyAccumulator) worldIn.getTileEntity(pos);
+            InventoryHelper.dropInventoryItems(worldIn, pos,tile);
+            this.doItemDrop(worldIn, pos, tile);
+            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.harvesters.set(null);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

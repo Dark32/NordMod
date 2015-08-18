@@ -14,7 +14,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 
 public abstract class BlockRotatebleContainer extends BlockAbstractContainer {
 
@@ -73,8 +73,8 @@ public abstract class BlockRotatebleContainer extends BlockAbstractContainer {
         if (stack.hasDisplayName()) {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileAbstractEnergyMachina) {
-                ((TileAbstractEnergyMachina) tileentity).setCustomInventoryName(stack.getDisplayName());
+            if (tileentity instanceof TileAbstractEnergyMachine) {
+                ((TileAbstractEnergyMachine) tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
     }

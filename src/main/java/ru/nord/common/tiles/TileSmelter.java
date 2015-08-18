@@ -9,10 +9,10 @@ import ru.nord.client.gui.inventory.GuiSmelter;
 import ru.nord.common.container.ContainerSmelter;
 import ru.nord_core.common.recipes.Interfaces.IAbstractRecipes;
 import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachineDoubleInput;
 import ru.nord_core.common.utils.Constants;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachinaDoubleInput;
 
-public class TileSmelter extends TileAbstractEnergyMachinaDoubleInput {
+public class TileSmelter extends TileAbstractEnergyMachineDoubleInput {
     @Override
     public String getName() {
         return this.hasCustomName() ? this.machineCustomName : "nord.tile.smelter";

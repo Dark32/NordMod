@@ -5,21 +5,19 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.client.gui.inventory.GuiSmelter;
 import ru.nord.client.gui.inventory.GuiWasher;
-import ru.nord.common.container.ContainerSmelter;
 import ru.nord.common.container.ContainerWasher;
 import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
 import ru.nord_core.common.recipes.Interfaces.IAbstractRecipes;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachinaDoubleInput;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachineWithWaterConsumer;
 import ru.nord_core.common.utils.Constants;
 
-public class TileWasher extends TileAbstractEnergyMachinaDoubleInput {
+public class TileWasher extends TileAbstractEnergyMachineWithWaterConsumer {
+
     @Override
     public String getName() {
-        return this.hasCustomName() ? this.machineCustomName : "nord.tile.smelter";
+        return this.hasCustomName() ? this.machineCustomName : "nord.tile.washer";
     }
-
 
     @Override
     public IAbstractRecipes getRecipes() {
@@ -56,4 +54,6 @@ public class TileWasher extends TileAbstractEnergyMachinaDoubleInput {
     public GuiContainer getGui(EntityPlayer player) {
         return new GuiWasher(player,this);
     }
+
+
 }

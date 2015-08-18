@@ -8,10 +8,10 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord.Nord;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord.common.tiles.TileFlowing;
 
-public class BlockFlowing extends BlockAbstractMachina {
+public class BlockFlowing extends BlockAbstractMachine {
 
         public BlockFlowing() {
                 super(Material.rock);

@@ -19,17 +19,22 @@ public class OreDropEvent {
             return;
         }
         IBlockState state = event.state;
-        int fortune = EnchantmentHelper.getFortuneModifier(event.harvester);
-        int quantity = event.harvester.worldObj.rand.nextInt(fortune + 1) + 1;
-        if (!event.harvester.capabilities.isCreativeMode && !event.isSilkTouching) {
+        int fortune =0;
+        boolean creative = false;
+        if (event.harvester!=null){
+            fortune = EnchantmentHelper.getFortuneModifier(event.harvester);
+            creative = !event.harvester.capabilities.isCreativeMode;
+        }
+        int quantity = event.world.rand.nextInt(fortune + 1) + 1;
+        if (!creative && !event.isSilkTouching) {
             if (state.getBlock() == Blocks.iron_ore || state.getBlock() == Blocks.gold_ore) {
                 event.drops.clear();
                 if (state.getBlock() == Blocks.iron_ore) {
-                    quantity *= event.harvester.worldObj.rand.nextInt(3) + 3;
+                    quantity *= event.world.rand.nextInt(3) + 3;
                     int meta = EnumOreDrop.MAGNETITE.getMetadata();
                     event.drops.add(new ItemStack(NordItems.itemOreDrop, quantity, meta));
                 } else {
-                    quantity *= event.harvester.worldObj.rand.nextInt(5) + 6;
+                    quantity *= event.world.rand.nextInt(5) + 6;
                     event.drops.add(new ItemStack(Items.gold_nugget, quantity));
                 }
             }

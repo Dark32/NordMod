@@ -3,7 +3,7 @@ package ru.nord_core.client.gui.inventory.abstracts;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public abstract class GuiMachine extends GuiContainer {
     }
 
     protected EntityPlayer player;
-    protected TileAbstractEnergyMachina tileEntity;
+    protected TileAbstractEnergyMachine tileEntity;
 
 //    @Override
 //    protected void drawCreativeTabHoveringText(String text, int x, int y) {

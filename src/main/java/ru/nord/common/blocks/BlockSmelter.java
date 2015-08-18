@@ -9,11 +9,11 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import ru.nord.Nord;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord.common.tiles.TileSmelter;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachina;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 
-public class BlockSmelter extends BlockAbstractMachina {
+public class BlockSmelter extends BlockAbstractMachine {
 
         public BlockSmelter() {
                 super(Material.rock);
@@ -38,7 +38,7 @@ public class BlockSmelter extends BlockAbstractMachina {
                 return new TileSmelter();
         }
     protected boolean getWork(IBlockAccess world, BlockPos pos) {
-        TileAbstractEnergyMachina tile = (TileAbstractEnergyMachina) world.getTileEntity(pos);
+        TileAbstractEnergyMachine tile = (TileAbstractEnergyMachine) world.getTileEntity(pos);
         return tile != null && tile.isWork();
     }
 }

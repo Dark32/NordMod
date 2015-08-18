@@ -101,7 +101,7 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
     private boolean canConnectTo(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         Block block = worldIn.getBlockState(otherBlock).getBlock();
         if (block == Blocks.barrier) return false;
-        if (block instanceof BlockAbstractEnergyCable || block instanceof BlockAbstractMachina) {
+        if (block instanceof BlockAbstractEnergyCable || block instanceof BlockAbstractMachine) {
             return true;
         }
         return false;

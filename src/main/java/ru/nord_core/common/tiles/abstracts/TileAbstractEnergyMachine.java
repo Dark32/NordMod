@@ -25,7 +25,7 @@ import ru.nord_core.common.tiles.interfaces.IMachine;
  * @author andrew
  *         Абстрактная машина с 1 входом, 2 выходами и энергией
  */
-public abstract class TileAbstractEnergyMachina extends TileAbstractEnergyBlock
+public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         implements IMachine {
 
     private static final int[] slotsTop = new int[]{1};

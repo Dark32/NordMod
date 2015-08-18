@@ -9,11 +9,11 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import ru.nord.Nord;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord.common.tiles.TileGenerator;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyGenerator;
 
-public class BlockGenerator extends BlockAbstractMachina {
+public class BlockGenerator extends BlockAbstractMachine {
 
     public BlockGenerator() {
         super(Material.rock);

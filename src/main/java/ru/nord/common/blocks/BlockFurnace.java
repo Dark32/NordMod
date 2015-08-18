@@ -9,9 +9,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord.Nord;
 import ru.nord.common.tiles.TileFurnace;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 
-public class BlockFurnace extends BlockAbstractMachina {
+public class BlockFurnace extends BlockAbstractMachine {
 
         public BlockFurnace() {
                 super(Material.rock);

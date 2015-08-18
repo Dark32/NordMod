@@ -9,10 +9,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord.Nord;
 import ru.nord.common.tiles.TileExtractor;
-import ru.nord.common.tiles.TileFlowing;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractMachina;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 
-public class BlockExtractor extends BlockAbstractMachina {
+public class BlockExtractor extends BlockAbstractMachine {
 
         public BlockExtractor() {
                 super(Material.rock);
