@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
+import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyBlock;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.Constants;
@@ -84,11 +85,6 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
     }
 
     @Override
-    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-        return false;
-    }
-
-    @Override
     public void onBlockPlacedBy(final World world, final BlockPos coord, final IBlockState bs, final EntityLivingBase player, final ItemStack item) {
         super.onBlockPlacedBy(world, coord, bs, player, item);
         if( item.hasTagCompound() && item.getTagCompound().hasKey("energy")){
@@ -142,6 +138,21 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
         loreTag.appendTag(new NBTTagString(message));
         if(!stack.hasTagCompound()){
             stack.setTagCompound(new NBTTagCompound());
+        }
+    }
+
+    @Override
+    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (playerIn.isSneaking()) {
+            this.harvesters.set(playerIn);
+            TileAbstractEnergyBlock tile = (TileAbstractEnergyBlock) worldIn.getTileEntity(pos);
+            InventoryHelper.dropInventoryItems(worldIn, pos,tile);
+            this.doItemDrop(worldIn, pos, tile);
+            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.harvesters.set(null);
+            return true;
+        } else {
+            return false;
         }
     }
 }

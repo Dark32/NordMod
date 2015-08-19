@@ -68,18 +68,5 @@ public class BlockAccumulator extends BlockAbstractMachine {
         return true;
     }
 
-    @Override
-    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if (playerIn.isSneaking()) {
-            this.harvesters.set(playerIn);
-            TileAbstractEnergyAccumulator tile = (TileAbstractEnergyAccumulator) worldIn.getTileEntity(pos);
-            InventoryHelper.dropInventoryItems(worldIn, pos,tile);
-            this.doItemDrop(worldIn, pos, tile);
-            this.removedByPlayer(worldIn, pos, playerIn, true);
-            this.harvesters.set(null);
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 }
