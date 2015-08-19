@@ -11,6 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import ru.nord.Nord;
 import ru.nord.common.tiles.TileWasher;
@@ -28,41 +29,55 @@ public class BlockWasher extends BlockAbstractMachine {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-        super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
+
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (tileEntity == null || playerIn.isSneaking()) {
             return false;
         }
+
         if (worldIn.isRemote) {
             return true;
         }
+
         ItemStack item = playerIn.getCurrentEquippedItem();
         if (item != null && FluidContainerRegistry.isContainer(item)) {
             IFluidTankBlock te = (IFluidTankBlock) tileEntity;
             FluidStack fluid = FluidContainerRegistry.getFluidForFilledItem(item);
-            if (fluid != null) {
+            if (fluid != null && fluid.getFluid() == FluidRegistry.WATER) {
                 if (te.getTank().getFluidAmount() <= 0 && te.getTank().getCapacity() >= fluid.amount) {
                     // В пустой танк
+                    System.err.println(fluid);
+                    System.err.println( te.getTank().getFluidAmount());
+                    System.err.println( te.getTank().getCapacity());
                     te.getTank().setFluid(fluid);
-                    ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
-                    if (item.stackSize == 1) {
-                        playerIn.setCurrentItemOrArmor(0, newBucket);
-                    } else {
-                        item.stackSize--;
-                        worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
+
+                    if (!playerIn.capabilities.isCreativeMode){
+                        ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
+                        if (item.stackSize == 1) {
+                            playerIn.setCurrentItemOrArmor(0, newBucket);
+                        } else {
+                            item.stackSize--;
+                            worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
+                        }
                     }
                     return true;
                 } else if (te.getTank().getFluid().getFluid().equals(fluid.getFluid())
                         && (te.getTank().getFluidAmount() + fluid.amount) <= te.getTank().getCapacity()) {
                     //В не пустой танк
                     te.getTank().fill(fluid, true);
-                    ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
-                    if (item.stackSize == 1) {
-                        playerIn.setCurrentItemOrArmor(0, newBucket);
-                    } else {
-                        item.stackSize--;
-                        worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
+                    System.err.println(fluid);
+                    System.err.println( te.getTank().getFluidAmount());
+                    System.err.println( te.getTank().getCapacity());
+                    if (!playerIn.capabilities.isCreativeMode){
+                        ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
+                        if (item.stackSize == 1) {
+                            playerIn.setCurrentItemOrArmor(0, newBucket);
+                        } else {
+                            item.stackSize--;
+                            worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
+                        }
                     }
+                    tileEntity.markDirty();
                     return true;
                 } else {
                     return false;
@@ -70,7 +85,7 @@ public class BlockWasher extends BlockAbstractMachine {
             }
         }
         playerIn.openGui(Nord.instance, 2, worldIn, pos.getX(), pos.getY(), pos.getZ());
-        return true;
+        return super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
     }
 
     @Override

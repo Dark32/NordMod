@@ -77,4 +77,25 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
     public FluidTank getTank() {
         return tank;
     }
+
+    public int getField(int id) {
+        if (id == getFieldCount()){
+            return this.getTank().getFluidAmount();
+        }
+        return 0;
+    }
+
+    public void setField(int id, int value) {
+       if (id == getFieldCount()){
+           if(this.getTank().getFluid()==null){
+               this.getTank().setFluid(new FluidStack(FluidRegistry.WATER,1));
+           }
+           this.getTank().setCapacity(value);
+       }
+    }
+
+    public int getFieldCount() {
+        return super.getFieldCount()+1;
+    }
+
 }
