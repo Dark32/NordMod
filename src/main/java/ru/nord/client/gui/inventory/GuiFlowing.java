@@ -31,12 +31,10 @@ public class GuiFlowing extends GuiMachine {
             this.drawTexturedModalRect(k + 78, l + 35, 180, 16, progress, 21);
 
             progress = this.tileEntity.getEnergyProgressScaled(52);
-            this.drawTexturedModalRect(k + 11, l + 22, 183, 37, 3, 52); // Отрисовать полную текстуру огня
-            this.drawTexturedModalRect(k + 11, l + 22, 11, 22, 3, 52 - progress); // А поверх нее рисовать обычную текстуру (без огня)
+            this.drawVerticalProgressBar(k + 11, l + 22, 183, 37, 3, 52,progress); // Отрисовать полную текстуру огня
 
             progress = this.tileEntity.getBurnTimeRemainingScaled(14);
-            this.drawTexturedModalRect(k + 19, l + 41, 176, 2, 14, 14);
-            this.drawTexturedModalRect(k + 19, l + 41, 19, 41, 14, 14 - progress);
+            this.drawVerticalProgressBar(k + 19, l + 41, 176, 2, 14, 14,progress);
         }
 
         @Override

@@ -29,20 +29,16 @@ public class GuiAccumulator extends GuiMachine {
             this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 
             int progress = this.tileEntity.getEnergyProgressScaled(1,52);
-            this.drawTexturedModalRect(k + 11, l + 22, 183, 37, 3, 52);
-            this.drawTexturedModalRect(k + 11, l + 22, 11, 22, 3, 52 - progress);
+            this.drawVerticalProgressBar(k + 11, l + 22, 183, 37, 3, 52,progress);
 
             progress = this.tileEntity.getEnergyProgressScaled(2,52);
-            this.drawTexturedModalRect(k + 17, l + 22, 183, 37, 3, 52);
-            this.drawTexturedModalRect(k + 17, l + 22, 11, 22, 3, 52 - progress);
+            this.drawVerticalProgressBar(k + 17, l + 22, 183, 37, 3, 52,progress);
 
             progress = this.tileEntity.getEnergyProgressScaled(3,52);
-            this.drawTexturedModalRect(k + 23, l + 22, 183, 37, 3, 52);
-            this.drawTexturedModalRect(k + 23, l + 22, 11, 22, 3, 52 - progress);
+            this.drawVerticalProgressBar(k + 23, l + 22, 183, 37, 3, 52,progress);
 
             progress = this.tileEntity.getEnergyProgressScaled(4,52);
-            this.drawTexturedModalRect(k + 29, l + 22, 183, 37, 3, 52);
-            this.drawTexturedModalRect(k + 29, l + 22, 11, 22, 3, 52 - progress);
+            this.drawVerticalProgressBar(k + 29, l + 22, 183, 37, 3, 52,progress);
 
             boolean charge = this.tileEntity.getCharge();
             if (charge)
@@ -55,8 +51,7 @@ public class GuiAccumulator extends GuiMachine {
             if (tileEntity.getBonusMaxEnergy()>0){
                 this.drawTexturedModalRect(k + 33, l + 21, 188, 37, 5, 54);
                 progress = this.tileEntity.getBonusEnergy()*52/this.tileEntity.getBonusMaxEnergy();
-                this.drawTexturedModalRect(k + 34, l + 22, 183, 37, 3, 52);
-                this.drawTexturedModalRect(k + 34, l + 22, 11, 22, 3, 52 - progress);
+                this.drawVerticalProgressBar(k + 34, l + 22, 183, 37, 3, 52,progress);
             }
 
         }

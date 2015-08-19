@@ -35,5 +35,9 @@ public abstract class GuiMachine extends GuiContainer {
         }
     }
 
+    protected void drawVerticalProgressBar(int x, int y, int textureX, int textureY, int width, int height, int progress){
+        this.drawTexturedModalRect(x , y + height - progress , textureX, textureY+ height - progress, width, progress);
+    }
+
 
 }

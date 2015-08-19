@@ -29,8 +29,7 @@ public class GuiGenerator extends GuiMachine {
             this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 
             int progress = this.tileEntity.getEnergyProgressScaled(52);
-            this.drawTexturedModalRect(k + 11, l + 22, 183, 37, 3, 52);
-            this.drawTexturedModalRect(k + 11, l + 22, 11, 22, 3, 52 - progress);
+            this.drawVerticalProgressBar(k + 11, l + 22, 183, 37, 3, 52,progress);
 
             boolean charge = this.tileEntity.getCharge(1);
             if (charge)
@@ -41,8 +40,7 @@ public class GuiGenerator extends GuiMachine {
                  this.drawTexturedModalRect(k + 153, l + 43, 182, 95, 5, 11);
 
             progress = this.tileEntity.getBurnTimeRemainingScaled(14);
-            this.drawTexturedModalRect(k + 19, l + 41, 176, 2, 14, 14);
-            this.drawTexturedModalRect(k + 19, l + 41, 19, 41, 14, 14 - progress);
+            this.drawVerticalProgressBar(k + 19, l + 41, 176, 2, 14, 14,progress);
         }
 
         @Override
