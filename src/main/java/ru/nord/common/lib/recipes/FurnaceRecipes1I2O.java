@@ -1,15 +1,15 @@
 package ru.nord.common.lib.recipes;
 
 import net.minecraft.item.ItemStack;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
-import ru.nord_core.common.recipes.abstracts.Recipe1I2O;
-import ru.nord_core.common.recipes.abstracts.Recipes1I2O;
+import ru.nord_core.common.recipes.abstracts.ARecipe1I2O;
+import ru.nord_core.common.recipes.abstracts.ARecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 
-public class FurnaceRecipes1I2O extends Recipes1I2O {
+public class FurnaceRecipes1I2O extends ARecipes1I2O {
 
     public static void addRecipe(ItemStack input, ItemStack output1,
                                  ItemStack output2, int needEnergy, float percent, float exp) {
-        Recipe1I2O recipe = new Recipe1I2O(input, output1, output2, needEnergy,
+        ARecipe1I2O recipe = new ARecipe1I2O(input, output1, output2, needEnergy,
                 percent, exp);
 
         INSTANCE().getRecipes().add(recipe);

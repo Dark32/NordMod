@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.container.slot.SlotFuelAndEnergy;
 import ru.nord_core.common.container.slot.SlotOutput1I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IMachine;
 
@@ -45,6 +45,7 @@ abstract public class ContainerAbstactMachine extends Container {
                 icrafter.sendProgressBarUpdate(this, 1, this.tileEntity.getBurnTime());
                 icrafter.sendProgressBarUpdate(this, 2, this.tileEntity.getCurrentItemEnergyProgress());
                 icrafter.sendProgressBarUpdate(this, 3, this.tileEntity.getCurrentItemEnergyNeed());
+                icrafter.sendProgressBarUpdate(this, 4, this.tileEntity.getFuelBurnTime());
         }
 
         @Override

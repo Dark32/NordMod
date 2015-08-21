@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiFlowing;
 import ru.nord.common.container.ContainerFlowing;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.Constants;
 

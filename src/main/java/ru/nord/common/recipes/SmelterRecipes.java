@@ -11,9 +11,16 @@ import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
  */
 public class SmelterRecipes {
     public static void postInit(){
-        SmelterRecipes2I2O.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
+        SmelterRecipes2I2O.addRecipe(
+                new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
                 new ItemStack(Item.getItemFromBlock(Blocks.stone), 1),
                 new ItemStack(Item.getItemFromBlock(Blocks.dirt), 1),
+                new ItemStack(Items.diamond, 5),
+                400, 30, 5, true);
+        SmelterRecipes2I2O.addRecipe(
+                new ItemStack(Item.getItemFromBlock(Blocks.dirt), 1),
+                new ItemStack(Item.getItemFromBlock(Blocks.dirt), 1),
+                new ItemStack(Items.diamond, 1),
                 new ItemStack(Items.diamond, 5),
                 400, 30, 5, true);
     }

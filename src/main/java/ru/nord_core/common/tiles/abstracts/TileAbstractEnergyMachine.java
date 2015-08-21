@@ -15,8 +15,8 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
-import ru.nord_core.common.recipes.Interfaces.IRecipe1I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipe1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.utils.ChargeHelper;
 import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IMachine;
@@ -39,7 +39,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
      * inv[3] - result 2
      */
     private final int fuel_slot = 0;
-    private final int input_slot = 1;
+    protected final int input_slot = 1;
     private final int result_slot = 2;
     private final int second_result_slot = 3;
 
@@ -262,7 +262,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
             this.markDirty(); // обновляем
         }
     }
-    private boolean burnFuel(){
+    protected boolean burnFuel(){
         boolean updated = false;
         if (isBurning()) {
             if (burnTime>=getBurnPacketEnergy()) { // есть ли пакет в горение
@@ -532,7 +532,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         currentItemEnergyNeed = recNext != null ? recNext.getEnergy() : 0;
         currentItemEnergyProgress = 0;
     }
-    private boolean chargeFromFuel(){
+    protected boolean chargeFromFuel(){
         if (isEnergyStorage()) {
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
@@ -558,7 +558,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         return false;
     }
 
-    private IRecipe1I2O getRecipe(ItemStack stack) {
+    protected IRecipe1I2O getRecipe(ItemStack stack) {
         return ((IRecipes1I2O) getRecipes()).getRecipe(stack);
     }
 

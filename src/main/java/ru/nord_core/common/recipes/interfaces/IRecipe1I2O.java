@@ -1,8 +1,9 @@
-package ru.nord_core.common.recipes.Interfaces;
+package ru.nord_core.common.recipes.interfaces;
 
 import net.minecraft.item.ItemStack;
 
-public interface IRecipe1I2O {
+public interface IRecipe1I2O extends IAbstractRecipe{
+
     /**
      * Входные данные
      *
@@ -13,35 +14,35 @@ public interface IRecipe1I2O {
     /**
      * Результат
      *
-     * @return
+     * @return стак результата
      */
     ItemStack getResult();
 
     /**
      * Второй резльтат
      *
-     * @return
+     * @return стак второгорезультата
      */
     ItemStack getSecondResult();
 
     /**
      * Требуемая энергия
      *
-     * @return
+     * @return значение
      */
     int getEnergy();
 
     /**
      * Получаемый опыт
      *
-     * @return
+     * @return значение
      */
     float getExpirince();
 
     /**
      * Шанс второго выхода
      *
-     * @return
+     * @return шанс
      */
     float getPercent();
 

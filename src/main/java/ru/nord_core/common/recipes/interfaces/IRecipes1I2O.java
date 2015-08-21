@@ -1,7 +1,7 @@
-package ru.nord_core.common.recipes.Interfaces;
+package ru.nord_core.common.recipes.interfaces;
 
 import net.minecraft.item.ItemStack;
-import ru.nord_core.common.recipes.abstracts.Recipe1I2O;
+import ru.nord_core.common.recipes.abstracts.ARecipe1I2O;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public interface IRecipes1I2O extends IAbstractRecipes {
      * Получаем переменную рецептов
       * @return рецепты
      */
-    List<Recipe1I2O> getRecipes();
+    List<ARecipe1I2O> getRecipes();
 
     /**
      * Получаем рецепт по предмету

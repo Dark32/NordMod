@@ -10,5 +10,9 @@ public interface IFluidTankBlock extends IFluidHandler {
      * @return внутренний танк
      */
     FluidTank getTank() ;
-
+    /**
+     * Пакет Жидкости для работы
+     *
+     */
+    int getFluidWorkPacket();
 }

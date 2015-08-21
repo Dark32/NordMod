@@ -1,14 +1,19 @@
 package ru.nord_core.common.recipes.abstracts;
 
 import net.minecraft.item.ItemStack;
-import ru.nord_core.common.recipes.Interfaces.IRecipe2I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes2I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipe2I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class Recipes2I2O extends Recipes1I2O implements IRecipes2I2O {
-    protected static final List<Recipe2I2O> recipes = new ArrayList<Recipe2I2O>(64);
+abstract public class ARecipes2I2O implements IRecipes2I2O {
+    protected static final List<ARecipe2I2O> recipes = new ArrayList<ARecipe2I2O>(64);
+
+    @Override
+    public List<ARecipe2I2O> getRecipes(){
+        return recipes;
+    }
 
     @Override
     public TYPES getType() {
@@ -54,7 +59,6 @@ abstract public class Recipes2I2O extends Recipes1I2O implements IRecipes2I2O {
         return -1;
     }
 
-    @SuppressWarnings("RefusedBequest")
     @Override
     public IRecipe2I2O getRecipe(int index) {
         if (index > -1)

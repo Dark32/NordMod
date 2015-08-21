@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiExtractor;
 import ru.nord.common.container.ContainerExtractor;
 import ru.nord.common.lib.recipes.ExtractorRecipes1I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.Constants;
 

@@ -1,7 +1,7 @@
 package ru.nord_core.common.tiles.interfaces;
 
 import net.minecraft.inventory.IInventory;
-import ru.nord_core.common.recipes.Interfaces.IAbstractRecipes;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipes;
 
 public interface IMachine extends IInventory, IEnergyTile {
     /**

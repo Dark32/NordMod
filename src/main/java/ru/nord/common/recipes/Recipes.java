@@ -30,7 +30,7 @@ public class Recipes {
         FMLLog.info("Loaded " + SmelterRecipes2I2O.INSTANCE().getRecipes().size() + " SmelterRecipes2I2O");
         FMLLog.info("Loaded " + ExtractorRecipes1I2O.INSTANCE().getRecipes().size() + " ExtractorRecipes1I2O");
         FMLLog.info("Loaded " + FurnaceRecipes1I2O.INSTANCE().getRecipes().size() + " FurnaceRecipes1I2O");
-        FMLLog.info("Loaded " + WasherRecipes2I2O.INSTANCE().getRecipes().size() + " WasherRecipes2I2O");
+        FMLLog.info("Loaded " + WasherRecipes1I2O.INSTANCE().getRecipes().size() + " WasherRecipes2I2O");
 
     }
 

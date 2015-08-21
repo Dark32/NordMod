@@ -1,6 +1,9 @@
-package ru.nord_core.common.recipes.Interfaces;
+package ru.nord_core.common.recipes.interfaces;
 
 import net.minecraft.item.ItemStack;
+import ru.nord_core.common.recipes.abstracts.ARecipe2I2O;
+
+import java.util.List;
 
 /**
  * Интерфейс описывающий абстрактный класс рецептов
@@ -14,15 +17,13 @@ import net.minecraft.item.ItemStack;
  *
  * @author andrew
  */
-public interface IRecipes2I2O extends IRecipes1I2O {
+public interface IRecipes2I2O extends IAbstractRecipes {
 
     /**
-     * Получаем сингелтон
-     *
-     * @return Себя
+     * Получаем переменную рецептов
+     * @return рецепты
      */
-    //IRecipes1I2O INSTANCE();
-
+    List<ARecipe2I2O> getRecipes();
     /**
      * Получаем рецепт по предмету
      *
@@ -39,7 +40,7 @@ public interface IRecipes2I2O extends IRecipes1I2O {
      * @param slot  номер слота
      * @return рецепт
      */
-    IRecipe1I2O getPartRecipe(int index, int slot);
+    IRecipe2I2O getPartRecipe(int index, int slot);
 
     /**
      * Получаем индекс рецепта по предмету
@@ -67,7 +68,7 @@ public interface IRecipes2I2O extends IRecipes1I2O {
      * @param index номер рецепта
      * @return рецепт
      */
-    IRecipe1I2O getRecipe(int index);
+    IRecipe2I2O getRecipe(int index);
 
     /**
      * Получаем индекс рецепта по предмету

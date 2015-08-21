@@ -15,8 +15,8 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
-import ru.nord_core.common.recipes.Interfaces.IRecipe2I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes2I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipe2I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 import ru.nord_core.common.utils.ChargeHelper;
 import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IMachine;
@@ -258,7 +258,7 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
             this.markDirty(); // обновляем
         }
     }
-    private boolean burnFuel(){
+    protected boolean burnFuel(){
         boolean updated = false;
         if (isBurning()) {
             if (burnTime>=getBurnPacketEnergy()) { // есть ли пакет в горение
@@ -534,7 +534,7 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
         currentItemEnergyNeed = recNext != null ? recNext.getEnergy() : 0;
         currentItemEnergyProgress = 0;
    }
-    private boolean chargeFromFuel(){
+    protected boolean chargeFromFuel(){
         if (isEnergyStorage()) {
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
@@ -563,6 +563,7 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
     private IRecipe2I2O getPartRecipe(ItemStack stack) {
         return ((IRecipes2I2O) getRecipes()).getPartRecipe(stack,0);
     }
+
     protected IRecipe2I2O getRecipe(ItemStack stack, ItemStack stack2) {
         return ((IRecipes2I2O) this.getRecipes()).getRecipe(stack, stack2);
     }

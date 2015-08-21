@@ -1,17 +1,17 @@
 package ru.nord_core.common.recipes.abstracts;
 
 import net.minecraft.item.ItemStack;
-import ru.nord_core.common.recipes.Interfaces.IRecipe1I2O;
-import ru.nord_core.common.recipes.Interfaces.IRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipe1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class Recipes1I2O implements IRecipes1I2O {
-    protected final List<Recipe1I2O> recipes = new ArrayList<Recipe1I2O>(64);
+abstract public class ARecipes1I2O implements IRecipes1I2O {
+    protected final List<ARecipe1I2O> recipes = new ArrayList<ARecipe1I2O>(64);
 
     @Override
-    public List<Recipe1I2O> getRecipes(){
+    public List<ARecipe1I2O> getRecipes(){
         return recipes;
     }
 
