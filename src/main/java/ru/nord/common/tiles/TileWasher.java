@@ -7,8 +7,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.client.gui.inventory.GuiWasher;
 import ru.nord.common.container.ContainerWasher;
-import ru.nord.common.lib.recipes.SmelterRecipes2I2O;
-import ru.nord_core.common.recipes.Interfaces.IAbstractRecipes;
+import ru.nord.common.lib.recipes.WasherRecipes1I2O;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipes;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachineWithWaterConsumer;
 import ru.nord_core.common.utils.Constants;
 
@@ -21,7 +21,7 @@ public class TileWasher extends TileAbstractEnergyMachineWithWaterConsumer {
 
     @Override
     public IAbstractRecipes getRecipes() {
-        return SmelterRecipes2I2O.INSTANCE();
+        return WasherRecipes1I2O.INSTANCE();
     }
 
     @Override
@@ -56,4 +56,8 @@ public class TileWasher extends TileAbstractEnergyMachineWithWaterConsumer {
     }
 
 
+    @Override
+    public int getFluidWorkPacket() {
+        return 1;
+    }
 }

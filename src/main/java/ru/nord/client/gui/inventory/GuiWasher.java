@@ -38,12 +38,11 @@ public class GuiWasher extends GuiMachine {
         drawOverText(9, 20, 4, 54, xAxis, yAxis, String.valueOf(energy) + "/" + String.valueOf(maxEnergy) + " share" + (energy > 1 ? "s" : ""));
         drawOverText(161, 20, 4, 54, xAxis, yAxis, String.valueOf(capacity) + "/" + String.valueOf(maxCapacity) + " mb");
 
-        this.fontRendererObj.drawString("X: " + xAxis + " Y: " + yAxis, xAxis, yAxis, 4210752);
-        this.fontRendererObj.drawString(":" +tileEntity.getEnergy(), xAxis, yAxis+12, 4210752);
-        this.fontRendererObj.drawString(":" +tileEntity.getTank().getFluidAmount(), xAxis, yAxis+24, 4210752);
-//        System.err.println(tileEntity.getTank());
-//        System.err.println(tileEntity.getTank().getFluidAmount());
-//        System.err.println(tileEntity.getTank().getCapacity());
+//        this.fontRendererObj.drawString("X: " + xAxis + " Y: " + yAxis, xAxis, yAxis, 4210752);
+//        this.fontRendererObj.drawString(":" +tileEntity.getEnergy(), xAxis, yAxis+12, 4210752);
+//        this.fontRendererObj.drawString(":" +(this.tileEntity.getWaterLevel()*52), xAxis, yAxis+24, 4210752);
+//        this.fontRendererObj.drawString(":" +(this.tileEntity.getEnergyProgressScaled(52)), xAxis, yAxis+36, 4210752);
+
     }
 
     @Override
@@ -56,7 +55,7 @@ public class GuiWasher extends GuiMachine {
         this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 
         int progress = this.tileEntity.getProgressScaled(24);
-        this.drawTexturedModalRect(k + 92, l + 34, 178, 16, progress, 21);
+        this.drawTexturedModalRect(k + 68, l + 32, 178, 16, progress, 20);
 
         progress = this.tileEntity.getEnergyProgressScaled(52);
         this.drawVerticalProgressBar(k + 11, l + 22, 183, 37, 3, 52, progress);
@@ -64,8 +63,8 @@ public class GuiWasher extends GuiMachine {
         progress = this.tileEntity.getBurnTimeRemainingScaled(14);
         this.drawVerticalProgressBar(k + 19, l + 41, 176, 2, 14, 14, progress);
 
-        progress = (int)(this.tileEntity.getWaterLevel()*24);
-        this.drawVerticalProgressBar(k + 162, l + 22, 216, 37, 3, 14,progress);
+        progress = (int)(this.tileEntity.getWaterLevel()*52);
+        this.drawVerticalProgressBar(k + 162, l + 22, 216, 37, 3, 52,progress);
 
 
     }

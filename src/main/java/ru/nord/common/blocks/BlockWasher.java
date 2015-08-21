@@ -16,6 +16,7 @@ import net.minecraftforge.fluids.FluidStack;
 import ru.nord.Nord;
 import ru.nord.common.tiles.TileWasher;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
+import ru.nord_core.common.helpers.FluidHelper;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.tiles.interfaces.IFluidTankBlock;
 
@@ -46,37 +47,14 @@ public class BlockWasher extends BlockAbstractMachine {
             if (fluid != null && fluid.getFluid() == FluidRegistry.WATER) {
                 if (te.getTank().getFluidAmount() <= 0 && te.getTank().getCapacity() >= fluid.amount) {
                     // В пустой танк
-                    System.err.println(fluid);
-                    System.err.println( te.getTank().getFluidAmount());
-                    System.err.println( te.getTank().getCapacity());
                     te.getTank().setFluid(fluid);
-
-                    if (!playerIn.capabilities.isCreativeMode){
-                        ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
-                        if (item.stackSize == 1) {
-                            playerIn.setCurrentItemOrArmor(0, newBucket);
-                        } else {
-                            item.stackSize--;
-                            worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
-                        }
-                    }
+                    FluidHelper.bucktDrain(playerIn,item,worldIn);
                     return true;
                 } else if (te.getTank().getFluid().getFluid().equals(fluid.getFluid())
                         && (te.getTank().getFluidAmount() + fluid.amount) <= te.getTank().getCapacity()) {
                     //В не пустой танк
                     te.getTank().fill(fluid, true);
-                    System.err.println(fluid);
-                    System.err.println( te.getTank().getFluidAmount());
-                    System.err.println( te.getTank().getCapacity());
-                    if (!playerIn.capabilities.isCreativeMode){
-                        ItemStack newBucket = FluidContainerRegistry.drainFluidContainer(item);
-                        if (item.stackSize == 1) {
-                            playerIn.setCurrentItemOrArmor(0, newBucket);
-                        } else {
-                            item.stackSize--;
-                            worldIn.spawnEntityInWorld(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, newBucket));
-                        }
-                    }
+                    FluidHelper.bucktDrain(playerIn,item,worldIn);
                     tileEntity.markDirty();
                     return true;
                 } else {
