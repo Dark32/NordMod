@@ -35,21 +35,11 @@ public enum EnumOre implements IMetadataEnum {
     },
     UVAROVITE(5, "uvarovite", "chrom") {
         @Override
-        public EnumCrystal getCrystal() {
-            return EnumCrystal.UVAROVITE;
-        }
-
-        @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.UVAROVITE;
         }
     },
     CROCOITE(6, "crocoite", "chrom") {
-        @Override
-        public EnumCrystal getCrystal() {
-            return EnumCrystal.CROCOITE;
-        }
-
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.CROCOITE;
@@ -62,11 +52,6 @@ public enum EnumOre implements IMetadataEnum {
         }
     },
     OLIVINE(8, "olivine", "iron") {
-        @Override
-        public EnumCrystal getCrystal() {
-            return EnumCrystal.OLIVINE;
-        }
-
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.OLIVINE;
@@ -85,11 +70,6 @@ public enum EnumOre implements IMetadataEnum {
         }
     },
     ALMANDINE(11, "almandine", "iron") {
-        @Override
-        public EnumCrystal getCrystal() {
-            return EnumCrystal.ALMANDINE;
-        }
-
         @Override
         public EnumOreDrop getOreDrop() {
             return EnumOreDrop.ALMANDINE;
@@ -156,9 +136,6 @@ public enum EnumOre implements IMetadataEnum {
         return null;
     }
 
-    public EnumCrystal getCrystal() {
-        return null;
-    }
 
     public EnumOreDrop getOreDrop() {
         return null;

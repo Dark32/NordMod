@@ -14,13 +14,13 @@ public class ARecipe1I2O implements IRecipe1I2O {
     private final float percent;
 
     public ARecipe1I2O(ItemStack input, ItemStack result,
-                       ItemStack secondResult, int energy, float expirince, float exp) {
+                       ItemStack secondResult, int energy, float percent, float expirince) {
         this.input = input;
         this.result = result;
         this.secondResult = secondResult;
         this.energy = energy;
+        this.percent = percent;
         this.expirince = expirince;
-        this.percent = exp;
     }
 
     @Override

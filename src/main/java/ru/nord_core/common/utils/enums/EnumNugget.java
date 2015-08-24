@@ -9,13 +9,13 @@ public enum EnumNugget implements IMetadataEnum {
             return EnumMetal.SILVER;
         }
     },
-    TIN(2, "tin") {
+    TIN(1, "tin") {
         @Override
         public EnumMetal getMetal() {
             return EnumMetal.TIN;
         }
     },
-    MERCURY(3, "mercury") {
+    MERCURY(2, "mercury") {
         @Override
         public EnumMetal getMetal() {
             return null;

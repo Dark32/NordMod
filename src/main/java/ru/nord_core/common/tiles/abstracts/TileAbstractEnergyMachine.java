@@ -12,6 +12,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
@@ -501,7 +502,6 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         ItemStack secondResult = getStackInSlot(second_result_slot);
         ItemStack out1 = rec.getResult();
         ItemStack out2 = rec.getSecondResult();
-
         boolean second = this.worldObj.rand.nextFloat() * 100 < rec.getPercent();
         if (out1 != null) {
             if (result != null) {

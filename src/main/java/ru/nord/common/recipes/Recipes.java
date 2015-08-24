@@ -26,11 +26,11 @@ public class Recipes {
         FurnaceRecipes.postInit();
         WasherRecipes.postInit();
 
-        FMLLog.info("Loaded " + FlowingRecipes1I2O.INSTANCE().getRecipes().size() + " FlowingRecipes1I2O");
-        FMLLog.info("Loaded " + SmelterRecipes2I2O.INSTANCE().getRecipes().size() + " SmelterRecipes2I2O");
-        FMLLog.info("Loaded " + ExtractorRecipes1I2O.INSTANCE().getRecipes().size() + " ExtractorRecipes1I2O");
-        FMLLog.info("Loaded " + FurnaceRecipes1I2O.INSTANCE().getRecipes().size() + " FurnaceRecipes1I2O");
-        FMLLog.info("Loaded " + WasherRecipes1I2O.INSTANCE().getRecipes().size() + " WasherRecipes2I2O");
+        FMLLog.info("[NORD]  Loaded " + FlowingRecipes1I2O.INSTANCE().getRecipes().size() + " FlowingRecipes1I2O");
+        FMLLog.info("[NORD] Loaded " + SmelterRecipes2I2O.INSTANCE().getRecipes().size() + " SmelterRecipes2I2O");
+        FMLLog.info("[NORD] Loaded " + ExtractorRecipes1I2O.INSTANCE().getRecipes().size() + " ExtractorRecipes1I2O");
+        FMLLog.info("[NORD] Loaded " + FurnaceRecipes1I2O.INSTANCE().getRecipes().size() + " FurnaceRecipes1I2O");
+        FMLLog.info("[NORD] Loaded " + WasherRecipes1I2O.INSTANCE().getRecipes().size() + " WasherRecipes2I2O");
 
     }
 
