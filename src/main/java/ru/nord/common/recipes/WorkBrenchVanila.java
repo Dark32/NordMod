@@ -21,10 +21,6 @@ public class WorkBrenchVanila {
         GameRegistry.addRecipe(new ItemStack(NordItems.itemStick, 2, EnumDust.GOLD.getMetadata()), "x", "x",
                 'x', new ItemStack(Items.gold_ingot, 1));
         for (EnumMetal metal : EnumMetal.values()) {
-            GameRegistry.addSmelting(
-                    new ItemStack(NordItems.itemOreDrop, 1, metal.getDust().getMetadata()),
-                    new ItemStack(NordItems.itemIngot, 1, metal.getMetadata()),
-                    1);
             GameRegistry.addRecipe(new ItemStack(NordItems.itemStick, 2, metal.getMetadata()), "x", "x",
                     'x', new ItemStack(NordItems.itemIngot, 2, metal.getMetadata()));
         }
@@ -69,7 +65,6 @@ public class WorkBrenchVanila {
         for (int i = 0; i < EnumMetal.values().length; i++) {
             GameRegistry.addRecipe(new ItemStack(NordBloks.metalBlock, 1, i), "xxx", "xxx", "xxx",
                     'x', new ItemStack(NordItems.itemIngot, 1, i));
-            GameRegistry.addSmelting(new ItemStack(NordItems.itemOreDrop, 1, i + 2), new ItemStack(NordItems.itemIngot, 1, i), 0);
         }
         GameRegistry.addRecipe(new ItemStack(NordBloks.oilLamp), "wfw", "sts", "www",
                 'w', new ItemStack(Blocks.planks),
