@@ -25,8 +25,7 @@ public class ExtractorRecipes {
         for (EnumOreDrop ore : EnumOreDrop.values()) {
             ExtractorRecipes1I2O.addRecipe(new ItemStack(NordItems.itemOreClearPowder, 2,ore.getMetadata()),
                     new ItemStack(NordItems.itemMetalDust, 3,ore.getDust().getMetadata()),
-                    new ItemStack(NordItems.itemOreNugget)
-                    , 200, 0, 0);
+                    null, 200, 0, 0);
         }
     }
 }
