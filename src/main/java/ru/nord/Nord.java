@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.*;
 import ru.nord.common.*;
 import ru.nord.common.events.*;
+import ru.nord.common.lib.dictoary.Dictoary;
 import ru.nord.common.network.*;
 import ru.nord.common.recipes.*;
 import ru.nord.common.utils.*;
@@ -61,6 +62,7 @@ public class Nord {
         NordMetalgury.postInit();
         NordDecoration.postInit();
         Fuel.postInit();
+        Dictoary.postInit();
         Recipes.postInit();
     }
     public void setupModInfo(ModMetadata meta){
