@@ -7,8 +7,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.NordBloks;
 import ru.nord.NordItems;
+import ru.nord_core.common.utils.enums.EnumClearMetal;
 import ru.nord_core.common.utils.enums.EnumDust;
 import ru.nord_core.common.utils.enums.EnumMetal;
+import ru.nord_core.common.utils.enums.EnumNugget;
 
 /**
  * Created by andrew on 03.08.15.
@@ -88,6 +90,31 @@ public class WorkBrenchVanila {
                     'x', new ItemStack(Blocks.stained_glass, 1, i),
                     'y', new ItemStack(Blocks.planks),
                     's', new ItemStack(Blocks.torch));
+        }
+
+        for (EnumNugget nug : EnumNugget.values()) {
+            if (nug.getMetal() != null) {
+                ItemStack nugget = new ItemStack(NordItems.itemOreNugget, 1, nug.getMetadata());
+                GameRegistry.addShapelessRecipe(new ItemStack(NordItems.itemIngot, 1, nug.getMetal().getMetadata()),
+                        nugget, nugget, nugget, nugget, nugget, nugget, nugget, nugget, nugget);
+                GameRegistry.addShapelessRecipe(new ItemStack(NordItems.itemOreNugget, 9, nug.getMetadata())
+                        , new ItemStack(NordItems.itemIngot, 1, nug.getMetal().getMetadata()));
+            }
+        }
+        for(EnumMetal ingot : EnumMetal.values()){
+            ItemStack _ingot = new ItemStack(NordItems.itemIngot, 1, ingot.getMetadata());
+            GameRegistry.addShapelessRecipe(new ItemStack(NordBloks.metalBlock, 1, ingot.getMetadata()),
+                    _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot);
+            GameRegistry.addShapelessRecipe(new ItemStack(NordItems.itemIngot,9, ingot.getMetadata()),
+                     new ItemStack(NordBloks.metalBlock, 1, ingot.getMetadata()));
+        }
+
+        for(EnumClearMetal ingot : EnumClearMetal.values()){
+            ItemStack _ingot = new ItemStack(NordItems.itemClearIngot, 1, ingot.getMetadata());
+            GameRegistry.addShapelessRecipe(new ItemStack(NordBloks.metalClearBlock, 1, ingot.getMetadata()),
+                    _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot, _ingot);
+            GameRegistry.addShapelessRecipe(new ItemStack(NordItems.itemClearIngot,9, ingot.getMetadata()),
+                    new ItemStack(NordBloks.metalClearBlock, 1, ingot.getMetadata()));
         }
     }
 }
