@@ -7,11 +7,11 @@ import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class ARecipes1I2O implements IRecipes1I2O {
+abstract public class ARecipes1I2O extends ARecipes implements IRecipes1I2O {
     protected final List<ARecipe1I2O> recipes = new ArrayList<ARecipe1I2O>(64);
 
     @Override
-    public List<ARecipe1I2O> getRecipes(){
+    public List<ARecipe1I2O> getRecipes() {
         return recipes;
     }
 
@@ -43,10 +43,7 @@ abstract public class ARecipes1I2O implements IRecipes1I2O {
         IRecipe1I2O recipe;
         for (int i = 0; i < recipes.size(); i++) {
             recipe = recipes.get(i);
-            check = (recipe.getInput().getItem() == item.getItem());
-            check &= recipe.getInput().getItemDamage() == item.getItemDamage()
-                    || recipe.getInput().getItemDamage() == 32767;
-            check &= (recipe.getInput().stackSize <= item.stackSize);
+            check = compare(item, recipe.getInput());
             if (check) {
                 return i;
             }

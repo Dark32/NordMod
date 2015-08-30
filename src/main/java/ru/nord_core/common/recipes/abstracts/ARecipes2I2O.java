@@ -7,11 +7,11 @@ import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class ARecipes2I2O implements IRecipes2I2O {
+abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
     protected static final List<ARecipe2I2O> recipes = new ArrayList<ARecipe2I2O>(64);
 
     @Override
-    public List<ARecipe2I2O> getRecipes(){
+    public List<ARecipe2I2O> getRecipes() {
         return recipes;
     }
 
@@ -85,9 +85,9 @@ abstract public class ARecipes2I2O implements IRecipes2I2O {
             ItemStack input = recipe.getInput();
             ItemStack input2 = recipe.getSecondInput();
             boolean soft = recipe.getSoft();
-            check = compare(input, item) && compare(input2, item2);
+            check = compare(item, input) && compare(item2, input2);
             if (soft) {
-                check |= compare(input, item2) && compare(input2, item);
+                check |= compare(item2, input) && compare(item, input2);
             }
             if (check) {
                 return i;
@@ -96,10 +96,5 @@ abstract public class ARecipes2I2O implements IRecipes2I2O {
         return -1;
     }
 
-    private boolean compare(ItemStack item1, ItemStack item2) {
-        boolean check = item1.getItem() == item2.getItem();
-        check &= item1.getItemDamage() == item2.getItemDamage();
-        check &= item1.stackSize <= item2.stackSize;
-        return check;
-    }
+
 }
