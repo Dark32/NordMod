@@ -528,7 +528,11 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
         if (input.stackSize == 0) {
             input = null;
         }
+        if (input2.stackSize == 0) {
+            input2 = null;
+        }
         setInventorySlotContents(input_slot, input);
+        setInventorySlotContents(input_slot2, input2);
 
         IRecipe2I2O recNext = getRecipe(input,input2);
         currentItemEnergyNeed = recNext != null ? recNext.getEnergy() : 0;

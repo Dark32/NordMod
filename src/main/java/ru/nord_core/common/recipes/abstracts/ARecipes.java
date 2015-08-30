@@ -25,7 +25,7 @@ abstract public class ARecipes implements IAbstractRecipes {
         boolean check_item = input.getItem() == recepie.getItem()
                 && (input.getItemDamage() == recepie.getItemDamage() || recepie.getItemDamage() == 32767);
         boolean check_oredict = checkInputOreDictoary(input, recepie);
-        boolean chesk_size =input.stackSize <= recepie.stackSize;
+        boolean chesk_size =input.stackSize >= recepie.stackSize;
         return (check_item || check_oredict) && chesk_size;
     }
 }
