@@ -4,6 +4,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fluids.*;
 import ru.nord_core.common.recipes.interfaces.IRecipe1I2O;
+import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.tiles.interfaces.IFluidTankBlock;
 import ru.nord_core.common.tiles.interfaces.IMachine;
 
@@ -73,7 +74,7 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
 
     @Override
     public int getField(int id) {
-        if (id == getFieldCount()) {
+        if (id == 5) {
             return this.getTank().getFluidAmount();
         }
         return 0;
@@ -81,7 +82,7 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
 
     @Override
     public void setField(int id, int value) {
-        if (id == 4) {
+        if (id == 5) {
             if (this.getTank().getFluid() == null) {
                 this.getTank().setFluid(new FluidStack(FluidRegistry.WATER, 1));
             }
@@ -91,7 +92,7 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
 
     @Override
     public int getFieldCount() {
-        return 5;
+        return 6;
     }
 
     @Override
@@ -115,7 +116,7 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
                 work(); // работаем
             }
         } else if (canStartWorking()) { // можем ли начать работать
-            IRecipe1I2O rec = getRecipe(getStackInSlot(input_slot)); // получаем рецепт
+            IRecipe1I2O rec = getRecipe(this.recipeId); // получаем рецепт
             if (rec != null) { // если есть рецепт
                 currentItemEnergyNeed = rec.getEnergy(); // устанавливаем требование энергии из рецепта
                 updated = true; // помечаем на обновление
