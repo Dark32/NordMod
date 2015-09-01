@@ -573,18 +573,12 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     protected boolean checkRecipe() {
         ItemStack stack = getStackInSlot(input_slot);
         if (stack == null) return false;
-        if (this.recipeId != IAbstractRecipes.NOT_FOUND) {
-            IRecipe1I2O rec = getRecipe(this.recipeId);
-            if (RecipesHelper.compare(stack, rec.getInput(), false)) {
-                return true;
-            } else {
-                this.recipeId = ((IRecipes1I2O) getRecipes()).getIndexRecipe(stack);
-                return this.recipeId != IAbstractRecipes.NOT_FOUND;
-            }
-        } else {
-            this.recipeId = ((IRecipes1I2O) getRecipes()).getIndexRecipe(stack);
-            return this.recipeId != IAbstractRecipes.NOT_FOUND;
+        if (this.recipeId != IAbstractRecipes.NOT_FOUND &&
+                RecipesHelper.compare(stack, getRecipe(this.recipeId).getInput(), false)) {
+            return true;
         }
+        this.recipeId = ((IRecipes1I2O) getRecipes()).getIndexRecipe(stack);
+        return this.recipeId != IAbstractRecipes.NOT_FOUND;
     }
 
     private IRecipe1I2O getRecipe(int index) {
