@@ -21,7 +21,7 @@ abstract public class ARecipes implements IAbstractRecipes {
         return false;
     }
 
-    protected final boolean compare(ItemStack input, ItemStack recepie) {
+    final boolean compare(ItemStack input, ItemStack recepie) {
         boolean check_item = input.getItem() == recepie.getItem()
                 && (input.getItemDamage() == recepie.getItemDamage() || recepie.getItemDamage() == 32767);
         boolean check_oredict = checkInputOreDictoary(input, recepie);

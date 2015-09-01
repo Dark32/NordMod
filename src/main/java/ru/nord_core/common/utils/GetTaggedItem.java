@@ -38,11 +38,11 @@ public class GetTaggedItem {
         NBTTagCompound explosion = new NBTTagCompound();
 
         fireworks.setByte("Flight", (byte) flight);
-        explosion.setByte("Trail", (byte) (trail == true ? 1 : 0));
+        explosion.setByte("Trail", (byte) (trail ? 1 : 0));
         explosion.setByte("Type", (byte) type);
         explosion.setIntArray("Colors", colors);
         explosion.setIntArray("FadeColors", fadeColors);
-        explosion.setByte("Flicker", (byte) (flicker == true ? 1 : 0));
+        explosion.setByte("Flicker", (byte) (flicker ? 1 : 0));
 
         nbt.setTag("Fireworks", fireworks);
         nbt.getCompoundTag("Fireworks").setTag("Explosions", new NBTTagList());

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract public class ARecipes1I2O extends ARecipes implements IRecipes1I2O {
-    protected final List<ARecipe1I2O> recipes = new ArrayList<ARecipe1I2O>(64);
+    private final List<ARecipe1I2O> recipes = new ArrayList<ARecipe1I2O>(64);
 
     @Override
     public List<ARecipe1I2O> getRecipes() {

@@ -1,6 +1,6 @@
 package ru.nord_core;
 
-;import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
