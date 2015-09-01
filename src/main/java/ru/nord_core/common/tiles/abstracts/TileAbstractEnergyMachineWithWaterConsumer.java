@@ -136,4 +136,9 @@ public abstract class TileAbstractEnergyMachineWithWaterConsumer extends TileAbs
                 && this.getEnergy() >= this.getPacketEnergy()
                 && this.tank.getFluidAmount() >= this.getFluidWorkPacket();
     }
+
+    private IRecipe1I2O getRecipe(int index) {
+        return ((IRecipes1I2O) getRecipes()).getRecipe(index);
+    }
+
 }

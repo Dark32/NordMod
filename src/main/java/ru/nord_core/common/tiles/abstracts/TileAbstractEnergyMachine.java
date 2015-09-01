@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.helpers.RecipesHelper;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipes;
 import ru.nord_core.common.recipes.interfaces.IRecipe1I2O;
 import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 import ru.nord_core.common.tiles.interfaces.IMachine;
@@ -50,7 +51,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     protected int currentItemEnergyNeed; // общая энергия требуемая
 
     protected String machineCustomName;
-    protected int recipeId = -1;
+    protected int recipeId = IAbstractRecipes.NOT_FOUND;
 
     /**
      * Returns the number of slots in the inventory.
@@ -572,17 +573,17 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     protected boolean checkRecipe() {
         ItemStack stack = getStackInSlot(input_slot);
         if (stack == null) return false;
-        if (this.recipeId != -1) {
+        if (this.recipeId != IAbstractRecipes.NOT_FOUND) {
             IRecipe1I2O rec = getRecipe(this.recipeId);
             if (RecipesHelper.compare(stack, rec.getInput(), false)) {
                 return true;
             } else {
                 this.recipeId = ((IRecipes1I2O) getRecipes()).getIndexRecipe(stack);
-                return this.recipeId != -1;
+                return this.recipeId != IAbstractRecipes.NOT_FOUND;
             }
         } else {
             this.recipeId = ((IRecipes1I2O) getRecipes()).getIndexRecipe(stack);
-            return this.recipeId != -1;
+            return this.recipeId != IAbstractRecipes.NOT_FOUND;
         }
     }
 
@@ -597,7 +598,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
 
     @Override
     public int getCurrentItemEnergyProgress() {
-        return currentItemEnergyProgress;
+        return this.currentItemEnergyProgress;
     }
 
     @Override

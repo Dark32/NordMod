@@ -12,7 +12,7 @@ public class FurnaceRecipes1I2O extends ARecipes1I2O {
         ARecipe1I2O recipe = new ARecipe1I2O(input, output1, output2, needEnergy,
                 percent, exp);
 
-        INSTANCE().getRecipes().add(recipe);
+        INSTANCE().add(recipe);
     }
 
     private static IRecipes1I2O INSTANCE;

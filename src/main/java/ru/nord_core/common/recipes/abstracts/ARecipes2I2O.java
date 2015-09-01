@@ -1,6 +1,8 @@
 package ru.nord_core.common.recipes.abstracts;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipe;
 import ru.nord_core.common.recipes.interfaces.IRecipe2I2O;
 import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 
@@ -27,7 +29,7 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
 
     @Override
     public IRecipe2I2O getPartRecipe(int index, int slot) {
-        if (index > -1 && (slot == 1 || slot == 2))
+        if (index != NOT_FOUND && (slot == 1 || slot == 2))
             return recipes.get(index);
         else
             return null;
@@ -36,7 +38,7 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
     @Override
     public int getIndexPartRecipe(ItemStack item, int slot) {
         if (item == null || (slot != 1 && slot != 2)) {
-            return -1;
+            return NOT_FOUND;
         }
 
         boolean check = true;
@@ -56,12 +58,12 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
                 return i;
             }
         }
-        return -1;
+        return NOT_FOUND;
     }
 
     @Override
     public IRecipe2I2O getRecipe(int index) {
-        if (index > -1)
+        if (index >NOT_FOUND)
             return recipes.get(index);
         else
             return null;
@@ -75,7 +77,7 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
     @Override
     public int getIndexRecipe(ItemStack item, ItemStack item2) {
         if (item == null || item2 == null) {
-            return -1;
+            return NOT_FOUND;
         }
 
         boolean check;
@@ -93,8 +95,19 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
                 return i;
             }
         }
-        return -1;
+        return NOT_FOUND;
     }
 
+    @Override
+    public void add(IAbstractRecipe recipe){
+        IRecipe2I2O recipe2i20 = (IRecipe2I2O)recipe;
+        int indx = this.getIndexRecipe(recipe2i20.getInput(),recipe2i20.getSecondInput());
+        if (indx!=NOT_FOUND){
+            this.getRecipes().add((ARecipe2I2O) recipe);
+        }else{
+            FMLLog.info("[NORD] Recipe override " + indx);
+            this.getRecipes().add(indx,(ARecipe2I2O) recipe);
+        }
+    }
 
 }

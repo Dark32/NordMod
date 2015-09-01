@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.helpers.RecipesHelper;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipes;
 import ru.nord_core.common.recipes.interfaces.IRecipe2I2O;
 import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 import ru.nord_core.common.utils.ChargeHelper;
@@ -573,17 +574,17 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
         ItemStack stack = getStackInSlot(input_slot);
         ItemStack stack2 = getStackInSlot(input_slot2);
         if (stack == null) return false;
-        if (this.recipeId != -1) {
+        if (this.recipeId != IAbstractRecipes.NOT_FOUND) {
             IRecipe2I2O rec = getRecipe(this.recipeId);
             if (RecipesHelper.compare(stack, rec.getInput(), false)) {
                 return true;
             } else {
                 this.recipeId = ((IRecipes2I2O) getRecipes()).getIndexRecipe(stack,stack2);
-                return this.recipeId != -1;
+                return this.recipeId != IAbstractRecipes.NOT_FOUND;
             }
         } else {
             this.recipeId = ((IRecipes2I2O) getRecipes()).getIndexRecipe(stack,stack2);
-            return this.recipeId != -1;
+            return this.recipeId != IAbstractRecipes.NOT_FOUND;
         }
     }
 

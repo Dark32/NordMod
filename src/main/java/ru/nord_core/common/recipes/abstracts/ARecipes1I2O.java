@@ -2,6 +2,7 @@ package ru.nord_core.common.recipes.abstracts;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLLog;
+import ru.nord_core.common.recipes.interfaces.IAbstractRecipe;
 import ru.nord_core.common.recipes.interfaces.IRecipe1I2O;
 import ru.nord_core.common.recipes.interfaces.IRecipes1I2O;
 
@@ -23,7 +24,7 @@ abstract public class ARecipes1I2O extends ARecipes implements IRecipes1I2O {
 
     @Override
     public IRecipe1I2O getRecipe(int index) {
-        if (index > -1)
+        if (index != NOT_FOUND)
             return recipes.get(index);
         else
             return null;
@@ -38,7 +39,7 @@ abstract public class ARecipes1I2O extends ARecipes implements IRecipes1I2O {
     @Override
     public int getIndexRecipe(ItemStack item) {
         if (item == null) {
-            return -1;
+            return NOT_FOUND;
         }
         boolean check;
         IRecipe1I2O recipe;
@@ -49,6 +50,18 @@ abstract public class ARecipes1I2O extends ARecipes implements IRecipes1I2O {
                 return i;
             }
         }
-        return -1;
+        return NOT_FOUND;
+    }
+
+    @Override
+    public void add(IAbstractRecipe recipe) {
+        IRecipe1I2O recipe1i20 = (IRecipe1I2O) recipe;
+        int indx = this.getIndexRecipe(recipe1i20.getInput());
+        if (indx != NOT_FOUND) {
+            this.getRecipes().add((ARecipe1I2O) recipe);
+        } else {
+            FMLLog.info("[NORD] Recipe override " + indx);
+            this.getRecipes().add(indx, (ARecipe1I2O) recipe);
+        }
     }
 }

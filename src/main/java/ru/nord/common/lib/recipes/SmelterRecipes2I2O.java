@@ -12,7 +12,7 @@ public class SmelterRecipes2I2O extends ARecipes2I2O {
             , boolean soft) {
         ARecipe2I2O recipe = new ARecipe2I2O(input, input2, output1, output2, needEnergy,
                 percent, exp, soft);
-        INSTANCE().getRecipes().add(recipe);
+        INSTANCE().add(recipe);
     }
 
     private static IRecipes2I2O INSTANCE;

@@ -8,6 +8,11 @@ public interface IAbstractRecipes {
         TYPE_2I2O,
     }
 
+    /**
+     * Индек не найденного рейепта
+     */
+    int NOT_FOUND=-1;
+
     TYPES getType();
     /**
      * Проверяем совападают ли стаки по словарю руд
@@ -16,4 +21,11 @@ public interface IAbstractRecipes {
      * @return совпали ли
      */
     boolean checkInputOreDictoary(ItemStack input, ItemStack recepies);
+
+    /**
+     * Добавляем рецепт в список
+     * @param recipe рецепт
+     */
+    void add(IAbstractRecipe recipe);
+
 }

@@ -10,7 +10,7 @@ public class ExtractorRecipes1I2O extends ARecipes1I2O {
                                  ItemStack output2, int needEnergy, float percent, float exp) {
         ARecipe1I2O recipe = new ARecipe1I2O(input, output1, output2, needEnergy,
                 percent, exp);
-        INSTANCE().getRecipes().add(recipe);
+        INSTANCE().add(recipe);
     }
 
     private static IRecipes1I2O INSTANCE;
