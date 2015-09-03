@@ -16,4 +16,6 @@ public class NordItems {
     public static Item itemMetalDust;
     public static Item itemOreCrystal;
     public static Item itemClearIngot;
+
+    public static Item itemTestHammer;
 }

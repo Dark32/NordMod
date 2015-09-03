@@ -1,16 +1,19 @@
 package ru.nord;
 
+import com.google.common.collect.Sets;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import ru.nord.common.blocks.BlockClearMetal;
 import ru.nord.common.blocks.BlockCrystal;
 import ru.nord.common.blocks.BlockMetal;
 import ru.nord.common.blocks.BlockMetalOre;
 import ru.nord.common.helpers.RegisterHelper;
-import ru.nord.common.items.ItemBlockClearMetal;
-import ru.nord.common.items.ItemBlockCrystall;
-import ru.nord.common.items.ItemBlockMetal;
-import ru.nord.common.items.ItemBlockMetalOre;
+import ru.nord.common.items.*;
 import ru.nord_core.common.items.ItemMetaData;
 import ru.nord_core.common.utils.enums.*;
+
+import java.util.Set;
 
 public class NordMetalgury {
     public static void preInit() {
@@ -38,6 +41,8 @@ public class NordMetalgury {
         NordItems.itemIngot = new ItemMetaData(EnumMetal.getNames()).setUnlocalizedName("ingot").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemClearIngot = new ItemMetaData(EnumClearMetal.getNames()).setUnlocalizedName("clearIngot").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemStick = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("stick").setCreativeTab(NordTabs.tabMetallurgy);
+
+        NordItems.itemTestHammer = new ItemDrill(1, Item.ToolMaterial.IRON,1,1).setUnlocalizedName("itemTestHammer").setCreativeTab(NordTabs.tabMetallurgy);
     }
 
     private static void createBlock() {
@@ -58,6 +63,7 @@ public class NordMetalgury {
         RegisterHelper.registerMetadataItem(NordItems.itemIngot, "ingot", "ingot", EnumMetal.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemClearIngot, "clearIngot", "clearIngot", EnumClearMetal.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemStick, "stick", "stick", EnumDust.getNames());
+        RegisterHelper.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
     }
 
     private static void registerBlock() {

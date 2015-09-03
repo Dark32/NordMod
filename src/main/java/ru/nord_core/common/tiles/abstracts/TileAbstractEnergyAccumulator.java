@@ -14,8 +14,8 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
-import ru.nord_core.common.utils.ChargeHelper;
 import ru.nord_core.common.tiles.interfaces.IAccumulator;
+import ru.nord_core.common.utils.ChargeHelper;
 
 /**
  * @author andrew
@@ -262,16 +262,22 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
     private boolean canStartDisCharge() {
         ItemStack item = getStackInSlot(dis_charge_slot_in);
         IEnergyCharges charge = ((IEnergyCharges) item.getItem());
-        return charge.currectEnergy(item) >= this.getPacketEnergy()
-                && (this.hasAddEnergy(this.getPacketEnergy())
-                || hasAddBonusEnergy(this.getPacketEnergy()));
+        return charge.hasDisCharge() && (
+                charge.currectEnergy(item) >= this.getPacketEnergy()
+                        && (this.hasAddEnergy(this.getPacketEnergy()) || hasAddBonusEnergy(this.getPacketEnergy()))
+        );
     }
 
 
     private boolean isDisChargeability() {
         ItemStack item = getStackInSlot(dis_charge_slot_in);
-        if (item == null) return false;
-        if (item.getItem() instanceof IEnergyCharges) return true;
+        if (item == null) {
+            return false;
+        }
+        if (item.getItem() instanceof IEnergyCharges &&
+                ((IEnergyCharges) item.getItem()).hasDisCharge()) {
+            return true;
+        }
         return false;
     }
 
@@ -520,7 +526,7 @@ public abstract class TileAbstractEnergyAccumulator extends TileAbstractEnergyBl
 
     @SideOnly(Side.CLIENT)
     public int getEnergyProgressScaled(int line, int val) {
-        int energyInLine = this.getEnergy()-this.getEnergyByLine()*(line-1);
+        int energyInLine = this.getEnergy() - this.getEnergyByLine() * (line - 1);
         energyInLine = energyInLine > 0 ? energyInLine : 0;
         energyInLine = energyInLine < this.getEnergyByLine() ? energyInLine : this.getEnergyByLine();
         return energyInLine * val / this.getEnergyByLine();

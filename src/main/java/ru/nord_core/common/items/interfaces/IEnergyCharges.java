@@ -36,4 +36,10 @@ public interface IEnergyCharges {
      * @return значение
      */
     int packetEnergy(ItemStack itemStack);
+
+    /**
+     * Можно ли разряжать
+     * @return можно ли?
+     */
+    boolean hasDisCharge();
 }

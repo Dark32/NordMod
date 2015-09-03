@@ -1,4 +1,4 @@
-package ru.nord_core.common.items;
+package ru.nord_core.common.items.abstracts;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -6,16 +6,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord_core.common.items.interfaces.IEnergyCharges;
 
 import java.util.List;
+public abstract class AEnergyToolNBT extends AEnergyTool {
 
-public class ItemEnergyStorageNBT extends ItemEnergyStorageDamagable implements IEnergyCharges {
-
-    public ItemEnergyStorageNBT(int maxEnergy,String modid) {
-        super(maxEnergy,modid);
-        this.setMaxStackSize(1);
-        this.setHasSubtypes(false);
+    protected AEnergyToolNBT(float attackDamage, ToolMaterial material, int energyByUse, int energyByHit) {
+        super(attackDamage, material, energyByUse, energyByHit);
     }
 
     private NBTTagCompound getNBT(ItemStack itemStack) {
@@ -48,11 +44,6 @@ public class ItemEnergyStorageNBT extends ItemEnergyStorageDamagable implements 
         return currectEnergy(itemStack);
     }
 
-//        @Override
-//    public int getDamage(ItemStack stack) {
-//        return maxEnergy(stack)-currectEnergy(stack);
-//    }
-
     @Override
     public double getDurabilityForDisplay(ItemStack stack) {
         return 1.00d - ((double)currectEnergy(stack)) / maxEnergy(stack);
@@ -62,6 +53,7 @@ public class ItemEnergyStorageNBT extends ItemEnergyStorageDamagable implements 
     {
         return true;
     }
+
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List subItems) {
         ItemStack itemStack = new ItemStack(itemIn, 1);

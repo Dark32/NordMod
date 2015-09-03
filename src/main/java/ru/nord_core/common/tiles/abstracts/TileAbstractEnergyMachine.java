@@ -235,6 +235,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     /**
      * Updates the JList with a new model.
      */
+    @Override
     public void update() {
 
         boolean updated = false;
@@ -307,6 +308,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     /**
      * Do not make give this method the name canInteractWith because it clashes with Container
      */
+    @Override
     public boolean isUseableByPlayer(EntityPlayer player) {
         return this.worldObj.getTileEntity(this.pos) == this
                 && player.getDistanceSq((double) this.pos.getX() + 0.5D,
@@ -314,18 +316,21 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
                 (double) this.pos.getZ() + 0.5D) <= 64.0D;
     }
 
+    @Override
     public void openInventory(EntityPlayer player) {
     }
 
+    @Override
     public void closeInventory(EntityPlayer player) {
     }
 
     /**
      * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
      */
+    @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
         if (index == fuel_slot && getItemBurnTime(stack) == 0) {
-            return false;
+            return isItemFuel(stack);
         }
         if (index == result_slot || index == second_result_slot) {
             return false;
@@ -335,6 +340,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         return rec != null;
     }
 
+    @Override
     public int[] getSlotsForFace(EnumFacing side) {
         switch (side) {
             case DOWN:
@@ -350,6 +356,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
      * Returns true if automation can insert the given item in the given slot from the given side. Args: slot, item,
      * side
      */
+    @Override
     public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
         return this.isItemValidForSlot(index, itemStackIn);
     }
@@ -358,8 +365,9 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
      * Returns true if automation can extract the given item in the given slot from the given side. Args: slot, item,
      * side
      */
+    @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-        if (direction == EnumFacing.DOWN && index == 1) {
+        if (direction == EnumFacing.DOWN && index == fuel_slot) {
             Item item = stack.getItem();
 
             if (item != Items.water_bucket && item != Items.bucket) {
@@ -371,15 +379,18 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
     }
 
     //todo abstract
+    @Override
     public String getGuiID() {
         return "nord:abstractEnegyMachina";
     }
 
     //todo abstract
+    @Override
     public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
         return new ContainerFurnace(playerInventory, this);
     }
 
+    @Override
     public int getField(int id) {
         switch (id) {
             case 0:
@@ -397,6 +408,7 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         }
     }
 
+    @Override
     public void setField(int id, int value) {
         switch (id) {
             case 0:
@@ -415,10 +427,12 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
         }
     }
 
+    @Override
     public int getFieldCount() {
         return 5;
     }
 
+    @Override
     public void clear() {
         for (int i = 0; i < this.inventory.length; ++i) {
             this.setInventorySlotContents(i, null);
@@ -549,7 +563,8 @@ public abstract class TileAbstractEnergyMachine extends TileAbstractEnergyBlock
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = (IEnergyCharges) item.getItem();
-                if (ChargeHelper.hasEnergy(item, charge.packetEnergy(item))
+                if (charge.hasDisCharge() &&
+                        ChargeHelper.hasEnergy(item, charge.packetEnergy(item))
                         && this.getEnergy() <= (this.getMaxEnergy() - charge.packetEnergy(item))) {
                     this.addEnergy(charge.packetEnergy(item));
                     ChargeHelper.subEnergy(item, charge.packetEnergy(item));

@@ -102,7 +102,7 @@ abstract public class ARecipes2I2O extends ARecipes implements IRecipes2I2O {
     public void add(IAbstractRecipe recipe){
         IRecipe2I2O recipe2i20 = (IRecipe2I2O)recipe;
         int indx = this.getIndexRecipe(recipe2i20.getInput(),recipe2i20.getSecondInput());
-        if (indx!=NOT_FOUND){
+        if (indx==NOT_FOUND){
             this.getRecipes().add((ARecipe2I2O) recipe);
         }else{
             FMLLog.info("[NORD] Recipe override " + indx);

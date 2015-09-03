@@ -5,8 +5,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.input.Keyboard;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
 import ru.nord_core.common.utils.Constants;
 
@@ -39,21 +41,30 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
     }
 
     @Override
+    public boolean hasDisCharge() {
+        return true;
+    }
+
+    @Override
     public int setEnergy(ItemStack itemStack, int energy) {
         itemStack.setItemDamage(maxEnergy(itemStack) - energy);
         return currectEnergy(itemStack);
     }
 
 
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
-        tooltip.add("Energy: " + EnumChatFormatting.RED + currectEnergy(stack) / Constants.SHARE_MULTIPLE + "/" + maxEnergy(stack) / Constants.SHARE_MULTIPLE + " " +Constants.ENERGY);
-        tooltip.add("dEnergy: " + EnumChatFormatting.RED + currectEnergy(stack) % Constants.SHARE_MULTIPLE +  " " +Constants.ENERGY);
-    }
+
 
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List subItems) {
         subItems.add(new ItemStack(itemIn, 1,_maxEnergy));
         subItems.add(new ItemStack(itemIn, 1, 0));
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
+        if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+            list.add("Power: " + currectEnergy(itemStack) +"/" + maxEnergy(itemStack) + " share");
+        } else list.add(StatCollector.translateToLocal("information.ShiftDialog"));
     }
 }

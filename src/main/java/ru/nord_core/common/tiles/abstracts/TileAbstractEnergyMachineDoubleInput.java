@@ -550,7 +550,8 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
             ItemStack item = getStackInSlot(fuel_slot);
             if (item.getItem() instanceof IEnergyCharges) {
                 IEnergyCharges charge = (IEnergyCharges) item.getItem();
-                if (ChargeHelper.hasEnergy(item, charge.packetEnergy(item))
+                if (charge.hasDisCharge() &&
+                        ChargeHelper.hasEnergy(item, charge.packetEnergy(item))
                         && this.getEnergy() <= (this.getMaxEnergy() - charge.packetEnergy(item))) {
                     this.addEnergy(charge.packetEnergy(item));
                     ChargeHelper.subEnergy(item, charge.packetEnergy(item));
