@@ -61,11 +61,10 @@ public class FlowingRecipes {
         Измалываем дропы  в грязную пыль
          */
         for (EnumOreDrop ore : EnumOreDrop.values()) {
-            if (ore.getDust() != null)
                 FlowingRecipes1I2O.addRecipe(
                         new ItemStack(NordItems.itemOreDrop, 1, ore.getMetadata()),
-                        new ItemStack(NordItems.itemOreDirtyPowder, 1, ore.getDust().getMetadata()),
-                        new ItemStack(NordItems.itemOreDirtyPowder, 1, ore.getDust().getMetadata()),
+                        new ItemStack(NordItems.itemOreDirtyPowder, 1, ore.getMetadata()),
+                        new ItemStack(NordItems.itemOreDirtyPowder, 1, ore.getMetadata()),
                         80, 5, 0);
         }
 
