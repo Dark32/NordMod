@@ -27,8 +27,8 @@ public class Recipes {
         ExtractorRecipes.postInit();
         FurnaceRecipes.postInit();
         WasherRecipes.postInit();
-        //if(Loader.isModLoaded(""))
-        MineTweaker.Init();
+        if (Loader.isModLoaded("MineTweaker3"))
+            MineTweaker.Init();
         FMLLog.info("[NORD] Loaded " + FlowingRecipes1I2O.INSTANCE().getRecipes().size() + " FlowingRecipes1I2O");
         FMLLog.info("[NORD] Loaded " + SmelterRecipes2I2O.INSTANCE().getRecipes().size() + " SmelterRecipes2I2O");
         FMLLog.info("[NORD] Loaded " + ExtractorRecipes1I2O.INSTANCE().getRecipes().size() + " ExtractorRecipes1I2O");
