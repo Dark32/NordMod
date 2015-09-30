@@ -1,12 +1,12 @@
 
 itemGroup.tabMachine=Машины
 tile.nord.flowingBlock.name=Дробитель
-tile.nord.accumulatorBlock.name=Аккамулятор
+tile.nord.accumulatorBlock.name=Аккумулятор
 tile.nord.generatorBlock.name=Генератор
 tile.nord.energyCableBlock.name=Кабель
-item.nord.itemEnergyStorage.name=Портативный аккамулятор 
-nord.tile.flowing=Дробитель
-nord.tile.accumulator=Аккамулятор
+item.nord.itemEnergyStorage.name=Портативный аккумулятор 
+nord.tile.flowing=Измельчитель
+nord.tile.accumulator=Аккумулятор
 nord.tile.generator=Генератор
 tile.frame.IRON.name=Железный каркас
 tile.frame.WOOD.name=Деревянный каркас
