@@ -8,12 +8,16 @@ item.nord.itemEnergyStorage.name=Портативный аккумулятор
 nord.tile.flowing=Измельчитель
 nord.tile.accumulator=Аккумулятор
 nord.tile.generator=Генератор
+nord.tile.smelter=Плавильня
+nord.tile.washer=Мойка
+nord.tile.extractor=Экстрактор
+nord.tile.furnace=Печь
 tile.frame.IRON.name=Железный каркас
 tile.frame.WOOD.name=Деревянный каркас
 tile.frame.GOLD.name=Золотой каркас
 tile.digger_well.name=[DEBUG]Digger
 tile.nord.smelterBlock.name=Плавильня
-nord.tile.smelter=Плавильня
+
 item.nord.itemWrench.name=Разводной гаечный ключ
 item.blades.name=Лезвие
 
