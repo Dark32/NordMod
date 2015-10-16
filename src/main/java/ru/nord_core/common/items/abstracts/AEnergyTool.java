@@ -2,10 +2,12 @@ package ru.nord_core.common.items.abstracts;
 
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
@@ -34,7 +36,7 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
 
     @Override
     public float getStrVsBlock(ItemStack stack, Block block) {
-        if (ChargeHelper.hasEnergy(stack, powerOnUse(stack))) {
+        if (canUse(stack)) {
             return this.efficiencyOnProperMaterial;
         } else {
             return 1.0F;
@@ -50,8 +52,8 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
      */
     @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        if (ChargeHelper.hasEnergy(stack, powerOnHit(stack))) {
-            ChargeHelper.subEnergy(stack, powerOnHit(stack));
+        if (canHit(stack)) {
+            doHit(stack);
             return true;
         } else {
             return false;
@@ -62,7 +64,7 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, Block blockIn, BlockPos pos, EntityLivingBase playerIn) {
         if ((double) blockIn.getBlockHardness(worldIn, pos) != 0.0D) {
-            ChargeHelper.subEnergy(stack, powerOnUse(stack));
+            doUse(stack);
         }
 
         return true;
@@ -74,34 +76,34 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
     }
 
 
-
     @Override
     public int getHarvestLevel(ItemStack stack, String toolClass) {
-        if (!(ChargeHelper.hasEnergy(stack, powerOnUse(stack))) ||
+        if (!canUse(stack) ||
                 toolClass == null ||
-                !this.getHarvestType().getName().equals(toolClass)){
+                !this.getHarvestType().getName().equals(toolClass)) {
             return -1;
         }
         return this.toolMaterial.getHarvestLevel();
     }
 
     @Override
-    public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state)
-    {
-       if (state.getBlock().isToolEffective(getHarvestType().getName(), state))
-                return efficiencyOnProperMaterial;
+    public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state) {
+        if (state.getBlock().isToolEffective(getHarvestType().getName(), state))
+            return efficiencyOnProperMaterial;
 
         return 1.0F;
     }
+
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
         if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-            list.add("Power: " + currectEnergy(itemStack) +"/" + maxEnergy(itemStack) + " share");
+            list.add("Power: " + currectEnergy(itemStack) + "/" + maxEnergy(itemStack) + " share");
             list.add("Harvest Level: " + toolMaterial.getHarvestLevel());
             list.add("Efficiency: " + toolMaterial.getEfficiencyOnProperMaterial());
         } else list.add(StatCollector.translateToLocal("information.ShiftDialog"));
     }
+
 
     @Override
     public boolean hasDisCharge() {
@@ -119,17 +121,22 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
     }
 
     @Override
-    public abstract TOOLS getHarvestType();
+    public void doUse(ItemStack itemStack) {
+        ChargeHelper.subEnergy(itemStack, powerOnUse(itemStack));
+    }
 
     @Override
-    public abstract int currectEnergy(ItemStack itemStack);
+    public void doHit(ItemStack itemStack) {
+        ChargeHelper.subEnergy(itemStack, powerOnHit(itemStack));
+    }
 
     @Override
-    public abstract int maxEnergy(ItemStack itemStack);
+    public boolean canUse(ItemStack itemStack) {
+        return ChargeHelper.hasEnergy(itemStack, powerOnUse(itemStack));
+    }
 
     @Override
-    public abstract int setEnergy(ItemStack itemStack, int energy);
-
-    @Override
-    public abstract int packetEnergy(ItemStack itemStack);
+    public boolean canHit(ItemStack itemStack) {
+        return ChargeHelper.hasEnergy(itemStack, powerOnHit(itemStack));
+    }
 }

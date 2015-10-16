@@ -48,7 +48,13 @@ public class NordDecoration {
     public static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.tutorialBlock, "tutorialBlock");
         RegisterHelper.registerSingleBlock(NordBloks.oilLamp, "oilLamp");
-        RegisterHelper.registerMetadataBlock(NordBloks.empireDecoration1, ItemBlockEmpPaper.class, "empPaper", "empPaper", EnumPaperEmp.getNames());
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.empireDecoration1,
+                ItemBlockEmpPaper.class,
+                "empPaper",
+                "empPaper",
+                EnumPaperEmp.getNames()
+        );
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];

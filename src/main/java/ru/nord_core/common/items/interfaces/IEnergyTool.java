@@ -45,4 +45,31 @@ public interface IEnergyTool extends IEnergyCharges {
      * @return тип
      */
     TOOLS getHarvestType();
+
+    /**
+     * Использовать инструмент
+     * @param itemStack инструмент
+     */
+    void doUse(ItemStack itemStack);
+
+    /**
+     * Ударить инструментом
+     * @param itemStack инструмент
+     */
+    void doHit(ItemStack itemStack);
+
+    /**
+     * Можно спользовать инструмент
+     * @param itemStack инструмент
+     * @return можно?
+     */
+    boolean canUse(ItemStack itemStack);
+
+    /**
+     * Можно ударить инструментом
+     * @param itemStack инструмент
+     * @return можно?
+     */
+    boolean canHit(ItemStack itemStack);
+
 }
