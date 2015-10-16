@@ -28,4 +28,5 @@ public class NordBloks {
     public static Block extractorBlock;
     public static Block furnaceBlock;
     public static Block washerBlock;
+    public static Block empireDecoration1;
 }

@@ -1,0 +1,83 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "type":{
+        
+             "bambook"     : {
+               "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            },
+             "empire1"     : {
+               "textures": {
+                    "all": "nord:blocks/deco/empire/empire1",
+                    "particle": "nord:blocks/deco/empire/empire1"
+                }
+            },
+             "empire2"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/empire2",
+                    "particle": "nord:blocks/deco/empire/empire2"
+                }
+            },
+             "empire3"     : {
+                "textures": {
+                     "all": "nord:blocks/deco/empire/empire3",
+                     "particle": "nord:blocks/deco/empire/empire3"
+                }
+             },
+              "empire4"     : {
+                 "textures": {
+                      "all": "nord:blocks/deco/empire/empire4",
+                      "particle": "nord:blocks/deco/empire/empire4"
+                 }
+              },
+               "empire5"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/empire5",
+                       "particle": "nord:blocks/deco/empire/empire5"
+                  }
+               },
+               "empire6"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/empire6",
+                       "particle": "nord:blocks/deco/empire/empire6"
+                  }
+               },
+               "empire7"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/empire7",
+                       "particle": "nord:blocks/deco/empire/empire7"
+                  }
+               },
+               "empire8"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/empire8",
+                       "particle": "nord:blocks/deco/empire/empire8"
+                  }
+               },
+                "empire9"     : {
+                   "textures": {
+                        "all": "nord:blocks/deco/empire/empire9",
+                        "particle": "nord:blocks/deco/empire/empire9"
+                   }
+                },
+                "empire10"     : {
+                   "textures": {
+                        "all": "nord:blocks/deco/empire/empire10",
+                        "particle": "nord:blocks/deco/empire/empire10"
+                   }
+                },
+                "empire11"     : {
+                   "textures": {
+                        "all": "nord:blocks/deco/empire/empire11",
+                        "particle": "nord:blocks/deco/empire/empire11"
+                                   }
+                                }
+        }
+    }
+}
