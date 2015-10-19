@@ -1,12 +1,15 @@
 package ru.nord;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
+import ru.nord.common.utils.enums.EnumFoodNord;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.ItemEnergyStorageDamagable;
+import ru.nord_core.common.items.ItemFoodNord;
 import ru.nord_core.common.items.ItemWrench;
 
 public class NordMachine {
@@ -29,6 +32,7 @@ public class NordMachine {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
         NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
+        NordItems.itemFoodNord = new ItemFoodNord(1, 1, false).setUnlocalizedName("itemFood").setCreativeTab(CreativeTabs.tabFood);
     }
 
     private static void createBlock() {
@@ -50,6 +54,7 @@ public class NordMachine {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
         RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
+        RegisterHelper.registerMetadataItem(NordItems.itemFoodNord, "itemFood","itemFood", EnumFoodNord.getNames());
     }
 
     private static void registerBlock() {

@@ -14,6 +14,7 @@ public class NordTabs {
     public static final CreativeTabs tabDecoration = new TabNord("tabDecoration");
     public static final CreativeTabs tabMetallurgy = new TabNord("tabMetallurgy");
     public static final CreativeTabs tabLamp = new TabNord("tabLamp");
+    public static final CreativeTabs tabFood = new TabNord("tabFood");
     public static Random RandomNumb = new Random();
     public static void postInit() {
         ((TabNord) tabGeneral).setTabIconItem(new ItemStack(Items.bed));
@@ -21,5 +22,6 @@ public class NordTabs {
         ((TabNord) tabDecoration).setTabIconItem(new ItemStack(NordBloks.decoStoneBlock[1],1,1));
         ((TabNord) tabMetallurgy).setTabIconItem(new ItemStack(NordItems.itemIngot,1,RandomNumb.nextInt(EnumMetal.values().length)));
         ((TabNord) tabLamp).setTabIconItem(new ItemStack(NordBloks.empireFloorLamp1,1,0));
+        ((TabNord) tabFood).setTabIconItem(new ItemStack(Items.golden_apple));
     }
 }
