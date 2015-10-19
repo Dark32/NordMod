@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-  "layer0": "nord:items\foods\pancakes\a_lot_of_pancakes"
+  "layer0": "nord:items/foods/blin/alotofpancakes"
   },
   "display": {
     "thirdperson": {
