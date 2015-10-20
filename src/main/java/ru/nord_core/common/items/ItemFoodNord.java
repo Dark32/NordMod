@@ -17,6 +17,7 @@ public class ItemFoodNord extends ItemFood {
     public ItemFoodNord(int amount, float saturation, boolean isWolfFood) {
         super(amount, saturation, isWolfFood);
         this.setHasSubtypes(true);
+        setCreativeTab(CreativeTabs.tabFood);
     }
 
         public int getHealAmount(ItemStack stack)

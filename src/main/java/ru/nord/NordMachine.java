@@ -33,7 +33,7 @@ public class NordMachine {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
         NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
-        NordItems.itemFoodNord = new ItemFoodNord(1, 1, false).setUnlocalizedName("itemFood").setCreativeTab(CreativeTabs.tabFood);
+        NordItems.itemFoodNord = new ItemFoodNord(1, 1, false).setUnlocalizedName("itemFood");
     }
 
     private static void createBlock() {
