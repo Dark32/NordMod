@@ -8,7 +8,6 @@ import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord_core.common.utils.enums.EnumColors;
-import ru.nord_core.common.utils.enums.EnumCrystal;
 import ru.nord_core.common.utils.enums.EnumStone;
 
 public class NordDecoration {
@@ -27,22 +26,22 @@ public class NordDecoration {
     }
 
     public static void createBlock() {
-        NordBloks.tutorialBlock = new BlockBase(Version.MODID).setUnlocalizedName("tutorialBlock").setCreativeTab(NordTabs.tabGeneral);
+        NordBloks.tutorialBlock = new BlockBase(Version.MODID).setUnlocalizedName("tutorialBlock").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireLamp1 = new BlockEmperiaLamp().setUnlocalizedName("empireLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.empireFloorLamp1 = new BlockEmpireFloorLamp().setUnlocalizedName("empireFloorLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.oilLamp = new BlockOilLamp().setUnlocalizedName("oilLamp").setCreativeTab(NordTabs.tabLamp);
         NordBloks.floorLamp1 = new BlockFloorLamp().setUnlocalizedName("floorLamp1").setCreativeTab(NordTabs.tabLamp);
-        NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabGeneral);
+        NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabDecoration);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
             NordBloks.decoStoneBlock[i] = new BlockDecoStone(color.getSecondColor()).
-                    setUnlocalizedName("decoStoneBlock." + color.name()).setCreativeTab(NordTabs.tabDecoration);
+                    setUnlocalizedName("decoStoneBlock." + color.name()).setCreativeTab(NordTabs.tabColorStone);
         }
     }
 
     public static void createItem() {
-        NordItems.tutorialItem = new ItemBase(Version.MODID).setUnlocalizedName("itemBase").setCreativeTab(NordTabs.tabDecoration);
+        NordItems.tutorialItem = new ItemBase(Version.MODID).setUnlocalizedName("itemBase").setCreativeTab(NordTabs.tabColorStone);
     }
 
     public static void registerBlock() {

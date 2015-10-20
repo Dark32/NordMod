@@ -1,13 +1,10 @@
 package ru.nord;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
-import ru.nord.common.utils.enums.EnumFoodNord;
-import ru.nord.common.utils.enums.EnumGlassFood;
 import ru.nord_core.common.items.*;
 
 public class NordMachine {
@@ -30,9 +27,7 @@ public class NordMachine {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
         NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
-        NordItems.itemFoodNord = new ItemFoodNord().setUnlocalizedName("itemFood");
-        NordItems.itemGlassFood = new ItemGlassFood(Version.MODID).setUnlocalizedName("itemGlassFood");
-    }
+        }
 
     private static void createBlock() {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
@@ -41,7 +36,7 @@ public class NordMachine {
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
         NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabDecoration);
+        NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabColorStone);
         NordBloks.diggerWell = new BlockDiggerWell().setUnlocalizedName("digger_well").setCreativeTab(NordTabs.tabMachine);
         NordBloks.extractorBlock = new BlockExtractor().setUnlocalizedName("extractorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.furnaceBlock = new BlockFurnace().setUnlocalizedName("furnaceBlock").setCreativeTab(NordTabs.tabMachine);
@@ -53,9 +48,7 @@ public class NordMachine {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
         RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
-        RegisterHelper.registerMetadataItem(NordItems.itemFoodNord, "itemFood", "itemFood", EnumFoodNord.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemGlassFood, "itemGlassFood", "itemGlassFood", EnumGlassFood.getNames());
-    }
+         }
 
     private static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");

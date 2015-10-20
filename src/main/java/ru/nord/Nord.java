@@ -38,6 +38,7 @@ public class Nord {
         NordMachine.preInit();
         NordMetalgury.preInit();
         NordDecoration.preInit();
+        NordFood.preInit();
         Recipes.preInit();
     }
 
@@ -46,6 +47,7 @@ public class Nord {
         NordMachine.init();
         NordMetalgury.init();
         NordDecoration.init();
+        NordFood.init();
         Nord.proxy.registerRenderers();
         packetPipeline.initialise();
         MinecraftForge.EVENT_BUS.register(new OreDropEvent());
@@ -61,6 +63,7 @@ public class Nord {
         NordMachine.postInit();
         NordMetalgury.postInit();
         NordDecoration.postInit();
+        NordFood.postInit();
         Fuel.postInit();
         Dictoary.postInit();
         Recipes.postInit();
