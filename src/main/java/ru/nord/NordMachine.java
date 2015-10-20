@@ -8,10 +8,7 @@ import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumFoodNord;
 import ru.nord.common.utils.enums.EnumGlassFood;
-import ru.nord_core.common.items.ItemBase;
-import ru.nord_core.common.items.ItemEnergyStorageDamagable;
-import ru.nord_core.common.items.ItemFoodNord;
-import ru.nord_core.common.items.ItemWrench;
+import ru.nord_core.common.items.*;
 
 public class NordMachine {
     public static void preInit() {
@@ -33,7 +30,8 @@ public class NordMachine {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
         NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
-        NordItems.itemFoodNord = new ItemFoodNord(1, 1, false).setUnlocalizedName("itemFood");
+        NordItems.itemFoodNord = new ItemFoodNord().setUnlocalizedName("itemFood");
+        NordItems.itemGlassFood = new ItemGlassFood(Version.MODID).setUnlocalizedName("itemGlassFood");
     }
 
     private static void createBlock() {

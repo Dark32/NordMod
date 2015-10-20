@@ -9,15 +9,16 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.NordTabs;
 import ru.nord.common.utils.enums.EnumFoodNord;
 
 import java.util.List;
 
 public class ItemFoodNord extends ItemFood {
-    public ItemFoodNord(int amount, float saturation, boolean isWolfFood) {
-        super(amount, saturation, isWolfFood);
+    public ItemFoodNord() {
+        super(0,0,false);
         this.setHasSubtypes(true);
-        setCreativeTab(CreativeTabs.tabFood);
+        this.setCreativeTab(NordTabs.tabFood);
     }
 
         public int getHealAmount(ItemStack stack)

@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.NordTabs;
 import ru.nord.common.utils.enums.EnumGlassFood;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class ItemGlassFood extends ItemBase {
         super(modid);
         this.setHasSubtypes(true);
 
+        this.setCreativeTab(NordTabs.tabOthers);
     }
 
 
