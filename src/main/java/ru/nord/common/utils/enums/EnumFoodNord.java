@@ -14,7 +14,26 @@ public enum EnumFoodNord implements IMetadataEnum {
     pancakeswithmeat(7,"pancakeswithmeat",8,4),
     pancakeswithonionsandeggs(8,"pancakeswithonionsandeggs",5,2),
     pancakeswithpotatoes(9,"pancakeswithpotatoes",8,4),
-    pancakeswithsorrel(10,"pancakeswithsorrel",4,2),;
+    pancakeswithsorrel(10,"pancakeswithsorrel",4,2),
+    bun(11,"bun",2,2),
+    bunjam(12,"bunjam",2,2),
+    bunjam2(13,"bunjam2",2,2),
+    cheesecake(14,"cheesecake",2,2),
+    curd(14,"curd",4,4),
+    dough(15,"dough",1,1),
+    dough2(16,"dough2",1,1),
+    fritters(17,"fritters",2,2),
+    clabberfull(18,"clabberfull",2,6),
+    PitcherFull(19,"PitcherFull",4,8),
+    onion(20,"onion",2,2),
+    FishPie(21,"FishPie",8,4),
+    JamPie(22,"JamPie",8,4),
+    MeatPie(23,"MeatPie",8,4),
+    Piewithonionsandeggs(24,"Piewithonionsandeggs",8,4),
+    PotatoesPie(25,"PotatoesPie",8,4),
+    SorrelPie(26,"SorrelPie",8,4),
+    Sorrel(27,"Sorrel",8,4),;
+
     private final String name;
     private final int meta;
     private final int saturation;
