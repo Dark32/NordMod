@@ -4,7 +4,17 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumFoodNord implements IMetadataEnum {
 
-    a_lot_of_pancakes(0,"a_lot_of_pancakes",0,1),;
+    a_lot_of_pancakes(0,"a_lot_of_pancakes",8,4),
+    Pancake(1,"Pancake",2,1),
+    Pancakeswithcottagecheese(2,"Pancakeswithcottagecheese",4,2),
+    pancakeswithcurd(3,"pancakeswithcurd",4,2),
+    pancakeswithfish(4,"pancakeswithfish",6,3),
+    Pancakeswithjam(5,"Pancakeswithjam",4,2),
+    Pancakeswithjam2(6,"Pancakeswithjam2",5,2),
+    pancakeswithmeat(7,"pancakeswithmeat",8,4),
+    pancakeswithonionsandeggs(8,"pancakeswithonionsandeggs",5,2),
+    pancakeswithpotatoes(9,"pancakeswithpotatoes",8,4),
+    pancakeswithsorrel(10,"pancakeswithsorrel",4,2),;
     private final String name;
     private final int meta;
     private final int saturation;

@@ -3,6 +3,7 @@ package ru.nord;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import ru.nord.common.utils.enums.EnumFoodNord;
 import ru.nord_core.common.tabs.TabNord;
 import ru.nord_core.common.utils.enums.EnumMetal;
 
@@ -22,6 +23,6 @@ public class NordTabs {
         ((TabNord) tabDecoration).setTabIconItem(new ItemStack(NordBloks.decoStoneBlock[1],1,1));
         ((TabNord) tabMetallurgy).setTabIconItem(new ItemStack(NordItems.itemIngot,1,RandomNumb.nextInt(EnumMetal.values().length)));
         ((TabNord) tabLamp).setTabIconItem(new ItemStack(NordBloks.empireFloorLamp1,1,0));
-        ((TabNord) tabFood).setTabIconItem(new ItemStack(Items.golden_apple));
+        ((TabNord) tabFood).setTabIconItem(new ItemStack(NordItems.itemFoodNord,1,RandomNumb.nextInt(EnumFoodNord.values().length)));
     }
 }
