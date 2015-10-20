@@ -7,6 +7,7 @@ import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumFoodNord;
+import ru.nord.common.utils.enums.EnumGlassFood;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.ItemEnergyStorageDamagable;
 import ru.nord_core.common.items.ItemFoodNord;
@@ -54,7 +55,8 @@ public class NordMachine {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
         RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
-        RegisterHelper.registerMetadataItem(NordItems.itemFoodNord, "itemFood","itemFood", EnumFoodNord.getNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemFoodNord, "itemFood", "itemFood", EnumFoodNord.getNames());
+        RegisterHelper.registerMetadataItem(NordItems.itemGlassFood, "itemGlassFood", "itemGlassFood", EnumGlassFood.getNames());
     }
 
     private static void registerBlock() {
