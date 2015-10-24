@@ -15,7 +15,8 @@ public enum EnumPaperEmp implements IMetadataEnum {
     EMP8(8, "empire8"),
     EMP9(9, "empire9"),
     EMP10(10, "empire10"),
-    EMP11(11, "empire11"),;
+    EMP11(11, "empire11"),
+ ;
     private final String name;
     private final int meta;
 
