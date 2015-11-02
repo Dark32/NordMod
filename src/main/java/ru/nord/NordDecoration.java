@@ -3,6 +3,7 @@ package ru.nord;
 import ru.nord.common.blocks.*;
 import ru.nord.common.items.*;
 import ru.nord.common.utils.Version;
+import ru.nord.common.utils.enums.EnumEmpGlass;
 import ru.nord.common.utils.enums.EnumPaperEmp;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
@@ -33,6 +34,7 @@ public class NordDecoration {
         NordBloks.floorLamp1 = new BlockFloorLamp().setUnlocalizedName("floorLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
+        NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
@@ -55,6 +57,15 @@ public class NordDecoration {
                 "empPaper",
                 EnumPaperEmp.getNames()
         );
+
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.empireGlass,
+                ItemBlockEmpGlass.class,
+                "empGlass",
+                "empGlass",
+                EnumEmpGlass.getNames()
+        );
+
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecorationPanel1,
                 ItemBlockEmpPaper.class,
