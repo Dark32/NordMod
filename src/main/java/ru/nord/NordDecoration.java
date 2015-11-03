@@ -5,6 +5,7 @@ import ru.nord.common.items.*;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumEmpGlass;
 import ru.nord.common.utils.enums.EnumPaperEmp;
+import ru.nord.common.utils.enums.EnumWhiteStone;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord.common.helpers.RegisterHelper;
@@ -35,6 +36,7 @@ public class NordDecoration {
         NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
+        NordBloks.whiteStone = new BlockWhiteStone(EnumWhiteStone.getNames()).setUnlocalizedName("whiteStone").setCreativeTab(NordTabs.tabDecoration);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];

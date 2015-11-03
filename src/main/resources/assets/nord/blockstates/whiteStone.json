@@ -1,0 +1,54 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "type":{
+        
+             "white1"     : {
+               "textures": {
+                    "all": "nord:blocks/deco/empire/white1",
+                    "particle": "nord:blocks/deco/empire/white1"
+                }
+            },
+             "white2"     : {
+               "textures": {
+                    "all": "nord:blocks/deco/empire/white2",
+                    "particle": "nord:blocks/deco/empire/white2"
+                }
+            },
+             "white3"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/white3",
+                    "particle": "nord:blocks/deco/empire/white3"
+                }
+            },
+             "white4"     : {
+                "textures": {
+                     "all": "nord:blocks/deco/empire/white4",
+                     "particle": "nord:blocks/deco/empire/white4"
+                }
+             },
+              "white5"     : {
+                 "textures": {
+                      "all": "nord:blocks/deco/empire/white5",
+                      "particle": "nord:blocks/deco/empire/white5"
+                 }
+              },
+               "white6"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/white6",
+                       "particle": "nord:blocks/deco/empire/white6"
+                  }
+               },
+               "white7"     : {
+                  "textures": {
+                       "all": "nord:blocks/deco/empire/white7",
+                       "particle": "nord:blocks/deco/empire/white7"
+                  }
+               },
+
+        }
+    }
+}
