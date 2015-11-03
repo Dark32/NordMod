@@ -61,6 +61,14 @@ public class NordDecoration {
         );
 
         RegisterHelper.registerMetadataBlock(
+                NordBloks.whiteStone,
+                ItemBlockWhiteStone.class,
+                "whiteStone",
+                "whiteStone",
+                EnumWhiteStone.getNames()
+        );
+
+        RegisterHelper.registerMetadataBlock(
                 NordBloks.empireGlass,
                 ItemBlockEmpGlass.class,
                 "empGlass",

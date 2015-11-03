@@ -30,24 +30,24 @@
                      "particle": "nord:blocks/deco/empire/white4"
                 }
              },
-              "white5"     : {
-                 "textures": {
-                      "all": "nord:blocks/deco/empire/white5",
-                      "particle": "nord:blocks/deco/empire/white5"
-                 }
-              },
-               "white6"     : {
-                  "textures": {
-                       "all": "nord:blocks/deco/empire/white6",
-                       "particle": "nord:blocks/deco/empire/white6"
+             "white5"     : {
+                "textures": {
+                     "all": "nord:blocks/deco/empire/white5",
+                     "particle": "nord:blocks/deco/empire/white5"
+                }
+             },
+             "white6"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/white6",
+                    "particle": "nord:blocks/deco/empire/white6"
+                }
+             },
+             "white7"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/white7",
+                    "particle": "nord:blocks/deco/empire/white7"
                   }
-               },
-               "white7"     : {
-                  "textures": {
-                       "all": "nord:blocks/deco/empire/white7",
-                       "particle": "nord:blocks/deco/empire/white7"
-                  }
-               },
+               }
 
         }
     }
