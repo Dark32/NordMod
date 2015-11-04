@@ -14,38 +14,38 @@
             },
              "glass1"     : {
                "textures": {
-                    "all": "nord:blocks/deco/empire/empire1",
-                    "particle": "nord:blocks/deco/empire/empire1"
+                    "all": "nord:blocks/deco/empire/window4",
+                    "particle": "nord:blocks/deco/empire/window4"
                 }
             },
              "glass2"     : {
                 "textures": {
-                    "all": "nord:blocks/deco/empire/empire2",
-                    "particle": "nord:blocks/deco/empire/empire2"
+                    "all": "nord:blocks/deco/empire/window5",
+                    "particle": "nord:blocks/deco/empire/window5"
                 }
             },
              "glass3"     : {
                 "textures": {
-                     "all": "nord:blocks/deco/empire/empire3",
-                     "particle": "nord:blocks/deco/empire/empire3"
+                     "all": "nord:blocks/deco/empire/window6",
+                     "particle": "nord:blocks/deco/empire/window6"
                 }
              },
-              "empire4"     : {
+              "glass4"     : {
                  "textures": {
-                      "all": "nord:blocks/deco/empire/empire4",
-                      "particle": "nord:blocks/deco/empire/empire4"
+                      "all": "nord:blocks/deco/empire/window1",
+                      "particle": "nord:blocks/deco/empire/window1"
                  }
               },
-               "empire5"     : {
+               "glass5"     : {
                   "textures": {
-                       "all": "nord:blocks/deco/empire/empire5",
-                       "particle": "nord:blocks/deco/empire/empire5"
+                       "all": "nord:blocks/deco/empire/window2",
+                       "particle": "nord:blocks/deco/empire/window2"
                   }
                },
-               "empire6"     : {
+               "glass6"     : {
                   "textures": {
-                       "all": "nord:blocks/deco/empire/empire6",
-                       "particle": "nord:blocks/deco/empire/empire6"
+                       "all": "nord:blocks/deco/empire/window3",
+                       "particle": "nord:blocks/deco/empire/window3"
                   }
                },
                "empire7"     : {

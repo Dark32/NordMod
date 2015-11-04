@@ -4,11 +4,14 @@ import ru.nord.common.blocks.*;
 import ru.nord.common.items.*;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumEmpGlass;
+import ru.nord.common.utils.enums.EnumGlowstoneDust;
 import ru.nord.common.utils.enums.EnumPaperEmp;
 import ru.nord.common.utils.enums.EnumWhiteStone;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord.common.helpers.RegisterHelper;
+import ru.nord_core.common.items.ItemGlassFood;
+import ru.nord_core.common.items.ItemGlowstoneDust;
 import ru.nord_core.common.utils.enums.EnumColors;
 import ru.nord_core.common.utils.enums.EnumStone;
 
@@ -37,6 +40,7 @@ public class NordDecoration {
         NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.whiteStone = new BlockWhiteStone(EnumWhiteStone.getNames()).setUnlocalizedName("whiteStone").setCreativeTab(NordTabs.tabDecoration);
+        NordItems.itemGlowstoneDust = new ItemGlowstoneDust(Version.MODID).setUnlocalizedName("itemGlowstoneDust").setCreativeTab(NordTabs.tabOthers);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
@@ -58,6 +62,13 @@ public class NordDecoration {
                 "empPaper",
                 "empPaper",
                 EnumPaperEmp.getNames()
+        );
+
+        RegisterHelper.registerMetadataItem(
+                NordItems.itemGlowstoneDust,
+                "itemGlowstoneDust",
+                "itemGlowstoneDust",
+                EnumGlowstoneDust.getNames()
         );
 
         RegisterHelper.registerMetadataBlock(

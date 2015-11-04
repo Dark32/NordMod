@@ -23,9 +23,9 @@ public class NordTabs {
         ((TabNord) tabDecoration).setTabIconItem(new ItemStack(NordBloks.empireDecoration1, 1,3));
         ((TabNord) tabMachine).setTabIconItem(new ItemStack(NordBloks.accumulatorBlock));
         ((TabNord) tabColorStone).setTabIconItem(new ItemStack(NordBloks.decoStoneBlock[1],1,1));
-        ((TabNord) tabMetallurgy).setTabIconItem(new ItemStack(NordItems.itemIngot,1,RandomNumb.nextInt(EnumMetal.values().length)));
-        ((TabNord) tabLamp).setTabIconItem(new ItemStack(NordBloks.empireFloorLamp1,1,1));
-        ((TabNord) tabFood).setTabIconItem(new ItemStack(NordItems.itemFoodNord,1,RandomNumb.nextInt(EnumFoodNord.values().length)));
-        ((TabNord) tabOthers).setTabIconItem(new ItemStack(NordItems.itemGlassFood, 1,0));
+        ((TabNord) tabMetallurgy).setTabIconItem(new ItemStack(NordItems.itemIngot,1,5));
+        ((TabNord) tabLamp).setTabIconItem(new ItemStack(NordBloks.empireLamp1,1,0));
+        ((TabNord) tabFood).setTabIconItem(new ItemStack(NordItems.itemFoodNord,1,12));
+        ((TabNord) tabOthers).setTabIconItem(new ItemStack(NordItems.itemGlowstoneDust, 1,11));
     }
 }

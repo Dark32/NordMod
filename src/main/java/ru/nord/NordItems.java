@@ -18,6 +18,7 @@ public class NordItems {
     public static Item itemClearIngot;
     public static Item itemFoodNord;
     public static Item itemGlassFood;
+    public static Item itemGlowstoneDust;
 
     public static Item itemTestHammer;
 

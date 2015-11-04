@@ -6,7 +6,10 @@ public enum EnumEmpGlass implements IMetadataEnum {
 
     glass1(0, "glass1"),
     glass2(1, "glass2"),
-    glass3(2, "glass3"),;
+    glass3(2, "glass3"),
+    glass4(3, "glass4"),
+    glass5(4, "glass5"),
+    glass6(5, "glass6"),;
 
     private final String name;
     private final int meta;
@@ -37,5 +40,8 @@ public enum EnumEmpGlass implements IMetadataEnum {
     public int getMetadata() {
         return this.meta;
     }
+
+
+
 
 }

@@ -1,7 +1,7 @@
 {
   "parent": "nord:block/block_colored",
   "textures": {
-  "all": "nord:blocks/deco/empire/window5"
+  "all": "nord:blocks/deco/empire/window3"
   },
   "display": {
     "thirdperson": {
