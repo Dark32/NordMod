@@ -41,6 +41,7 @@ public class NordDecoration {
         NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.whiteStone = new BlockWhiteStone(EnumWhiteStone.getNames()).setUnlocalizedName("whiteStone").setCreativeTab(NordTabs.tabDecoration);
         NordItems.itemGlowstoneDust = new ItemGlowstoneDust(Version.MODID).setUnlocalizedName("itemGlowstoneDust").setCreativeTab(NordTabs.tabOthers);
+        NordBloks.chairWhite = new BlockChair("nord").setUnlocalizedName("chairWhite").setCreativeTab(NordTabs.tabDecoration);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
@@ -56,6 +57,7 @@ public class NordDecoration {
     public static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.tutorialBlock, "tutorialBlock");
         RegisterHelper.registerSingleBlock(NordBloks.oilLamp, "oilLamp");
+        RegisterHelper.registerSingleBlock(NordBloks.chairWhite, "chairWhite");
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecoration1,
                 ItemBlockEmpPaper.class,

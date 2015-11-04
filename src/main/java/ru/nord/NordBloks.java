@@ -32,7 +32,6 @@ public class NordBloks {
     public static Block empireDecorationPanel1;
     public static Block empireGlass;
     public static Block whiteStone;
-
-
+    public static Block chairWhite;
 }
 

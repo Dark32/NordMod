@@ -1,0 +1,8 @@
+{   "parent": "nord:block/stool1"
+    "ambientocclusion": false,
+    "textures": {
+        "wool_colored_white": "blocks/wool_colored_white",
+        "planks_oak": "blocks/planks_oak"
+    },
+
+    }
