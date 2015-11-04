@@ -29,7 +29,7 @@ public class BlockChair extends BlockRotateble {
     {
         return false;
     }
-
+    @Override
     public boolean isOpaqueCube()
     {
         return false;
