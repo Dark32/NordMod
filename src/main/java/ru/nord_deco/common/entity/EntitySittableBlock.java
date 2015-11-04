@@ -1,4 +1,4 @@
-package ru.nord_core.common.entity;
+package ru.nord_deco.common.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;

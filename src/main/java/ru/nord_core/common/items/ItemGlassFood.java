@@ -15,7 +15,7 @@ public class ItemGlassFood extends ItemBase {
         super(modid);
         this.setHasSubtypes(true);
 
-        this.setCreativeTab(NordTabs.tabOthers);
+        this.setCreativeTab(NordTabs.tabFood);
     }
 
 

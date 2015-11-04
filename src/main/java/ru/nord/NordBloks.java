@@ -12,7 +12,6 @@ public class NordBloks {
     public static Block generatorBlock;
     public static Block accumulatorBlock;
     public static Block energyCableBlock;
-    public static Block energyCableBlock2;
     public static Block empireLamp1;
     public static Block oilLamp;
     public static Block empireFloorLamp1;
@@ -32,6 +31,5 @@ public class NordBloks {
     public static Block empireDecorationPanel1;
     public static Block empireGlass;
     public static Block whiteStone;
-    public static Block chairWhite;
 }
 

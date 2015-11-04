@@ -17,7 +17,6 @@ public class FurnaceRecipes {
         Плавим дпропы
          */
         for (EnumOreDrop ore : EnumOreDrop.values()) {
-            System.err.println(ore + " " + ore.getMetadata() + " " + ore.getDust().getMetal());
             if (ore.getDust() == EnumDust.IRON) {
                 FurnaceRecipes1I2O.addRecipe(
                         new ItemStack(NordItems.itemOreClearPowder, 1, ore.getMetadata()),
@@ -47,7 +46,6 @@ public class FurnaceRecipes {
         for (EnumOreDrop ore2 : EnumOreDrop.values()) {
             if (ore2.getDust() == EnumDust.IRON) {
                 ItemStack is = new ItemStack(NordItems.itemOreDrop, 2, ore2.getMetadata());
-                System.err.println(is +" "+ ore2+ " "+ ore2.getDust());
                 FurnaceRecipes1I2O.addRecipe(
                         is,
                         new ItemStack(Items.iron_ingot, 1), null, 200, 0, 0);

@@ -10,7 +10,6 @@ import ru.nord.common.utils.enums.EnumWhiteStone;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord.common.helpers.RegisterHelper;
-import ru.nord_core.common.items.ItemGlassFood;
 import ru.nord_core.common.items.ItemGlowstoneDust;
 import ru.nord_core.common.utils.enums.EnumColors;
 import ru.nord_core.common.utils.enums.EnumStone;
@@ -40,8 +39,6 @@ public class NordDecoration {
         NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.whiteStone = new BlockWhiteStone(EnumWhiteStone.getNames()).setUnlocalizedName("whiteStone").setCreativeTab(NordTabs.tabDecoration);
-        NordItems.itemGlowstoneDust = new ItemGlowstoneDust(Version.MODID).setUnlocalizedName("itemGlowstoneDust").setCreativeTab(NordTabs.tabOthers);
-        NordBloks.chairWhite = new BlockChair(Version.MODID).setUnlocalizedName("chairWhite").setCreativeTab(NordTabs.tabDecoration);
 
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
@@ -52,25 +49,18 @@ public class NordDecoration {
 
     public static void createItem() {
         NordItems.tutorialItem = new ItemBase(Version.MODID).setUnlocalizedName("itemBase").setCreativeTab(NordTabs.tabColorStone);
+        NordItems.itemGlowstoneDust = new ItemGlowstoneDust(Version.MODID).setUnlocalizedName("itemGlowstoneDust").setCreativeTab(NordTabs.tabOthers);
     }
 
     public static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.tutorialBlock, "tutorialBlock");
         RegisterHelper.registerSingleBlock(NordBloks.oilLamp, "oilLamp");
-        RegisterHelper.registerSingleBlock(NordBloks.chairWhite, "chairWhite");
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecoration1,
                 ItemBlockEmpPaper.class,
                 "empPaper",
                 "empPaper",
                 EnumPaperEmp.getNames()
-        );
-
-        RegisterHelper.registerMetadataItem(
-                NordItems.itemGlowstoneDust,
-                "itemGlowstoneDust",
-                "itemGlowstoneDust",
-                EnumGlowstoneDust.getNames()
         );
 
         RegisterHelper.registerMetadataBlock(
@@ -124,5 +114,11 @@ public class NordDecoration {
     }
 
     public static void registerItem() {
+        RegisterHelper.registerMetadataItem(
+                NordItems.itemGlowstoneDust,
+                "itemGlowstoneDust",
+                "itemGlowstoneDust",
+                EnumGlowstoneDust.getNames()
+        );
     }
 }

@@ -1,5 +1,9 @@
 {
-    "parent": "nord:block/chairWhite",
+    "parent": "nord_deco:block/chair/base/chair",
+    "textures": {
+         "wool_colored_white": "blocks/wool_colored_white",
+         "planks_oak": "blocks/planks_oak"
+    },
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

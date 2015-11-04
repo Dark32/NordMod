@@ -1,4 +1,4 @@
-package ru.nord_core.common.utils;
+package ru.nord_deco.common.utils;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import ru.nord_core.common.entity.EntitySittableBlock;
+import ru.nord_deco.common.entity.EntitySittableBlock;
 
 
 public class SittableUtil {
