@@ -4,6 +4,8 @@ import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import ru.nord_core.common.entity.EntitySittableBlock;
 import ru.nord_core.common.handler.GuiHandler;
 import ru.nord_core.common.CommonProxy;
 import ru.nord_core.common.utils.Version;
@@ -30,6 +32,7 @@ public class NordCore {
 
     @EventHandler
     public void init(final FMLInitializationEvent event) {
+        EntityRegistry.registerModEntity(EntitySittableBlock.class, "MountableBlock", 0, this, 80, 1, false);
     }
 
     @EventHandler

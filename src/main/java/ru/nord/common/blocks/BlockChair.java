@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.blocks.abstracts.BlockRotateble;
+import ru.nord_core.common.utils.SittableUtil;
 
 public class BlockChair extends BlockRotateble {
     protected String modid;
@@ -35,23 +36,19 @@ public class BlockChair extends BlockRotateble {
         return false;
     }
 
-    /*
+
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos,
                                     IBlockState state, EntityPlayer playerIn,
                                     EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if (worldIn.isRemote)
+        if(SittableUtil.sitOnBlock(worldIn, pos.getX(), pos.getY(), pos.getZ(), playerIn, 7 * 0.0625))
         {
+            worldIn.updateComparatorOutputLevel(pos, this);
             return true;
         }
-        else
-        {
-            System.err.println(222);
-            playerIn.setLocationAndAngles(pos.getX(), pos.getY()+0.5, pos.getZ(), playerIn.rotationYaw, playerIn.rotationPitch);
-            return true;
-        }
+        return false;
     }
-    */
+
 
 }
