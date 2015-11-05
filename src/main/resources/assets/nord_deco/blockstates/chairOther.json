@@ -3,7 +3,8 @@
   "defaults": {
     "textures": {
          "wool_colored_white": "blocks/wool_colored_white",
-         "planks_oak": "blocks/planks_oak"
+         "planks_oak": "blocks/planks_oak",
+         "0": "blocks/planks_dark_oak"
     }
   },
     "variants": {
@@ -21,17 +22,8 @@
             }
         },
         "type":{
-            "chair":{
-                "model": "nord_deco:chair/base/chair"
-            },
-            "stool":{
-                "model": "nord_deco:chair/base/stool"
-            },
-            "stool2":{
-                "model": "nord_deco:chair/base/stool3"
-            },
-            "backless":{
-                "model": "nord_deco:chair/base/backless"
+            "streetChair":{
+                "model": "nord_deco:chair/base/streetChair"
             }
         }
     }

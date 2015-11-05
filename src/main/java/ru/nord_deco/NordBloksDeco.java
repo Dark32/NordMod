@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 
 public class NordBloksDeco {
     public static Block chairWhite;
+    public static Block chairOther;
 }
 
 
