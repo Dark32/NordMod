@@ -6,8 +6,8 @@ import net.minecraft.block.material.Material;
 public class BlockBase extends Block {
     private String unlocalizedName;
     protected String modid;
-    public BlockBase(String modid) {
-        super(Material.rock);
+    public BlockBase(String modid,Material mat) {
+        super(mat);
         this.modid=modid;
     }
 

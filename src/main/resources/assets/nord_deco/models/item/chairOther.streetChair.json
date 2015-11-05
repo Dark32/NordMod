@@ -1,9 +1,7 @@
 {
     "parent": "nord_deco:block/chair/base/streetChair",
     "textures": {
-         "wool_colored_white": "blocks/wool_colored_white",
-         "planks_oak": "blocks/planks_oak",
-         "0": "blocks/planks_dark_oak"
+         "base": "blocks/planks_big_oak"
     },
     "display": {
         "thirdperson": {

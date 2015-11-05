@@ -30,7 +30,6 @@ public class NordDecoration {
     }
 
     public static void createBlock() {
-        NordBloks.tutorialBlock = new BlockBase(Version.MODID).setUnlocalizedName("tutorialBlock").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireLamp1 = new BlockEmperiaLamp().setUnlocalizedName("empireLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.empireFloorLamp1 = new BlockEmpireFloorLamp().setUnlocalizedName("empireFloorLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.oilLamp = new BlockOilLamp().setUnlocalizedName("oilLamp").setCreativeTab(NordTabs.tabLamp);
@@ -53,7 +52,6 @@ public class NordDecoration {
     }
 
     public static void registerBlock() {
-        RegisterHelper.registerSingleBlock(NordBloks.tutorialBlock, "tutorialBlock");
         RegisterHelper.registerSingleBlock(NordBloks.oilLamp, "oilLamp");
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecoration1,

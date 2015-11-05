@@ -21,8 +21,8 @@ public abstract class BlockRotateble extends BlockBase {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    protected BlockRotateble(String modid) {
-        super(modid);
+    protected BlockRotateble(String modid, Material mat) {
+        super(modid,mat);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 

@@ -2,22 +2,24 @@ package ru.nord_deco.common.blocks;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.blocks.abstracts.BlockRotateble;
+import ru.nord_deco.common.entity.EntitySittableBlock;
+import ru.nord_deco.common.helpers.CollisionHelper;
 import ru.nord_deco.common.utils.SittableUtil;
 import ru.nord_deco.common.utils.enums.EnumChairType;
 
@@ -29,9 +31,11 @@ public class BlockChair extends BlockRotateble {
     private String unlocalizedName;
 
     public BlockChair(String modid,String[] names) {
-        super(modid);
+        super(modid, Material.cloth);
         this.names = names;
+        setHardness(1.0F);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+
     }
 
     @Override
@@ -124,4 +128,38 @@ public class BlockChair extends BlockRotateble {
                 .withProperty(FACING, face)
                 .withProperty(TYPE,type);
     }
+
+
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos, EntityPlayer player)
+    {
+        IBlockState state = world.getBlockState(pos);
+        int type = ((EnumChairType) state.getValue(TYPE)).getMetadata();
+        return new ItemStack(this,1,type & 3);
+    }
+
+    @Override
+    public void addCollisionBoxesToList(World world, BlockPos pos, IBlockState state, AxisAlignedBB mask, List list, Entity collidingEntity)
+    {
+        if (!(collidingEntity instanceof EntitySittableBlock))
+        {
+            int metadata = getMetaFromState(state);
+            float[] data = CollisionHelper.fixRotation(metadata, 0.825F, 0.1F, 0.9F, 0.9F);
+            setBlockBounds(data[0], 0.6F, data[1], data[2], 1.2F, data[3]);
+            super.addCollisionBoxesToList(world, pos, state, mask, list, collidingEntity);
+            setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 0.6F, 0.9F);
+            super.addCollisionBoxesToList(world, pos, state, mask, list, collidingEntity);
+        }
+        else
+        {
+            setBlockBounds(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+            super.addCollisionBoxesToList(world, pos, state, mask, list, collidingEntity);
+        }
+    }
+
+    public String getHarvestTool(IBlockState state)
+    {
+        return "axe";
+    }
+
 }
