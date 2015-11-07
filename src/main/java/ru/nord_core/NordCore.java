@@ -33,4 +33,10 @@ public class NordCore {
     public void postInit(final FMLPostInitializationEvent event) {
 
     }
+
+    @EventHandler
+    public void missMap(final FMLMissingMappingsEvent event) {
+        FMLLog.info("Core Nord Mod start FMLMissingMappingsEvent");
+
+    }
 }
