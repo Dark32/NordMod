@@ -39,6 +39,12 @@
                "empire5"     : {
                   "textures": {
                        "all": "nord:blocks/deco/empire/empire5",
+                       "down": "nord:blocks/deco/empire/empire7",
+                       "up": "nord:blocks/deco/empire/empire3",
+                       "north": "nord:blocks/deco/empire/empire5",
+                       "south": "nord:blocks/deco/empire/empire5",
+                       "west": "nord:blocks/deco/empire/empire5",
+                       "east": "nord:blocks/deco/empire/empire5",
                        "particle": "nord:blocks/deco/empire/empire5"
                   }
                },
