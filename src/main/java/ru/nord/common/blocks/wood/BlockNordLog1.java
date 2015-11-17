@@ -1,7 +1,7 @@
 package ru.nord.common.blocks.wood;
 
 import com.google.common.base.Predicate;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -15,9 +15,9 @@ import ru.nord.common.utils.enums.EnumNordPlank;
 
 import java.util.List;
 
-public class BlockNordLog extends BlockLog {
+public class BlockNordLog1 extends BlockNordLog {
 
-    private static int shift = 0;
+    private static int shift = 1;
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant",EnumNordPlank.class, new Predicate()
     {
         public boolean apply(EnumNordPlank type)
@@ -32,9 +32,9 @@ public class BlockNordLog extends BlockLog {
     });
     private static final String __OBFID = "CL_00000281";
 
-    public BlockNordLog()
+    public BlockNordLog1()
     {
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT,  EnumNordPlank.SAKURA).withProperty(LOG_AXIS, net.minecraft.block.BlockLog.EnumAxis.Y));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT,  EnumNordPlank.PALM_TREES).withProperty(LOG_AXIS, EnumAxis.Y));
     }
 
     /**
@@ -61,16 +61,16 @@ public class BlockNordLog extends BlockLog {
         switch (meta & 12)
         {
             case 0:
-                iblockstate = iblockstate.withProperty(LOG_AXIS, net.minecraft.block.BlockLog.EnumAxis.Y);
+                iblockstate = iblockstate.withProperty(LOG_AXIS, EnumAxis.Y);
                 break;
             case 4:
-                iblockstate = iblockstate.withProperty(LOG_AXIS, net.minecraft.block.BlockLog.EnumAxis.X);
+                iblockstate = iblockstate.withProperty(LOG_AXIS, EnumAxis.X);
                 break;
             case 8:
-                iblockstate = iblockstate.withProperty(LOG_AXIS, net.minecraft.block.BlockLog.EnumAxis.Z);
+                iblockstate = iblockstate.withProperty(LOG_AXIS, EnumAxis.Z);
                 break;
             default:
-                iblockstate = iblockstate.withProperty(LOG_AXIS, net.minecraft.block.BlockLog.EnumAxis.NONE);
+                iblockstate = iblockstate.withProperty(LOG_AXIS, EnumAxis.NONE);
         }
 
         return iblockstate;
@@ -85,7 +85,7 @@ public class BlockNordLog extends BlockLog {
         byte b0 = 0;
         int i = b0 | ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-(shift*4);
 
-        switch (SwitchEnumAxis.AXIS_LOOKUP[((net.minecraft.block.BlockLog.EnumAxis)state.getValue(LOG_AXIS)).ordinal()])
+        switch (SwitchEnumAxis.AXIS_LOOKUP[((EnumAxis)state.getValue(LOG_AXIS)).ordinal()])
         {
             case 1:
                 i |= 4;
@@ -98,11 +98,6 @@ public class BlockNordLog extends BlockLog {
         }
 
         return i;
-    }
-    @Override
-    protected BlockState createBlockState()
-    {
-        return new BlockState(this, new IProperty[] {VARIANT, LOG_AXIS});
     }
     @Override
     protected ItemStack createStackedBlock(IBlockState state)
@@ -119,16 +114,5 @@ public class BlockNordLog extends BlockLog {
         return ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-shift*4;
     }
 
-    static final class SwitchEnumAxis
-    {
-        static final int[] AXIS_LOOKUP = new int[EnumAxis.values().length];
 
-        static
-        {
-            AXIS_LOOKUP[EnumAxis.X.ordinal()]       = 1;
-            AXIS_LOOKUP[EnumAxis.Z.ordinal()]       = 2;
-            AXIS_LOOKUP[EnumAxis.NONE.ordinal()]    = 3;
-
-        }
-    }
 }

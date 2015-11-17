@@ -1,7 +1,8 @@
 package ru.nord.common.blocks.wood;
 
 import com.google.common.base.Predicate;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -25,11 +26,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BlockNordLeaves extends BlockLeaves {
-    private static int shift = 0;
+public class BlockNordLeaves1 extends BlockNordLeaves {
+    private static int shift = 1;
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumNordPlank.class, new Predicate()
     {
-
         public boolean apply(EnumNordPlank type)
         {
             int meta =  type.getMetadata();
@@ -41,44 +41,13 @@ public class BlockNordLeaves extends BlockLeaves {
         }
     });
 
-    public BlockNordLeaves()
+    public BlockNordLeaves1()
     {
-        this.setDefaultState(
-                this.blockState.getBaseState()
-                        .withProperty(VARIANT, EnumNordPlank.SAKURA)
-                        .withProperty(CHECK_DECAY, true)
-                        .withProperty(DECAYABLE, true));
-    }
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getRenderColor(IBlockState state)
-    {
-      return super.getRenderColor(state);
-    }
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass)
-    {
-        return super.colorMultiplier(worldIn, pos, renderPass);
-    }
-    @Override
-    protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance)
-    {
-
-        EnumNordPlank apple = ((EnumNordPlank) state.getValue(VARIANT));
-        if (apple.dropFruit() != null && worldIn.rand.nextInt(chance) == 0)
-            spawnAsEntity(worldIn, pos, apple.dropFruit());
-
-    }
-    @Override
-    protected int getSaplingDropChance(IBlockState state)
-    {
-        return super.getSaplingDropChance(state);
-    }
-
-    @Override
-    public BlockPlanks.EnumType getWoodType(int meta) {
-        return null;
+//        this.setDefaultState(
+//                this.blockState.getBaseState()
+//                        .withProperty(VARIANT, EnumNordPlank.PALM_TREES)
+//                        .withProperty(CHECK_DECAY, true)
+//                        .withProperty(DECAYABLE, true));
     }
 
     @Override
@@ -97,14 +66,6 @@ public class BlockNordLeaves extends BlockLeaves {
         return new ItemStack(Item.getItemFromBlock(this), 1, ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-shift*4);
     }
 
-    @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState()
-                .withProperty(VARIANT, this.getWoodType2(meta))
-                .withProperty(DECAYABLE, (meta & 4) == 0)
-                .withProperty(CHECK_DECAY, (meta & 8) > 0);
-    }
 
     @Override
     public int getMetaFromState(IBlockState state)
@@ -125,15 +86,10 @@ public class BlockNordLeaves extends BlockLeaves {
         return i;
     }
 
-
+    @Override
     public EnumNordPlank getWoodType2(int meta)
     {
         return EnumNordPlank.byMetadata((meta & 3) +(shift*4));
-    }
-    @Override
-    protected BlockState createBlockState()
-    {
-        return new BlockState(this, new IProperty[] {VARIANT, CHECK_DECAY, DECAYABLE});
     }
 
     /**

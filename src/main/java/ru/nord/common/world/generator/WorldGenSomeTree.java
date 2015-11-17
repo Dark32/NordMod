@@ -82,7 +82,7 @@ public class WorldGenSomeTree extends WorldGenAbstractTree {
                                     BlockPos blockpos1 = new BlockPos(i2, l1, k2);
 
                                     if (worldIn.getBlockState(blockpos1).getBlock().canBeReplacedByLeaves(worldIn, blockpos1)) {
-                                        this.func_175905_a(worldIn, blockpos1, this.leaves, EnumNordPlank.SOME_PLANK.getMetadata());
+                                        this.func_175905_a(worldIn, blockpos1, this.leaves, EnumNordPlank.SAKURA.getMetadata());
                                     }
                                 }
                             }
@@ -108,7 +108,7 @@ public class WorldGenSomeTree extends WorldGenAbstractTree {
                         Block block2 = worldIn.getBlockState(upN).getBlock();
 
                         if (block2.isAir(worldIn, upN) || block2.isLeaves(worldIn, upN)) {
-                            this.func_175905_a(worldIn, pos.up(l1), this.log, EnumNordPlank.SOME_PLANK.getMetadata());
+                            this.func_175905_a(worldIn, pos.up(l1), this.log, EnumNordPlank.SAKURA.getMetadata());
                         }
                     }
 

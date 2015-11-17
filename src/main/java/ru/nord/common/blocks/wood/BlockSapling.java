@@ -29,9 +29,9 @@ public class BlockSapling extends BlockBush implements IGrowable {
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumNordPlank.class);
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 
-    protected BlockSapling()
+    public BlockSapling()
     {
-        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumNordPlank.SOME_PLANK).withProperty(STAGE, Integer.valueOf(0)));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumNordPlank.SAKURA).withProperty(STAGE, Integer.valueOf(0)));
         float f = 0.4F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(NordTabs.tabWood);
