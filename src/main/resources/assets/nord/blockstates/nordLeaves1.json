@@ -1,0 +1,42 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "leaves"
+    },
+    "variants": {
+        "variant":{
+            "sakura"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/sakura/leaf_1",
+                    "particle": "nord:blocks/wood/sakura/leaf_1"
+                }
+            },
+            "punica"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            },
+            "pear"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            },
+            "peach"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            }
+        },
+        "check_decay":{
+            "true":{},
+            "false":{}
+        },
+        "decayable":{
+            "true":{},
+            "false":{}
+        }
+    }
+}

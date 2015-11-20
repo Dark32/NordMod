@@ -1,6 +1,5 @@
-package ru.nord.common.blocks.wood;
+package ru.nord.common.blocks.wood.type1;
 
-import com.google.common.base.Predicate;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -17,19 +16,7 @@ import java.util.List;
 
 public class BlockNordLog extends BlockLog {
 
-    private static int shift = 0;
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant",EnumNordPlank.class, new Predicate()
-    {
-        public boolean apply(EnumNordPlank type)
-        {
-            int meta =  type.getMetadata();
-            return meta>=shift*4 && meta< (shift+1)*4;
-        }
-        public boolean apply(Object object)
-        {
-            return this.apply((EnumNordPlank)object);
-        }
-    });
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant",EnumNordPlank.class);
     private static final String __OBFID = "CL_00000281";
 
     public BlockNordLog()
@@ -43,10 +30,8 @@ public class BlockNordLog extends BlockLog {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        for (int i=0;i<4;i++){
-            int c = i+shift*4;
-            if (EnumNordPlank.values().length >= c)
-                list.add(new ItemStack(itemIn, 1, EnumNordPlank.values()[c].getMetadata()-shift*4));
+        for (int i=0;i<EnumNordPlank.values().length;i++){
+                list.add(new ItemStack(itemIn, 1, EnumNordPlank.values()[i].getMetadata()));
         }
     }
 
@@ -56,7 +41,7 @@ public class BlockNordLog extends BlockLog {
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, EnumNordPlank.byMetadata((meta & 3) + shift*4));
+        IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, EnumNordPlank.byMetadata((meta & 3)));
 
         switch (meta & 12)
         {
@@ -83,7 +68,7 @@ public class BlockNordLog extends BlockLog {
     public int getMetaFromState(IBlockState state)
     {
         byte b0 = 0;
-        int i = b0 | ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-(shift*4);
+        int i = b0 | ((EnumNordPlank)state.getValue(VARIANT)).getMetadata();
 
         switch (SwitchEnumAxis.AXIS_LOOKUP[((net.minecraft.block.BlockLog.EnumAxis)state.getValue(LOG_AXIS)).ordinal()])
         {
@@ -107,7 +92,7 @@ public class BlockNordLog extends BlockLog {
     @Override
     protected ItemStack createStackedBlock(IBlockState state)
     {
-        return new ItemStack(Item.getItemFromBlock(this), 1, ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-shift*4);
+        return new ItemStack(Item.getItemFromBlock(this), 1, ((EnumNordPlank)state.getValue(VARIANT)).getMetadata());
     }
 
     /**
@@ -116,7 +101,7 @@ public class BlockNordLog extends BlockLog {
     @Override
     public int damageDropped(IBlockState state)
     {
-        return ((EnumNordPlank)state.getValue(VARIANT)).getMetadata()-shift*4;
+        return ((EnumNordPlank)state.getValue(VARIANT)).getMetadata();
     }
 
     static final class SwitchEnumAxis

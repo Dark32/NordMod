@@ -1,0 +1,51 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+
+    },
+    "variants": {
+        "variant":{
+            "sakura"     : {
+                "textures": {
+                    "end": "nord:blocks/wood/sakura/log_top",
+                    "side": "nord:blocks/wood/sakura/log",
+                    "all": "nord:blocks/wood/sakura/log",
+                    "particle": "nord:blocks/wood/sakura/log"
+                }
+            },
+            "punica"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            },
+            "pear"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            },
+            "peach"     : {
+                "textures": {
+                    "all": "nord:blocks/deco/empire/bambook",
+                    "particle": "nord:blocks/deco/empire/bambook"
+                }
+            }
+        },
+        "axis":{
+            "y":{
+                 "model": "cube_column"
+            },
+            "z":{
+                 "model": "column_side"
+            },
+            "x":{
+                "model": "column_side",
+                "y": 90
+            },
+            "none":{
+                 "model": "cube_all"
+            }
+        }
+    }
+}

@@ -30,9 +30,9 @@ public class NordBloks {
     public static Block empireDecorationPanel1;
     public static Block empireGlass;
     public static Block whiteStone;
-    public static Block nordPlank;
-    public static Block nordSapling;
-    public static Block nordLeaves0;
+    public static Block nordPlank1;
+    public static Block nordSapling1;
     public static Block nordLeaves1;
+    public static Block nordLog1;
 }
 

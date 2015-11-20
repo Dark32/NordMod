@@ -1,13 +1,10 @@
-package ru.nord.common.items.wood;
+package ru.nord.common.items.wood.type1;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.common.blocks.wood.BlockNordLeaves;
 import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
-import ru.nord_core.common.utils.enums.EnumClearMetal;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class ItemBlockNordLog extends ItemBlockMetadata {
     private final Block block;
@@ -27,8 +24,12 @@ public class ItemBlockNordLog extends ItemBlockMetadata {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
-    {
-        return super.getUnlocalizedName() + "." + EnumNordPlank.byMetadata(stack.getMetadata()).getName();
+    public String getUnlocalizedName(ItemStack stack) {
+        int meta = stack.getMetadata();
+        if (meta < EnumMetal.getNames().length) {
+            return super.getUnlocalizedName() + "." + EnumNordPlank.byMetadata(stack.getMetadata()).getName();
+        } else {
+            return super.getUnlocalizedName() + ".errorData";
+        }
     }
 }

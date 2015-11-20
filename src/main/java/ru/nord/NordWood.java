@@ -1,13 +1,14 @@
 package ru.nord;
 
-import ru.nord.common.blocks.wood.BlockNordLeaves;
-import ru.nord.common.blocks.wood.BlockNordLeaves1;
-import ru.nord.common.blocks.wood.BlockPlanks;
-import ru.nord.common.blocks.wood.BlockSapling;
+import ru.nord.common.blocks.wood.type1.BlockNordLeaves;
+import ru.nord.common.blocks.wood.type1.BlockNordLog;
+import ru.nord.common.blocks.wood.type1.BlockPlanks;
+import ru.nord.common.blocks.wood.type1.BlockSapling;
 import ru.nord.common.helpers.RegisterHelper;
-import ru.nord.common.items.wood.ItemBlockNordLeaves;
-import ru.nord.common.items.wood.ItemBlockNordPlank;
-import ru.nord.common.items.wood.ItemBlockNordSapling;
+import ru.nord.common.items.wood.type1.ItemBlockNordLeaves;
+import ru.nord.common.items.wood.type1.ItemBlockNordLog;
+import ru.nord.common.items.wood.type1.ItemBlockNordPlank;
+import ru.nord.common.items.wood.type1.ItemBlockNordSapling;
 import ru.nord.common.utils.enums.EnumNordPlank;
 
 import java.util.Arrays;
@@ -28,10 +29,10 @@ public class NordWood {
     }
 
     public static void createBlock() {
-        NordBloks.nordPlank = new BlockPlanks(EnumNordPlank.getNames()).setUnlocalizedName("nordPlank").setCreativeTab(NordTabs.tabWood);
-        NordBloks.nordSapling = new BlockSapling().setUnlocalizedName("nordSapling").setCreativeTab(NordTabs.tabWood);
-        NordBloks.nordLeaves0 = new BlockNordLeaves().setUnlocalizedName("nordLeaves").setCreativeTab(NordTabs.tabWood);
-        NordBloks.nordLeaves1 = new BlockNordLeaves1().setUnlocalizedName("nordLeaves").setCreativeTab(NordTabs.tabWood);
+        NordBloks.nordPlank1 = new BlockPlanks(EnumNordPlank.getNames()).setUnlocalizedName("nordPlank").setCreativeTab(NordTabs.tabWood);
+        NordBloks.nordSapling1 = new BlockSapling().setUnlocalizedName("nordSapling").setCreativeTab(NordTabs.tabWood);
+        NordBloks.nordLeaves1 = new BlockNordLeaves().setUnlocalizedName("nordLeaves").setCreativeTab(NordTabs.tabWood);
+        NordBloks.nordLog1 = new BlockNordLog().setUnlocalizedName("nordLog").setCreativeTab(NordTabs.tabWood);
     }
 
     public static void createItem() {
@@ -40,35 +41,36 @@ public class NordWood {
 
     public static void registerBlock() {
         RegisterHelper.registerMetadataBlock(
-                NordBloks.nordPlank,
+                NordBloks.nordPlank1,
                 ItemBlockNordPlank.class,
-                "nordPlank",
-                "nordPlank",
+                "nordPlank1",
+                "nordPlank1",
                 EnumNordPlank.getNames()
         );
         RegisterHelper.registerMetadataBlock(
-                NordBloks.nordSapling,
+                NordBloks.nordSapling1,
                 ItemBlockNordSapling.class,
-                "nordSapling",
-                "nordSapling",
+                "nordSapling1",
+                "nordSapling1",
                 EnumNordPlank.getNames()
         );
 
         RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLeaves0,
+                NordBloks.nordLeaves1,
                 ItemBlockNordLeaves.class,
-                "nordLeaves0",
-                "nordLeaves0",
-                Arrays.copyOfRange(EnumNordPlank.getNames(),0,4)
+                "nordLeaves1",
+                "nordLeaves1",
+                EnumNordPlank.getNames()
         );
 
-//        RegisterHelper.registerMetadataBlock(
-//                NordBloks.nordLeaves1,
-//                ItemBlockNordLeaves.class,
-//                "nordLeaves1",
-//                "nordLeaves1",
-//                Arrays.copyOfRange(EnumNordPlank.getNames(),4,8)
-//        );
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.nordLog1,
+                ItemBlockNordLog.class,
+                "nordLog1",
+                "nordLog1",
+                EnumNordPlank.getNames()
+        );
+
     }
 
     public static void registerItem() {

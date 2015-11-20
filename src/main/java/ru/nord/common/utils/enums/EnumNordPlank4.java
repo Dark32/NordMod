@@ -1,25 +1,11 @@
 package ru.nord.common.utils.enums;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import ru.nord.common.world.generator.WorldGenSomeTree;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumNordPlank implements IMetadataEnum {
-//    SOME_PLANK(0, "some_plank") {
-//        @Override
-//        public WorldGenAbstractTree generate() {
-//            return new WorldGenSomeTree(true);
-//        }
-//
-//        @Override
-//        public ItemStack dropFruit() {
-//            return new ItemStack(Items.apple);
-//        }
-//    },
-
-    SAKURA(0, "sakura") {
+public enum EnumNordPlank4 implements IMetadataEnum {
+   BAOBAB(0, "baobab") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -30,7 +16,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PUNICA(1, "punica") {
+    ASH(1, "ash") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -41,7 +27,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PEAR(2, "pear") {
+    APRICOT(2, "apricot ") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -52,7 +38,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PEACH(3, "peach") {
+    CAMPHOR(3, "camphor") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -62,24 +48,23 @@ public enum EnumNordPlank implements IMetadataEnum {
         public ItemStack dropFruit() {
             return null;
         }
-    },
-    ;
+    },;
     private final String name;
     private final int meta;
 
-    EnumNordPlank(int _meta, String _name) {
+    EnumNordPlank4(int _meta, String _name) {
         this.name = _name;
         this.meta = _meta;
     }
 
-    public static EnumNordPlank byMetadata(int meta) {
-        return meta < EnumNordPlank.values().length ? EnumNordPlank.values()[meta] : EnumNordPlank.values()[0];
+    public static EnumNordPlank4 byMetadata(int meta) {
+        return meta < EnumNordPlank4.values().length ? EnumNordPlank4.values()[meta] : EnumNordPlank4.values()[0];
     }
 
     public static String[] getNames() {
-        String[] array = new String[EnumNordPlank.values().length];
-        for (int i = 0; i < EnumNordPlank.values().length; i++) {
-            array[i] = EnumNordPlank.values()[i].getName();
+        String[] array = new String[EnumNordPlank4.values().length];
+        for (int i = 0; i < EnumNordPlank4.values().length; i++) {
+            array[i] = EnumNordPlank4.values()[i].getName();
         }
         return array;
     }

@@ -1,4 +1,4 @@
-package ru.nord.common.blocks.wood;
+package ru.nord.common.blocks.wood.type1;
 
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
@@ -21,9 +21,6 @@ import ru.nord.common.utils.enums.EnumNordPlank;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by andrew on 07.11.15.
- */
 public class BlockSapling extends BlockBush implements IGrowable {
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumNordPlank.class);

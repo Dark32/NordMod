@@ -1,25 +1,11 @@
 package ru.nord.common.utils.enums;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import ru.nord.common.world.generator.WorldGenSomeTree;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumNordPlank implements IMetadataEnum {
-//    SOME_PLANK(0, "some_plank") {
-//        @Override
-//        public WorldGenAbstractTree generate() {
-//            return new WorldGenSomeTree(true);
-//        }
-//
-//        @Override
-//        public ItemStack dropFruit() {
-//            return new ItemStack(Items.apple);
-//        }
-//    },
-
-    SAKURA(0, "sakura") {
+public enum EnumNordPlank2 implements IMetadataEnum {
+    PALM_TREES(0, "palm_trees") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -30,7 +16,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PUNICA(1, "punica") {
+    ORANGE(1, "orange") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -41,7 +27,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PEAR(2, "pear") {
+    OLIVE(2, "olive") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -52,7 +38,7 @@ public enum EnumNordPlank implements IMetadataEnum {
             return null;
         }
     },
-    PEACH(3, "peach") {
+    MULBERRY(3, "mulberry") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
@@ -67,19 +53,19 @@ public enum EnumNordPlank implements IMetadataEnum {
     private final String name;
     private final int meta;
 
-    EnumNordPlank(int _meta, String _name) {
+    EnumNordPlank2(int _meta, String _name) {
         this.name = _name;
         this.meta = _meta;
     }
 
-    public static EnumNordPlank byMetadata(int meta) {
-        return meta < EnumNordPlank.values().length ? EnumNordPlank.values()[meta] : EnumNordPlank.values()[0];
+    public static EnumNordPlank2 byMetadata(int meta) {
+        return meta < EnumNordPlank2.values().length ? EnumNordPlank2.values()[meta] : EnumNordPlank2.values()[0];
     }
 
     public static String[] getNames() {
-        String[] array = new String[EnumNordPlank.values().length];
-        for (int i = 0; i < EnumNordPlank.values().length; i++) {
-            array[i] = EnumNordPlank.values()[i].getName();
+        String[] array = new String[EnumNordPlank2.values().length];
+        for (int i = 0; i < EnumNordPlank2.values().length; i++) {
+            array[i] = EnumNordPlank2.values()[i].getName();
         }
         return array;
     }

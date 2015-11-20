@@ -1,4 +1,4 @@
-package ru.nord.common.items.wood;
+package ru.nord.common.items.wood.type1;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;

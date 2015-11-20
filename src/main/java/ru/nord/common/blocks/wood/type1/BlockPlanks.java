@@ -1,6 +1,6 @@
-package ru.nord.common.blocks.wood;
+package ru.nord.common.blocks.wood.type1;
 
-import net.minecraft.block.Block;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -15,14 +15,10 @@ import ru.nord.NordTabs;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord_core.common.blocks.abstracts.BlockMetadata;
-import ru.nord_core.common.utils.enums.EnumClearMetal;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.List;
 
-/**
- * Created by andrew on 07.11.15.
- */
 public class BlockPlanks extends BlockMetadata {
 
     public static final PropertyEnum TYPE = PropertyEnum.create("variant", EnumNordPlank.class);
@@ -36,7 +32,7 @@ public class BlockPlanks extends BlockMetadata {
 
     @Override
     public IBlockState getStateFromMeta(int meta){
-        return this.getDefaultState().withProperty(TYPE, EnumClearMetal.byMetadata(meta));
+        return this.getDefaultState().withProperty(TYPE, EnumNordPlank.byMetadata(meta));
     }
     @Override
     protected BlockState createBlockState() {
