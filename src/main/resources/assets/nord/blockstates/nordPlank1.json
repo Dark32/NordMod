@@ -13,20 +13,20 @@
                 },
                 "punica"     : {
                     "textures": {
-                        "all": "nord:blocks/deco/empire/bambook",
-                        "particle": "nord:blocks/deco/empire/bambook"
+                        "all": "nord:blocks/wood/punica/punica_wood",
+                        "particle": "nord:blocks/wood/punica/punica_wood"
                     }
                 },
                 "pear"     : {
                     "textures": {
-                        "all": "nord:blocks/deco/empire/bambook",
-                        "particle": "nord:blocks/deco/empire/bambook"
+                        "all": "nord:blocks/wood/pear/pear_wood",
+                        "particle": "nord:blocks/wood/pear/pear_pear"
                     }
                 },
                 "peach"     : {
                     "textures": {
-                        "all": "nord:blocks/deco/empire/bambook",
-                        "particle": "nord:blocks/deco/empire/bambook"
+                        "all": "nord:blocks/wood/peach/peach_wood",
+                        "particle": "nord:blocks/wood/peach/peach_wood"
                     }
                 }
 
