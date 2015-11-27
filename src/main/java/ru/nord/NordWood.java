@@ -80,21 +80,19 @@ public class NordWood {
                 EnumNordPlank.getNames()
         );
 
-
-
         RegisterHelper.registerMetadataBlock(
                 NordBloks.nordPlank2,
                 ItemBlockNordPlank2.class,
                 "nordPlank2",
                 "nordPlank2",
-                EnumNordPlank.getNames()
+                EnumNordPlank2.getNames()
         );
         RegisterHelper.registerMetadataBlock(
                 NordBloks.nordSapling2,
                 ItemBlockNordSapling2.class,
                 "nordSapling2",
                 "nordSapling2",
-                EnumNordPlank.getNames()
+                EnumNordPlank2.getNames()
         );
 
         RegisterHelper.registerMetadataBlock(
@@ -102,7 +100,7 @@ public class NordWood {
                 ItemBlockNordLeaves2.class,
                 "nordLeaves2",
                 "nordLeaves2",
-                EnumNordPlank.getNames()
+                EnumNordPlank2.getNames()
         );
 
         RegisterHelper.registerMetadataBlock(
@@ -110,7 +108,7 @@ public class NordWood {
                 ItemBlockNordLog2.class,
                 "nordLog2",
                 "nordLog2",
-                EnumNordPlank.getNames()
+                EnumNordPlank2.getNames()
         );
 
     }

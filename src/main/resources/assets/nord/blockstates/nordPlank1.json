@@ -20,7 +20,7 @@
                 "pear"     : {
                     "textures": {
                         "all": "nord:blocks/wood/pear/pear_wood",
-                        "particle": "nord:blocks/wood/pear/pear_pear"
+                        "particle": "nord:blocks/wood/pear/pear_wood"
                     }
                 },
                 "peach"     : {
@@ -29,7 +29,6 @@
                         "particle": "nord:blocks/wood/peach/peach_wood"
                     }
                 }
-
         }
     }
 }

@@ -1,29 +1,46 @@
-[00:21:57] [main/INFO]: Extra: []
-[00:21:57] [main/INFO]: Running with arguments: [--userProperties, {}, --accessToken{REDACTED}, --assetIndex, 1.8, --assetsDir, C:/Users/TIMOFEY/.gradle/caches/minecraft/assets, --version, 1.8, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker]
-[00:21:58] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:21:59] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:21:59] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:21:59] [main/INFO]: Forge Mod Loader version 11.14.3.1521 for Minecraft 1.8 loading
-[00:21:59] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.7.0_79, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jdk1.7.0_79\jre
-[00:22:00] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[00:22:01] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:22:01] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[00:22:01] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:22:01] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:22:01] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[00:22:04] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[00:22:16] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
-[00:22:16] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[00:22:16] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[00:22:16] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[00:22:16] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[00:22:16] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[00:22:17] [Client thread/INFO]: Setting user: Player347
-[00:22:20] [Client thread/INFO]: LWJGL Version: 2.9.1
-[00:22:21] [Client thread/INFO]: [net.minecraftforge.fml.client.SplashProgress:start:-1]: ---- Minecraft Crash Report ----
-// Don't do that.
+[17:07:30] [main/INFO]: Extra: []
+[17:07:30] [main/INFO]: Running with arguments: [--userProperties, {}, --accessToken{REDACTED}, --assetIndex, 1.8, --assetsDir, /home/andrew/.gradle/caches/minecraft/assets, --version, 1.8, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker]
+[17:07:30] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:07:30] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:07:30] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:07:30] [main/INFO]: Forge Mod Loader version 11.14.4.1577 for Minecraft 1.8 loading
+[17:07:30] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.7.0_51, running on Linux:amd64:3.16.0-4-amd64, installed at /usr/lib/jvm/java-7-oracle/jre
+[17:07:30] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[17:07:31] [main/WARN]: The coremod codechicken.core.launch.CodeChickenCorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[17:07:31] [main/WARN]: The coremod codechicken.lib.asm.CCLCorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[17:07:31] [main/WARN]: The coremod codechicken.lib.asm.CCLCorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[17:07:31] [main/WARN]: The coremod codechicken.nei.asm.NEICorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[17:07:31] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:07:31] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[17:07:31] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:07:31] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:07:31] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:32] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[17:07:35] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[17:07:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:36] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:36] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:37] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:37] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:07:37] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[17:07:40] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[17:07:40] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[17:07:41] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[17:07:49] [Client thread/INFO]: Setting user: Player21
+[17:08:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:08:06] [Client thread/INFO]: [net.minecraftforge.fml.client.SplashProgress:start:-1]: ---- Minecraft Crash Report ----
 
-Time: 27.11.15 0:22
+WARNING: coremods are present:
+  CCLCorePlugin (CodeChickenLib-1.8-1.1.2.115-dev.jar)
+  NEICorePlugin (NotEnoughItems-1.8-1.0.5.82-dev.jar)
+  CCCDeobfPlugin (unknown)
+  CodeChickenCorePlugin (CodeChickenCore-1.8-1.0.5.34-dev.jar)
+Contact their authors BEFORE contacting forge
+
+// There are four lights!
+
+Time: 27.11.15 17:08
 Description: Loading screen debug info
 
 This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
@@ -35,718 +52,633 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- System Details --
 Details:
 	Minecraft Version: 1.8
-	Operating System: Windows 7 (amd64) version 6.1
-	Java Version: 1.7.0_79, Oracle Corporation
+	Operating System: Linux (amd64) version 3.16.0-4-amd64
+	Java Version: 1.7.0_51, Oracle Corporation
 	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 895904104 bytes (854 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	Memory: 883237088 bytes (842 MB) / 1056309248 bytes (1007 MB) up to 1056309248 bytes (1007 MB)
 	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	Loaded coremods (and transformers): 
-	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.5.0 NVIDIA 358.50' Renderer: 'GeForce GT 640/PCIe/SSE2'
-[00:22:21] [Client thread/INFO]: Attempting early MinecraftForge initialization
-[00:22:21] [Client thread/INFO]: MinecraftForge v11.14.3.1521 Initialized
-[00:22:21] [Client thread/INFO]: Replaced 204 ore recipies
-[00:22:21] [Client thread/INFO]: Completed early MinecraftForge initialization
-[00:22:21] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
-[00:22:21] [Client thread/INFO]: Searching C:\Nord\Nord\eclipse\mods for mods
-[00:22:28] [Client thread/INFO]: Forge Mod Loader has identified 7 mods to load
-[00:22:29] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, nord, nord_core, nord_deco, MineTweaker3] at CLIENT
-[00:22:29] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, nord, nord_core, nord_deco, MineTweaker3] at SERVER
-[00:22:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Nord Mod, FMLFileResourcePack:Core Nord Mod 1.8, FMLFileResourcePack:Nord Decoration Mod 1.8, FMLFileResourcePack:MineTweaker 3
-[00:22:31] [Client thread/INFO]: Processing ObjectHolder annotations
-[00:22:31] [Client thread/INFO]: Found 384 ObjectHolder annotations
-[00:22:31] [Client thread/INFO]: Identifying ItemStackHolder annotations
-[00:22:31] [Client thread/INFO]: Found 0 ItemStackHolder annotations
-[00:22:31] [Client thread/INFO]: Configured a dormant chunk cache size of 0
-[00:22:31] [Client thread/INFO]: Core Nord Mod start init
-[00:22:31] [Client thread/INFO]: Nord Mod start init
-[00:22:31] [Client thread/INFO]: Deco Nord Mod start init
-[00:22:31] [Client thread/INFO]: Applying holder lookups
-[00:22:31] [Client thread/INFO]: Holder lookups applied
-[00:22:31] [Client thread/INFO]: Injecting itemstacks
-[00:22:31] [Client thread/INFO]: Itemstack injection complete
-[00:22:31] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[00:22:31] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[00:22:31] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[00:22:32] [Thread-9/INFO]: OpenAL initialized.
-[00:22:32] [Sound Library Loader/INFO]: Sound engine started
-[00:22:35] [Client thread/INFO]: Max texture size: 16384
-[00:22:35] [Client thread/INFO]: Created: 16x16 textures-atlas
-[00:22:36] [Client thread/INFO]: Injecting itemstacks
-[00:22:36] [Client thread/INFO]: Itemstack injection complete
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 24
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 27
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 27
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 27
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 31
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 8
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 8
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 8
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 12
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 3
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 35
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 33
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 44
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 44
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 51
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 19
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 57
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 58
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 5
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 59
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 20
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 20
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 65
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 70
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 73
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 73
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 73
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 77
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 2
-[00:22:36] [Client thread/INFO]: [NORD] Recipe override 4
-[00:22:36] [Client thread/INFO]: [NORD] Loaded 66 FlowingRecipes1I2O
-[00:22:36] [Client thread/INFO]: [NORD] Loaded 28 SmelterRecipes2I2O
-[00:22:36] [Client thread/INFO]: [NORD] Loaded 14 ExtractorRecipes1I2O
-[00:22:36] [Client thread/INFO]: [NORD] Loaded 79 FurnaceRecipes1I2O
-[00:22:36] [Client thread/INFO]: [NORD] Loaded 6 WasherRecipes2I2O
-[00:22:36] [Client thread/INFO]: Forge Mod Loader has successfully loaded 7 mods
-[00:22:36] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Nord Mod, FMLFileResourcePack:Core Nord Mod 1.8, FMLFileResourcePack:Nord Decoration Mod 1.8, FMLFileResourcePack:MineTweaker 3
-[00:22:36] [Client thread/INFO]: SoundSystem shutting down...
-[00:22:36] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[00:22:36] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[00:22:36] [Thread-11/INFO]: Initializing LWJGL OpenAL
-[00:22:36] [Thread-11/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[00:22:36] [Thread-11/INFO]: OpenAL initialized.
-[00:22:37] [Sound Library Loader/INFO]: Sound engine started
-[00:22:38] [Client thread/INFO]: Max texture size: 16384
-[00:22:42] [Client thread/INFO]: Created: 512x512 textures-atlas
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire11#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire4#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:itemTestHammer#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:digger_well#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank1.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank1.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling1.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:deco_placer#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire10#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog1.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire5#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog1.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog1.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog1.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire1#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire9#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=mulberry not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank1.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling1.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank1.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:itemblades#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire2#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.sakura#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire6#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling1.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:deco_placer#normal not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=palm_trees not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:digger_well#normal not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.bambook#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire8#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.pear#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=olive not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling1.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire3#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire7#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=orange not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordPlank2.punica#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.peach#inventory not found
-[00:22:42] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=palm_trees not found
-[00:22:43] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-[00:22:43] [Client thread/ERROR]: The following texture errors were found.
-[00:22:43] [Client thread/ERROR]: ==================================================
-[00:22:43] [Client thread/ERROR]:   DOMAIN minecraft
-[00:22:43] [Client thread/ERROR]: --------------------------------------------------
-[00:22:43] [Client thread/ERROR]:   domain minecraft is missing 1 texture
-[00:22:43] [Client thread/ERROR]:     domain minecraft has 3 locations:
-[00:22:43] [Client thread/ERROR]:       unknown resourcepack type net.minecraft.client.resources.DefaultResourcePack : Default
-[00:22:43] [Client thread/ERROR]:       mod FML resources at C:\Users\TIMOFEY\.gradle\caches\minecraft\net\minecraftforge\forge\1.8-11.14.3.1521\snapshot\20141130\forgeSrc-1.8-11.14.3.1521.jar
-[00:22:43] [Client thread/ERROR]:       mod Forge resources at C:\Users\TIMOFEY\.gradle\caches\minecraft\net\minecraftforge\forge\1.8-11.14.3.1521\snapshot\20141130\forgeSrc-1.8-11.14.3.1521.jar
-[00:22:43] [Client thread/ERROR]: -------------------------
-[00:22:43] [Client thread/ERROR]:     The missing resources for domain minecraft are:
-[00:22:43] [Client thread/ERROR]:       textures/blocks/wood/pear/pear_leaf_1.png
-[00:22:43] [Client thread/ERROR]: -------------------------
-[00:22:43] [Client thread/ERROR]:     No other errors exist for domain minecraft
-[00:22:43] [Client thread/ERROR]: ==================================================
-[00:22:43] [Client thread/ERROR]: ==================================================
-[00:22:43] [Client thread/ERROR]:   DOMAIN nord
-[00:22:43] [Client thread/ERROR]: --------------------------------------------------
-[00:22:43] [Client thread/ERROR]:   domain nord is missing 1 texture
-[00:22:43] [Client thread/ERROR]:     domain nord has 3 locations:
-[00:22:43] [Client thread/ERROR]:       mod nord resources at C:\Nord\Nord\classes\production\Nord
-[00:22:43] [Client thread/ERROR]:       mod nord_core resources at C:\Nord\Nord\classes\production\Nord
-[00:22:43] [Client thread/ERROR]:       mod nord_deco resources at C:\Nord\Nord\classes\production\Nord
-[00:22:43] [Client thread/ERROR]: -------------------------
-[00:22:43] [Client thread/ERROR]:     The missing resources for domain nord are:
-[00:22:43] [Client thread/ERROR]:       textures/blocks/wood/pear/pear_pear.png
-[00:22:43] [Client thread/ERROR]: -------------------------
-[00:22:43] [Client thread/ERROR]:     No other errors exist for domain nord
-[00:22:43] [Client thread/ERROR]: ==================================================
-[00:22:43] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-[00:23:43] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[00:23:43] [Server thread/INFO]: Generating keypair
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empireLamp1 : ru.nord.common.items.ItemBlockRoofLamp@3eb29d2b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ghast_tear : net.minecraft.item.Item@7914bbd2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:book : net.minecraft.item.ItemBook@118b69c2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_ward : net.minecraft.item.ItemRecord@5922f665
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather : net.minecraft.item.Item@268539b0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_door : net.minecraft.item.ItemDoor@2ee5d440
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.PURPLE : ru.nord.common.items.ItemBlockDecoStone@4ba723bf
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cobblestone : net.minecraft.item.ItemBlock@4fde7fea
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_chest : net.minecraft.item.ItemBlock@a2219ac
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick : net.minecraft.item.ItemBlock@16f23be8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snow_layer : net.minecraft.item.ItemSnow@6520496c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spawn_egg : net.minecraft.item.ItemMonsterPlacer@14b58fc0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_chestplate : net.minecraft.item.ItemArmor@a4225aa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_chestplate : net.minecraft.item.ItemArmor@7a40cb4b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sand : net.minecraft.item.ItemMultiTexture@4ae143b1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tnt : net.minecraft.item.ItemBlock@5b71ba77
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_pickaxe : net.minecraft.item.ItemPickaxe@51991b9b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_11 : net.minecraft.item.ItemRecord@65e8e9b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:generatorBlock : net.minecraft.item.ItemBlock@60813c84
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snow : net.minecraft.item.ItemBlock@319ce065
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_fence_gate : net.minecraft.item.ItemBlock@d1a8066
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:furnaceBlock : net.minecraft.item.ItemBlock@4298b7b7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fermented_spider_eye : net.minecraft.item.Item@6af06702
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_chicken : net.minecraft.item.ItemFood@4274aa53
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:minecart : net.minecraft.item.ItemMinecart@57bd24cb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hardened_clay : net.minecraft.item.ItemBlock@7a9274ba
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bucket : net.minecraft.item.ItemBucket@3a9750e1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald : net.minecraft.item.Item@6a54c459
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cobblestone_wall : net.minecraft.item.ItemMultiTexture@27ea4128
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_button : net.minecraft.item.ItemBlock@5884888a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_glass : net.minecraft.item.ItemCloth@67d53134
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_boots : net.minecraft.item.ItemArmor@18a8422d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_ingot : net.minecraft.item.Item@5afecc75
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_slab : net.minecraft.item.ItemSlab@2e326835
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clay : net.minecraft.item.ItemBlock@2a7ac641
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_glass_pane : net.minecraft.item.ItemCloth@5d91822d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit : net.minecraft.item.ItemFood@6475c0ab
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:activator_rail : net.minecraft.item.ItemBlock@51d76da1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass_bottle : net.minecraft.item.ItemGlassBottle@31b76950
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_block : net.minecraft.item.ItemMultiTexture@3f29a9f5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_lamp : net.minecraft.item.ItemBlock@563995a0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_cat : net.minecraft.item.ItemRecord@62ba42ab
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brown_mushroom_block : net.minecraft.item.ItemBlock@72a973bd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_helmet : net.minecraft.item.ItemArmor@635dbb3e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clay_ball : net.minecraft.item.Item@28a83765
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tallgrass : net.minecraft.item.ItemColored@4be9246f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreDrop : ru.nord_core.common.items.ItemMetaData@4a77914d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_far : net.minecraft.item.ItemRecord@6783c490
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:repeater : net.minecraft.item.ItemReed@7b1a3553
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ice : net.minecraft.item.ItemBlock@2ab48552
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.GRAY : ru.nord.common.items.ItemBlockDecoStone@5dbab9df
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemblades : ru.nord_core.common.items.ItemBase@41d1b8a6
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_star : net.minecraft.item.ItemSimpleFoiled@721d7463
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick_block : net.minecraft.item.ItemBlock@6f578744
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreClearPowder : ru.nord_core.common.items.ItemMetaData@1a4cfd8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dispenser : net.minecraft.item.ItemBlock@34edb5aa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_wait : net.minecraft.item.ItemRecord@29e46561
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flower_pot : net.minecraft.item.ItemReed@eab9103
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald_block : net.minecraft.item.ItemBlock@7b085bce
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_carrot : net.minecraft.item.ItemFood@325aa873
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_flower : net.minecraft.item.ItemMultiTexture@4d998798
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:beef : net.minecraft.item.ItemFood@7de0a5c6
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:firework_charge : net.minecraft.item.ItemFireworkCharge@2b7892f9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone : net.minecraft.item.ItemMultiTexture@19ba71a9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sugar : net.minecraft.item.Item@3964565e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:soul_sand : net.minecraft.item.ItemBlock@125f3899
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fireworks : net.minecraft.item.ItemFirework@113a4a9a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass_pane : net.minecraft.item.ItemBlock@7e24b71c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mycelium : net.minecraft.item.ItemBlock@7b4dab69
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bookshelf : net.minecraft.item.ItemBlock@7890988
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chicken : net.minecraft.item.ItemFood@6a1dadaa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:light_weighted_pressure_plate : net.minecraft.item.ItemBlock@2024469c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_leggings : net.minecraft.item.ItemArmor@6184c65d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord_deco:chairWhite : ru.nord_deco.common.items.ItemBlockChair@5b70c94b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordPlank1 : ru.nord.common.items.wood.type1.ItemBlockNordPlank@4e7a11ec
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_door : net.minecraft.item.ItemDoor@373835ba
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_horse_armor : net.minecraft.item.Item@48fab4ad
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:energyCableBlock : net.minecraft.item.ItemBlock@6c94030
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_hardened_clay : net.minecraft.item.ItemCloth@19fe9620
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz : net.minecraft.item.Item@2d353425
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bedrock : net.minecraft.item.ItemBlock@6ecc295c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreNugget : ru.nord_core.common.items.ItemMetaData@6b496ebf
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:baked_potato : net.minecraft.item.ItemFood@59f7817e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick : net.minecraft.item.Item@2dc42634
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_boots : net.minecraft.item.ItemArmor@53fb35af
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_eye : net.minecraft.item.ItemEnderEye@ae918c9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_boots : net.minecraft.item.ItemArmor@4243690f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:writable_book : net.minecraft.item.ItemWritableBook@699743b3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fence_gate : net.minecraft.item.ItemBlock@5c7a92e6
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_ore : net.minecraft.item.ItemBlock@37364f2f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_fish : net.minecraft.item.ItemFishFood@7fa6e654
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemGlassFood : ru.nord_core.common.items.ItemGlassFood@62aee697
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flint : net.minecraft.item.Item@282e6ef4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_horse_armor : net.minecraft.item.Item@79e9616a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalCrystal : ru.nord.common.items.ItemBlockCrystall@3e71a01
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rail : net.minecraft.item.ItemBlock@7c472ee
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_shovel : net.minecraft.item.ItemSpade@b49ca9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hay_block : net.minecraft.item.ItemBlock@7a2efecc
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:comparator : net.minecraft.item.ItemReed@11a1bfc2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hopper : net.minecraft.item.ItemBlock@45e120b2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:torch : net.minecraft.item.ItemBlock@4b7a0b86
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLeaves1 : ru.nord.common.items.wood.type1.ItemBlockNordLeaves@223acec2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:farmland : net.minecraft.item.ItemBlock@42890c99
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lit_furnace : net.minecraft.item.ItemBlock@50860360
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_hoe : net.minecraft.item.ItemHoe@1b3b9b36
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:banner : net.minecraft.item.ItemBanner@6e4d4b9d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:command_block_minecart : net.minecraft.item.ItemMinecart@368a8297
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mutton : net.minecraft.item.ItemFood@3f83a37a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carrot : net.minecraft.item.ItemSeedFood@4cce292e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:slime : net.minecraft.item.ItemBlock@70b7a641
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:string : net.minecraft.item.ItemReed@1e22b429
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BLACK : ru.nord.common.items.ItemBlockDecoStone@45b8015f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemWrench : ru.nord_core.common.items.ItemWrench@224dbab
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_axe : net.minecraft.item.ItemAxe@507501ff
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:netherbrick : net.minecraft.item.Item@12346299
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:enchanting_table : net.minecraft.item.ItemBlock@17c341e4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_ingot : net.minecraft.item.Item@e2143ff
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dropper : net.minecraft.item.ItemBlock@165e8f01
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:potato : net.minecraft.item.ItemSeedFood@72f1b266
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon_seeds : net.minecraft.item.ItemSeeds@b2e12fd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal : net.minecraft.item.ItemCoal@1e4c9973
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemFood : ru.nord_core.common.items.ItemFoodNord@9d1c7e5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_wart : net.minecraft.item.ItemSeeds@608ba297
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bread : net.minecraft.item.ItemFood@1cda52a1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:painting : net.minecraft.item.ItemHangingEntity@343523e2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_door : net.minecraft.item.ItemDoor@2c1e889f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chest_minecart : net.minecraft.item.ItemMinecart@24af4e03
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fishing_rod : net.minecraft.item.ItemFishingRod@300a2ae
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:blaze_powder : net.minecraft.item.Item@4cfaeb27
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_boots : net.minecraft.item.ItemArmor@75d515a3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin_pie : net.minecraft.item.ItemFood@6bc44a1c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine : net.minecraft.item.ItemMultiTexture@1868eadb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rotten_flesh : net.minecraft.item.ItemFood@795a513a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.WHITE : ru.nord.common.items.ItemBlockDecoStone@4ea8b9c2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordPlank2 : ru.nord.common.items.wood.type2.ItemBlockNordPlank2@795f514f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:enchanted_book : net.minecraft.item.ItemEnchantedBook@767f168d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cake : net.minecraft.item.ItemReed@6a6252c1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIGHT_BLUE : ru.nord.common.items.ItemBlockDecoStone@5c1e46ae
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_bars : net.minecraft.item.ItemBlock@74d1dd7e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lapis_block : net.minecraft.item.ItemBlock@6ad8a3db
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cookie : net.minecraft.item.ItemFood@75a31b48
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_mutton : net.minecraft.item.ItemFood@5b61bf29
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cactus : net.minecraft.item.ItemBlock@32502055
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalClearBlock : ru.nord.common.items.ItemBlockClearMetal@1410eb06
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wool : net.minecraft.item.ItemCloth@32a9892f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_door : net.minecraft.item.ItemDoor@149f68fe
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalBlock : ru.nord.common.items.ItemBlockMetal@3967aafe
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_foot : net.minecraft.item.Item@6b68ad75
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:command_block : net.minecraft.item.ItemBlock@60c086e8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:end_stone : net.minecraft.item.ItemBlock@7376dd43
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sapling : net.minecraft.item.ItemMultiTexture@27b5411
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_boots : net.minecraft.item.ItemArmor@4efaa03e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:compass : net.minecraft.item.Item@16edb8ee
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_rabbit : net.minecraft.item.ItemFood@6ebc4e13
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:log : net.minecraft.item.ItemMultiTexture@5e42d31a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_13 : net.minecraft.item.ItemRecord@1017319d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_chestplate : net.minecraft.item.ItemArmor@1eb01669
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:milk_bucket : net.minecraft.item.ItemBucketMilk@2b19d83f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_stal : net.minecraft.item.ItemRecord@17e9bba8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:water_bucket : net.minecraft.item.ItemBucket@243f01d4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lava_bucket : net.minecraft.item.ItemBucket@249117e3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:saddle : net.minecraft.item.ItemSaddle@7cc43be4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:log2 : net.minecraft.item.ItemMultiTexture@2508e612
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_stairs : net.minecraft.item.ItemBlock@48553438
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stonebrick : net.minecraft.item.ItemMultiTexture@36e6ec63
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.RED : ru.nord.common.items.ItemBlockDecoStone@4e6e4eb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:potion : net.minecraft.item.ItemPotion@4072b0fe
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_mushroom : net.minecraft.item.ItemBlock@39862775
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone : net.minecraft.item.ItemRedstone@6f88dae
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLeaves2 : ru.nord.common.items.wood.type2.ItemBlockNordLeaves2@3f56fab1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemGlowstoneDust : ru.nord_core.common.items.ItemGlowstoneDust@288bda87
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_block : net.minecraft.item.ItemBlock@712cb19
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_block : net.minecraft.item.ItemBlock@5f9ab2da
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_stairs : net.minecraft.item.ItemBlock@24fd0a90
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_leggings : net.minecraft.item.ItemArmor@37900029
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:item_frame : net.minecraft.item.ItemHangingEntity@6326e598
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_ore : net.minecraft.item.ItemBlock@3eec3af5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:flowingBlock : net.minecraft.item.ItemBlock@d630469
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord_deco:chairOther : ru.nord_deco.common.items.ItemBlockChairOther@25c7f4c1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:reeds : net.minecraft.item.ItemReed@3bccdcbd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_fence_gate : net.minecraft.item.ItemBlock@46e3af42
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_fence_gate : net.minecraft.item.ItemBlock@7c8c0c57
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:experience_bottle : net.minecraft.item.ItemExpBottle@7b3691b6
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal_ore : net.minecraft.item.ItemBlock@709e635d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_stairs : net.minecraft.item.ItemBlock@61c3707c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:waterlily : net.minecraft.item.ItemLilyPad@2830b9bd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_shovel : net.minecraft.item.ItemSpade@cd6cecb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:piston : net.minecraft.item.ItemPiston@3782a3ca
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_ore : net.minecraft.item.ItemBlock@4c4ccbf0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bow : net.minecraft.item.ItemBow@3e9ed70d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_hoe : net.minecraft.item.ItemHoe@557597b7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:vine : net.minecraft.item.ItemColored@740c6fb7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_helmet : net.minecraft.item.ItemArmor@57a679c5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:furnace : net.minecraft.item.ItemBlock@339a32ef
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snowball : net.minecraft.item.ItemSnowball@4894a84a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:daylight_detector : net.minecraft.item.ItemBlock@44c82522
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_pressure_plate : net.minecraft.item.ItemBlock@bdcf4a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gravel : net.minecraft.item.ItemBlock@b233fdf
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_door : net.minecraft.item.ItemDoor@72d1cdcd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empireFloorLamp1 : ru.nord.common.items.ItemBlockRoofLamp@3a93ea5f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BLUE : ru.nord.common.items.ItemBlockDecoStone@26c5f632
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lit_pumpkin : net.minecraft.item.ItemBlock@40c798c4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oilLamp : net.minecraft.item.ItemBlock@262aeb1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:barrier : net.minecraft.item.ItemBlock@19321c35
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tnt_minecart : net.minecraft.item.ItemMinecart@7ff28052
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_fence_gate : net.minecraft.item.ItemBlock@73426978
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_fence : net.minecraft.item.ItemBlock@2323dd3b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_pressure_plate : net.minecraft.item.ItemBlock@2d7403a7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemTestHammer : ru.nord.common.items.ItemDrill@6da4fa43
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_stew : net.minecraft.item.ItemSoup@ca9fa31
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:map : net.minecraft.item.ItemEmptyMap@72496c23
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_chestplate : net.minecraft.item.ItemArmor@54fd251e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fish : net.minecraft.item.ItemFishFood@1efb3a27
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:filled_map : net.minecraft.item.ItemMap@479a933a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:clearIngot : ru.nord_core.common.items.ItemMetaData@4f7d258d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_porkchop : net.minecraft.item.ItemFood@5e1ac9b4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:detector_rail : net.minecraft.item.ItemBlock@203da423
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bowl : net.minecraft.item.Item@22c9762d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:netherrack : net.minecraft.item.ItemBlock@4b1603fa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_slab2 : net.minecraft.item.ItemSlab@20d3e3b1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_sword : net.minecraft.item.ItemSword@3718104f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordSapling1 : ru.nord.common.items.wood.type1.ItemBlockNordSapling@7bf68bf7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gunpowder : net.minecraft.item.Item@3ff92c98
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brown_mushroom : net.minecraft.item.ItemBlock@1a9533f5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BROWN : ru.nord.common.items.ItemBlockDecoStone@302c74c4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_torch : net.minecraft.item.ItemBlock@169fd990
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.PINK : ru.nord.common.items.ItemBlockDecoStone@39ece0e3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spider_eye : net.minecraft.item.ItemFood@631cb0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:floorLamp1 : ru.nord.common.items.ItemBlockFloorLamp@6b573c5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_shovel : net.minecraft.item.ItemSpade@780ca032
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sandstone_stairs : net.minecraft.item.ItemBlock@57339e4e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:washerBlock : net.minecraft.item.ItemBlock@74a05624
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:beacon : net.minecraft.item.ItemBlock@7fd91af7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_sandstone : net.minecraft.item.ItemMultiTexture@64703b1b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:smelterBlock : net.minecraft.item.ItemBlock@707f6892
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:grass : net.minecraft.item.ItemColored@1f7c1b71
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_pickaxe : net.minecraft.item.ItemPickaxe@1a9a3a95
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_axe : net.minecraft.item.ItemAxe@1ae386f7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalDust : ru.nord_core.common.items.ItemMetaData@2205f4a0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glowstone : net.minecraft.item.ItemBlock@297cce3b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:deadbush : net.minecraft.item.ItemBlock@37571a58
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick_stairs : net.minecraft.item.ItemBlock@4e7e63a2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:arrow : net.minecraft.item.Item@2e38b699
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_mushroom_block : net.minecraft.item.ItemBlock@52edb81a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLog1 : ru.nord.common.items.wood.type1.ItemBlockNordLog@58ab1ae4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_rail : net.minecraft.item.ItemBlock@e25044e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empPaper : ru.nord.common.items.ItemBlockEmpPaper@46c4f6d5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:anvil : net.minecraft.item.ItemAnvilBlock@40cc0191
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.ORANGE : ru.nord.common.items.ItemBlockDecoStone@6bf19c0b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_fence : net.minecraft.item.ItemBlock@58d3ee56
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jukebox : net.minecraft.item.ItemBlock@626deb30
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_leggings : net.minecraft.item.ItemArmor@7cb6c128
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_fence : net.minecraft.item.ItemBlock@37d5c2ae
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_door : net.minecraft.item.ItemDoor@6da60645
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreCrystal : ru.nord_core.common.items.ItemMetaData@34ff45d3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_nugget : net.minecraft.item.Item@40371618
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_stairs : net.minecraft.item.ItemBlock@5a25a41d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empGlass : ru.nord.common.items.ItemBlockEmpGlass@5e4da970
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:digger_well : net.minecraft.item.ItemBlock@4ba0b841
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_blocks : net.minecraft.item.ItemRecord@326f1b30
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon : net.minecraft.item.ItemFood@6796bfc8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:accumulatorBlock : net.minecraft.item.ItemBlock@62b91f5e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:obsidian : net.minecraft.item.ItemBlock@1cd886cd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:stick : ru.nord_core.common.items.ItemMetaData@212c74c0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_shovel : net.minecraft.item.ItemSpade@7469d7f4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal_block : net.minecraft.item.ItemBlock@252d9e34
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:armor_stand : net.minecraft.item.ItemArmorStand@4b945f01
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_block : net.minecraft.item.ItemBlock@16888fd4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:feather : net.minecraft.item.Item@7861ff33
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.CYAN : ru.nord.common.items.ItemBlockDecoStone@223f018c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:monster_egg : net.minecraft.item.ItemMultiTexture@26cd629f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_mellohi : net.minecraft.item.ItemRecord@2b926419
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mob_spawner : net.minecraft.item.ItemBlock@398ab120
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:magma_cream : net.minecraft.item.Item@6d6474ec
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_slab : net.minecraft.item.ItemSlab@5e8e6799
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:boat : net.minecraft.item.ItemBoat@6038a3ba
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_ore : net.minecraft.item.ItemBlock@4e88b2fa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_fence_gate : net.minecraft.item.ItemBlock@e073a6a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_pearl : net.minecraft.item.ItemEnderPearl@73a64659
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_brick_stairs : net.minecraft.item.ItemBlock@4bbf48f0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_block : net.minecraft.item.ItemBlock@2ffdfe75
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_door : net.minecraft.item.ItemDoor@4882a72a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:oak_stairs : net.minecraft.item.ItemBlock@4072c963
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:yellow_flower : net.minecraft.item.ItemMultiTexture@44250147
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_hide : net.minecraft.item.Item@2554136a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:heavy_weighted_pressure_plate : net.minecraft.item.ItemBlock@2d97bc40
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:written_book : net.minecraft.item.ItemEditableBook@74491643
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:apple : net.minecraft.item.ItemFood@3387f025
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:extractorBlock : net.minecraft.item.ItemBlock@3bf6d2d9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:speckled_melon : net.minecraft.item.Item@4d5a39b7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brewing_stand : net.minecraft.item.ItemReed@5e386a0f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:ingot : ru.nord_core.common.items.ItemMetaData@63413ad3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sticky_piston : net.minecraft.item.ItemPiston@2ee3065e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mossy_cobblestone : net.minecraft.item.ItemBlock@35d0c395
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_strad : net.minecraft.item.ItemRecord@721f1edb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:deco_placer : net.minecraft.item.ItemBlock@66a3eb31
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick_stairs : net.minecraft.item.ItemBlock@1291a472
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordSapling2 : ru.nord.common.items.wood.type2.ItemBlockNordSapling2@38663561
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leaves2 : net.minecraft.item.ItemLeaves@6767001b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:end_portal_frame : net.minecraft.item.ItemBlock@141aebec
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:trapdoor : net.minecraft.item.ItemBlock@6ffe8d15
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_sandstone_stairs : net.minecraft.item.ItemBlock@4389d21
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin_seeds : net.minecraft.item.ItemSeeds@5a091899
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_horse_armor : net.minecraft.item.Item@436bef49
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leaves : net.minecraft.item.ItemLeaves@1028cfde
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sea_lantern : net.minecraft.item.ItemBlock@1012dc62
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_helmet : net.minecraft.item.ItemArmor@4e90a500
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond : net.minecraft.item.Item@36ee5c8f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine_shard : net.minecraft.item.Item@59bdd595
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_apple : net.minecraft.item.ItemAppleGold@24cce823
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carrot_on_a_stick : net.minecraft.item.ItemCarrotOnAStick@2eaa4bf8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalOre : ru.nord.common.items.ItemBlockMetalOre@3280d3ec
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carpet : net.minecraft.item.ItemCloth@235a41bf
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:shears : net.minecraft.item.ItemShears@6d2c0f26
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:skull : net.minecraft.item.ItemSkull@1da3450b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dirt : net.minecraft.item.ItemMultiTexture@a0adf9c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_shovel : net.minecraft.item.ItemSpade@6659effa
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald_ore : net.minecraft.item.ItemBlock@7dde3f9b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLog2 : ru.nord.common.items.wood.type2.ItemBlockNordLog2@bef0597
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:planks : net.minecraft.item.ItemMultiTexture@6ac47476
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:trapped_chest : net.minecraft.item.ItemBlock@117af7d3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:egg : net.minecraft.item.ItemEgg@66ff9a56
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_mall : net.minecraft.item.ItemRecord@7bddff07
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_beef : net.minecraft.item.ItemFood@27a3aaba
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_sword : net.minecraft.item.ItemSword@4884b5b1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_pickaxe : net.minecraft.item.ItemPickaxe@4e97031
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_leggings : net.minecraft.item.ItemArmor@3a8f573c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_sword : net.minecraft.item.ItemSword@2e6dfd69
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sponge : net.minecraft.item.ItemMultiTexture@9d524af
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_axe : net.minecraft.item.ItemAxe@67d9a642
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:crafting_table : net.minecraft.item.ItemBlock@62d3d9ef
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_stairs : net.minecraft.item.ItemBlock@5d399a27
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick_fence : net.minecraft.item.ItemBlock@793b081c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clock : net.minecraft.item.Item@1eb84f0c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIME : ru.nord.common.items.ItemBlockDecoStone@62d30cc6
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_pickaxe : net.minecraft.item.ItemPickaxe@50e10fe1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:blaze_rod : net.minecraft.item.Item@2954b860
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_stairs : net.minecraft.item.ItemBlock@660e0f08
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_helmet : net.minecraft.item.ItemArmor@11819f3c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sandstone : net.minecraft.item.ItemMultiTexture@574f9db7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dragon_egg : net.minecraft.item.ItemBlock@b894ee
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:furnace_minecart : net.minecraft.item.ItemMinecart@712ab9c5
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cauldron : net.minecraft.item.ItemReed@49bb2f1c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ladder : net.minecraft.item.ItemBlock@e47bced
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.MAGENTA : ru.nord.common.items.ItemBlockDecoStone@1f52e245
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fire_charge : net.minecraft.item.ItemFireball@27f55b38
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lead : net.minecraft.item.ItemLead@4c45a3ad
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_hoe : net.minecraft.item.ItemHoe@664b0431
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:noteblock : net.minecraft.item.ItemBlock@2bfb8629
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_hoe : net.minecraft.item.ItemHoe@59c7f05d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_sword : net.minecraft.item.ItemSword@31d6359d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bed : net.minecraft.item.ItemBed@22b48b21
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empPaperPanel : ru.nord.common.items.ItemBlockEmpPaper@6c2806c9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:packed_ice : net.minecraft.item.ItemBlock@55ed7afd
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mushroom_stew : net.minecraft.item.ItemSoup@52edb7a0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glowstone_dust : net.minecraft.item.Item@564dac95
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dye : net.minecraft.item.ItemDye@55fd2f18
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lapis_ore : net.minecraft.item.ItemBlock@278c4835
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_trapdoor : net.minecraft.item.ItemBlock@28d9e87f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chest : net.minecraft.item.ItemBlock@3003a3a3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stick : net.minecraft.item.Item@4fb1cfeb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_helmet : net.minecraft.item.ItemArmor@787fbcc4
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_leggings : net.minecraft.item.ItemArmor@33e2e7a1
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:poisonous_potato : net.minecraft.item.ItemFood@856a557
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_fence : net.minecraft.item.ItemBlock@32e04a25
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bone : net.minecraft.item.Item@611efcc2
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreDirtyPowder : ru.nord_core.common.items.ItemMetaData@6fe47c6c
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hopper_minecart : net.minecraft.item.ItemMinecart@9c6c91e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_chestplate : net.minecraft.item.ItemArmor@7284a177
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flint_and_steel : net.minecraft.item.ItemFlintAndSteel@2de743a3
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_hoe : net.minecraft.item.ItemHoe@f0a0101
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.GREEN : ru.nord.common.items.ItemBlockDecoStone@6de87506
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:slime_ball : net.minecraft.item.Item@57cc488d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wheat : net.minecraft.item.Item@2b63aca0
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sign : net.minecraft.item.ItemSign@784d0d4b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon_block : net.minecraft.item.ItemBlock@1c71cff7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIGHT_GRAY : ru.nord.common.items.ItemBlockDecoStone@1ad4ae12
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine_crystals : net.minecraft.item.Item@3e11573a
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemEnergyStorage : ru.nord_core.common.items.ItemEnergyStorageDamagable@2de4b4f7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_button : net.minecraft.item.ItemBlock@45bbd91
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lever : net.minecraft.item.ItemBlock@45f3ac6f
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:paper : net.minecraft.item.Item@6b01af7
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_ore : net.minecraft.item.ItemBlock@1b9be041
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_chirp : net.minecraft.item.ItemRecord@1c62062e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_stairs : net.minecraft.item.ItemBlock@72556b3d
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_pickaxe : net.minecraft.item.ItemPickaxe@6aa27802
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.YELLOW : ru.nord.common.items.ItemBlockDecoStone@61f269fc
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin : net.minecraft.item.ItemBlock@41c47da9
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:double_plant : net.minecraft.item.ItemDoublePlant@29dafbfb
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wheat_seeds : net.minecraft.item.ItemSeeds@57b8e38e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass : net.minecraft.item.ItemBlock@85b6234
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:porkchop : net.minecraft.item.ItemFood@7669c8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fence : net.minecraft.item.ItemBlock@1e6bcecc
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tripwire_hook : net.minecraft.item.ItemBlock@44c37066
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_fence : net.minecraft.item.ItemBlock@7915e83
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:whiteStone : ru.nord.common.items.ItemBlockWhiteStone@472e2029
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:web : net.minecraft.item.ItemBlock@3ab71d5e
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_axe : net.minecraft.item.ItemAxe@79c4a37b
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_axe : net.minecraft.item.ItemAxe@37c19d8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_sword : net.minecraft.item.ItemSword@74b293e8
-[00:23:44] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:name_tag : net.minecraft.item.ItemNameTag@741d67cf
-[00:23:44] [Server thread/INFO]: [minetweaker.MineTweakerImplementationAPI:reload:613]: First time loading a script, go ahead
-[00:23:44] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:111]: Loading scripts
-[00:23:44] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:158]: MineTweaker: Loading intermod
-[00:23:44] [Server thread/INFO]: Injecting existing block and item data into this server instance
-[00:23:44] [Server thread/INFO]: Applying holder lookups
-[00:23:44] [Server thread/INFO]: Holder lookups applied
-[00:23:44] [Server thread/INFO]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@4d4e05fb)
-[00:23:44] [Server thread/INFO]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@4d4e05fb)
-[00:23:44] [Server thread/INFO]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@4d4e05fb)
-[00:23:44] [Server thread/INFO]: Preparing start region for level 0
-[00:23:45] [Server thread/INFO]: Changing view distance to 12, from 10
-[00:23:47] [Netty Local Client IO #0/INFO]: Server protocol version 2
-[00:23:47] [Netty Server IO #1/INFO]: Client protocol version 2
-[00:23:47] [Netty Server IO #1/INFO]: Client attempting to join with 7 mods : nord_deco@0.1.0,mcp@9.05,FML@8.0.99.99,Forge@11.14.3.1521,MineTweaker3@3.0.10,nord@0.1.0,nord_core@0.1.0
-[00:23:47] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
-[00:23:47] [Server thread/INFO]: [Server thread] Server side modded connection established
-[00:23:47] [Server thread/INFO]: Player347[local:E:9882de4d] logged in with entity id 300 at (1044.2161390938727, 68.73064119087354, -712.6999999880791)
-[00:23:47] [Server thread/INFO]: Player347 joined the game
-[00:23:50] [Server thread/INFO]: Saving and pausing game...
-[00:23:50] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[00:23:50] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[00:23:50] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[00:26:47] [Server thread/INFO]: [Player347: Changing to clear weather]
-[00:26:47] [Client thread/INFO]: [CHAT] Changing to clear weather
-[00:26:48] [Server thread/INFO]: Player347 has just earned the achievement [Taking Inventory]
-[00:26:48] [Client thread/INFO]: [CHAT] Player347 has just earned the achievement [Taking Inventory]
-[00:27:26] [Server thread/ERROR]: Encountered an unexpected exception
-java.lang.NullPointerException
-	at net.minecraft.crash.CrashReportCategory.firstTwoElementsOfStackTraceMatch(Unknown Source) ~[CrashReportCategory.class:?]
-	at net.minecraft.crash.CrashReport.makeCategoryDepth(Unknown Source) ~[CrashReport.class:?]
-	at net.minecraft.world.World.addWorldInfoToCrashReport(Unknown Source) ~[World.class:?]
-	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(Unknown Source) ~[MinecraftServer.class:?]
-	at net.minecraft.server.MinecraftServer.tick(Unknown Source) ~[MinecraftServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.tick(Unknown Source) ~[IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(Unknown Source) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:745) [?:1.7.0_79]
-[00:27:26] [Server thread/ERROR]: This crash report has been saved to: C:\Nord\Nord\eclipse\.\crash-reports\crash-2015-11-27_00.27.26-server.txt
-[00:27:26] [Server thread/INFO]: Stopping server
-[00:27:26] [Server thread/INFO]: Saving players
-[00:27:26] [Client thread/INFO]: [net.minecraft.init.Bootstrap:printToSYSOUT:-1]: ---- Minecraft Crash Report ----
-// Ooh. Shiny.
-
-Time: 27.11.15 0:27
-Description: Exception in server tick loop
-
-java.lang.NullPointerException: Exception in server tick loop
-	at net.minecraft.crash.CrashReportCategory.firstTwoElementsOfStackTraceMatch(Unknown Source)
-	at net.minecraft.crash.CrashReport.makeCategoryDepth(Unknown Source)
-	at net.minecraft.world.World.addWorldInfoToCrashReport(Unknown Source)
-	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(Unknown Source)
-	at net.minecraft.server.MinecraftServer.tick(Unknown Source)
-	at net.minecraft.server.integrated.IntegratedServer.tick(Unknown Source)
-	at net.minecraft.server.MinecraftServer.run(Unknown Source)
-	at java.lang.Thread.run(Thread.java:745)
-
-
-A detailed walkthrough of the error, its code path and all known details is as follows:
----------------------------------------------------------------------------------------
-
--- System Details --
-Details:
-	Minecraft Version: 1.8
-	Operating System: Windows 7 (amd64) version 6.1
-	Java Version: 1.7.0_79, Oracle Corporation
-	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 526791184 bytes (502 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
-	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
-	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
-	FML: MCP v9.10 FML v8.0.99.99 Minecraft Forge 11.14.3.1521 7 mods loaded, 7 mods active
-	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
-	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
-	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.8-11.14.3.1521.jar) 
-	UCHIJAAAA	Forge{11.14.3.1521} [Minecraft Forge] (forgeSrc-1.8-11.14.3.1521.jar) 
-	UCHIJAAAA	nord_core{0.1.0} [Core Nord Mod 1.8] (Nord) 
-	UCHIJAAAA	nord{0.1.0} [Nord Mod] (Nord) 
-	UCHIJAAAA	nord_deco{0.1.0} [Nord Decoration Mod 1.8] (Nord) 
-	UCHIJAAAA	MineTweaker3{3.0.10} [MineTweaker 3] (MineTweaker3-Dev-1.8-3.0.10.jar) 
-	Loaded coremods (and transformers): 
-	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
-	Profiler Position: N/A (disabled)
-	Player Count: 1 / 8; [EntityPlayerMP['Player347'/300, l='New World', x=1031,74, y=74,11, z=-677,05]]
-	Type: Integrated Server (map_client.txt)
-	Is Modded: Definitely; Client brand changed to 'fml,forge'
-[00:27:26] [Client thread/INFO]: [net.minecraft.init.Bootstrap:printToSYSOUT:-1]: #@!@# Game crashed! Crash report saved to: #@!@# .\crash-reports\crash-2015-11-27_00.27.26-server.txt
-[00:27:26] [Client thread/INFO]: Waiting for the server to terminate/save.
-[00:27:26] [Server thread/INFO]: Saving worlds
-[00:27:26] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[00:27:27] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[00:27:27] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[00:27:27] [Server thread/INFO]: Unloading dimension 0
-[00:27:27] [Server thread/INFO]: Unloading dimension -1
-[00:27:27] [Server thread/INFO]: Unloading dimension 1
-[00:27:27] [Server thread/INFO]: Applying holder lookups
-[00:27:27] [Server thread/INFO]: Holder lookups applied
-[00:27:27] [Server thread/INFO]: The state engine was in incorrect state SERVER_STOPPING and forced into state SERVER_STOPPED. Errors may have been discarded.
-[00:27:27] [Client thread/INFO]: Server terminated.
+CCLCorePlugin (CodeChickenLib-1.8-1.1.2.115-dev.jar)
+  codechicken.lib.asm.ClassHeirachyManager
+  codechicken.lib.asm.RenderHookTransformer
+NEICorePlugin (NotEnoughItems-1.8-1.0.5.82-dev.jar)
+  codechicken.nei.asm.NEITransformer
+CCCDeobfPlugin (unknown)
+  
+CodeChickenCorePlugin (CodeChickenCore-1.8-1.0.5.34-dev.jar)
+  codechicken.core.asm.InterfaceDependancyTransformer
+  codechicken.core.asm.TweakTransformer
+  codechicken.core.asm.DelegatedTransformer
+  codechicken.core.asm.DefaultImplementationTransformer
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.4.0 NVIDIA 340.65' Renderer: 'GeForce GT 630/PCIe/SSE2'
+[17:08:06] [Client thread/INFO]: Attempting early MinecraftForge initialization
+[17:08:06] [Client thread/INFO]: MinecraftForge v11.14.4.1577 Initialized
+[17:08:06] [Client thread/INFO]: Replaced 204 ore recipies
+[17:08:07] [Client thread/INFO]: Completed early MinecraftForge initialization
+[17:08:07] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[17:08:07] [Client thread/INFO]: Searching /home/andrew/nord/NordMod/eclipse/mods for mods
+[17:08:07] [Client thread/INFO]: Also searching /home/andrew/nord/NordMod/eclipse/mods/1.8 for mods
+[17:08:17] [Client thread/INFO]: Forge Mod Loader has identified 9 mods to load
+[17:08:18] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, CodeChickenCore, NotEnoughItems, nord, nord_core, nord_deco, MineTweaker3] at CLIENT
+[17:08:18] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, CodeChickenCore, NotEnoughItems, nord, nord_core, nord_deco, MineTweaker3] at SERVER
+[17:08:23] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Nord Mod, FMLFileResourcePack:Core Nord Mod 1.8, FMLFileResourcePack:Nord Decoration Mod 1.8, FMLFileResourcePack:MineTweaker 3
+[17:08:23] [Client thread/INFO]: Processing ObjectHolder annotations
+[17:08:23] [Client thread/INFO]: Found 384 ObjectHolder annotations
+[17:08:23] [Client thread/INFO]: Identifying ItemStackHolder annotations
+[17:08:23] [Client thread/INFO]: Found 0 ItemStackHolder annotations
+[17:08:23] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[17:08:23] [Forge Version Check/INFO]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[17:08:23] [Client thread/INFO]: Core Nord Mod start init
+[17:08:23] [Client thread/INFO]: Nord Mod start preInit
+[17:08:24] [Client thread/INFO]: Nord Mod start createBlock
+[17:08:24] [Forge Version Check/INFO]: [Forge] Found status: AHEAD Target: null
+[17:08:26] [Client thread/INFO]: Deco Nord Mod start init
+[17:08:26] [Client thread/INFO]: Applying holder lookups
+[17:08:26] [Client thread/INFO]: Holder lookups applied
+[17:08:26] [Client thread/INFO]: Injecting itemstacks
+[17:08:26] [Client thread/INFO]: Itemstack injection complete
+[17:08:26] [Client thread/INFO]: [tv.twitch.StandardCoreAPI:<init>:16]: If on Windows, make sure to provide all of the necessary dll's as specified in the twitchsdk README. Also, make sure to set the PATH environment variable to point to the directory containing the dll's.
+[17:08:26] [Client thread/ERROR]: Couldn't initialize twitch stream
+[17:08:27] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:08:27] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[17:08:27] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:08:27] [Thread-8/INFO]: OpenAL initialized.
+[17:08:27] [Sound Library Loader/INFO]: Sound engine started
+[17:08:33] [Client thread/INFO]: Max texture size: 16384
+[17:08:33] [Client thread/INFO]: Created: 16x16 textures-atlas
+[17:08:39] [Client thread/INFO]: Injecting itemstacks
+[17:08:39] [Client thread/INFO]: Itemstack injection complete
+[17:08:39] [Client thread/INFO]: [NORD] Recipe override 24
+[17:08:39] [Client thread/INFO]: [NORD] Recipe override 27
+[17:08:39] [Client thread/INFO]: [NORD] Recipe override 27
+[17:08:39] [Client thread/INFO]: [NORD] Recipe override 27
+[17:08:39] [Client thread/INFO]: [NORD] Recipe override 31
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 5
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 8
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 8
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 8
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 12
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 29
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 35
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 43
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 22
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 42
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 42
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 51
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 39
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 13
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 13
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 57
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 13
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 58
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 13
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 59
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 12
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 12
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 65
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 70
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 73
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 73
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 73
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 77
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 2
+[17:08:40] [Client thread/INFO]: [NORD] Recipe override 4
+[17:08:40] [Client thread/INFO]: [NORD] Loaded 66 FlowingRecipes1I2O
+[17:08:40] [Client thread/INFO]: [NORD] Loaded 28 SmelterRecipes2I2O
+[17:08:40] [Client thread/INFO]: [NORD] Loaded 14 ExtractorRecipes1I2O
+[17:08:40] [Client thread/INFO]: [NORD] Loaded 79 FurnaceRecipes1I2O
+[17:08:40] [Client thread/INFO]: [NORD] Loaded 6 WasherRecipes2I2O
+[17:08:40] [Client thread/INFO]: Forge Mod Loader has successfully loaded 9 mods
+[17:08:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Nord Mod, FMLFileResourcePack:Core Nord Mod 1.8, FMLFileResourcePack:Nord Decoration Mod 1.8, FMLFileResourcePack:MineTweaker 3
+[17:08:40] [Client thread/INFO]: SoundSystem shutting down...
+[17:08:40] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[17:08:40] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:08:41] [Thread-11/INFO]: Initializing LWJGL OpenAL
+[17:08:41] [Thread-11/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:08:41] [Thread-11/INFO]: OpenAL initialized.
+[17:08:41] [Sound Library Loader/INFO]: Sound engine started
+[17:08:55] [Client thread/INFO]: Max texture size: 16384
+[17:08:57] [Client thread/INFO]: Created: 512x512 textures-atlas
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2.palm_trees#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2.orange#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire11#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire4#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:energyCableBlock2#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:itemTestHammer#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2.mulberry#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:digger_well#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2.olive#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank1.sakura#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.mulberry#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2.mulberry#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank1.peach#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling1.pear#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:deco_placer#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2.palm_trees#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2.olive#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire10#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog1.pear#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire5#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.peach#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=true,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog1.peach#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2.palm_trees#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.sakura#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2.olive#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=true,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog1.sakura#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog1.punica#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=false,decayable=false,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire1#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire9#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=mulberry not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.punica#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank1.pear#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling1.sakura#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank1.punica#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.olive#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:itemblades#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire2#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2#check_decay=true,decayable=false,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire6#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.palm_trees#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling1.punica#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2.orange#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:deco_placer#normal not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=none,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=palm_trees not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:digger_well#normal not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2#variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=z,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.bambook#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire8#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves1.pear#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=y,variant=olive not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling1.peach#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLeaves2.orange#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire3#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=1,type=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:empPaperPanel.empire7#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordLog2#axis=x,variant=orange not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2.orange#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordPlank2.mulberry#inventory not found
+[17:09:09] [Client thread/ERROR]: Model definition for location nord:nordSapling2#stage=0,type=palm_trees not found
+[17:09:29] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[17:09:29] [Server thread/INFO]: Generating keypair
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empireLamp1 : ru.nord.common.items.ItemBlockRoofLamp@3dac4cab
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ghast_tear : net.minecraft.item.Item@7ca2dd43
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:book : net.minecraft.item.ItemBook@1d8148be
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_ward : net.minecraft.item.ItemRecord@d0f92b5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather : net.minecraft.item.Item@4f3208d4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_door : net.minecraft.item.ItemDoor@3536fbb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.PURPLE : ru.nord.common.items.ItemBlockDecoStone@4588ffc9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cobblestone : net.minecraft.item.ItemBlock@10583596
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_chest : net.minecraft.item.ItemBlock@4e7667f4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick : net.minecraft.item.ItemBlock@40738293
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snow_layer : net.minecraft.item.ItemSnow@7c1b2e27
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spawn_egg : net.minecraft.item.ItemMonsterPlacer@67c135cd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_chestplate : net.minecraft.item.ItemArmor@42096939
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_chestplate : net.minecraft.item.ItemArmor@1044aa6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sand : net.minecraft.item.ItemMultiTexture@4514c8dd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tnt : net.minecraft.item.ItemBlock@6ac00f8a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_pickaxe : net.minecraft.item.ItemPickaxe@626f331d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_11 : net.minecraft.item.ItemRecord@7968afc5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:generatorBlock : net.minecraft.item.ItemBlock@6a13879e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snow : net.minecraft.item.ItemBlock@12f86513
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_fence_gate : net.minecraft.item.ItemBlock@2fcd89b2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:furnaceBlock : net.minecraft.item.ItemBlock@5d1e1c80
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fermented_spider_eye : net.minecraft.item.Item@6fe85471
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_chicken : net.minecraft.item.ItemFood@613cf3c5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:minecart : net.minecraft.item.ItemMinecart@47e0ada6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hardened_clay : net.minecraft.item.ItemBlock@5a7c5c88
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bucket : net.minecraft.item.ItemBucket@2ce683c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald : net.minecraft.item.Item@4df935ec
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cobblestone_wall : net.minecraft.item.ItemMultiTexture@2515c68f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_button : net.minecraft.item.ItemBlock@1dbd60c1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_glass : net.minecraft.item.ItemCloth@731cf278
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_boots : net.minecraft.item.ItemArmor@6cb521
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_ingot : net.minecraft.item.Item@1cf470a8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_slab : net.minecraft.item.ItemSlab@3dd1c356
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clay : net.minecraft.item.ItemBlock@531e418a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_glass_pane : net.minecraft.item.ItemCloth@7172df52
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit : net.minecraft.item.ItemFood@1ed7c2f9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:activator_rail : net.minecraft.item.ItemBlock@42dc4566
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass_bottle : net.minecraft.item.ItemGlassBottle@860d510
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_block : net.minecraft.item.ItemMultiTexture@7e9083bb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_lamp : net.minecraft.item.ItemBlock@75caec96
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_cat : net.minecraft.item.ItemRecord@5f3f0bb0
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brown_mushroom_block : net.minecraft.item.ItemBlock@1e29db84
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_helmet : net.minecraft.item.ItemArmor@54deb3d7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clay_ball : net.minecraft.item.Item@70ea9d43
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tallgrass : net.minecraft.item.ItemColored@41aa8485
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreDrop : ru.nord_core.common.items.ItemMetaData@5818806d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_far : net.minecraft.item.ItemRecord@3b131db5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:repeater : net.minecraft.item.ItemReed@4ecdb390
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ice : net.minecraft.item.ItemBlock@5c734218
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.GRAY : ru.nord.common.items.ItemBlockDecoStone@74891d79
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemblades : ru.nord_core.common.items.ItemBase@411022ad
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_star : net.minecraft.item.ItemSimpleFoiled@a1223e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick_block : net.minecraft.item.ItemBlock@166f62cf
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreClearPowder : ru.nord_core.common.items.ItemMetaData@32de1a32
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dispenser : net.minecraft.item.ItemBlock@52bce8b8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_wait : net.minecraft.item.ItemRecord@47ebecc8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flower_pot : net.minecraft.item.ItemReed@3b5ce277
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald_block : net.minecraft.item.ItemBlock@614f43c9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_carrot : net.minecraft.item.ItemFood@45fd1d7a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_flower : net.minecraft.item.ItemMultiTexture@5647f13b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:beef : net.minecraft.item.ItemFood@20ab1c28
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:firework_charge : net.minecraft.item.ItemFireworkCharge@7863940f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone : net.minecraft.item.ItemMultiTexture@7293da04
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sugar : net.minecraft.item.Item@3fb8619d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:soul_sand : net.minecraft.item.ItemBlock@693880ff
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fireworks : net.minecraft.item.ItemFirework@92341f1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass_pane : net.minecraft.item.ItemBlock@331e701a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mycelium : net.minecraft.item.ItemBlock@1c78ac86
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bookshelf : net.minecraft.item.ItemBlock@673c63c6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chicken : net.minecraft.item.ItemFood@1332a24b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:light_weighted_pressure_plate : net.minecraft.item.ItemBlock@5fb1d786
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_leggings : net.minecraft.item.ItemArmor@2e16d41f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord_deco:chairWhite : ru.nord_deco.common.items.ItemBlockChair@4b52dfb1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordPlank1 : ru.nord.common.items.wood.type1.ItemBlockNordPlank@52c5b221
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_door : net.minecraft.item.ItemDoor@1e47422e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_horse_armor : net.minecraft.item.Item@231e2524
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:energyCableBlock : net.minecraft.item.ItemBlock@700b27b6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stained_hardened_clay : net.minecraft.item.ItemCloth@4525e0c0
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz : net.minecraft.item.Item@51c1659f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bedrock : net.minecraft.item.ItemBlock@4568e1c1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreNugget : ru.nord_core.common.items.ItemMetaData@1389e2b5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:baked_potato : net.minecraft.item.ItemFood@60de8209
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick : net.minecraft.item.Item@267d5f0a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_boots : net.minecraft.item.ItemArmor@5cc056dc
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_eye : net.minecraft.item.ItemEnderEye@bf6d6ca
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_boots : net.minecraft.item.ItemArmor@5b08abf4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:writable_book : net.minecraft.item.ItemWritableBook@be78549
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fence_gate : net.minecraft.item.ItemBlock@5154aca9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_ore : net.minecraft.item.ItemBlock@7fe761b7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_fish : net.minecraft.item.ItemFishFood@3a02b214
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemGlassFood : ru.nord_core.common.items.ItemGlassFood@512d2470
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flint : net.minecraft.item.Item@59499477
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_horse_armor : net.minecraft.item.Item@138585f7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalCrystal : ru.nord.common.items.ItemBlockCrystall@4ac9809
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rail : net.minecraft.item.ItemBlock@7fc42635
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_shovel : net.minecraft.item.ItemSpade@7aba61dd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hay_block : net.minecraft.item.ItemBlock@6d9c24d7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:comparator : net.minecraft.item.ItemReed@642e89d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hopper : net.minecraft.item.ItemBlock@4501e1d1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:torch : net.minecraft.item.ItemBlock@75c50969
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLeaves1 : ru.nord.common.items.wood.type1.ItemBlockNordLeaves@6abb7d54
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:farmland : net.minecraft.item.ItemBlock@540f8828
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lit_furnace : net.minecraft.item.ItemBlock@3f6df5a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_hoe : net.minecraft.item.ItemHoe@6073ef8d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:banner : net.minecraft.item.ItemBanner@73c51dde
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:command_block_minecart : net.minecraft.item.ItemMinecart@565b576f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mutton : net.minecraft.item.ItemFood@6c964b4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carrot : net.minecraft.item.ItemSeedFood@5933c253
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:slime : net.minecraft.item.ItemBlock@5f896b8d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:string : net.minecraft.item.ItemReed@ab2f206
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BLACK : ru.nord.common.items.ItemBlockDecoStone@152660c7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemWrench : ru.nord_core.common.items.ItemWrench@7bbe65a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_axe : net.minecraft.item.ItemAxe@35915368
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:netherbrick : net.minecraft.item.Item@12b59ea1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:enchanting_table : net.minecraft.item.ItemBlock@656c90b6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_ingot : net.minecraft.item.Item@74103471
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dropper : net.minecraft.item.ItemBlock@b504dd5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:potato : net.minecraft.item.ItemSeedFood@551b04e5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon_seeds : net.minecraft.item.ItemSeeds@582bc179
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal : net.minecraft.item.ItemCoal@3c1f666c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemFood : ru.nord_core.common.items.ItemFoodNord@6a0e9794
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_wart : net.minecraft.item.ItemSeeds@71da6f69
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bread : net.minecraft.item.ItemFood@2f0f1ecb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:painting : net.minecraft.item.ItemHangingEntity@5a62cf04
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_door : net.minecraft.item.ItemDoor@1f9e8c09
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:energyCableBlock2 : net.minecraft.item.ItemBlock@1ab166ea
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chest_minecart : net.minecraft.item.ItemMinecart@43e611b1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fishing_rod : net.minecraft.item.ItemFishingRod@1db4341d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:blaze_powder : net.minecraft.item.Item@7e00001c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_boots : net.minecraft.item.ItemArmor@34da1f3f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin_pie : net.minecraft.item.ItemFood@52cf14c4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine : net.minecraft.item.ItemMultiTexture@2c52ffdd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rotten_flesh : net.minecraft.item.ItemFood@68a83c62
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.WHITE : ru.nord.common.items.ItemBlockDecoStone@67e9850
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordPlank2 : ru.nord.common.items.wood.type2.ItemBlockNordPlank2@3de66588
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:enchanted_book : net.minecraft.item.ItemEnchantedBook@5f2d0b54
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cake : net.minecraft.item.ItemReed@6210ab19
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIGHT_BLUE : ru.nord.common.items.ItemBlockDecoStone@77ca1888
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_bars : net.minecraft.item.ItemBlock@25734693
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lapis_block : net.minecraft.item.ItemBlock@41077d72
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cookie : net.minecraft.item.ItemFood@22c7db5b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_mutton : net.minecraft.item.ItemFood@ff268e7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cactus : net.minecraft.item.ItemBlock@71b3cc1f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalClearBlock : ru.nord.common.items.ItemBlockClearMetal@386315ad
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wool : net.minecraft.item.ItemCloth@378f9b20
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_door : net.minecraft.item.ItemDoor@122c1533
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalBlock : ru.nord.common.items.ItemBlockMetal@5f09fca2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_foot : net.minecraft.item.Item@7330a56a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:command_block : net.minecraft.item.ItemBlock@51ed1906
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:end_stone : net.minecraft.item.ItemBlock@7978c9a2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sapling : net.minecraft.item.ItemMultiTexture@2fadf3eb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_boots : net.minecraft.item.ItemArmor@27b6e83f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:compass : net.minecraft.item.Item@5cd38dd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_rabbit : net.minecraft.item.ItemFood@67417940
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:log : net.minecraft.item.ItemMultiTexture@6045a3ce
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_13 : net.minecraft.item.ItemRecord@372ec3e5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_chestplate : net.minecraft.item.ItemArmor@68f113c8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:milk_bucket : net.minecraft.item.ItemBucketMilk@40d6130f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_stal : net.minecraft.item.ItemRecord@342fe5cf
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:water_bucket : net.minecraft.item.ItemBucket@3d1d3c94
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lava_bucket : net.minecraft.item.ItemBucket@4a7437e4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:saddle : net.minecraft.item.ItemSaddle@74de0d7b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:log2 : net.minecraft.item.ItemMultiTexture@37e841a5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_stairs : net.minecraft.item.ItemBlock@41b8aae7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stonebrick : net.minecraft.item.ItemMultiTexture@136833f0
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.RED : ru.nord.common.items.ItemBlockDecoStone@56e6c4ff
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:potion : net.minecraft.item.ItemPotion@41201ddb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_mushroom : net.minecraft.item.ItemBlock@690cdcb4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone : net.minecraft.item.ItemRedstone@1334212d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLeaves2 : ru.nord.common.items.wood.type2.ItemBlockNordLeaves2@7f1bbbf0
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemGlowstoneDust : ru.nord_core.common.items.ItemGlowstoneDust@5b80c9eb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_block : net.minecraft.item.ItemBlock@17a04197
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_block : net.minecraft.item.ItemBlock@1b65faeb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_stairs : net.minecraft.item.ItemBlock@5bf196f2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_leggings : net.minecraft.item.ItemArmor@36bec9dd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:item_frame : net.minecraft.item.ItemHangingEntity@244340f2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_ore : net.minecraft.item.ItemBlock@3605534e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:flowingBlock : net.minecraft.item.ItemBlock@5c6f6cb4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord_deco:chairOther : ru.nord_deco.common.items.ItemBlockChairOther@4e379cea
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:reeds : net.minecraft.item.ItemReed@3afad39f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_fence_gate : net.minecraft.item.ItemBlock@5f0b1da2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_fence_gate : net.minecraft.item.ItemBlock@701a0f8f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:experience_bottle : net.minecraft.item.ItemExpBottle@5d42f5b7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal_ore : net.minecraft.item.ItemBlock@4c3713b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_stairs : net.minecraft.item.ItemBlock@1aeb7308
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:waterlily : net.minecraft.item.ItemLilyPad@3686a004
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_shovel : net.minecraft.item.ItemSpade@67cb9267
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:piston : net.minecraft.item.ItemPiston@135e1b18
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:quartz_ore : net.minecraft.item.ItemBlock@72e99437
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bow : net.minecraft.item.ItemBow@4177da8a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_hoe : net.minecraft.item.ItemHoe@5fbcbe55
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:vine : net.minecraft.item.ItemColored@6182c8ea
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_helmet : net.minecraft.item.ItemArmor@16514edd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:furnace : net.minecraft.item.ItemBlock@47b42535
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:snowball : net.minecraft.item.ItemSnowball@413c978a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:daylight_detector : net.minecraft.item.ItemBlock@77daa57b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_pressure_plate : net.minecraft.item.ItemBlock@275d728c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gravel : net.minecraft.item.ItemBlock@578f4899
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_door : net.minecraft.item.ItemDoor@5acc5fb1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empireFloorLamp1 : ru.nord.common.items.ItemBlockRoofLamp@50b60ceb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BLUE : ru.nord.common.items.ItemBlockDecoStone@31700e69
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lit_pumpkin : net.minecraft.item.ItemBlock@2e6c611a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oilLamp : net.minecraft.item.ItemBlock@41e5174f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:barrier : net.minecraft.item.ItemBlock@39c680b7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tnt_minecart : net.minecraft.item.ItemMinecart@6ff6d3a7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_fence_gate : net.minecraft.item.ItemBlock@e13b4f6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jungle_fence : net.minecraft.item.ItemBlock@35e949a4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_pressure_plate : net.minecraft.item.ItemBlock@680b5984
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemTestHammer : ru.nord.common.items.ItemDrill@4f4c74db
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_stew : net.minecraft.item.ItemSoup@7b7f8db5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:map : net.minecraft.item.ItemEmptyMap@3b474cb5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_chestplate : net.minecraft.item.ItemArmor@4cdae43e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fish : net.minecraft.item.ItemFishFood@5621a1c1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:filled_map : net.minecraft.item.ItemMap@2c69c4e9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:clearIngot : ru.nord_core.common.items.ItemMetaData@2ecb42
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_porkchop : net.minecraft.item.ItemFood@51205cb7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:detector_rail : net.minecraft.item.ItemBlock@77f6ddde
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bowl : net.minecraft.item.Item@5ab575d2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:netherrack : net.minecraft.item.ItemBlock@1967bb48
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_slab2 : net.minecraft.item.ItemSlab@1f5b492b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_sword : net.minecraft.item.ItemSword@1c6db9f5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordSapling1 : ru.nord.common.items.wood.type1.ItemBlockNordSapling@5eb20eb1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gunpowder : net.minecraft.item.Item@2229dbb7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brown_mushroom : net.minecraft.item.ItemBlock@d2e84be
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.BROWN : ru.nord.common.items.ItemBlockDecoStone@6bd70bb6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_torch : net.minecraft.item.ItemBlock@26febb57
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.PINK : ru.nord.common.items.ItemBlockDecoStone@213b9b8b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spider_eye : net.minecraft.item.ItemFood@d4411bc
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:floorLamp1 : ru.nord.common.items.ItemBlockFloorLamp@6df23aa8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_shovel : net.minecraft.item.ItemSpade@32e16d62
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sandstone_stairs : net.minecraft.item.ItemBlock@1285384a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:washerBlock : net.minecraft.item.ItemBlock@232ed6ce
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:beacon : net.minecraft.item.ItemBlock@250602ef
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_sandstone : net.minecraft.item.ItemMultiTexture@1bf73879
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:smelterBlock : net.minecraft.item.ItemBlock@738fe743
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:grass : net.minecraft.item.ItemColored@48ce7760
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_pickaxe : net.minecraft.item.ItemPickaxe@540b6fd1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_axe : net.minecraft.item.ItemAxe@7284e767
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalDust : ru.nord_core.common.items.ItemMetaData@4182e318
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glowstone : net.minecraft.item.ItemBlock@7c9d1b50
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:deadbush : net.minecraft.item.ItemBlock@21e25971
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brick_stairs : net.minecraft.item.ItemBlock@3ef3aec8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:arrow : net.minecraft.item.Item@23acbb9a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_mushroom_block : net.minecraft.item.ItemBlock@4e0ac694
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLog1 : ru.nord.common.items.wood.type1.ItemBlockNordLog@4629b851
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_rail : net.minecraft.item.ItemBlock@283040ee
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empPaper : ru.nord.common.items.ItemBlockEmpPaper@7d6777c3
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:anvil : net.minecraft.item.ItemAnvilBlock@94baa70
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.ORANGE : ru.nord.common.items.ItemBlockDecoStone@1e139d9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_fence : net.minecraft.item.ItemBlock@717cdf72
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:jukebox : net.minecraft.item.ItemBlock@6760f5a7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_leggings : net.minecraft.item.ItemArmor@77db3f0d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:spruce_fence : net.minecraft.item.ItemBlock@21223ca1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_door : net.minecraft.item.ItemDoor@c23d097
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreCrystal : ru.nord_core.common.items.ItemMetaData@780b5e41
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_nugget : net.minecraft.item.Item@286c99a2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:acacia_stairs : net.minecraft.item.ItemBlock@2b2cecab
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empGlass : ru.nord.common.items.ItemBlockEmpGlass@743f2543
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:digger_well : net.minecraft.item.ItemBlock@6c92cd07
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_blocks : net.minecraft.item.ItemRecord@241880aa
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon : net.minecraft.item.ItemFood@751b4584
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:accumulatorBlock : net.minecraft.item.ItemBlock@dac7354
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:obsidian : net.minecraft.item.ItemBlock@338d1e5f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:stick : ru.nord_core.common.items.ItemMetaData@225a26
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_shovel : net.minecraft.item.ItemSpade@5cde8f62
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:coal_block : net.minecraft.item.ItemBlock@1a9f1321
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:armor_stand : net.minecraft.item.ItemArmorStand@76e28cbb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:gold_block : net.minecraft.item.ItemBlock@4b6de34d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:feather : net.minecraft.item.Item@6a2f6d66
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.CYAN : ru.nord.common.items.ItemBlockDecoStone@3485af95
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:monster_egg : net.minecraft.item.ItemMultiTexture@232880d5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mob_spawner : codechicken.nei.ItemMobSpawner@65078a2e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_mellohi : net.minecraft.item.ItemRecord@1ecd3c45
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:magma_cream : net.minecraft.item.Item@32076ee4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_slab : net.minecraft.item.ItemSlab@5d72a844
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:boat : net.minecraft.item.ItemBoat@7536885a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_ore : net.minecraft.item.ItemBlock@2fc076fb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_fence_gate : net.minecraft.item.ItemBlock@52c6a76d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ender_pearl : net.minecraft.item.ItemEnderPearl@400a5b1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_brick_stairs : net.minecraft.item.ItemBlock@7057ecc1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_block : net.minecraft.item.ItemBlock@33a66bb6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_door : net.minecraft.item.ItemDoor@7fb719a9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:oak_stairs : net.minecraft.item.ItemBlock@7fe362ac
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:yellow_flower : net.minecraft.item.ItemMultiTexture@5ff09be3
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:rabbit_hide : net.minecraft.item.Item@7ebc0d3a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:heavy_weighted_pressure_plate : net.minecraft.item.ItemBlock@14bccf7f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:written_book : net.minecraft.item.ItemEditableBook@472ad8b4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:apple : net.minecraft.item.ItemFood@4a55ac8e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:extractorBlock : net.minecraft.item.ItemBlock@1f75da5e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:speckled_melon : net.minecraft.item.Item@7a8f6de8
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:brewing_stand : net.minecraft.item.ItemReed@6015465
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:ingot : ru.nord_core.common.items.ItemMetaData@32593af9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sticky_piston : net.minecraft.item.ItemPiston@70605759
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mossy_cobblestone : net.minecraft.item.ItemBlock@2dba911d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_strad : net.minecraft.item.ItemRecord@349893cd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:deco_placer : net.minecraft.item.ItemBlock@2c3b6533
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick_stairs : net.minecraft.item.ItemBlock@37af8981
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordSapling2 : ru.nord.common.items.wood.type2.ItemBlockNordSapling2@35c4d1f7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leaves2 : net.minecraft.item.ItemLeaves@6d3c62b9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:end_portal_frame : net.minecraft.item.ItemBlock@3a90d0bf
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:trapdoor : net.minecraft.item.ItemBlock@4d5b09c5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:red_sandstone_stairs : net.minecraft.item.ItemBlock@39c9e47
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin_seeds : net.minecraft.item.ItemSeeds@5171192c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_horse_armor : net.minecraft.item.Item@1018707f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leaves : net.minecraft.item.ItemLeaves@747bd28d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sea_lantern : net.minecraft.item.ItemBlock@7d1c1ce6
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_helmet : net.minecraft.item.ItemArmor@60e789be
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond : net.minecraft.item.Item@317d5b4a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine_shard : net.minecraft.item.Item@3fa554e4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_apple : net.minecraft.item.ItemAppleGold@6814956a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carrot_on_a_stick : net.minecraft.item.ItemCarrotOnAStick@2d988524
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:metalOre : ru.nord.common.items.ItemBlockMetalOre@76c7eb60
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:carpet : net.minecraft.item.ItemCloth@2636d779
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:shears : net.minecraft.item.ItemShears@677fc3f9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:skull : net.minecraft.item.ItemSkull@70012519
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dirt : net.minecraft.item.ItemMultiTexture@67bc9eb7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_shovel : net.minecraft.item.ItemSpade@1ab0e6f7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:emerald_ore : net.minecraft.item.ItemBlock@68328bc5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:nordLog2 : ru.nord.common.items.wood.type2.ItemBlockNordLog2@46db862f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:planks : net.minecraft.item.ItemMultiTexture@3788e92d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:trapped_chest : net.minecraft.item.ItemBlock@46a2a3d4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:egg : net.minecraft.item.ItemEgg@7f42f891
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_mall : net.minecraft.item.ItemRecord@6403745f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cooked_beef : net.minecraft.item.ItemFood@41c596d9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_sword : net.minecraft.item.ItemSword@49ddb58d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_pickaxe : net.minecraft.item.ItemPickaxe@6dd45706
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:leather_leggings : net.minecraft.item.ItemArmor@2b49e54b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_sword : net.minecraft.item.ItemSword@2960f4e4
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sponge : net.minecraft.item.ItemMultiTexture@66d7e31d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_axe : net.minecraft.item.ItemAxe@62247009
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:crafting_table : net.minecraft.item.ItemBlock@1a322c9f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_stairs : net.minecraft.item.ItemBlock@1265e4b2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:nether_brick_fence : net.minecraft.item.ItemBlock@5f81a1f3
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:clock : net.minecraft.item.Item@21c96b27
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIME : ru.nord.common.items.ItemBlockDecoStone@1688410
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_pickaxe : net.minecraft.item.ItemPickaxe@17979a90
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:blaze_rod : net.minecraft.item.Item@467e0984
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_stairs : net.minecraft.item.ItemBlock@57cd2006
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_helmet : net.minecraft.item.ItemArmor@5786b516
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sandstone : net.minecraft.item.ItemMultiTexture@4df16ea1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dragon_egg : net.minecraft.item.ItemBlock@68fde8fb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:furnace_minecart : net.minecraft.item.ItemMinecart@35939e4a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:cauldron : net.minecraft.item.ItemReed@414bb5f7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:ladder : net.minecraft.item.ItemBlock@44c18fbe
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.MAGENTA : ru.nord.common.items.ItemBlockDecoStone@4144a4c7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fire_charge : net.minecraft.item.ItemFireball@f5d63ce
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lead : net.minecraft.item.ItemLead@50423558
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_hoe : net.minecraft.item.ItemHoe@5b744373
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:noteblock : net.minecraft.item.ItemBlock@25963401
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_hoe : net.minecraft.item.ItemHoe@64be16d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_sword : net.minecraft.item.ItemSword@57faec51
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bed : net.minecraft.item.ItemBed@2e688085
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:empPaperPanel : ru.nord.common.items.ItemBlockEmpPaper@f068882
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:packed_ice : net.minecraft.item.ItemBlock@41a0e92e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:mushroom_stew : net.minecraft.item.ItemSoup@6e5fb30e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glowstone_dust : net.minecraft.item.Item@2e99dec5
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dye : net.minecraft.item.ItemDye@5b6698f1
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lapis_ore : net.minecraft.item.ItemBlock@72767cfb
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_trapdoor : net.minecraft.item.ItemBlock@172c8c03
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chest : net.minecraft.item.ItemBlock@29634bcc
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stick : net.minecraft.item.Item@737455ed
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:iron_helmet : net.minecraft.item.ItemArmor@5c397c34
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:chainmail_leggings : net.minecraft.item.ItemArmor@40c0d8cf
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:poisonous_potato : net.minecraft.item.ItemFood@302b4e8e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:birch_fence : net.minecraft.item.ItemBlock@4eba7f05
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:bone : net.minecraft.item.Item@2cc32518
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:oreDirtyPowder : ru.nord_core.common.items.ItemMetaData@3097a14a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:hopper_minecart : net.minecraft.item.ItemMinecart@35c1b25e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:diamond_chestplate : net.minecraft.item.ItemArmor@34109a9d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:flint_and_steel : net.minecraft.item.ItemFlintAndSteel@6c99cdbd
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_hoe : net.minecraft.item.ItemHoe@54358764
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.GREEN : ru.nord.common.items.ItemBlockDecoStone@4b3d8346
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:slime_ball : net.minecraft.item.Item@12cec114
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wheat : net.minecraft.item.Item@30fcf45d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:sign : net.minecraft.item.ItemSign@62100617
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:melon_block : net.minecraft.item.ItemBlock@1351d52e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.LIGHT_GRAY : ru.nord.common.items.ItemBlockDecoStone@11985738
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:prismarine_crystals : net.minecraft.item.Item@7f686560
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:itemEnergyStorage : ru.nord_core.common.items.ItemEnergyStorageDamagable@67b4b0af
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_button : net.minecraft.item.ItemBlock@389ee94e
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:lever : net.minecraft.item.ItemBlock@96c5571
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:paper : net.minecraft.item.Item@295b89f9
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:redstone_ore : net.minecraft.item.ItemBlock@41221e79
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:record_chirp : net.minecraft.item.ItemRecord@44a72b69
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_stairs : net.minecraft.item.ItemBlock@26a8a31b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wooden_pickaxe : net.minecraft.item.ItemPickaxe@65f8dd6d
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:decoStoneBlock.YELLOW : ru.nord.common.items.ItemBlockDecoStone@6b723bcc
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:pumpkin : net.minecraft.item.ItemBlock@3d31ef93
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:double_plant : net.minecraft.item.ItemDoublePlant@41da8bfe
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:wheat_seeds : net.minecraft.item.ItemSeeds@32fdbeda
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:glass : net.minecraft.item.ItemBlock@677fb9aa
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:porkchop : net.minecraft.item.ItemFood@6db23e6c
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:fence : net.minecraft.item.ItemBlock@e9fdbf7
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:tripwire_hook : net.minecraft.item.ItemBlock@3fa2ec6a
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:dark_oak_fence : net.minecraft.item.ItemBlock@66e1c9a2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: nord:whiteStone : ru.nord.common.items.ItemBlockWhiteStone@30d132b
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:web : net.minecraft.item.ItemBlock@4506cdb2
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_axe : net.minecraft.item.ItemAxe@f9d833f
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:stone_axe : net.minecraft.item.ItemAxe@3ada2d72
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:golden_sword : net.minecraft.item.ItemSword@4ce494be
+[17:09:29] [Server thread/INFO]: [minetweaker.mc18.brackets.ItemBracketHandler:rebuildItemRegistry:52]: minecraft:name_tag : net.minecraft.item.ItemNameTag@116465dc
+[17:09:29] [Server thread/INFO]: [minetweaker.MineTweakerImplementationAPI:reload:613]: First time loading a script, go ahead
+[17:09:29] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:111]: Loading scripts
+[17:09:29] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:158]: MineTweaker: Loading intermod
+[17:09:30] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[17:09:30] [Server thread/INFO]: Applying holder lookups
+[17:09:30] [Server thread/INFO]: Holder lookups applied
+[17:09:30] [Server thread/INFO]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@375a0bf8)
+[17:09:30] [Server thread/INFO]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@375a0bf8)
+[17:09:30] [Server thread/INFO]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@375a0bf8)
+[17:09:30] [Server thread/INFO]: Preparing start region for level 0
+[17:09:31] [Server thread/INFO]: Changing view distance to 12, from 10
+[17:09:33] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[17:09:33] [Netty Server IO #1/INFO]: Client protocol version 2
+[17:09:33] [Netty Server IO #1/INFO]: Client attempting to join with 9 mods : nord_deco@0.1.0,mcp@9.05,FML@8.0.99.99,NotEnoughItems@1.0.5.82,Forge@11.14.4.1577,CodeChickenCore@1.0.5.34,MineTweaker3@3.0.10,nord@0.1.0,nord_core@0.1.0
+[17:09:33] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[17:09:33] [Server thread/INFO]: [Server thread] Server side modded connection established
+[17:09:33] [Server thread/INFO]: Player21[local:E:1c201b44] logged in with entity id 100 at (365.3292967979465, 4.0, 717.8329442910818)
+[17:09:33] [Server thread/INFO]: Player21 joined the game
+[17:09:38] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 4993ms behind, skipping 99 tick(s)
+[17:09:47] [Server thread/INFO]: Player21 has just earned the achievement [Taking Inventory]
+[17:09:47] [Client thread/INFO]: [CHAT] Player21 has just earned the achievement [Taking Inventory]
+[17:09:52] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2732ms behind, skipping 54 tick(s)

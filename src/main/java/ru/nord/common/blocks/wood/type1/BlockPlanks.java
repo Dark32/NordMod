@@ -26,7 +26,6 @@ public class BlockPlanks extends BlockMetadata {
     public BlockPlanks(String[] names)
     {
         super(Material.wood,names,EnumNordPlank.class, Version.MODID);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumNordPlank.SAKURA));
         this.setCreativeTab(NordTabs.tabWood);
     }
 

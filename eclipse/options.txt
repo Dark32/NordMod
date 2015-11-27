@@ -11,7 +11,7 @@ anaglyph3d:false
 maxFps:120
 fboEnable:true
 difficulty:0
-fancyGraphics:true
+fancyGraphics:false
 ao:2
 renderClouds:true
 resourcePacks:[]

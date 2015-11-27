@@ -22,11 +22,6 @@ public class ItemBlockNordLeaves3 extends ItemBlockMetadata {
     }
 
     @Override
-    public int getMetadata(int damage)
-    {
-        return damage | 4;
-    }
-    @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int renderPass)
     {

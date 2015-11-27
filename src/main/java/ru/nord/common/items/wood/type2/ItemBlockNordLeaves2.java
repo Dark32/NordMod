@@ -20,12 +20,6 @@ public class ItemBlockNordLeaves2 extends ItemBlockMetadata {
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
     }
-
-    @Override
-    public int getMetadata(int damage)
-    {
-        return damage | 4;
-    }
     @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int renderPass)

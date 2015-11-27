@@ -7,20 +7,12 @@ import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class ItemBlockNordPlank extends ItemBlockMetadata {
-    private final Block block;
 
     public ItemBlockNordPlank(Block block)
     {
         super(block);
-        this.block = block;
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
-    }
-
-    @Override
-    public int getMetadata(int damage)
-    {
-        return damage | 4;
     }
 
     @Override
