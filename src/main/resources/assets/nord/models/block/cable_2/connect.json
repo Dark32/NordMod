@@ -1,0 +1,42 @@
+{
+    "__createdwith": "opl's Model Creator",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "nord:blocks/stone/stone.burnt",
+        "texture": "nord:blocks/energy_cable2"
+    },
+    "elements": [
+        {
+            "from": [6,6,-0.5],
+            "to": [10,10,6],
+            "faces": {
+                "up": {
+                    "uv": [10,2,16,6],
+                    "texture": "#texture",
+                    "rotation": 90
+                },
+                "down": {
+                    "uv": [8,2,14,6],
+                    "texture": "#texture",
+                    "rotation": 90
+                },
+                "west": {
+                    "uv": [10,2,16,6],
+                    "texture": "#texture"
+                },
+                "east": {
+                    "uv": [8,2,14,6],
+                    "texture": "#texture"
+                },
+                "north": {
+                    "uv": [10,10,14,14],
+                    "texture": "#texture"
+                },
+                "south": {
+                    "uv": [2,10,6,14],
+                    "texture": "#texture"
+                }
+            }
+        }
+    ]
+}

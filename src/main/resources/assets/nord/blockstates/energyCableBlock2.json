@@ -1,0 +1,260 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "nord:cable_2/core"
+    },
+    "variants": {
+        "connect_up": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_up": {
+                        "model": "nord:cable_2/connect",
+                        "x": 270
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_up": {
+                        "model": "nord:cable_2/disconnect",
+                        "x": 270
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_up": {
+                        "model": "nord:cable_2/connect",
+                        "x": 270
+                    },
+                    "connect": {
+                        "model": "nord:cable_2/input",
+                        "x": 270
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_up": {
+                        "model": "nord:cable_2/connect",
+                        "x": 270
+                    },
+                    "connect": {
+                        "model": "nord:cable_2/output",
+                        "x": 270
+                    }
+                }
+            }
+        },
+        "connect_down": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_down": {
+                        "model": "nord:cable_2/connect",
+                        "x": 90
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_down": {
+                        "model": "nord:cable_2/disconnect",
+                        "x": 90
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_down": {
+                        "model": "nord:cable_2/connect",
+                        "x": 90
+                    },
+                    "connect_down": {
+                        "model": "nord:cable_2/input",
+                        "x": 90
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_down": {
+                        "model": "nord:cable_2/connect",
+                        "x": 90
+                    },
+                    "connect_down": {
+                        "model": "nord:cable_2/output",
+                        "x": 90
+                    }
+                }
+            }
+        },
+        "connect_west": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_west": {
+                        "model": "nord:cable_2/connect",
+                        "y": 270
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_west": {
+                        "model": "nord:cable_2/disconnect",
+                        "y": 270
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_west": {
+                        "model": "nord:cable_2/connect",
+                        "y": 270
+                    },
+                    "connect_west": {
+                        "model": "nord:cable_2/input",
+                        "y": 270
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_west": {
+                        "model": "nord:cable_2/connect",
+                        "y": 270
+                    },
+                    "connect_west": {
+                        "model": "nord:cable_2/output",
+                        "y": 270
+                    }
+                }
+            }
+        },
+        "connect_east": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_east": {
+                        "model": "nord:cable_2/connect",
+                        "y": 90
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_east": {
+                        "model": "nord:cable_2/disconnect",
+                        "y": 90
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_east": {
+                        "model": "nord:cable_2/connect",
+                        "y": 90
+                    },
+                    "connect_east": {
+                        "model": "nord:cable_2/input",
+                        "y": 90
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_east": {
+                        "model": "nord:cable_2/connect",
+                        "y": 90
+                    },
+                    "connect_east": {
+                        "model": "nord:cable_2/output",
+                        "y": 90
+                    }
+                }
+            }
+        },
+        "connect_north": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_north": {
+                        "model": "nord:cable_2/connect"
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_north": {
+                        "model": "nord:cable_2/disconnect"
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_north": {
+                        "model": "nord:cable_2/connect"
+                    },
+                    "connect_north": {
+                        "model": "nord:cable_2/input"
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_north": {
+                        "model": "nord:cable_2/connect"
+                    },
+                    "connect_north": {
+                        "model": "nord:cable_2/output"
+                    }
+                }
+            }
+        },
+        "connect_south": {
+            "undefined": {},
+            "connect": {
+                "submodel": {
+                    "pipe_south": {
+                        "model": "nord:cable_2/connect",
+                        "y": 180
+                    }
+                }
+            },
+            "disconnect": {
+                "submodel": {
+                    "pipe_south": {
+                        "model": "nord:cable_2/disconnect",
+                        "y": 180
+                    }
+                }
+            },
+            "input": {
+                "submodel": {
+                    "pipe_south": {
+                        "model": "nord:cable_2/connect",
+                        "y": 180
+                    },
+                    "connect_south": {
+                        "model": "nord:cable_2/input",
+                        "y": 180
+                    }
+                }
+            },
+            "output": {
+                "submodel": {
+                    "pipe_south": {
+                        "model": "nord:cable_2/connect",
+                        "y": 180
+                    },
+                    "connect_south": {
+                        "model": "nord:cable_2/output",
+                        "y": 180
+                    }
+                }
+            }
+        }
+    }
+}

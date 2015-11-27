@@ -12,4 +12,5 @@ public class CommonProxy {
     public void registerBlockRender(Block block, int i, String name,String modid) {
     }
 
+    public void registerEventHandlers() {}
 }

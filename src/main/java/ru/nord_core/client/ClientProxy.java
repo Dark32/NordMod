@@ -5,6 +5,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import ru.nord_core.client.event.DrawBlockHighlight;
 import ru.nord_core.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
@@ -24,5 +27,11 @@ public class ClientProxy extends CommonProxy {
                 new ModelResourceLocation(modid + ":" + model, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
     }
-
+    @Override
+    public void registerEventHandlers() {
+        super.registerEventHandlers();
+        DrawBlockHighlight eventHandler = new DrawBlockHighlight();
+        FMLCommonHandler.instance().bus().register(eventHandler);
+        MinecraftForge.EVENT_BUS.register(eventHandler);
+    }
 }

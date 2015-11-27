@@ -1,18 +1,24 @@
 package ru.nord;
 
-import net.minecraftforge.common.*;
-import net.minecraftforge.fml.common.Mod.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.ModMetadata;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.*;
-import ru.nord.common.*;
-import ru.nord.common.events.*;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import ru.nord.common.CommonProxy;
+import ru.nord.common.events.OreDropEvent;
 import ru.nord.common.lib.dictoary.Dictoary;
-import ru.nord.common.network.*;
-import ru.nord.common.recipes.*;
-import ru.nord.common.utils.*;
-import ru.nord.common.utils.generator.*;
+import ru.nord.common.network.PacketPipeline;
+import ru.nord.common.recipes.Recipes;
+import ru.nord.common.utils.Version;
+import ru.nord.common.utils.generator.NordOre;
 import ru.nord_core.common.handler.GuiHandler;
 import ru.nord_core.common.utils.Fuel;
 
@@ -33,7 +39,7 @@ public class Nord {
 
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
-        FMLLog.info("Nord Mod start init");
+        FMLLog.info("Nord Mod start preInit");
         NordConfig.preInit();
         NordMachine.preInit();
         NordMetalgury.preInit();
@@ -71,7 +77,8 @@ public class Nord {
         Dictoary.postInit();
         Recipes.postInit();
     }
-    public void setupModInfo(ModMetadata meta){
+
+    public void setupModInfo(ModMetadata meta) {
         Version.setupModInfo(meta);
     }
 }

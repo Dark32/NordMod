@@ -1,5 +1,6 @@
 package ru.nord;
 
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
 import ru.nord.common.helpers.RegisterHelper;
@@ -10,6 +11,7 @@ import ru.nord_core.common.items.*;
 public class NordMachine {
     public static void preInit() {
         createItem();
+        FMLLog.info("Nord Mod start createBlock");
         createBlock();
     }
 
@@ -34,6 +36,7 @@ public class NordMachine {
         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
+        NordBloks.energyCableBlock2 = new BlockEnergoCable2().setUnlocalizedName("energyCableBlock2").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
         NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabColorStone);
@@ -55,6 +58,7 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
+        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
         RegisterHelper.registerSingleBlock(NordBloks.diggerWell, "digger_well");
         RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
@@ -73,6 +77,7 @@ public class NordMachine {
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
         GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");
+        GameRegistry.registerTileEntity(TileEnergyCable2.class, "TileEntityEnergyCable2");
     }
 
 }
