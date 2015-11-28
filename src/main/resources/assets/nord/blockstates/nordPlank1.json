@@ -13,20 +13,20 @@
                 },
                 "punica"     : {
                     "textures": {
-                        "all": "nord:blocks/wood/punica/punica_wood",
-                        "particle": "nord:blocks/wood/punica/punica_wood"
+                        "all": "nord:blocks/wood/punica/plank",
+                        "particle": "nord:blocks/wood/punica/plank"
                     }
                 },
                 "pear"     : {
                     "textures": {
-                        "all": "nord:blocks/wood/pear/pear_wood",
-                        "particle": "nord:blocks/wood/pear/pear_wood"
+                        "all": "nord:blocks/wood/pear/plank",
+                        "particle": "nord:blocks/wood/pear/plank"
                     }
                 },
                 "peach"     : {
                     "textures": {
-                        "all": "nord:blocks/wood/peach/peach_wood",
-                        "particle": "nord:blocks/wood/peach/peach_wood"
+                        "all": "nord:blocks/wood/peach/plank",
+                        "particle": "nord:blocks/wood/peach/plank"
                     }
                 }
         }

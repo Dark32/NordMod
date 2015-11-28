@@ -1,0 +1,18 @@
+{
+  "parent": "nord:blocks/wood/sakura/log",
+  "textures": {
+         "end": "nord:blocks/wood/sakura/logTop",
+         "side": "nord:blocks/wood/sakura/log",
+         "all": "nord:blocks/wood/sakura/log",
+         "particle": "nord:blocks/wood/sakura/log"
+
+  },
+  "display": {
+    "thirdperson": {
+                   "rotation": [ 10, -45, 170 ],
+                   "translation": [ 0, 1.5, -2.75 ],
+                   "scale": [ 0.375, 0.375, 0.375 ]
+               }
+           }
+       }
+

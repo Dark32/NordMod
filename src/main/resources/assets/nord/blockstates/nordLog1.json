@@ -7,7 +7,7 @@
         "variant":{
             "sakura"     : {
                 "textures": {
-                    "end": "nord:blocks/wood/sakura/log_top",
+                    "end": "nord:blocks/wood/sakura/logTop",
                     "side": "nord:blocks/wood/sakura/log",
                     "all": "nord:blocks/wood/sakura/log",
                     "particle": "nord:blocks/wood/sakura/log"
@@ -15,26 +15,26 @@
             },
             "punica"     : {
                 "textures": {
-                     "end": "nord:blocks/wood/punica/punica_log_top",
-                     "side": "nord:blocks/wood/punica/punica_log",
-                     "all": "nord:blocks/wood/punica/punica_log",
-                     "particle": "nord:blocks/wood/punica/punica_log"
+                     "end": "nord:blocks/wood/punica/logTop",
+                     "side": "nord:blocks/wood/punica/log",
+                     "all": "nord:blocks/wood/punica/log",
+                     "particle": "nord:blocks/wood/punica/log"
                 }
             },
             "pear"     : {
                 "textures": {
-                    "end": "nord:blocks/wood/pear/pear_log_top",
-                    "side": "nord:blocks/wood/pear/pear_log",
-                    "all": "nord:blocks/wood/pear/pear_log",
-                    "particle": "nord:blocks/wood/pear/pear_log"
+                    "end": "nord:blocks/wood/pear/logTop",
+                    "side": "nord:blocks/wood/pear/log",
+                    "all": "nord:blocks/wood/pear/log",
+                    "particle": "nord:blocks/wood/pear/log"
                 }
             },
             "peach"     : {
                 "textures": {
-                    "end": "nord:blocks/wood/peach/peach_log_top",
-                    "side": "nord:blocks/wood/peach/peach_log",
-                    "all": "nord:blocks/wood/peach/peach_log",
-                    "particle": "nord:blocks/wood/peach/peach_log"
+                    "end": "nord:blocks/wood/peach/logTop",
+                    "side": "nord:blocks/wood/peach/log",
+                    "all": "nord:blocks/wood/peach/log",
+                    "particle": "nord:blocks/wood/peach/log"
                 }
             }
         },

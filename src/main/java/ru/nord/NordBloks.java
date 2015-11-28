@@ -39,5 +39,13 @@ public class NordBloks {
     public static Block nordSapling2;
     public static Block nordLeaves2;
     public static Block nordLog2;
+    public static Block nordPlank3;
+    public static Block nordSapling3;
+    public static Block nordLeaves3;
+    public static Block nordLog3;
+    public static Object nordPlank4;
+    public static Object nordSapling4;
+    public static Object nordLeaves4;
+    public static Object nordLog4;
 }
 

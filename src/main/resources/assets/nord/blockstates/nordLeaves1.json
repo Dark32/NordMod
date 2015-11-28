@@ -7,26 +7,26 @@
         "variant":{
             "sakura"     : {
                 "textures": {
-                    "all": "nord:blocks/wood/sakura/leaf_1",
-                    "particle": "nord:blocks/wood/sakura/leaf_1"
+                    "all": "nord:blocks/wood/sakura/leaf1",
+                    "particle": "nord:blocks/wood/sakura/leaf1"
                 }
             },
             "punica"     : {
                 "textures": {
-                    "all": "nord:blocks/wood/punica/punica_leaf_1",
-                    "particle": "nord:blocks/wood/punica/punica_leaf_1"
+                    "all": "nord:blocks/wood/punica/leaf1",
+                    "particle": "nord:blocks/wood/punica/leaf1"
                 }
             },
             "pear"     : {
                 "textures": {
-                    "all": "nord:blocks/wood/pear/pear_leaf_1",
-                    "particle": "nord:blocks/wood/pear/pear_leaf_1"
+                    "all": "nord:blocks/wood/pear/leaf1",
+                    "particle": "nord:blocks/wood/pear/leaf1"
                 }
             },
             "peach"     : {
                 "textures": {
-                    "all": "nord:blocks/wood/peach/peach_leaf_1",
-                    "particle": "nord:blocks/wood/peach/peach_leaf_1"
+                    "all": "nord:blocks/wood/peach/leaf1",
+                    "particle": "nord:blocks/wood/peach/leaf1"
                 }
             }
         },

@@ -13,20 +13,20 @@
                 },
                 "punica"     : {
                     "textures": {
-                        "cross": "nord:blocks/wood/punica/punica_sapling",
-                        "particle": "nord:blocks/wood/punica/punica_sapling"
+                        "cross": "nord:blocks/wood/punica/sapling",
+                        "particle": "nord:blocks/wood/punica/sapling"
                     }
                 },
                 "pear"     : {
                     "textures": {
-                        "cross": "nord:blocks/wood/pear/pear_sapling",
-                        "particle": "nord:blocks/wood/pear/pear_sapling"
+                        "cross": "nord:blocks/wood/pear/sapling",
+                        "particle": "nord:blocks/wood/pear/sapling"
                     }
                 },
                 "peach"     : {
                     "textures": {
-                        "cross": "nord:blocks/wood/peach/peach_sapling",
-                        "particle": "nord:blocks/wood/peach/peach_sapling"
+                        "cross": "nord:blocks/wood/peach/sapling",
+                        "particle": "nord:blocks/wood/peach/sapling"
                     }
                 }
         },
