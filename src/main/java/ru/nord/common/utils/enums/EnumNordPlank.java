@@ -1,23 +1,22 @@
 package ru.nord.common.utils.enums;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import ru.nord.common.world.generator.WorldGenSomeTree;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumNordPlank implements IMetadataEnum {
-//    SOME_PLANK(0, "some_plank") {
-//        @Override
-//        public WorldGenAbstractTree generate() {
-//            return new WorldGenSomeTree(true);
-//        }
-//
-//        @Override
-//        public ItemStack dropFruit() {
-//            return new ItemStack(Items.apple);
-//        }
-//    },
+/*    SOME_PLANK(0, "some_plank") {
+        @Override
+        public WorldGenAbstractTree generate() {
+            return new WorldGenSomeTree(true);
+        }
+
+        @Override
+        public ItemStack dropFruit() {
+            return new ItemStack(Items.apple);
+        }
+    },
+*/
 
     SAKURA(0, "sakura") {
         @Override

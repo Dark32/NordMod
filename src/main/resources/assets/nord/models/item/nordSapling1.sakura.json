@@ -1,7 +1,7 @@
 {
-  "parent": "cross",
+  "parent": "builtin/generated",
   "textures": {
-  "cross": "nord:blocks/wood/sakura/sapling"
+    "layer0": "nord:blocks/wood/sakura/sapling"
   },
   "display": {
     "thirdperson": {
