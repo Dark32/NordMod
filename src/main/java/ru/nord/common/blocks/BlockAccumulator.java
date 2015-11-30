@@ -46,8 +46,12 @@ public class BlockAccumulator extends BlockAbstractMachine {
 
     @Override
     protected boolean getWork(IBlockAccess world, BlockPos pos) {
-        TileAbstractEnergyAccumulator tile = (TileAbstractEnergyAccumulator) world.getTileEntity(pos);
-        return tile != null && (tile.getCharge() || tile.getDisCharge());
+        TileEntity otile = world.getTileEntity(pos);
+        if (otile instanceof TileAbstractEnergyAccumulator ){
+            TileAbstractEnergyAccumulator tile = (TileAbstractEnergyAccumulator) world.getTileEntity(pos);
+            return tile != null && (tile.getCharge() || tile.getDisCharge());
+        }
+        return false;
     }
     public boolean isFullCube()
     {

@@ -1,36 +1,36 @@
 package ru.nord_core.common.blocks.abstracts;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.Sys;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyCable2;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.enums.EnumCableState;
-import ru.nord_core.common.utils.enums.EnumColors;
 
 import java.util.List;
+import java.util.Random;
 
-public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWrenchable,ITileEntityProvider {
+public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWrenchable, ITileEntityProvider {
 
     // the LINK properties are used to communicate to the ISmartBlockModel which of the links should be drawn
     public static final PropertyEnum CONNECT_UP = PropertyEnum.create("connect_up", EnumCableState.class);
@@ -39,12 +39,11 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
     public static final PropertyEnum CONNECT_EAST = PropertyEnum.create("connect_east", EnumCableState.class);
     public static final PropertyEnum CONNECT_NORTH = PropertyEnum.create("connect_north", EnumCableState.class);
     public static final PropertyEnum CONNECT_SOUTH = PropertyEnum.create("connect_south", EnumCableState.class);
-//    public static final PropertyEnum COLOUR = PropertyEnum.create("colour", EnumColors.class);
 
     private final float pipeRadius; // in fraction of a block (aka meters)
 
     public BlockAbstractEnergyCable2() {
-        super(Version.MODID,Material.iron);
+        super(Version.MODID, Material.iron);
         setHardness(2.0F);
         setResistance(5.0F);
         this.pipeRadius = 0.0625f * 2;
@@ -57,6 +56,7 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
                         .withProperty(CONNECT_NORTH, EnumCableState.UNDEFINED)
                         .withProperty(CONNECT_SOUTH, EnumCableState.UNDEFINED)
         );
+//        this.setTickRandomly(true);
     }
 
     @SideOnly(Side.CLIENT)
@@ -88,8 +88,7 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
                 CONNECT_EAST,
                 CONNECT_WEST,
                 CONNECT_NORTH,
-                CONNECT_SOUTH,
-//                COLOUR
+                CONNECT_SOUTH
         };
         return new BlockState(this, listedProperties);
     }
@@ -198,12 +197,21 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
                 return false;
             }
             if (tileEntity instanceof TileAbstractEnergyCable2) {
-                    playerIn.addChatComponentMessage(new ChatComponentText(
+                 /*   playerIn.addChatComponentMessage(new ChatComponentText(
                             " x="+hitX+
                             " z="+hitZ+
                             " y="+hitY
                     ));
-                    worldIn.markBlockForUpdate(pos);
+                 */
+                TileAbstractEnergyCable2 cable = (TileAbstractEnergyCable2) tileEntity;
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.NORTH));
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.SOUTH));
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.WEST));
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.EAST));
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.UP));
+//                System.err.println(cable.getCableStateOnFacing(EnumFacing.DOWN));
+                worldIn.markBlockForUpdate(pos);
+                this.updteCableState(worldIn,pos,state);
             }
             return true;
         }
@@ -217,22 +225,14 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
     }
 
     @Override
-    public void onBlockPlacedBy(final World world, final BlockPos coord,
+    public void onBlockPlacedBy(final World worldIn, final BlockPos pos,
                                 final IBlockState bs, final EntityLivingBase player,
                                 final ItemStack item) {
-        super.onBlockPlacedBy(world, coord, bs, player, item);
-        this.updteCableState(world, coord, bs);
+        super.onBlockPlacedBy(worldIn, pos, bs, player, item);
+        this.placeCableState(worldIn,pos);
     }
 
-    @Override
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock)
-    {
-        worldIn.markBlockForUpdate(pos);
-        super.onNeighborBlockChange(worldIn, pos, state, neighborBlock);
-    }
-
-    private void updteCableState(final World worldIn, final BlockPos pos,
-                                 final IBlockState state){
+    private void placeCableState(final World worldIn, final BlockPos pos ) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(pos);
         final EnumCableState connectNorth = this.getConnectStateToPlace(worldIn, pos, EnumFacing.NORTH, pos.north());
         final EnumCableState connectSouth = this.getConnectStateToPlace(worldIn, pos, EnumFacing.SOUTH, pos.south());
@@ -240,27 +240,43 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         final EnumCableState connectEast = this.getConnectStateToPlace(worldIn, pos, EnumFacing.EAST, pos.east());
         final EnumCableState connectUp = this.getConnectStateToPlace(worldIn, pos, EnumFacing.UP, pos.up());
         final EnumCableState connectDown = this.getConnectStateToPlace(worldIn, pos, EnumFacing.DOWN, pos.down());
-        tile.setCableStateOnFacing(EnumFacing.NORTH,connectNorth);
-        tile.setCableStateOnFacing(EnumFacing.SOUTH,connectSouth);
-        tile.setCableStateOnFacing(EnumFacing.WEST,connectWest);
-        tile.setCableStateOnFacing(EnumFacing.EAST,connectEast);
-        tile.setCableStateOnFacing(EnumFacing.UP,connectUp);
-        tile.setCableStateOnFacing(EnumFacing.DOWN,connectDown);
+        tile.setCableStateOnFacing(EnumFacing.NORTH, connectNorth);
+        tile.setCableStateOnFacing(EnumFacing.SOUTH, connectSouth);
+        tile.setCableStateOnFacing(EnumFacing.WEST, connectWest);
+        tile.setCableStateOnFacing(EnumFacing.EAST, connectEast);
+        tile.setCableStateOnFacing(EnumFacing.UP, connectUp);
+        tile.setCableStateOnFacing(EnumFacing.DOWN, connectDown);
+    }
+    @Override
+    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
+        super.onNeighborBlockChange(worldIn, pos, state, neighborBlock);
+//        this.updteCableState(worldIn,pos,state);
+    }
+
+    private void updteCableState(final World worldIn, final BlockPos pos,
+                                 final IBlockState state) {
+        TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(pos);
+        final EnumCableState connectNorth = this.checkConnectState(worldIn, pos, EnumFacing.NORTH, pos.north());
+        final EnumCableState connectSouth = this.checkConnectState(worldIn, pos, EnumFacing.SOUTH, pos.south());
+        final EnumCableState connectWest = this.checkConnectState(worldIn, pos, EnumFacing.WEST, pos.west());
+        final EnumCableState connectEast = this.checkConnectState(worldIn, pos, EnumFacing.EAST, pos.east());
+        final EnumCableState connectUp = this.checkConnectState(worldIn, pos, EnumFacing.UP, pos.up());
+        final EnumCableState connectDown = this.checkConnectState(worldIn, pos, EnumFacing.DOWN, pos.down());
+        tile.setCableStateOnFacing(EnumFacing.NORTH, connectNorth);
+        tile.setCableStateOnFacing(EnumFacing.SOUTH, connectSouth);
+        tile.setCableStateOnFacing(EnumFacing.WEST, connectWest);
+        tile.setCableStateOnFacing(EnumFacing.EAST, connectEast);
+        tile.setCableStateOnFacing(EnumFacing.UP, connectUp);
+        tile.setCableStateOnFacing(EnumFacing.DOWN, connectDown);
     }
 
     private EnumCableState getConnectStateToPlace(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         IBlockState otherState = worldIn.getBlockState(otherBlock);
         IBlockState thisState = worldIn.getBlockState(thisBlock);
-
         if (otherState.getBlock() instanceof BlockAbstractEnergyCable2) {
             TileAbstractEnergyCable2 otherTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(otherBlock);
-//            if (thisState.getValue(COLOUR) == otherState.getValue(COLOUR)) {
-//                otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.DISCONNECT);
-//                return EnumCableState.DISCONNECT;
-//            } else {
-                otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.CONNECT);
-                return EnumCableState.CONNECT;
-//            }
+            otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.CONNECT);
+            return EnumCableState.CONNECT;
         }
         if (otherState.getBlock() instanceof BlockAbstractMachine) {
             return EnumCableState.OUTPUT;
@@ -268,63 +284,92 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         return EnumCableState.UNDEFINED;
     }
 
+    private EnumCableState checkConnectState(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
+        IBlockState otherState = worldIn.getBlockState(otherBlock);
+        IBlockState thisState = worldIn.getBlockState(thisBlock);
+
+        if (otherState.getBlock() instanceof BlockAbstractEnergyCable2) {
+            TileAbstractEnergyCable2 otherTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(otherBlock);
+            TileAbstractEnergyCable2 thisTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(thisBlock);
+            EnumCableState thisCableState = this.getConnectState(worldIn,thisBlock,face);
+            EnumCableState otherCableState = this.getConnectState(worldIn,otherBlock,face.getOpposite());
+
+            if(thisCableState == otherCableState
+                    && (thisCableState == EnumCableState.CONNECT || thisCableState==EnumCableState.DISCONNECT)){
+                // Если статусы одинаковые и соедены или рассоеденены, тогда возвращаем его
+                return thisCableState;
+            }else if((thisCableState == EnumCableState.INPUT && otherCableState==EnumCableState.OUTPUT)
+                    ||(thisCableState == EnumCableState.OUTPUT && otherCableState==EnumCableState.INPUT)){
+                // если статусы разные и вход в выход или выход во вход - тогда возрващаем
+                return thisCableState;
+            }else{
+                // Иначе что-то не так, делаем просто соеденён и возвращаем
+                otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.CONNECT);
+                thisTile.setCableStateOnFacing(face, EnumCableState.CONNECT);
+                return EnumCableState.CONNECT;
+            }
+        }
+        if (otherState.getBlock() instanceof BlockAbstractMachine ) {
+            EnumCableState thisCableState = this.getConnectState(worldIn,thisBlock,face);
+            if (thisCableState == EnumCableState.INPUT || thisCableState == EnumCableState.OUTPUT){
+                return thisCableState;
+            }else{
+                return EnumCableState.OUTPUT;
+            }
+        }
+        return EnumCableState.UNDEFINED;
+    }
     private EnumCableState getConnectState(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(thisBlock);
         return tile.getCableStateOnFacing(face);
     }
-/*
-    private EnumColors getColour(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face) {
-        TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(thisBlock);
-        return tile.getColor();
-    }
-*/
+
     @Override
-    public IBlockState getStateFromMeta(int meta){
-        return this.getDefaultState()
-//                .withProperty(COLOUR, EnumColors.byMetadata(meta))
-                ;
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState();
     }
+
     @Override
     public int getMetaFromState(IBlockState state) {
-//        return ((IMetadataEnum)state.getValue(COLOUR)).getMetadata();
         return 0;
     }
 
     @Override
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return this.getDefaultState()
-                .withProperty(CONNECT_DOWN,getConnectState(worldIn,pos,EnumFacing.DOWN))
-                .withProperty(CONNECT_UP,getConnectState(worldIn,pos,EnumFacing.UP))
-                .withProperty(CONNECT_WEST,getConnectState(worldIn,pos,EnumFacing.WEST))
-                .withProperty(CONNECT_EAST,getConnectState(worldIn,pos,EnumFacing.EAST))
-                .withProperty(CONNECT_NORTH,getConnectState(worldIn,pos,EnumFacing.NORTH))
-                .withProperty(CONNECT_SOUTH,getConnectState(worldIn,pos,EnumFacing.SOUTH))
+                .withProperty(CONNECT_DOWN, getConnectState(worldIn, pos, EnumFacing.DOWN))
+                .withProperty(CONNECT_UP, getConnectState(worldIn, pos, EnumFacing.UP))
+                .withProperty(CONNECT_WEST, getConnectState(worldIn, pos, EnumFacing.WEST))
+                .withProperty(CONNECT_EAST, getConnectState(worldIn, pos, EnumFacing.EAST))
+                .withProperty(CONNECT_NORTH, getConnectState(worldIn, pos, EnumFacing.NORTH))
+                .withProperty(CONNECT_SOUTH, getConnectState(worldIn, pos, EnumFacing.SOUTH))
                 ;
     }
 
-    @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player)
-    {
-        super.onBlockHarvested(worldIn, pos, state, player);
-    }
+
 
     private void disconnectBreakBlock(World worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         IBlockState otherState = worldIn.getBlockState(otherBlock);
         if (otherState.getBlock() instanceof BlockAbstractEnergyCable2) {
             TileAbstractEnergyCable2 otherTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(otherBlock);
             otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.UNDEFINED);
-            worldIn.markBlockForUpdate(otherBlock);
-        }
+            this.updteCableState(worldIn,otherBlock,otherState);
+            this.checkConnectState(worldIn,otherBlock,face.getOpposite(),thisBlock);
+           }
     }
+
     @Override
-    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te){
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.NORTH, pos.north());
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.SOUTH, pos.south());
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.WEST, pos.west());
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.EAST, pos.east());
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.UP, pos.up());
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.DOWN, pos.down());
-        super.harvestBlock(worldIn, player, pos, state, te);
+       super.breakBlock(worldIn, pos, state);
     }
+
+
+
 }

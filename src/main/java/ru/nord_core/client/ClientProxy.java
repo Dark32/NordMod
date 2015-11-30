@@ -27,11 +27,12 @@ public class ClientProxy extends CommonProxy {
                 new ModelResourceLocation(modid + ":" + model, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
     }
+
     @Override
     public void registerEventHandlers() {
         super.registerEventHandlers();
-        DrawBlockHighlight eventHandler = new DrawBlockHighlight();
-        FMLCommonHandler.instance().bus().register(eventHandler);
-        MinecraftForge.EVENT_BUS.register(eventHandler);
+//        DrawBlockHighlight eventHandler = new DrawBlockHighlight();
+//        FMLCommonHandler.instance().bus().register(eventHandler);
+//        MinecraftForge.EVENT_BUS.register(eventHandler);
     }
 }
