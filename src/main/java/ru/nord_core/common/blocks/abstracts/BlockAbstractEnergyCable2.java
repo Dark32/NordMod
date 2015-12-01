@@ -11,6 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -183,14 +184,15 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
     @Override
     public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (playerIn.isSneaking()) {
-            this.removedByPlayer(worldIn, pos, playerIn, true);
-            this.dropBlockAsItem(worldIn, pos, state, 0);
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.NORTH, pos.north());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.SOUTH, pos.south());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.WEST, pos.west());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.EAST, pos.east());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.UP, pos.up());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.DOWN, pos.down());
+//            worldIn.setBlockToAir(pos);
+            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.dropBlockAsItem(worldIn, pos, state, 0);
         } else {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
             if (tileEntity == null) {
@@ -247,13 +249,16 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         tile.setCableStateOnFacing(EnumFacing.UP, connectUp);
         tile.setCableStateOnFacing(EnumFacing.DOWN, connectDown);
     }
+
     @Override
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
-        super.onNeighborBlockChange(worldIn, pos, state, neighborBlock);
-//        this.updteCableState(worldIn,pos,state);
+    public void onNeighborChange(IBlockAccess world, BlockPos pos, BlockPos neighbor){
+        super.onNeighborChange(world, pos, neighbor);
+        if (world.getBlockState(pos).getBlock() instanceof BlockAbstractMachine){
+            this.updteCableState(world,pos,world.getBlockState(pos));
+        }
     }
 
-    private void updteCableState(final World worldIn, final BlockPos pos,
+    private void updteCableState(final IBlockAccess worldIn, final BlockPos pos,
                                  final IBlockState state) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(pos);
         final EnumCableState connectNorth = this.checkConnectState(worldIn, pos, EnumFacing.NORTH, pos.north());
@@ -353,8 +358,7 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         if (otherState.getBlock() instanceof BlockAbstractEnergyCable2) {
             TileAbstractEnergyCable2 otherTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(otherBlock);
             otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.UNDEFINED);
-            this.updteCableState(worldIn,otherBlock,otherState);
-            this.checkConnectState(worldIn,otherBlock,face.getOpposite(),thisBlock);
+            worldIn.markBlockForUpdate(otherBlock);
            }
     }
 
