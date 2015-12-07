@@ -25,7 +25,20 @@ public enum EnumFoodNord implements IMetadataEnum {
     bunjam2(13, "bunjam2", 2, 2),
     cheesecake(14, "cheesecake", 2, 2),
     curd(14, "curd", 4, 4),
-    dough(15, "dough", 1, 1, 10) {
+    dough(15, "dough", 1, 1, 10),
+    apricotfruit(16, "apricotFruit", 1, 1, 10),
+    berry1(17, "berry1", 1, 1, 10),
+    berry2(18, "berry2", 1, 1, 10),
+    coffeaFruit(19, "coffeaFruit", 1, 1, 10),
+    coffeaGrain(20, "coffeaGrain", 1, 1, 10),
+    lemonFruit(21, "lemonFruit", 1, 1, 10),
+    oliveFruit(22, "oliveFruit", 1, 1, 10),
+    orangeFruit(23, "orangeFruit", 1, 1, 10),
+    peachFruit(24, "peachFruit", 1, 1, 10),
+    pearFruit(25, "pearFruit", 1, 1, 10),
+    punicaFruit(26, "punicaFruit", 1, 1, 10),
+    sakuraFruit(27, "sakuraFruit", 1, 1, 10) {
+
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
                     new PotionEffect(Potion.poison.id, 10, 1),
