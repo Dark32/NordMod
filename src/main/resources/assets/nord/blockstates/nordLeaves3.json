@@ -1,0 +1,42 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "leaves"
+    },
+    "variants": {
+        "variant":{
+            "malus"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/malus/leaf1",
+                    "particle": "nord:blocks/wood/malus/leaf1"
+                }
+            },
+            "lemon"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/lemon/leaf1",
+                    "particle": "nord:blocks/wood/lemon/leaf1"
+                }
+            },
+            "coffea"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/coffea/leaf1",
+                    "particle": "nord:blocks/wood/coffea/leaf1"
+                }
+            },
+            "beech"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/beech/leaf1",
+                    "particle": "nord:blocks/wood/beech/leaf1"
+                }
+            }
+        },
+        "check_decay":{
+            "true":{},
+            "false":{}
+        },
+        "decayable":{
+            "true":{},
+            "false":{}
+        }
+    }
+}

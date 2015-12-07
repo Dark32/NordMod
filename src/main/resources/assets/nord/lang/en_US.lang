@@ -623,7 +623,90 @@ tile.nord.empGlass.glass4.name=Paper window 4
 tile.nord.empGlass.glass5.name=Paper window 5
 tile.nord.empGlass.glass6.name=Paper window 6
 
+tile.nord.nordPlank1.sakura.name=Sakura plank
+tile.nord.nordPlank1.punica.name=Punica plank
+tile.nord.nordPlank1.pear.name=Pear plank
+tile.nord.nordPlank1.peach.name=Peach plank
+
+tile.nordSapling1.sakura.name=Sakura sapling
+tile.nordSapling1.punica.name=Punica sapling
+tile.nordSapling1.pear.name=Pear sapling
+tile.nordSapling1.peach.name=Peach sapling
+
+tile.nordLeaves1.sakura.name=Sakura Leaves
+tile.nordLeaves1.punica.name=Punica Leaves
+tile.nordLeaves1.pear.name=Pear Leaves
+tile.nordLeaves1.peach.name=Peach Leaves
+
+tile.nordLog1.sakura.name=Sakura Wood
+tile.nordLog1.punica.name=Punica Wood
+tile.nordLog1.pear.name=Pear Wood
+tile.nordLog1.peach.name=Peach Wood
+
+tile.nord.nordPlank2.palm_trees.name=Palm plank
+tile.nord.nordPlank2.orange.name=Orange plank
+tile.nord.nordPlank2.olive.name=Olive plank
+tile.nord.nordPlank2.mulberry.name=Mulberry plank
+
+tile.nordSapling2.palm_trees.name=Palm sapling
+tile.nordSapling2.orange.name=Orange sapling
+tile.nordSapling2.olive.name=Olive sapling
+tile.nordSapling2.mulberry.name=Mulberry sapling
+
+tile.nordLeaves2.palm_trees.name=Palm Leaves
+tile.nordLeaves2.orange.name=Orange Leaves
+tile.nordLeaves2.olive.name=Olive Leaves
+tile.nordLeaves2.mulberry.name=Mulberry Leaves
+
+tile.nordLog2.palm_trees.name=Palm Wood
+tile.nordLog2.orange.name=Orange Wood
+tile.nordLog2.olive.name=Olive Wood
+tile.nordLog2.mulberry.name=Mulberry Wood
+
+tile.nord.nordPlank3.malus.name=Malus plank
+tile.nord.nordPlank3.lemon.name=lemon plank
+tile.nord.nordPlank3.coffea.name=Coffea plank
+tile.nord.nordPlank3.beech.name=Beech plank
+
+tile.nordSapling3.malus.name=Malus sapling
+tile.nordSapling3.lemon.name=lemon sapling
+tile.nordSapling3.coffea.name=Coffea sapling
+tile.nordSapling3.beech.name=Beech sapling
+
+tile.nordLeaves3.malus.name=Malus Leaves
+tile.nordLeaves3.lemon.name=lemon Leaves
+tile.nordLeaves3.coffea.name=Coffea Leaves
+tile.nordLeaves3.beech.name=Beech Leaves
+
+tile.nordLog3.malus.name=Malus Wood
+tile.nordLog3.lemon.name=lemon Wood
+tile.nordLog3.coffea.name=Coffea Wood
+tile.nordLog3.beech.name=Beech Wood
+
+tile.nord.nordPlank4.baobab.name=Baobab plank
+tile.nord.nordPlank4.ash.name=Ash plank
+tile.nord.nordPlank4.apricot.name=Apricot plank
+tile.nord.nordPlank4.camphor.name=Camphor plank
+
+tile.nordSapling4.baobab.name=Baobab sapling
+tile.nordSapling4.ash.name=Ash sapling
+tile.nordSapling4.apricot.name=Apricot sapling
+tile.nordSapling4.camphor.name=Camphor sapling
+
+tile.nordLeaves4.baobab.name=Baobab Leaves
+tile.nordLeaves4.ash.name=Ash Leaves
+tile.nordLeaves4.apricot.name=Apricot Leaves
+tile.nordLeaves4.camphor.name=Camphor Leaves
+
+tile.nordLog4.baobab.name=Baobab Wood
+tile.nordLog4.ash.name=Ash Wood
+tile.nordLog4.apricot.name=Apricot Wood
+tile.nordLog4.camphor.name=Camphor Wood
+
 itemGroup.tabDecoration=Decoration
+itemGroup.tabFood=Food
+itemGroup.tabOther=Other 
+itemGroup.tabWood=Wood
 tile.deco_placer.name=[DEBUG] Decoration Block Placer
 
 itemGroup.tabGeneral=Temp Tab

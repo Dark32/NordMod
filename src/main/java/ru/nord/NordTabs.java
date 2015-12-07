@@ -29,6 +29,6 @@ public class NordTabs {
         ((TabNord) tabLamp).setTabIconItem(new ItemStack(NordBloks.empireLamp1,1,0));
         ((TabNord) tabFood).setTabIconItem(new ItemStack(NordItems.itemFoodNord,1,12));
         ((TabNord) tabOthers).setTabIconItem(new ItemStack(NordItems.itemGlowstoneDust, 1,11));
-        ((TabNord) tabWood).setTabIconItem(new ItemStack(NordItems.itemGlowstoneDust, 1,11));
+        ((TabNord) tabWood).setTabIconItem(new ItemStack(NordBloks.nordLog2, 1,2));
     }
 }

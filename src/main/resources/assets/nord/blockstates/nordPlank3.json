@@ -1,0 +1,34 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "variant":{
+                "malus"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/malus/plank",
+                        "particle": "nord:blocks/wood/malus/plank"
+                    }
+                },
+                "lemon"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/lemon/plank",
+                        "particle": "nord:blocks/wood/lemon/plank"
+                    }
+                },
+                "coffea"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/coffea/plank",
+                        "particle": "nord:blocks/wood/coffea/plank"
+                    }
+                },
+                "beech"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/beech/plank",
+                        "particle": "nord:blocks/wood/beech/plank"
+                    }
+                }
+        }
+    }
+}

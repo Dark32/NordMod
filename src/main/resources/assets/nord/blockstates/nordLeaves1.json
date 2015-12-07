@@ -7,8 +7,8 @@
         "variant":{
             "sakura"     : {
                 "textures": {
-                    "all": "nord:blocks/wood/sakura/leaf1",
-                    "particle": "nord:blocks/wood/sakura/leaf1"
+                    "all": "nord:blocks/wood/sakura/leafFlowers",
+                    "particle": "nord:blocks/wood/sakura/leafFlowers"
                 }
             },
             "punica"     : {

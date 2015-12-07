@@ -1,0 +1,38 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "cross"
+        },
+        "variants": {
+            "type":{
+                "malus"     : {
+                    "textures": {
+                        "cross": "nord:blocks/wood/malus/sapling",
+                        "particle": "nord:blocks/wood/malus/sapling"
+                    }
+                },
+                "lemon"     : {
+                    "textures": {
+                        "cross": "nord:blocks/wood/lemon/sapling",
+                        "particle": "nord:blocks/wood/lemon/sapling"
+                    }
+                },
+                "coffea"     : {
+                    "textures": {
+                        "cross": "nord:blocks/wood/coffea/sapling",
+                        "particle": "nord:blocks/wood/coffea/sapling"
+                    }
+                },
+                "beech"     : {
+                    "textures": {
+                        "cross": "nord:blocks/wood/beech/sapling",
+                        "particle": "nord:blocks/wood/beech/sapling"
+                    }
+                }
+        },
+        "stage":{
+            "0":{"model": "cross"},
+            "1":{"model": "cross"}
+        }
+    }
+}

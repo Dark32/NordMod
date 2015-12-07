@@ -1,0 +1,57 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+
+    },
+    "variants": {
+        "variant":{
+            "baobab"     : {
+                "textures": {
+                    "end": "nord:blocks/wood/baobab/logTop",
+                    "side": "nord:blocks/wood/baobab/log",
+                    "all": "nord:blocks/wood/baobab/log",
+                    "particle": "nord:blocks/wood/baobab/log"
+                }
+            },
+            "ash"     : {
+                "textures": {
+                     "end": "nord:blocks/wood/ash/logTop",
+                     "side": "nord:blocks/wood/ash/log",
+                     "all": "nord:blocks/wood/ash/log",
+                     "particle": "nord:blocks/wood/ash/log"
+                }
+            },
+            "apricot"     : {
+                "textures": {
+                    "end": "nord:blocks/wood/apricot/logTop",
+                    "side": "nord:blocks/wood/apricot/log",
+                    "all": "nord:blocks/wood/apricot/log",
+                    "particle": "nord:blocks/wood/apricot/log"
+                }
+            },
+            "camphor"     : {
+                "textures": {
+                    "end": "nord:blocks/wood/camphor/logTop",
+                    "side": "nord:blocks/wood/camphor/log",
+                    "all": "nord:blocks/wood/camphor/log",
+                    "particle": "nord:blocks/wood/camphor/log"
+                }
+            }
+        },
+        "axis":{
+            "y":{
+                 "model": "cube_column"
+            },
+            "z":{
+                 "model": "column_side"
+            },
+            "x":{
+                "model": "column_side",
+                "y": 90
+            },
+            "none":{
+                 "model": "cube_all"
+            }
+        }
+    }
+}

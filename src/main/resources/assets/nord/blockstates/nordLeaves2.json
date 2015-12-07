@@ -1,0 +1,42 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "leaves"
+    },
+    "variants": {
+        "variant":{
+            "palm_trees"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/palm_trees/leaf1",
+                    "particle": "nord:blocks/wood/palm_trees/leaf1"
+                }
+            },
+            "orange"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/orange/leaf1",
+                    "particle": "nord:blocks/wood/orange/leaf1"
+                }
+            },
+            "olive"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/olive/leaf1",
+                    "particle": "nord:blocks/wood/olive/leaf1"
+                }
+            },
+            "mulberry"     : {
+                "textures": {
+                    "all": "nord:blocks/wood/mulberry/leaf1",
+                    "particle": "nord:blocks/wood/mulberry/leaf1"
+                }
+            }
+        },
+        "check_decay":{
+            "true":{},
+            "false":{}
+        },
+        "decayable":{
+            "true":{},
+            "false":{}
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "variant":{
+                "baobab"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/baobab/plank",
+                        "particle": "nord:blocks/wood/baobab/plank"
+                    }
+                },
+                "ash"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/ash/plank",
+                        "particle": "nord:blocks/wood/ash/plank"
+                    }
+                },
+                "apricot"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/apricot/plank",
+                        "particle": "nord:blocks/wood/apricot/plank"
+                    }
+                },
+                "camphor"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/camphor/plank",
+                        "particle": "nord:blocks/wood/camphor/plank"
+                    }
+                }
+        }
+    }
+}

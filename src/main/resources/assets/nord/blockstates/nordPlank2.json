@@ -1,0 +1,34 @@
+{
+        "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
+        "variants": {
+            "variant":{
+                "palm_trees"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/palm_trees/plank",
+                        "particle": "nord:blocks/wood/palm_trees/plank"
+                    }
+                },
+                "orange"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/orange/plank",
+                        "particle": "nord:blocks/wood/orange/plank"
+                    }
+                },
+                "olive"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/olive/plank",
+                        "particle": "nord:blocks/wood/olive/plank"
+                    }
+                },
+                "mulberry"     : {
+                    "textures": {
+                        "all": "nord:blocks/wood/mulberry/plank",
+                        "particle": "nord:blocks/wood/mulberry/plank"
+                    }
+                }
+        }
+    }
+}
