@@ -18,7 +18,7 @@ public class ItemBlockNordPlank4 extends ItemBlockMetadata {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         int meta = stack.getMetadata();
-        if (meta < EnumMetal.getNames().length) {
+        if (meta < EnumNordPlank4.getNames().length) {
             return super.getUnlocalizedName() + "." + EnumNordPlank4.byMetadata(stack.getMetadata()).getName();
         } else {
             return super.getUnlocalizedName() + ".errorData";

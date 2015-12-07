@@ -26,7 +26,7 @@ public class BlockPlanks3 extends BlockMetadata {
     public BlockPlanks3(String[] names)
     {
         super(Material.wood,names,EnumNordPlank3.class, Version.MODID);
-         this.setCreativeTab(NordTabs.tabWood);
+        this.setCreativeTab(NordTabs.tabWood);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class BlockPlanks3 extends BlockMetadata {
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
         for (int i=0;i<EnumNordPlank3.values().length;i++){
-                 list.add(new ItemStack(itemIn, 1, EnumNordPlank3.values()[i].getMetadata()));
+            list.add(new ItemStack(itemIn, 1, EnumNordPlank3.values()[i].getMetadata()));
         }
     }
 }

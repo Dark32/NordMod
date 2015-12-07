@@ -65,10 +65,12 @@ public enum EnumNordPlank implements IMetadataEnum {
     ;
     private final String name;
     private final int meta;
+    private final boolean colorize;
 
     EnumNordPlank(int _meta, String _name) {
         this.name = _name;
         this.meta = _meta;
+        this.colorize = false;
     }
 
     public static EnumNordPlank byMetadata(int meta) {
@@ -92,6 +94,8 @@ public enum EnumNordPlank implements IMetadataEnum {
     public int getMetadata() {
         return this.meta;
     }
+    
+    public boolean getColorize(){return this.colorize;}
 
     public abstract WorldGenAbstractTree generate();
 

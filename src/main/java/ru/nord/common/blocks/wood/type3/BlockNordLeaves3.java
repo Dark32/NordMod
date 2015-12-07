@@ -9,6 +9,7 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -46,7 +47,11 @@ public class BlockNordLeaves3 extends BlockLeaves {
     @Override
     @SideOnly(Side.CLIENT)
     public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
-        return super.colorMultiplier(worldIn, pos, renderPass);
+        if (((EnumNordPlank3) worldIn.getBlockState(pos).getValue(VARIANT)).getColorize()) {
+            return super.colorMultiplier(worldIn, pos, renderPass);
+        } else {
+            return 0xffffff;
+        }
     }
 
     @Override
@@ -149,8 +154,7 @@ public class BlockNordLeaves3 extends BlockLeaves {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer()
-    {
-        return this.isTransparent ? EnumWorldBlockLayer.CUTOUT_MIPPED : EnumWorldBlockLayer.SOLID;
+    public EnumWorldBlockLayer getBlockLayer() {
+        return Blocks.leaves.getBlockLayer();
     }
 }
