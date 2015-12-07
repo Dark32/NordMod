@@ -27,6 +27,7 @@ import ru.nord.common.items.wood.type3.ItemBlockNordLog3;
 import ru.nord.common.items.wood.type3.ItemBlockNordPlank3;
 import ru.nord.common.items.wood.type3.ItemBlockNordSapling3;
 import ru.nord.common.items.wood.type4.ItemBlockNordLeaves4;
+import ru.nord.common.items.wood.type4.ItemBlockNordLog4;
 import ru.nord.common.items.wood.type4.ItemBlockNordPlank4;
 import ru.nord.common.items.wood.type4.ItemBlockNordSapling4;
 import ru.nord.common.utils.enums.EnumNordPlank;
@@ -173,6 +174,39 @@ public class NordWood {
                 "nordLog3",
                 EnumNordPlank3.getNames()
         );
+
+
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.nordPlank4,
+                ItemBlockNordPlank4.class,
+                "nordPlank4",
+                "nordPlank4",
+                EnumNordPlank4.getNames()
+        );
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.nordSapling4,
+                ItemBlockNordSapling4.class,
+                "nordSapling4",
+                "nordSapling4",
+                EnumNordPlank4.getNames()
+        );
+
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.nordLeaves4,
+                ItemBlockNordLeaves4.class,
+                "nordLeaves4",
+                "nordLeaves4",
+                EnumNordPlank4.getNames()
+        );
+
+        RegisterHelper.registerMetadataBlock(
+                NordBloks.nordLog4,
+                ItemBlockNordLog4.class,
+                "nordLog4",
+                "nordLog4",
+                EnumNordPlank4.getNames()
+        );
+
 
     }
 

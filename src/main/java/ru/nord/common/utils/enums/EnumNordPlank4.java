@@ -27,7 +27,7 @@ public enum EnumNordPlank4 implements IMetadataEnum {
             return null;
         }
     },
-    APRICOT(2, "apricot ") {
+    APRICOT(2, "apricot") {
         @Override
         public WorldGenAbstractTree generate() {
             return null;
