@@ -66,6 +66,7 @@ public class BlockSapling extends BlockBush implements IGrowable {
     {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
         WorldGenerator tree = ((EnumNordPlank)state.getValue(TYPE)).generate();
+        if (tree == null) return;
         int i = 0;
         int j = 0;
         boolean flag = false;
