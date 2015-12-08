@@ -2,6 +2,8 @@ package ru.nord.common.utils.enums;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import ru.nord.common.world.generator.WorldGenOliveTree;
+import ru.nord.common.world.generator.WorldGenOrangeTree;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumNordPlank2 implements IMetadataEnum {
@@ -19,7 +21,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
     ORANGE(1, "orange") {
         @Override
         public WorldGenAbstractTree generate() {
-            return null;
+            return new WorldGenOrangeTree(true);
         }
 
         @Override
@@ -30,7 +32,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
     OLIVE(2, "olive") {
         @Override
         public WorldGenAbstractTree generate() {
-            return null;
+            return new WorldGenOliveTree(true);
         }
 
         @Override

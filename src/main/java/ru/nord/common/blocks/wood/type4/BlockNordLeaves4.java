@@ -21,11 +21,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord.NordBloks;
 import ru.nord.common.utils.enums.EnumNordPlank4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class BlockNordLeaves4 extends BlockLeaves {
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumNordPlank4.class);
@@ -156,5 +158,11 @@ public class BlockNordLeaves4 extends BlockLeaves {
     @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer() {
         return Blocks.leaves.getBlockLayer();
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return Item.getItemFromBlock(NordBloks.nordSapling4);
     }
 }
