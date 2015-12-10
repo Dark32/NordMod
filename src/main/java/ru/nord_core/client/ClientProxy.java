@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import ru.nord_core.client.event.DrawBlockHighlight;
+import ru.nord_core.client.event.RenderWorldLast;
 import ru.nord_core.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
@@ -33,6 +34,10 @@ public class ClientProxy extends CommonProxy {
         super.registerEventHandlers();
 //        DrawBlockHighlight eventHandler = new DrawBlockHighlight();
 //        FMLCommonHandler.instance().bus().register(eventHandler);
-//        MinecraftForge.EVENT_BUS.register(eventHandler);
+//        MinecraftForge.EVENT_BUS.register(eventHandler);//
+
+        RenderWorldLast eventHandler = new RenderWorldLast();
+        FMLCommonHandler.instance().bus().register(eventHandler);
+        MinecraftForge.EVENT_BUS.register(eventHandler);
     }
 }
