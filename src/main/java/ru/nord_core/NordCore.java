@@ -24,15 +24,19 @@ public class NordCore {
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
         FMLLog.info("Core Nord Mod start init");
+        NordCoreDebug.preInit();
         proxy.registerEventHandlers();
     }
 
     @EventHandler
-    public void init(final FMLInitializationEvent event) {}
+    public void init(final FMLInitializationEvent event) {
+        NordCoreDebug.init();
+    }
 
     @EventHandler
     public void postInit(final FMLPostInitializationEvent event) {
 
+        NordCoreDebug.postInit();
     }
 
     @EventHandler
