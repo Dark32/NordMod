@@ -2,16 +2,21 @@ package ru.nord_core.common.items;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.fml.common.registry.GameData;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.Sys;
 
 import java.util.HashMap;
 import java.util.List;
@@ -69,6 +74,7 @@ public class ItemDebugStick extends ItemBase {
                     int z2 = pos2Tag.getInteger("PosZ");
 
                 AxisAlignedBB aabb = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
+/*
                 HashMap<String,Integer> size = new HashMap<String, Integer>(10);
                 for (int xi=(int)aabb.minX; xi<=aabb.maxX; xi++){
                     for (int yi=(int)aabb.minY; yi<=aabb.maxY; yi++){
@@ -90,12 +96,62 @@ public class ItemDebugStick extends ItemBase {
                                     + value + " " + key +" blocks"
                     ));
                 }
-
-
+*/
+                getMapCuboid(aabb,worldIn);
             }
             stack.setTagCompound(tag);
         }
         return false;
+    }
+
+    private void getMapCuboid(AxisAlignedBB aabb, World worldIn){
+        HashMap<String,Integer> mapBlockIndex = new HashMap<String, Integer>(10);
+        int index =1;
+        int l = (int)(aabb.maxX - aabb.minX + 1);
+        int w = (int)(aabb.maxY - aabb.minY + 1);
+        int h = (int)(aabb.maxZ - aabb.minZ + 1);
+        System.out.print("|"+w+"|"+l+"|"+h);
+        System.out.println();
+        System.out.print("|0|0|0");
+        System.out.println();
+        System.out.print("------");
+        System.out.println();
+        for (int yi=(int)aabb.minY; yi<=aabb.maxY; yi++){
+            for (int xi=(int)aabb.minX; xi<=aabb.maxX; xi++){
+                for (int zi=(int)aabb.minZ; zi<=aabb.maxZ; zi++){
+                    IBlockState state = worldIn.getBlockState(new BlockPos(xi, yi, zi));
+                    Block block = state.getBlock();
+
+                    int meta = block.getMetaFromState(state);
+                    int blockIndex;
+                    if (block != Blocks.air){
+                        Item item = Item.getItemFromBlock(block);
+                        String blockName = ((ResourceLocation) Item.itemRegistry.getNameForObject(item)).toString();
+                        if(mapBlockIndex.containsKey(blockName+":"+meta)){
+                            blockIndex = mapBlockIndex.get(blockName+":"+meta);
+                        }else{
+                            mapBlockIndex.put(blockName+":"+meta,index);
+                            blockIndex =index;
+                            index++;
+                        }
+                    }else{
+                        blockIndex=0;
+                    }
+                    System.out.print("|"+blockIndex);
+                }
+                System.out.println();
+            }
+            System.out.print("------");
+            System.out.println();
+        }
+        for(Map.Entry<String, Integer> entry : mapBlockIndex.entrySet()) {
+            String key = entry.getKey();
+            int value = entry.getValue();
+            System.out.print("|"+value+"|"+key);
+            System.out.println();
+        }
+//        System.out.print("------");
+        System.out.println();
     }
 
     @Override
