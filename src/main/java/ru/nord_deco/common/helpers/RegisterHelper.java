@@ -15,6 +15,9 @@ public class RegisterHelper {
     public static void registerSingleBlock(Block block, String name, String model) {
         ru.nord_core.common.helpers.RegisterHelper.registerSingleBlock(block,name,model,Version.MODID);
     }
+    public static void registerSingleBlockWithArgumenedItemBlock(Block block, String name, String model, Object... itemCtorArgs) {
+        ru.nord_core.common.helpers.RegisterHelper.registerSingleBlockWithArgumenedItemBlock(block, name, model, Version.MODID, itemCtorArgs);
+    }
 
     public static void registerSingleItem(Item item, String name) {
         registerSingleItem(item, name, name);
@@ -43,6 +46,17 @@ public class RegisterHelper {
     ) {
         ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlock(block,itemBlock,name,model,additionals,Version.MODID);
     }
+    public static void registerMetadataBlockWithArgumenedItemBlock(
+            Block block,
+            Class<? extends ItemBlock> itemBlock,
+            String name,
+            String model,
+            String[] additionals,
+            Object... itemCtorArgs
+    ) {
+        ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlockWithArgumenedItemBlock(block, itemBlock, name, model, additionals, Version.MODID, itemCtorArgs);
+    }
+
     public static void registerMetadataItem(
             Item itemVar,
             String name,

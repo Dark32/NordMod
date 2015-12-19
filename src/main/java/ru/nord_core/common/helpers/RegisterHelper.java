@@ -23,6 +23,15 @@ public class RegisterHelper {
         NordCore.proxy.registerBlockRender(block, 0, model, modid);
     }
 
+    public static void registerSingleBlockWithArgumenedItemBlock(Block block,
+                                                                 String name,
+                                                                 String model,
+                                                                 String modid,
+                                                                 Object... itemCtorArgs) {
+        GameRegistry.registerBlock(block,  ItemBlock.class,name,itemCtorArgs);
+        NordCore.proxy.registerBlockRender(block, 0, model, modid);
+    }
+
     public static void registerSingleItem(Item item,
                                           String name,
                                           String modid) {
@@ -66,6 +75,21 @@ public class RegisterHelper {
             NordCore.proxy.registerBlockRender(block, i, model + "." + additionals[i], modid);
         }
 
+    }
+
+    public static void registerMetadataBlockWithArgumenedItemBlock(
+            Block block,
+            Class<? extends ItemBlock> itemBlock,
+            String name,
+            String model,
+            String[] additionals,
+            String modid,
+            Object... itemCtorArgs
+    ) {
+        GameRegistry.registerBlock(block, itemBlock, name,itemCtorArgs);
+        for (int i = 0; i < additionals.length; i++) {
+            NordCore.proxy.registerBlockRender(block, i, model + "." + additionals[i], modid);
+        }
     }
 
     public static void registerMetadataItem(
