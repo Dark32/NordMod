@@ -22,20 +22,11 @@ public abstract class BlockAbstractSlab extends BlockSlab {
 
     public BlockAbstractSlab(Material materialIn) {
         super(materialIn);
-        IBlockState iblockstate = this.blockState.getBaseState();
 
-        if (this.isDouble())
-        {
-            iblockstate = iblockstate.withProperty(SEAMLESS, false);
-        }
-        else
-        {
-            iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
-        }
-
-//        this.setDefaultState(iblockstate.withProperty(VARIANT, BlockStoneSlab.EnumType.STONE));
 
     }
+    @Override
+    public abstract boolean isDouble();
 
     @Override
     public String getUnlocalizedName() {

@@ -25,19 +25,30 @@ import java.util.Random;
  * Created by andrew on 19.12.15.
  * Block non contain TileEntity!
  */
-public class BlockHalfSlabTile extends BlockAbstractSlab {
+public  class BlockHalfSlabTile extends BlockAbstractSlab {
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumTileType1.class);
-    private final boolean _double;
-    public BlockHalfSlabTile(Material materialIn, boolean _double) {
-        super(materialIn);
-        this._double=_double;
+    public BlockHalfSlabTile() {
+        super(Material.rock);
+        IBlockState iblockstate = this.blockState.getBaseState();
+
+        if (isDouble())
+        {
+            iblockstate = iblockstate.withProperty(SEAMLESS, false);
+        }
+        else
+        {
+            iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
+            this.setLightOpacity(1);
+        }
+
+        this.setDefaultState(iblockstate.withProperty(VARIANT, EnumTileType1.GRAY));
     }
+
 
     @Override
-    public boolean isDouble() {
-        return this._double;
-    }
-
+    public boolean isDouble(){
+        return false;
+    };
     @Override
     public IProperty getVariantProperty() {
         return VARIANT;
