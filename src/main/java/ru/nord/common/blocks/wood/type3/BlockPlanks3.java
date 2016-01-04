@@ -25,7 +25,7 @@ public class BlockPlanks3 extends BlockMetadata {
 
     public BlockPlanks3(String[] names)
     {
-        super(Material.wood,names,EnumNordPlank3.class, Version.MODID);
+        super(Material.wood,names, Version.MODID);
         this.setCreativeTab(NordTabs.tabWood);
     }
 
@@ -33,25 +33,10 @@ public class BlockPlanks3 extends BlockMetadata {
     public IBlockState getStateFromMeta(int meta){
         return this.getDefaultState().withProperty(TYPE, EnumNordPlank3.byMetadata(meta));
     }
-    @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{TYPE});
-    }
-    @Override
-    public int damageDropped(IBlockState state)
-    {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
-    }
 
     @Override
-    public int getMetaFromState(IBlockState state) {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
+    public PropertyEnum getTypes() {
+        return TYPE;
     }
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        for (int i=0;i<EnumNordPlank3.values().length;i++){
-            list.add(new ItemStack(itemIn, 1, EnumNordPlank3.values()[i].getMetadata()));
-        }
-    }
+
 }

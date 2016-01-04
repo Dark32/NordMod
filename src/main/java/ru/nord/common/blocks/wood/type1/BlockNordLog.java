@@ -17,7 +17,6 @@ import java.util.List;
 public class BlockNordLog extends BlockLog {
 
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant",EnumNordPlank.class);
-    private static final String __OBFID = "CL_00000281";
 
     public BlockNordLog()
     {

@@ -19,7 +19,7 @@ public class BlockEmpPaper extends BlockMetadata {
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumPaperEmp.class);
     public BlockEmpPaper(String[] names) {
-        super(Material.iron, names, EnumPaperEmp.class, Version.MODID);
+        super(Material.iron, names, Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
     }
@@ -29,19 +29,11 @@ public class BlockEmpPaper extends BlockMetadata {
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(TYPE, EnumPaperEmp.byMetadata(meta));
     }
-    @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{TYPE});
-    }
-    @Override
-    public int damageDropped(IBlockState state)
-    {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
-    }
 
     @Override
-    public int getMetaFromState(IBlockState state) {
-        return ((IMetadataEnum)state.getValue(TYPE)).getMetadata();
+    public PropertyEnum getTypes() {
+        return TYPE;
     }
+
 
 }

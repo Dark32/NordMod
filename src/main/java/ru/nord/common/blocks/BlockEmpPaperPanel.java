@@ -32,7 +32,7 @@ public class BlockEmpPaperPanel extends BlockMetadata {
 
 
     public BlockEmpPaperPanel(String[] names) {
-        super(Material.iron, names, EnumPaperEmp.class, Version.MODID);
+        super(Material.iron, names,  Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
     }
@@ -44,20 +44,14 @@ public class BlockEmpPaperPanel extends BlockMetadata {
     }
 
     @Override
+    public PropertyEnum getTypes() {
+        return TYPE;
+    }
+
+    @Override
     protected BlockState createBlockState() {
         return new BlockState(this, new IProperty[]{NORTH, EAST, WEST, SOUTH,TYPE});
     }
-
-    @Override
-    public int damageDropped(IBlockState state) {
-        return ((IMetadataEnum) state.getValue(TYPE)).getMetadata();
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return ((IMetadataEnum) state.getValue(TYPE)).getMetadata();
-    }
-
     /**
      * Get the actual Block state of this Block at the given position. This applies properties not visible in the
      * metadata, such as fence connections.
