@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 public interface IAbstractRecipes {
     enum TYPES {
         TYPE_1I2O,
+        TYPE_1I2OOD,
         TYPE_2I2O,
     }
 
