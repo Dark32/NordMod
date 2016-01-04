@@ -1,8 +1,9 @@
 package ru.nord_core.common.utils.enums;
 
+import ru.nord_core.common.utils.enums.interfaces.IColorizeEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public enum EnumColors implements IMetadataEnum {
+public enum EnumColors implements IMetadataEnum, IColorizeEnum {
     WHITE(0, 0xDDDDDD, 0xF0F0F0, "WHITE"),
     ORANGE(1, 0xDB7D3E, 0xEB8844, "ORANGE"),
     MAGENTA(2, 0xB350BC, 0xC354CD, "MAGENTA"),

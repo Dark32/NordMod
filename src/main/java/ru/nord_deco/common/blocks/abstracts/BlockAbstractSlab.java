@@ -5,15 +5,11 @@ import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
-//import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_deco.common.utils.Version;
-
-import java.util.Random;
 
 public abstract class BlockAbstractSlab extends BlockSlab {
 
@@ -25,6 +21,7 @@ public abstract class BlockAbstractSlab extends BlockSlab {
 
 
     }
+
     @Override
     public abstract boolean isDouble();
 
@@ -39,5 +36,17 @@ public abstract class BlockAbstractSlab extends BlockSlab {
         return this;
     }
 
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+        IBlockState iblockstate = this.getStateFromMeta(meta);
+        if (this.isDouble()) {
+            return iblockstate;
+        } else {
+            if (facing != EnumFacing.DOWN && (facing == EnumFacing.UP || (double) hitY <= 0.5D)) {
+                return iblockstate;
+            } else {
+                return iblockstate.withProperty(HALF, EnumBlockHalf.TOP);
+            }
+        }
+    }
 
 }

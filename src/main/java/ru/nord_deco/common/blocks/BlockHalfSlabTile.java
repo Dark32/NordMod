@@ -7,13 +7,14 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.common.utils.enums.interfaces.IColorizeEnum;
 import ru.nord_deco.NordBloksDeco;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractSlab;
 import ru.nord_deco.common.utils.enums.EnumTileType1;
@@ -25,18 +26,16 @@ import java.util.Random;
  * Created by andrew on 19.12.15.
  * Block non contain TileEntity!
  */
-public  class BlockHalfSlabTile extends BlockAbstractSlab {
+public class BlockHalfSlabTile extends BlockAbstractSlab {
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumTileType1.class);
+
     public BlockHalfSlabTile() {
         super(Material.rock);
         IBlockState iblockstate = this.blockState.getBaseState();
 
-        if (isDouble())
-        {
+        if (isDouble()) {
             iblockstate = iblockstate.withProperty(SEAMLESS, false);
-        }
-        else
-        {
+        } else {
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
             this.setLightOpacity(1);
         }
@@ -46,9 +45,12 @@ public  class BlockHalfSlabTile extends BlockAbstractSlab {
 
 
     @Override
-    public boolean isDouble(){
+    public boolean isDouble() {
         return false;
-    };
+    }
+
+    ;
+
     @Override
     public IProperty getVariantProperty() {
         return VARIANT;
@@ -67,14 +69,12 @@ public  class BlockHalfSlabTile extends BlockAbstractSlab {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        if (itemIn != Item.getItemFromBlock(Blocks.double_stone_slab)) {
-            EnumTileType1[] aenumtype = EnumTileType1.values();
-            int i = aenumtype.length;
+        EnumTileType1[] aenumtype = EnumTileType1.values();
+        int i = aenumtype.length;
 
-            for (int j = 0; j < i; ++j) {
-                EnumTileType1 enumtype = aenumtype[j];
-                list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
-            }
+        for (int j = 0; j < i; ++j) {
+            EnumTileType1 enumtype = aenumtype[j];
+            list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
         }
     }
 
@@ -118,12 +118,31 @@ public  class BlockHalfSlabTile extends BlockAbstractSlab {
     }
 
     @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune){
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Item.getItemFromBlock(NordBloksDeco.halfSlabTile1);
     }
+
     @SideOnly(Side.CLIENT)
-    public Item getItem(World worldIn, BlockPos pos)
-    {
+    public Item getItem(World worldIn, BlockPos pos) {
         return Item.getItemFromBlock(NordBloksDeco.halfSlabTile1);
     }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getRenderColor(IBlockState state) {
+        Comparable colorize = state.getValue(VARIANT);
+        if (colorize instanceof IColorizeEnum) {
+            return ((IColorizeEnum) colorize).getColor();
+        } else {
+            return 0xffffff;
+        }
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
+        IBlockState state = worldIn.getBlockState(pos);
+        return this.getRenderColor(state);
+    }
+
 }

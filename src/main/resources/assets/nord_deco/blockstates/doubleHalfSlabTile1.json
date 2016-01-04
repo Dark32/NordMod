@@ -1,12 +1,12 @@
 {
     "forge_marker": 1,
     "defaults": {
+        "model": "nord_deco:block_colored",
         "textures": {
-            "side": "nord_deco:blocks/roof_1",
-            "top": "nord_deco:blocks/roof_1",
-            "bottom": "nord_deco:blocks/roof_1"
-        },
-        "model": "nord:block_colored"
+            "all": "nord_deco:blocks/roof_1",
+            "particle": "nord_deco:blocks/roof_1"
+        }
+
     },
     "variants": {
         "seamless":{
