@@ -1,0 +1,51 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "side": "nord_deco:blocks/roof_1",
+            "top": "nord_deco:blocks/roof_1",
+            "bottom": "nord_deco:blocks/roof_1"
+        }
+    },
+    "variants": {
+         "half":{
+             "top":{
+                 "x": 180
+             },
+             "bottom":{
+                 "x": 0
+             }
+        },
+        "facing":{
+            "east":{
+
+            },
+            "west":{
+                "y": 180
+            },
+            "south":{
+
+            },
+            "north":{
+
+            }
+        },
+        "shape":{
+            "straight":{
+                "model": "nord_deco:stairs/stairs"
+            },
+            "inner_left":{
+                "model": "nord_deco:stairs/inner_stairs"
+            },
+            "inner_right":{
+                "model": "nord_deco:stairs/inner_stairs"
+            },
+            "outer_left":{
+                "model": "nord_deco:stairs/outer_stairs"
+            },
+            "outer_right":{
+                "model": "nord_deco:stairs/outer_stairs"
+            }
+        }
+    }
+}

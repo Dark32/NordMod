@@ -8,6 +8,7 @@ public class NordBloksDeco {
     public static Block chairOther;
     public static Block halfSlabTile1;
     public static Block doubleHalfSlabTile1;
+    public static Block stairs;
 }
 
 

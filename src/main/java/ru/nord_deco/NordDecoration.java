@@ -5,6 +5,7 @@ import ru.nord_deco.common.blocks.BlockChair;
 import ru.nord_deco.common.blocks.BlockChairOther;
 import ru.nord_deco.common.blocks.BlockDoubleHalfSlabTile;
 import ru.nord_deco.common.blocks.BlockHalfSlabTile;
+import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
 import ru.nord_deco.common.helpers.RegisterHelper;
 import ru.nord_deco.common.items.ItemBlockChair;
 import ru.nord_deco.common.items.ItemBlockChairOther;
@@ -34,6 +35,8 @@ public class NordDecoration {
         NordBloksDeco.chairOther = new BlockChairOther(Version.MODID,EnumChairOther.getNames()).setUnlocalizedName("chairOther").setCreativeTab(NordTabsDeco.tabDecoration);
         NordBloksDeco.halfSlabTile1 = new BlockHalfSlabTile().setUnlocalizedName("halfSlabTile1").setCreativeTab(NordTabsDeco.tabDecoration);
         NordBloksDeco.doubleHalfSlabTile1 = new BlockDoubleHalfSlabTile().setUnlocalizedName("doubleHalfSlabTile1").setCreativeTab(NordTabsDeco.tabDecoration);
+
+        NordBloksDeco.stairs = new BlockAbstractStairs(NordBloksDeco.halfSlabTile1.getDefaultState()).setUnlocalizedName("stairs").setCreativeTab(NordTabsDeco.tabDecoration);
     }
 
     public static void createItem() {
@@ -76,6 +79,7 @@ public class NordDecoration {
                 NordBloksDeco.doubleHalfSlabTile1,
                 true
         );
+        RegisterHelper.registerSingleBlock(NordBloksDeco.stairs, "stairs");
     }
 
     public static void registerItem() {
