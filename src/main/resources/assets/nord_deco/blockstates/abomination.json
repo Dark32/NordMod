@@ -1,0 +1,16 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "nord_deco:block_colored"
+    },
+    "variants": {
+        "type":{
+            "maggots":{
+                "textures": {
+                    "all": "nord_deco:blocks/maggots_0",
+                    "particle": "nord_deco:blocks/maggots_0"
+                }
+            }
+        }
+    }
+}

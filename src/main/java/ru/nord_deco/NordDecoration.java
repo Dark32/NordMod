@@ -1,16 +1,15 @@
 package ru.nord_deco;
 
 import net.minecraft.block.material.Material;
-import ru.nord_deco.common.blocks.BlockChair;
-import ru.nord_deco.common.blocks.BlockChairOther;
-import ru.nord_deco.common.blocks.BlockDoubleHalfSlabTile;
-import ru.nord_deco.common.blocks.BlockHalfSlabTile;
+import ru.nord_deco.common.blocks.*;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
 import ru.nord_deco.common.helpers.RegisterHelper;
+import ru.nord_deco.common.items.ItemBlockAbomination;
 import ru.nord_deco.common.items.ItemBlockChair;
 import ru.nord_deco.common.items.ItemBlockChairOther;
 import ru.nord_deco.common.items.ItemBlockSlabTile1;
 import ru.nord_deco.common.utils.Version;
+import ru.nord_deco.common.utils.enums.EnumAbomination;
 import ru.nord_deco.common.utils.enums.EnumChairOther;
 import ru.nord_deco.common.utils.enums.EnumChairType;
 import ru.nord_deco.common.utils.enums.EnumTileType1;
@@ -37,6 +36,10 @@ public class NordDecoration {
         NordBloksDeco.doubleHalfSlabTile1 = new BlockDoubleHalfSlabTile().setUnlocalizedName("doubleHalfSlabTile1").setCreativeTab(NordTabsDeco.tabDecoration);
 
         NordBloksDeco.stairs = new BlockAbstractStairs(NordBloksDeco.halfSlabTile1.getDefaultState()).setUnlocalizedName("stairs").setCreativeTab(NordTabsDeco.tabDecoration);
+
+
+        NordBloksDeco.abomination = new BlockAbomination(EnumAbomination.getNames()).setUnlocalizedName("abomination").setCreativeTab(NordTabsDeco.tabDecoration);
+
     }
 
     public static void createItem() {
@@ -80,6 +83,14 @@ public class NordDecoration {
                 true
         );
         RegisterHelper.registerSingleBlock(NordBloksDeco.stairs, "stairs");
+
+        RegisterHelper.registerMetadataBlock(
+                NordBloksDeco.abomination,
+                ItemBlockAbomination.class,
+                "abomination",
+                "abomination",
+                EnumAbomination.getNames());
+
     }
 
     public static void registerItem() {

@@ -9,6 +9,7 @@ public class NordBloksDeco {
     public static Block halfSlabTile1;
     public static Block doubleHalfSlabTile1;
     public static Block stairs;
+    public static Block abomination ;
 }
 
 
