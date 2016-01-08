@@ -4,9 +4,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import ru.nord.common.world.generator.WorldGenOliveTree;
 import ru.nord.common.world.generator.WorldGenOrangeTree;
+import ru.nord_core.common.utils.enums.interfaces.IBiomeColoredEnum;
+import ru.nord_core.common.utils.enums.interfaces.IDropItemEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
+import ru.nord_core.common.utils.enums.interfaces.IWorldGeneratorEnum;
 
-public enum EnumNordPlank2 implements IMetadataEnum {
+public enum EnumNordPlank2 implements IMetadataEnum, IBiomeColoredEnum, IDropItemEnum,IWorldGeneratorEnum {
     PALM_TREES(0, "palm_trees") {
         @Override
         public WorldGenAbstractTree generate() {
@@ -14,7 +17,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -25,7 +28,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -36,7 +39,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -47,7 +50,7 @@ public enum EnumNordPlank2 implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -87,5 +90,5 @@ public enum EnumNordPlank2 implements IMetadataEnum {
     public boolean getColorize(){return this.colorize;}
     public abstract WorldGenAbstractTree generate();
 
-    public abstract ItemStack dropFruit();
+    public abstract ItemStack dropItem();
 }

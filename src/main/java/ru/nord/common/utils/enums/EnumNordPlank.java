@@ -2,9 +2,12 @@ package ru.nord.common.utils.enums;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import ru.nord_core.common.utils.enums.interfaces.IBiomeColoredEnum;
+import ru.nord_core.common.utils.enums.interfaces.IDropItemEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
+import ru.nord_core.common.utils.enums.interfaces.IWorldGeneratorEnum;
 
-public enum EnumNordPlank implements IMetadataEnum {
+public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItemEnum,IWorldGeneratorEnum {
 /*    SOME_PLANK(0, "some_plank") {
         @Override
         public WorldGenAbstractTree generate() {
@@ -12,7 +15,7 @@ public enum EnumNordPlank implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return new ItemStack(Items.apple);
         }
     },
@@ -25,7 +28,7 @@ public enum EnumNordPlank implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -36,7 +39,7 @@ public enum EnumNordPlank implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -47,7 +50,7 @@ public enum EnumNordPlank implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -58,7 +61,7 @@ public enum EnumNordPlank implements IMetadataEnum {
         }
 
         @Override
-        public ItemStack dropFruit() {
+        public ItemStack dropItem() {
             return null;
         }
     },
@@ -99,5 +102,5 @@ public enum EnumNordPlank implements IMetadataEnum {
 
     public abstract WorldGenAbstractTree generate();
 
-    public abstract ItemStack dropFruit();
+    public abstract ItemStack dropItem();
 }
