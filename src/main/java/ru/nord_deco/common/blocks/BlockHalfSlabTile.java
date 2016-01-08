@@ -15,10 +15,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.utils.enums.interfaces.IColorizeEnum;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_deco.NordBloksDeco;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractSlab;
 import ru.nord_deco.common.utils.enums.EnumTileType1;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -69,15 +71,13 @@ public class BlockHalfSlabTile extends BlockAbstractSlab {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        EnumTileType1[] aenumtype = EnumTileType1.values();
-        int i = aenumtype.length;
-
-        for (int j = 0; j < i; ++j) {
-            EnumTileType1 enumtype = aenumtype[j];
-            list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
+        Iterator iterator = getVariantProperty().getAllowedValues().iterator();
+        while (iterator.hasNext())
+        {
+            IMetadataEnum oenum = (IMetadataEnum)iterator.next();
+            list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
         }
     }
-
     @Override
     public IBlockState getStateFromMeta(int meta) {
         IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, EnumTileType1.byMetadata(meta & 7));

@@ -4,9 +4,15 @@ import net.minecraft.block.BlockLog;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
+
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class BlockAbstractLog extends BlockLog {
 
@@ -79,5 +85,14 @@ public abstract class BlockAbstractLog extends BlockLog {
         return ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
     }
 
-
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
+        Iterator iterator = getVariant().getAllowedValues().iterator();
+        while (iterator.hasNext())
+        {
+            IMetadataEnum oenum = (IMetadataEnum)iterator.next();
+            list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
+        }
+    }
 }

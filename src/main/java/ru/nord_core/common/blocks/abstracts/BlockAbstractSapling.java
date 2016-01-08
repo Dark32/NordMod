@@ -6,13 +6,20 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_core.common.utils.enums.interfaces.IWorldGeneratorEnum;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 public abstract class BlockAbstractSapling extends BlockBush implements IGrowable {
@@ -95,4 +102,14 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
         return new BlockState(this, getVariant(), STAGE);
     }
 
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
+        Iterator iterator = getVariant().getAllowedValues().iterator();
+        while (iterator.hasNext())
+        {
+            IMetadataEnum oenum = (IMetadataEnum)iterator.next();
+            list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
+        }
+    }
 }

@@ -35,20 +35,6 @@ public class BlockSapling3 extends BlockAbstractSapling {
         this.setStepSound(soundTypeGrass);
     }
 
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
-    {
-        EnumNordPlank3[] aenumtype = EnumNordPlank3.values();
-        int i = aenumtype.length;
-
-        for (int j = 0; j < i; ++j)
-        {
-            EnumNordPlank3 enumtype = aenumtype[j];
-            list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
-        }
-    }
     @Override
     public PropertyEnum getVariant() {
         return TYPE;

@@ -1,16 +1,9 @@
 package ru.nord.common.blocks.wood.type1;
 
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordTabs;
 import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractSapling;
-
-import java.util.List;
 
 public class BlockSapling extends BlockAbstractSapling {
 
@@ -22,18 +15,6 @@ public class BlockSapling extends BlockAbstractSapling {
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(NordTabs.tabWood);
         this.setStepSound(soundTypeGrass);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        EnumNordPlank[] aenumtype = EnumNordPlank.values();
-        int i = aenumtype.length;
-
-        for (int j = 0; j < i; ++j) {
-            EnumNordPlank enumtype = aenumtype[j];
-            list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
-        }
     }
 
     @Override

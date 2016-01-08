@@ -18,11 +18,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.blocks.abstracts.BlockRotateble;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_deco.common.entity.EntitySittableBlock;
 import ru.nord_deco.common.helpers.CollisionHelper;
 import ru.nord_deco.common.utils.SittableUtil;
 import ru.nord_deco.common.utils.enums.EnumChairType;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class BlockChair extends BlockRotateble {
@@ -111,13 +113,22 @@ public class BlockChair extends BlockRotateble {
         this.unlocalizedName = unlocalizedName;
         return this;
     }
+
+    private PropertyEnum getVariant() {
+        return TYPE;
+    }
+
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        for (int i = 0; i < names.length; ++i) {
-            list.add(new ItemStack(itemIn, 1, i & 3));
+        Iterator iterator = getVariant().getAllowedValues().iterator();
+        while (iterator.hasNext())
+        {
+            IMetadataEnum oenum = (IMetadataEnum)iterator.next();
+            list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
         }
     }
+
 
     @Override
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
