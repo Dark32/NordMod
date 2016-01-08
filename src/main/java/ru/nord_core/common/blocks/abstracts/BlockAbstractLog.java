@@ -1,6 +1,7 @@
 package ru.nord_core.common.blocks.abstracts;
 
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
@@ -95,4 +96,5 @@ public abstract class BlockAbstractLog extends BlockLog {
             list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
         }
     }
+
 }
