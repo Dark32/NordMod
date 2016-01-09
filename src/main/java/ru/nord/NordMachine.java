@@ -7,6 +7,9 @@ import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.items.*;
+import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
+import ru.nord_core.common.utils.enums.EnumFrame;
+import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class NordMachine {
     public static void preInit() {
@@ -63,6 +66,8 @@ public class NordMachine {
         RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
         RegisterHelper.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
+        RegisterHelper.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame", "frame", EnumFrame.getNames());
+
     }
 
     private static void registerTileEntity() {

@@ -20,13 +20,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.utils.enums.interfaces.IBiomeColoredEnum;
 import ru.nord_core.common.utils.enums.interfaces.IDropItemEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.*;
 
-public abstract class BlockAbstractLeaves extends BlockLeaves {
+public abstract class BlockAbstractLeaves extends BlockLeaves implements IVariantMetadata {
 
 
     public abstract PropertyEnum getVariant();

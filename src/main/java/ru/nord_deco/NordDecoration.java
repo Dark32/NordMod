@@ -1,12 +1,10 @@
 package ru.nord_deco;
 
-import net.minecraft.block.material.Material;
+
+import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_deco.common.blocks.*;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
 import ru.nord_deco.common.helpers.RegisterHelper;
-import ru.nord_deco.common.items.ItemBlockAbomination;
-import ru.nord_deco.common.items.ItemBlockChair;
-import ru.nord_deco.common.items.ItemBlockChairOther;
 import ru.nord_deco.common.items.ItemBlockSlabTile1;
 import ru.nord_deco.common.utils.Version;
 import ru.nord_deco.common.utils.enums.EnumAbomination;
@@ -30,13 +28,11 @@ public class NordDecoration {
     }
 
     public static void createBlock() {
-        NordBloksDeco.chairWhite = new BlockChair(Version.MODID,EnumChairType.getNames()).setUnlocalizedName("chairWhite").setCreativeTab(NordTabsDeco.tabDecoration);
-        NordBloksDeco.chairOther = new BlockChairOther(Version.MODID,EnumChairOther.getNames()).setUnlocalizedName("chairOther").setCreativeTab(NordTabsDeco.tabDecoration);
+        NordBloksDeco.chairWhite = new BlockChair(Version.MODID).setUnlocalizedName("chairWhite").setCreativeTab(NordTabsDeco.tabDecoration);
+        NordBloksDeco.chairOther = new BlockChairOther(Version.MODID).setUnlocalizedName("chairOther").setCreativeTab(NordTabsDeco.tabDecoration);
         NordBloksDeco.halfSlabTile1 = new BlockHalfSlabTile().setUnlocalizedName("halfSlabTile1").setCreativeTab(NordTabsDeco.tabDecoration);
         NordBloksDeco.doubleHalfSlabTile1 = new BlockDoubleHalfSlabTile().setUnlocalizedName("doubleHalfSlabTile1").setCreativeTab(NordTabsDeco.tabDecoration);
-
         NordBloksDeco.stairs = new BlockAbstractStairs(NordBloksDeco.halfSlabTile1.getDefaultState()).setUnlocalizedName("stairs").setCreativeTab(NordTabsDeco.tabDecoration);
-
 
         NordBloksDeco.abomination = new BlockAbomination(EnumAbomination.getNames()).setUnlocalizedName("abomination").setCreativeTab(NordTabsDeco.tabDecoration);
 
@@ -48,7 +44,7 @@ public class NordDecoration {
     public static void registerBlock() {
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.chairWhite,
-                ItemBlockChair.class,
+                ItemBlockMetadata.class,
                 "chairWhite",
                 "chairWhite",
                 EnumChairType.getNames()
@@ -56,7 +52,7 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.chairOther,
-                ItemBlockChairOther.class,
+                ItemBlockMetadata.class,
                 "chairOther",
                 "chairOther",
                 EnumChairOther.getNames()
@@ -86,7 +82,7 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.abomination,
-                ItemBlockAbomination.class,
+                ItemBlockMetadata.class,
                 "abomination",
                 "abomination",
                 EnumAbomination.getNames());

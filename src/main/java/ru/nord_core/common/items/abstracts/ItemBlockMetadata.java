@@ -3,35 +3,44 @@ package ru.nord_core.common.items.abstracts;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-public abstract class ItemBlockMetadata extends ItemBlock {
-    public ItemBlockMetadata(Block block)
-    {
+public class ItemBlockMetadata extends ItemBlock {
+
+
+    private final Object[] enums;
+    protected final Block block;
+
+    public ItemBlockMetadata(Block block) {
         super(block);
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
+        this.block = block;
+        if (!(block instanceof IVariantMetadata)) {
+            FMLLog.warning("[NORD CORE] " + this + " not implements IVariantMetadata, cause bug");
+            this.enums = null;
+        } else {
+            this.enums = ((IVariantMetadata) block).getVariant().getAllowedValues().toArray();
+
+        }
+
     }
 
     @Override
-    public int getMetadata(int damage)
-    {
+    public int getMetadata(int damage) {
         return damage;
     }
 
     @Override
-    public abstract String getUnlocalizedName(ItemStack stack);
-//    {
-//        int meta = stack.getMetadata();
-//        if (meta < EnumOre.getNames().length) {
-//            return super.getUnlocalizedName() + "." + EnumOre.byMetadata(stack.getMetadata()).getName();
-//        } else {
-//            return super.getUnlocalizedName() + ".errorData";
-//        }
-//    }
-//    @Override
-//    public abstract void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4);
-//    {
-//        list.add(EnumOre.byMetadata(stack.getMetadata()).getMetal());
-//    }
+    public String getUnlocalizedName(ItemStack stack) {
+        int meta = stack.getMetadata();
+        if (meta < enums.length) {
+            return super.getUnlocalizedName() + "." + ((IMetadataEnum) ((IVariantMetadata) block).getEnumByMetadata(stack.getMetadata())).getName();
+        } else {
+            return super.getUnlocalizedName() + ".errorData";
+        }
+    }
 
 }

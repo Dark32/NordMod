@@ -2,22 +2,11 @@ package ru.nord.common.blocks.wood.type4;
 
 
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordTabs;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumNordPlank4;
-import ru.nord_core.common.blocks.abstracts.BlockMetadata;
-import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
-
-import java.util.List;
+import ru.nord_core.common.blocks.BlockMetadata;
 
 public class BlockPlanks4 extends BlockMetadata {
 
@@ -30,13 +19,13 @@ public class BlockPlanks4 extends BlockMetadata {
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta){
-        return this.getDefaultState().withProperty(TYPE, EnumNordPlank4.byMetadata(meta));
+    public PropertyEnum getVariant() {
+        return TYPE;
     }
 
     @Override
-    public PropertyEnum getTypes() {
-        return TYPE;
+    public Comparable getEnumByMetadata(int meta) {
+        return  EnumNordPlank4.byMetadata(meta);
     }
 
 }

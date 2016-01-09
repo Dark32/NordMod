@@ -14,11 +14,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.utils.enums.EnumStone;
 
 import java.util.List;
 
-public class BlockDecoStone extends Block {
+public class BlockDecoStone extends Block implements IVariantMetadata{
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumStone.class);
     private final int color;
@@ -85,5 +86,15 @@ public class BlockDecoStone extends Block {
     public Block setUnlocalizedName(String unlocalizedName) {
         this.unlocalizedName = unlocalizedName;
         return this;
+    }
+
+    @Override
+    public PropertyEnum getVariant() {
+        return TYPE;
+    }
+
+    @Override
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumStone.byMetadata(meta);
     }
 }

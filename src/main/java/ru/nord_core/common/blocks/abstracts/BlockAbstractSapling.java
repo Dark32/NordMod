@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_core.common.utils.enums.interfaces.IWorldGeneratorEnum;
 
@@ -22,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-public abstract class BlockAbstractSapling extends BlockBush implements IGrowable {
+public abstract class BlockAbstractSapling extends BlockBush implements IGrowable, IVariantMetadata {
 
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 

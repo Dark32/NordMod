@@ -9,6 +9,7 @@ import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.items.*;
 import ru.nord_core.common.items.ItemMetaData;
 import ru.nord_core.common.items.abstracts.AItemDrill;
+import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.*;
 
 public class NordMetalgury {
@@ -63,10 +64,10 @@ public class NordMetalgury {
     }
 
     private static void registerBlock() {
-        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetal.class, "metalBlock", "metalBlock", EnumMetal.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetalOre.class, "metalOre", "metalOre", EnumOre.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockClearMetal.class, "metalClearBlock", "metalClearBlock", EnumClearMetal.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockCrystall.class, "metalCrystal", "metalCrystal", EnumCrystal.getNames());
+        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetadata.class, "metalBlock", "metalBlock", EnumMetal.getNames());
+        RegisterHelper.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetadata.class, "metalOre", "metalOre", EnumOre.getNames());
+        RegisterHelper.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockMetadata.class, "metalClearBlock", "metalClearBlock", EnumClearMetal.getNames());
+        RegisterHelper.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockMetadata.class, "metalCrystal", "metalCrystal", EnumCrystal.getNames());
 
         for (int i = 0; i < EnumOre.getNames().length; i++) {
             RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));

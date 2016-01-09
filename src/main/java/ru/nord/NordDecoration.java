@@ -11,7 +11,9 @@ import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.blocks.BlockBase;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord_core.common.items.ItemGlowstoneDust;
+import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumColors;
+import ru.nord_core.common.utils.enums.EnumOilLamp;
 import ru.nord_core.common.utils.enums.EnumStone;
 
 public class NordDecoration {
@@ -52,10 +54,14 @@ public class NordDecoration {
     }
 
     public static void registerBlock() {
-        RegisterHelper.registerSingleBlock(NordBloks.oilLamp, "oilLamp");
+        RegisterHelper.registerMetadataBlock(NordBloks.oilLamp,
+                ItemBlockMetadata.class,
+                "oilLamp",
+                "oilLamp",
+                EnumOilLamp.getNames());
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecoration1,
-                ItemBlockEmpPaper.class,
+                ItemBlockMetadata.class,
                 "empPaper",
                 "empPaper",
                 EnumPaperEmp.getNames()
@@ -63,7 +69,7 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloks.whiteStone,
-                ItemBlockWhiteStone.class,
+                ItemBlockMetadata.class,
                 "whiteStone",
                 "whiteStone",
                 EnumWhiteStone.getNames()
@@ -71,7 +77,7 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireGlass,
-                ItemBlockEmpGlass.class,
+                ItemBlockMetadata.class,
                 "empGlass",
                 "empGlass",
                 EnumEmpGlass.getNames()
@@ -79,7 +85,7 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireDecorationPanel1,
-                ItemBlockEmpPaper.class,
+                ItemBlockMetadata.class,
                 "empPaperPanel",
                 "empPaperPanel",
                 EnumPaperEmp.getNames()
@@ -89,7 +95,7 @@ public class NordDecoration {
             EnumColors color = EnumColors.values()[i];
             RegisterHelper.registerMetadataBlock(
                     NordBloks.decoStoneBlock[i],
-                    ItemBlockDecoStone.class,
+                    ItemBlockWithRenderColorFromBlock.class,
                     "decoStoneBlock." + color.name(),
                     "decoStoneBlock",
                     EnumStone.getNames()
@@ -98,16 +104,16 @@ public class NordDecoration {
 
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireLamp1,
-                ItemBlockRoofLamp.class,
+                ItemBlockWithRenderColorFromBlock.class,
                 "empireLamp1", 16);
         RegisterHelper.registerMetadataBlock(
                 NordBloks.empireFloorLamp1,
-                ItemBlockRoofLamp.class,
+                ItemBlockWithRenderColorFromBlock.class,
                 "empireFloorLamp1", 16);
 
         RegisterHelper.registerMetadataBlock(
                 NordBloks.floorLamp1,
-                ItemBlockFloorLamp.class,
+                ItemBlockWithRenderColorFromBlock.class,
                 "floorLamp1",4);
     }
 

@@ -7,18 +7,16 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.common.blocks.BlockMetadata;
 
-public class BlockAbstractRoofLamp extends Block {
-    private final String modid;
-    private String unlocalizedName;
+public abstract class BlockAbstractRoofLamp extends BlockMetadata {
 
     public BlockAbstractRoofLamp(String modid) {
-        super(Material.circuits);
+        super(Material.circuits,modid);
         this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
-        setLightLevel(0.9375F);
+        setLightLevel(0.8375F);
         setStepSound(soundTypeWood);
         setHardness(0.0F);
-        this.modid=modid;
     }
 
     @SideOnly(Side.CLIENT)
@@ -27,16 +25,6 @@ public class BlockAbstractRoofLamp extends Block {
         return getRenderColor(worldIn.getBlockState(pos));
     }
 
-    @Override
-    public String getUnlocalizedName() {
-        return "tile." + modid + "." + this.unlocalizedName;
-    }
-
-    @Override
-    public Block setUnlocalizedName(String unlocalizedName) {
-        this.unlocalizedName = unlocalizedName;
-        return this;
-    }
     @Override
     public boolean isOpaqueCube()
     {

@@ -3,9 +3,8 @@ package ru.nord_deco.common.blocks;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.IBlockState;
 
-import ru.nord_core.common.blocks.abstracts.BlockMetadata;
+import ru.nord_core.common.blocks.BlockMetadata;
 import ru.nord_deco.common.utils.Version;
 import ru.nord_deco.common.utils.enums.EnumAbomination;
 
@@ -18,14 +17,13 @@ public class BlockAbomination extends BlockMetadata {
         setStepSound(SLIME_SOUND);
     }
 
-
     @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(TYPE, EnumAbomination.byMetadata(meta));
+    public PropertyEnum getVariant() {
+        return TYPE;
     }
 
     @Override
-    public PropertyEnum getTypes() {
-        return TYPE;
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumAbomination.byMetadata(meta);
     }
 }

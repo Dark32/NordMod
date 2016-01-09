@@ -1,16 +1,20 @@
 package ru.nord.common.blocks;
 
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractRoofLamp;
+import ru.nord_core.common.utils.enums.EnumOilLamp;
 
 import java.util.Random;
 
 
 public class BlockOilLamp extends BlockAbstractRoofLamp {
+    public static final PropertyEnum OIL = PropertyEnum.create("type", EnumOilLamp.class);
+
     public BlockOilLamp() {
         super(Version.MODID);
         this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
@@ -31,4 +35,13 @@ public class BlockOilLamp extends BlockAbstractRoofLamp {
     }
 
 
+    @Override
+    public PropertyEnum getVariant() {
+        return OIL;
+    }
+
+    @Override
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumOilLamp.byMetadata(meta);
+    }
 }

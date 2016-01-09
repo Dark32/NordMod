@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordBloks;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumEmpGlass;
-import ru.nord_core.common.blocks.abstracts.BlockMetadata;
+import ru.nord_core.common.blocks.BlockMetadata;
 
 public class BlockEmpGlass extends BlockMetadata {
 
@@ -27,15 +27,14 @@ public class BlockEmpGlass extends BlockMetadata {
         this.setLightOpacity(0);
     }
 
-
     @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(TYPE, EnumEmpGlass.byMetadata(meta));
+    public PropertyEnum getVariant() {
+        return TYPE;
     }
 
     @Override
-    public PropertyEnum getTypes() {
-        return TYPE;
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumEmpGlass.byMetadata(meta);
     }
 
     @Override

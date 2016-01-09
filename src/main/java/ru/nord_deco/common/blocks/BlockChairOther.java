@@ -1,6 +1,7 @@
 package ru.nord_deco.common.blocks;
 
 
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -14,66 +15,27 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_deco.common.blocks.abstracts.BlockAbstractChair;
 import ru.nord_deco.common.utils.enums.EnumChairOther;
 
-public class BlockChairOther extends BlockChair {
+public class BlockChairOther extends BlockAbstractChair {
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumChairOther.class);
 
-    public BlockChairOther(String modid, String[] names) {
-        super(modid, names);
+    public BlockChairOther(String modid) {
+        super(modid, Material.cloth);
+        setHardness(1.0F);
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
     }
 
     @Override
-    public int getMetaFromState(IBlockState state) {
-        int face = ((EnumFacing) state.getValue(FACING)).getIndex();
-        int type = ((EnumChairOther) state.getValue(TYPE)).getMetadata();
-        return (face << 2) + (type & 15);
+    public PropertyEnum getVariant() {
+        return TYPE;
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{FACING, TYPE});
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumChairOther.byMetadata(meta);
     }
 
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-        int face = meta >> 2;
-        int type = meta & 3;
-        EnumFacing enumfacing = EnumFacing.getFront(face);
-
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
-            enumfacing = EnumFacing.NORTH;
-        }
-
-        return this.getDefaultState()
-                .withProperty(FACING, enumfacing)
-                .withProperty(TYPE, EnumChairOther.values()[type]);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IBlockState getStateForEntityRender(IBlockState state) {
-        return this.getDefaultState()
-                .withProperty(FACING, EnumFacing.SOUTH)
-                .withProperty(TYPE, ((EnumChairOther) state.getValue(TYPE)).getMetadata());
-    }
-
-    @Override
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        EnumFacing face = placer.getHorizontalFacing().getOpposite();
-        EnumChairOther type = EnumChairOther.values()[meta & 3];
-        return this.getDefaultState()
-                .withProperty(FACING, face)
-                .withProperty(TYPE,type);
-    }
-
-    @Override
-    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos, EntityPlayer player)
-    {
-        IBlockState state = world.getBlockState(pos);
-        int type = ((EnumChairOther) state.getValue(TYPE)).getMetadata();
-        return new ItemStack(this,1,type & 3);
-    }
 
 }

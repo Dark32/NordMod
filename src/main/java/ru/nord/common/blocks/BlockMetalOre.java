@@ -12,7 +12,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import ru.nord.NordItems;
 import ru.nord.common.utils.Version;
-import ru.nord_core.common.blocks.abstracts.BlockMetadata;
+import ru.nord_core.common.blocks.BlockMetadata;
 import ru.nord_core.common.utils.enums.EnumOre;
 import java.util.Random;
 
@@ -26,13 +26,13 @@ public class BlockMetalOre extends BlockMetadata {
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(TYPE, EnumOre.byMetadata(meta));
+    public PropertyEnum getVariant() {
+        return TYPE;
     }
 
     @Override
-    public PropertyEnum getTypes() {
-        return TYPE;
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumOre.byMetadata(meta);
     }
 
     @Override

@@ -10,12 +10,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class BlockAbstractLog extends BlockLog {
+public abstract class BlockAbstractLog extends BlockLog implements IVariantMetadata{
 
     public abstract PropertyEnum getVariant();
 

@@ -2,7 +2,6 @@ package ru.nord.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -14,12 +13,9 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.enums.EnumPaperEmp;
-import ru.nord_core.common.blocks.abstracts.BlockMetadata;
-import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
+import ru.nord_core.common.blocks.BlockMetadata;
 
 import java.util.List;
 
@@ -37,20 +33,19 @@ public class BlockEmpPaperPanel extends BlockMetadata {
         this.setHarvestLevel("pickaxe", 1);
     }
 
-
     @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(TYPE, EnumPaperEmp.byMetadata(meta));
-    }
-
-    @Override
-    public PropertyEnum getTypes() {
+    public PropertyEnum getVariant() {
         return TYPE;
     }
 
     @Override
+    public Comparable getEnumByMetadata(int meta) {
+        return EnumPaperEmp.byMetadata(meta);
+    }
+
+    @Override
     protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{NORTH, EAST, WEST, SOUTH,TYPE});
+        return new BlockState(this, NORTH, EAST, WEST, SOUTH, getVariant());
     }
     /**
      * Get the actual Block state of this Block at the given position. This applies properties not visible in the
