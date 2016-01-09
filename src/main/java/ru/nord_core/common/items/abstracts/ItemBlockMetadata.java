@@ -7,6 +7,10 @@ import net.minecraftforge.fml.common.FMLLog;
 import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
+/**
+ * Простой ItemBlock для большенства блоков с методатой
+ * Требует от блока реализации {@link ru.nord_core.common.blocks.interfaces.IVariantMetadata}
+ */
 public class ItemBlockMetadata extends ItemBlock {
 
 
