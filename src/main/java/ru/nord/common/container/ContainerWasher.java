@@ -44,8 +44,8 @@ public class ContainerWasher extends ContainerAbstactMachine {
         this.lastFluifCapacity = this.tileFluidTankBlock.getTank().getFluidAmount();
     }
     @Override
-    public void addCraftingToCrafters(ICrafting icrafter) {
-        super.addCraftingToCrafters(icrafter);
+    public void onCraftGuiOpened(ICrafting icrafter) {
+        super.onCraftGuiOpened(icrafter);
         icrafter.sendProgressBarUpdate(this, 5, this.tileFluidTankBlock.getTank().getFluidAmount());
     }
     @Override

@@ -5,9 +5,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
 import ru.nord_core.common.utils.enums.EnumCableState;
 
@@ -15,7 +15,7 @@ import ru.nord_core.common.utils.enums.EnumCableState;
  * @author andrew
  */
 public abstract class TileAbstractEnergyCable2 extends TileAbstractEnergyBlockWithOutContainer /*TileAbstractEnergyBlock*/
-        implements IUpdatePlayerListBox {
+        implements ITickable {
     protected String machineCustomName;
 
     protected EnumCableState[] state = new EnumCableState[6];

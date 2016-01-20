@@ -1,31 +1,40 @@
 package ru.nord.common.world.generator;
 
 import java.util.Random;
-import net.minecraft.block.Block;
+
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.IPlantable;
 import ru.nord.NordBloks;
+import ru.nord.common.blocks.wood.type2.BlockNordLeaves2;
+import ru.nord.common.blocks.wood.type2.BlockNordLog2;
 import ru.nord.common.utils.enums.EnumNordPlank2;
 
 public class WorldGenOrangeTree extends WorldGenAbstractTree
 {
+    private static final IBlockState field_181653_a = NordBloks.nordLog2.getDefaultState().withProperty(BlockNordLog2.VARIANT,EnumNordPlank2.ORANGE);
+    private static final IBlockState field_181654_b = Blocks.leaves.getDefaultState().withProperty(BlockNordLeaves2.VARIANT, EnumNordPlank2.ORANGE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+
     /** The minimum height of a generated tree. */
     private final int minTreeHeight;
     /** The metadata value of the wood to use in tree generation. */
-    private final int metaWood;
+    private final IBlockState metaWood;
     /** The metadata value of the leaves to use in tree generation. */
-    private final int metaLeaves;
+
+    private final IBlockState metaLeaves;
     private static final String __OBFID = "CL_00000438";
 
     public WorldGenOrangeTree(boolean notify)
     {
-        this(notify, 5, EnumNordPlank2.ORANGE.getMetadata(), EnumNordPlank2.ORANGE.getMetadata());
+        this(notify, 5,field_181653_a, field_181654_b);
     }
 
-    public WorldGenOrangeTree(boolean doBlockNotify, int min, int meta, int metaL)
+    public WorldGenOrangeTree(boolean doBlockNotify, int min, IBlockState meta, IBlockState metaL)
     {
         super(doBlockNotify);
         this.minTreeHeight = min;
@@ -116,7 +125,7 @@ public class WorldGenOrangeTree extends WorldGenAbstractTree
 
                                     if (block.isAir(worldIn, blockpos1) || block.isLeaves(worldIn, blockpos1) || block.getMaterial() == Material.vine)
                                     {
-                                        this.func_175905_a(worldIn, blockpos1, NordBloks.nordLeaves2, this.metaLeaves);
+                                        this.setBlockAndNotifyAdequately(worldIn, blockpos1, this.metaLeaves);
                                     }
                                 }
                             }
@@ -130,7 +139,7 @@ public class WorldGenOrangeTree extends WorldGenAbstractTree
 
                         if (block2.isAir(worldIn, upN) || block2.isLeaves(worldIn, upN) || block2.getMaterial() == Material.vine)
                         {
-                            this.func_175905_a(worldIn, pos.up(leaveY), NordBloks.nordLog2, this.metaWood);
+                            this.setBlockAndNotifyAdequately(worldIn, pos.up(leaveY),  this.metaWood);
                         }
                     }
 

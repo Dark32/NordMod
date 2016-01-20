@@ -91,19 +91,19 @@ public abstract class TileAbstractEnergyMachineDoubleInput extends TileAbstractE
         }
     }
 
-
-    /**
-     * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
-     * like when you close a workbench GUI.
-     */
     @Override
-    public ItemStack getStackInSlotOnClosing(int index) {
+    public ItemStack removeStackFromSlot(int index)
+    {
         ItemStack itemstack = getStackInSlot(index);
-        if (itemstack != null) {
+        if (itemstack!=null)
+        {
             setInventorySlotContents(index, null);
+            return itemstack;
         }
-        return itemstack;
-
+        else
+        {
+            return null;
+        }
     }
 
     /**

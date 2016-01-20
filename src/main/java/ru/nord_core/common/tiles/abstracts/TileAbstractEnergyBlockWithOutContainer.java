@@ -1,14 +1,11 @@
 package ru.nord_core.common.tiles.abstracts;
 
-import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityLockable;
+import net.minecraft.util.ITickable;
 import ru.nord_core.common.tiles.interfaces.IEnergyTile;
-import ru.nord_core.common.tiles.interfaces.ITileWithGui;
 
 public abstract class TileAbstractEnergyBlockWithOutContainer extends TileEntity
-        implements IUpdatePlayerListBox, IEnergyTile{
+        implements ITickable, IEnergyTile{
         private int energy;
 
         @Override

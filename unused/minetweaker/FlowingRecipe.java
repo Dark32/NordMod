@@ -2,7 +2,6 @@ package ru.nord.common.recipes.minetweaker;
 
 import minetweaker.api.item.IIngredient;
 import minetweaker.api.item.IItemStack;
-import net.minecraft.item.ItemStack;
 import ru.nord.common.lib.recipes.FlowingRecipes1I2O;
 import ru.nord.common.recipes.minetweaker.helpers.ItemStackHelper;
 import stanhebben.zenscript.annotations.ZenClass;

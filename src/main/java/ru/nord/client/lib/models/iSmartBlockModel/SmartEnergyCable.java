@@ -67,8 +67,8 @@ public class SmartEnergyCable implements IFlexibleBakedModel, ISmartBlockModel {
     }
 
     @Override
-    public TextureAtlasSprite getTexture() {
-        return modelCore.getTexture();
+    public TextureAtlasSprite getParticleTexture() {
+        return modelCore.getParticleTexture();
     }
 
     @Override

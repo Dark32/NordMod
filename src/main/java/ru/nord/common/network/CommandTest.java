@@ -6,9 +6,10 @@ import net.minecraft.command.ICommandSender;
 
 public class CommandTest extends CommandBase {
     @Override
-    public String getName() {
+    public String getCommandName() {
         return "test";
     }
+
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
@@ -16,8 +17,9 @@ public class CommandTest extends CommandBase {
     }
 
     @Override
-    public void execute(ICommandSender sender, String[] args) throws CommandException {
+    public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 
     }
+
 
 }

@@ -4,7 +4,7 @@ package ru.nord.common.recipes;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
 import ru.nord.common.lib.recipes.*;
-import ru.nord.common.recipes.minetweaker.MineTweaker;
+//import ru.nord.common.recipes.minetweaker.MineTweaker;
 
 /**
  * Created by nikit_000 on 06.07.2015.
@@ -28,7 +28,7 @@ public class Recipes {
         FurnaceRecipes.postInit();
         WasherRecipes.postInit();
         if (Loader.isModLoaded("MineTweaker3"))
-            MineTweaker.Init();
+//            MineTweaker.Init();
         FMLLog.info("[NORD] Loaded " + FlowingRecipes1I2O.INSTANCE().getRecipes().size() + " FlowingRecipes1I2O");
         FMLLog.info("[NORD] Loaded " + SmelterRecipes2I2O.INSTANCE().getRecipes().size() + " SmelterRecipes2I2O");
         FMLLog.info("[NORD] Loaded " + ExtractorRecipes1I2O.INSTANCE().getRecipes().size() + " ExtractorRecipes1I2O");

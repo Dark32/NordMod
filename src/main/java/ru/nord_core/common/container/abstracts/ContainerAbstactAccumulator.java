@@ -43,8 +43,8 @@ abstract public class ContainerAbstactAccumulator extends Container {
     }
 
     @Override
-    public void addCraftingToCrafters(ICrafting icrafter) {
-        super.addCraftingToCrafters(icrafter);
+    public void onCraftGuiOpened(ICrafting icrafter) {
+        super.onCraftGuiOpened(icrafter);
         icrafter.sendProgressBarUpdate(this, 0, this.tileEntity.getEnergy());
     }
 

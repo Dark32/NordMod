@@ -12,7 +12,7 @@ import ru.nord_core.client.event.RenderWorldLast;
 import ru.nord_core.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
-
+//todo update
     @Override
     public void registerItemRender(Item item, int sub, String name,String modid) {
         ModelResourceLocation itemModelResourceLocation =
@@ -20,7 +20,7 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, sub, itemModelResourceLocation);
         ModelBakery.addVariantName(item, modid+ ":" + name);
     }
-
+    //todo update
     @Override
     public void registerBlockRender(Block block, int sub, String model,String modid) {
         ModelBakery.addVariantName(Item.getItemFromBlock(block),modid + ":" + model);
@@ -28,7 +28,7 @@ public class ClientProxy extends CommonProxy {
                 new ModelResourceLocation(modid + ":" + model, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
     }
-
+    //todo update
     @Override
     public void registerEventHandlers() {
         super.registerEventHandlers();
@@ -37,7 +37,6 @@ public class ClientProxy extends CommonProxy {
 //        MinecraftForge.EVENT_BUS.register(eventHandler);//
 
         RenderWorldLast eventHandler = new RenderWorldLast();
-        FMLCommonHandler.instance().bus().register(eventHandler);
         MinecraftForge.EVENT_BUS.register(eventHandler);
     }
 }

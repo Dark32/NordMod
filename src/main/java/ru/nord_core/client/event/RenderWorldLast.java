@@ -52,23 +52,24 @@ public class RenderWorldLast {
                         aabb.minX, aabb.minY, aabb.minZ,
                         aabb.maxX + 1, aabb.maxY + 1, aabb.maxZ + 1
                 );
-                event.context.drawOutlinedBoundingBox(
-                        aabb
-                                .offset(-px, -py, -pz)
-                        ,
-                        -1);
-                event.context.drawOutlinedBoundingBox(
-                        aabb
-                                .expand(shift2, shift2, shift2)
-                                .offset(-px, -py, -pz)
-                        ,
-                        -1);
-                event.context.drawOutlinedBoundingBox(
-                        aabb
-                                .contract(shift2, shift2, shift2)
-                                .offset(-px, -py, -pz)
-                        ,
-                        -1);
+                //todo fix it
+//                event.context.drawOutlinedBoundingBox(
+//                        aabb
+//                                .offset(-px, -py, -pz)
+//                        ,
+//                        -1);
+//                event.context.drawOutlinedBoundingBox(
+//                        aabb
+//                                .expand(shift2, shift2, shift2)
+//                                .offset(-px, -py, -pz)
+//                        ,
+//                        -1);
+//                event.context.drawOutlinedBoundingBox(
+//                        aabb
+//                                .contract(shift2, shift2, shift2)
+//                                .offset(-px, -py, -pz)
+//                        ,
+//                        -1);
                 GlStateManager.depthMask(true);
                 GlStateManager.enableTexture2D();
                 GlStateManager.disableBlend();

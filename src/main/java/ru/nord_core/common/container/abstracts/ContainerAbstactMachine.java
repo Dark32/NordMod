@@ -39,8 +39,8 @@ abstract public class ContainerAbstactMachine extends Container {
         }
 
         @Override
-        public void addCraftingToCrafters(ICrafting icrafter) {
-                super.addCraftingToCrafters(icrafter);
+        public void onCraftGuiOpened(ICrafting icrafter) {
+                super.onCraftGuiOpened(icrafter);
                 icrafter.sendProgressBarUpdate(this, 0, this.tileEntity.getEnergy());
                 icrafter.sendProgressBarUpdate(this, 1, this.tileEntity.getBurnTime());
                 icrafter.sendProgressBarUpdate(this, 2, this.tileEntity.getCurrentItemEnergyProgress());
