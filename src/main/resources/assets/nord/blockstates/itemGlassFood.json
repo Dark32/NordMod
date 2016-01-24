@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+     "clabberempty"         : { "textures": { "layer0": "nord:items/glassfood/clabberempty" } },
+     "pitcherempty"         : { "textures": { "layer0": "nord:items/glassfood/PitcherEmpty" } }
+    }
+  }
+}

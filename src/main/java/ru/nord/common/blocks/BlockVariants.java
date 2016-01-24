@@ -1,6 +1,5 @@
 package ru.nord.common.blocks;
 
-import com.choonster.testmod3.block.BlockTestMod3;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

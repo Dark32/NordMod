@@ -1,28 +1,30 @@
 package ru.nord;
 
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord.common.blocks.*;
-import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
-import ru.nord_core.client.helpers.ModModelManager;
-import ru.nord_core.common.items.*;
+import ru.nord_core.common.helpers.RegisterHelper2;
+import ru.nord_core.common.items.ItemBase;
+import ru.nord_core.common.items.ItemEnergyStorageDamagable;
+import ru.nord_core.common.items.ItemWrench;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumFrame;
-import ru.nord_core.common.utils.enums.EnumMetal;
 
 public class NordMachine {
     public static void preInit() {
         createItem();
-        FMLLog.info("Nord Mod start createBlock");
         createBlock();
+        createItem();
+        registerBlock();
+        registerItem();
+        registerBlockModel();
+        registerItemModel();
     }
+
 
     public static void init() {
         registerTileEntity();
-        registerItem();
-        registerBlock();
     }
 
     public static void postInit() {
@@ -33,7 +35,7 @@ public class NordMachine {
         NordItems.energyStorageItem = new ItemEnergyStorageDamagable(16000, Version.MODID).setUnlocalizedName("itemEnergyStorage").setCreativeTab(NordTabs.tabMachine);
         NordItems.wrench = new ItemWrench(Version.MODID).setUnlocalizedName("itemWrench").setCreativeTab(NordTabs.tabMachine);
         NordItems.itemBlades = new ItemBase(Version.MODID).setUnlocalizedName("blades");
-        }
+    }
 
     private static void createBlock() {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
@@ -50,41 +52,54 @@ public class NordMachine {
 
     }
 
-    private static void registerItem() {
-        RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
-        RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
-//        RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
-         }
-
-    private static void registerBlock() {
-        RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
-//        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
-//        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");
-        RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
-//        RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
-        RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
-
-        RegisterHelper.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame", "frame", EnumFrame.getNames());
-//        GameRegistry.registerBlock(NordBloks.frame, ItemBlockMetadata.class, "frame");
-//        ModModelManager.INSTANCE.registerAllModels();
-    }
-
     private static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileFlowing.class, "TileEntityFlowing");
         GameRegistry.registerTileEntity(TileExtractor.class, "TileEntityExtractor");
         GameRegistry.registerTileEntity(TileFurnace.class, "TileEntityFurnace");
         GameRegistry.registerTileEntity(TileSmelter.class, "TileEntitySmelter");
         GameRegistry.registerTileEntity(TileWasher.class, "TileEntityWasher");
-
         GameRegistry.registerTileEntity(TileGenerator.class, "TileEntityGenerator");
         GameRegistry.registerTileEntity(TileAccumulator.class, "TileEntityAccumulator");
         GameRegistry.registerTileEntity(TileEnergyCable.class, "TileEntityEnergyCable");
         GameRegistry.registerTileEntity(TileEnergyCable2.class, "TileEntityEnergyCable2");
     }
 
+    private static void registerItemModel() {
+        Nord.proxy.registerModel().registerItemModel(NordItems.energyStorageItem);
+        Nord.proxy.registerModel().registerItemModel(NordItems.wrench );
+    }
+
+    private static void registerBlockModel() {
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.washerBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.furnaceBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.extractorBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.smelterBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.accumulatorBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.generatorBlock, 0, "facing=north");
+        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.flowingBlock, 0, "facing=north");
+        for (EnumFrame enumType : EnumFrame.values()) {
+            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.frame, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+    }
+
+    private static void registerItem() {
+        RegisterHelper2.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
+        RegisterHelper2.registerSingleItem(NordItems.wrench, "itemWrench");
+//        RegisterHelper2.registerSingleItem(NordItems.itemBlades, "itemblades");//todo
+    }
+
+    private static void registerBlock() {
+        RegisterHelper2.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
+        RegisterHelper2.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
+        RegisterHelper2.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
+//        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock"); //todo
+//        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");//todo
+        RegisterHelper2.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
+//        RegisterHelper2.registerSingleBlock(NordBloks.placeDeco, "deco_placer");//todo
+        RegisterHelper2.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
+        RegisterHelper2.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
+        RegisterHelper2.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
+        RegisterHelper2.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame");
+    }
 }
 

@@ -24,20 +24,20 @@ public enum EnumFoodNord implements IMetadataEnum {
     bunjam(12, "bunjam", 2, 2),
     bunjam2(13, "bunjam2", 2, 2),
     cheesecake(14, "cheesecake", 2, 2),
-    curd(14, "curd", 4, 4),
-    dough(15, "dough", 1, 1, 10),
-    apricotfruit(16, "apricotFruit", 1, 1, 10),
-    berry1(17, "berry1", 1, 1, 10),
-    berry2(18, "berry2", 1, 1, 10),
-    coffeaFruit(19, "coffeaFruit", 1, 1, 10),
-    coffeaGrain(20, "coffeaGrain", 1, 1, 10),
-    lemonFruit(21, "lemonFruit", 1, 1, 10),
-    oliveFruit(22, "oliveFruit", 1, 1, 10),
-    orangeFruit(23, "orangeFruit", 1, 1, 10),
-    peachFruit(24, "peachFruit", 1, 1, 10),
-    pearFruit(25, "pearFruit", 1, 1, 10),
-    punicaFruit(26, "punicaFruit", 1, 1, 10),
-    sakuraFruit(27, "sakuraFruit", 1, 1, 10) {
+    curd(15, "curd", 4, 4),
+    dough(16, "dough", 1, 1, 10),
+    apricotfruit(17, "apricotFruit", 1, 1, 10),
+    berry1(18, "berry1", 1, 1, 10),
+    berry2(19, "berry2", 1, 1, 10),
+    coffeaFruit(20, "coffeaFruit", 1, 1, 10),
+    coffeaGrain(21, "coffeaGrain", 1, 1, 10),
+    lemonFruit(22, "lemonFruit", 1, 1, 10),
+    oliveFruit(23, "oliveFruit", 1, 1, 10),
+    orangeFruit(24, "orangeFruit", 1, 1, 10),
+    peachFruit(25, "peachFruit", 1, 1, 10),
+    pearFruit(26, "pearFruit", 1, 1, 10),
+    punicaFruit(27, "punicaFruit", 1, 1, 10),
+    sakuraFruit(28, "sakuraFruit", 1, 1, 10) {
 
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
@@ -47,7 +47,7 @@ public enum EnumFoodNord implements IMetadataEnum {
             };
         }
     },
-    dough2(16, "dough2", 1, 1, 20) {
+    dough2(29, "dough2", 1, 1, 20) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
                     new PotionEffect(Potion.poison.id, 40, 1),
@@ -60,8 +60,8 @@ public enum EnumFoodNord implements IMetadataEnum {
             return new ItemStack(NordItems.itemGlassFood, 1, EnumGlassFood.PITCHER_EMPTY.getMetadata());
         }
     },
-    fritters(17, "fritters", 2, 2),
-    clabberfull(18, "clabberfull", 2, 6, 80) {
+    fritters(30, "fritters", 2, 2),
+    clabberfull(31, "clabberfull", 2, 6, 80) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
                     new PotionEffect(Potion.absorption.id, 100, 1),
@@ -75,7 +75,7 @@ public enum EnumFoodNord implements IMetadataEnum {
             return EnumAction.DRINK;
         }
     },
-    PitcherFull(19, "PitcherFull", 4, 8, 99) {
+    PitcherFull(32, "PitcherFull", 4, 8, 99) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
                     new PotionEffect(Potion.absorption.id, 200, 2),
@@ -89,14 +89,14 @@ public enum EnumFoodNord implements IMetadataEnum {
             return EnumAction.DRINK;
         }
     },
-    onion(20, "onion", 2, 2),
-    FishPie(21, "FishPie", 8, 4),
-    JamPie(22, "JamPie", 8, 4),
-    MeatPie(23, "MeatPie", 8, 4),
-    Piewithonionsandeggs(24, "Piewithonionsandeggs", 8, 4),
-    PotatoesPie(25, "PotatoesPie", 8, 4),
-    SorrelPie(26, "SorrelPie", 8, 4),
-    Sorrel(27, "Sorrel", 8, 4),;
+    onion(33, "onion", 2, 2),
+    FishPie(34, "FishPie", 8, 4),
+    JamPie(35, "JamPie", 8, 4),
+    MeatPie(36, "MeatPie", 8, 4),
+    Piewithonionsandeggs(37, "Piewithonionsandeggs", 8, 4),
+    PotatoesPie(38, "PotatoesPie", 8, 4),
+    SorrelPie(39, "SorrelPie", 8, 4),
+    Sorrel(40, "Sorrel", 8, 4),;
 
     private final String name;
     private final int meta;

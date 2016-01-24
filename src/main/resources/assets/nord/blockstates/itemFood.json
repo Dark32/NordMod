@@ -1,0 +1,51 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "a_lot_of_pancakes"         : { "textures": { "layer0": "nord:items/foods/blin/alotofpancakes" } },
+        "pancake"                   : { "textures": { "layer0": "nord:items/foods/blin/Pancake" } },
+        "pancakeswithcottagecheese" : { "textures": { "layer0": "nord:items/foods/blin/Pancakeswithcottagecheese" } },
+        "pancakeswithcurd"          : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithcurd" } },
+        "pancakeswithfish"          : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithfish" } },
+        "pancakeswithjam"           : { "textures": { "layer0": "nord:items/foods/blin/Pancakeswithjam" } },
+        "pancakeswithjam2"          : { "textures": { "layer0": "nord:items/foods/blin/Pancakeswithjam2" } },
+        "pancakeswithmeat"          : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithmeat" } },
+        "pancakeswithonionsandeggs" : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithonionsandeggs" } },
+        "pancakeswithpotatoes"      : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithpotatoes" } },
+        "pancakeswithsorrel"        : { "textures": { "layer0": "nord:items/foods/blin/pancakeswithsorrel" } },
+        "bun"                       : { "textures": { "layer0": "nord:items/foods/bun/bun" } },
+        "bunjam"                    : { "textures": { "layer0": "nord:items/foods/bun/bunjam" } },
+        "bunjam2"                   : { "textures": { "layer0": "nord:items/foods/bun/bunjam2" } },
+        "cheesecake"                : { "textures": { "layer0": "nord:items/foods/cheesecake/cheesecake" } },
+        "curd"                      : { "textures": { "layer0": "nord:items/foods/curd/curd" } },
+        "dough"                     : { "textures": { "layer0": "nord:items/foods/dough/dough" } },
+        "apricotfruit"              : { "textures": { "layer0": "nord:items/foods/fruits/apricotFruit" } },
+        "berry1"                    : { "textures": { "layer0": "nord:items/foods/fruits/berry1" } },
+        "berry2"                    : { "textures": { "layer0": "nord:items/foods/fruits/berry2" } },
+        "coffeafruit"               : { "textures": { "layer0": "nord:items/foods/fruits/coffeaFruit" } },
+        "coffeagrain"               : { "textures": { "layer0": "nord:items/foods/fruits/coffeaGrain" } },
+        "lemonfruit"                : { "textures": { "layer0": "nord:items/foods/fruits/lemonFruit" } },
+        "olivefruit"                : { "textures": { "layer0": "nord:items/foods/fruits/oliveFruit" } },
+        "orangefruit"               : { "textures": { "layer0": "nord:items/foods/fruits/orangeFruit" } },
+        "peachfruit"                : { "textures": { "layer0": "nord:items/foods/fruits/peachFruit" } },
+        "pearfruit"                 : { "textures": { "layer0": "nord:items/foods/fruits/pearFruit" } },
+        "punicafruit"               : { "textures": { "layer0": "nord:items/foods/fruits/punicaFruit" } },
+        "sakurafruit"               : { "textures": { "layer0": "nord:items/foods/fruits/sakuraFruit" } },
+        "dough2"                    : { "textures": { "layer0": "nord:items/foods/dough/dough2" } },
+        "fritters"                  : { "textures": { "layer0": "nord:items/foods/fritters/fritters" } },
+        "clabberfull"               : { "textures": { "layer0": "nord:items/foods/milk/clabberfull" } },
+        "pitcherfull"               : { "textures": { "layer0": "nord:items/foods/milk/PitcherFull" } },
+        "onion"                     : { "textures": { "layer0": "nord:items/foods/onion/onion" } },
+        "fishpie"                   : { "textures": { "layer0": "nord:items/foods/pie/FishPie" } },
+        "jampie"                    : { "textures": { "layer0": "nord:items/foods/pie/JamPie" } },
+        "meatpie"                   : { "textures": { "layer0": "nord:items/foods/pie/MeatPie" } },
+        "piewithonionsandeggs"      : { "textures": { "layer0": "nord:items/foods/pie/Piewithonionsandeggs" } },
+        "potatoespie"               : { "textures": { "layer0": "nord:items/foods/pie/PotatoesPie" } },
+        "sorrelpie"                 : { "textures": { "layer0": "nord:items/foods/pie/SorrelPie" } },
+        "sorrel"                    : { "textures": { "layer0": "nord:items/foods/sorrel/Sorrel" } }
+    }
+  }
+}
