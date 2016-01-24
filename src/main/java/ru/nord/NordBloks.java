@@ -47,5 +47,6 @@ public class NordBloks {
     public static Block nordSapling4;
     public static Block nordLeaves4;
     public static Block nordLog4;
+    public static Block variantTest;
 }
 

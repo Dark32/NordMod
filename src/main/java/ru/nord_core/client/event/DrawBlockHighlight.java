@@ -81,14 +81,14 @@ public class DrawBlockHighlight {
                     double d0 = player.lastTickPosX + (player.posX - player.lastTickPosX) * (double)event.partialTicks;
                     double d1 = player.lastTickPosY + (player.posY - player.lastTickPosY) * (double)event.partialTicks;
                     double d2 = player.lastTickPosZ + (player.posZ - player.lastTickPosZ) * (double)event.partialTicks;
-//todo fix it
+//todo test it
 
-//                    event.context.drawOutlinedBoundingBox(
+                    event.context.drawSelectionBoundingBox(
 //                            block.getSelectedBoundingBox(event.player.worldObj, blockpos)
-//                            aabb
-//                                    .expand(0.0020000000949949026D, 0.0020000000949949026D, 0.0020000000949949026D)
-//                                    .offset(-d0, -d1, -d2)
-//                            );
+                            aabb
+                                    .expand(0.0020000000949949026D, 0.0020000000949949026D, 0.0020000000949949026D)
+                                    .offset(-d0, -d1, -d2)
+                            );
                 }
 
                 GlStateManager.depthMask(true);

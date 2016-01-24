@@ -3,6 +3,7 @@ package ru.nord_core.common.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
@@ -27,6 +28,7 @@ public class ItemDebugStick extends ItemBase {
     public ItemDebugStick(String modid) {
         super(modid);
         this.setMaxStackSize(1);
+        this.setCreativeTab(CreativeTabs.tabAllSearch);
     }
 
     @Override

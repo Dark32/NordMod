@@ -1,15 +1,11 @@
 package ru.nord.client;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
+
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import ru.nord.client.events.NordModelLoader;
 import ru.nord.common.CommonProxy;
-import ru.nord.common.utils.Version;
-import ru.nord_core.NordCore;
+//import ru.nord_core.client.helpers.ModModelManager;
+import ru.nord_core.client.helpers.RegisterRenderHelper;
 
 public class ClientProxy extends CommonProxy {
 
@@ -17,6 +13,16 @@ public class ClientProxy extends CommonProxy {
     public void registerRenderers() {
 
         ModelLoaderRegistry.registerLoader(new NordModelLoader());
+
     }
 
+    @Override
+    public void preInit() {
+//        ModModelManager.INSTANCE.registerAllModels();
+    }
+
+    @Override
+    public RegisterRenderHelper registerModel() {
+        return RegisterRenderHelper.INSTANCE;
+    }
 }

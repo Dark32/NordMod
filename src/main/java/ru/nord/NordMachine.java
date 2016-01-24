@@ -6,6 +6,7 @@ import ru.nord.common.blocks.*;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.tiles.*;
 import ru.nord.common.utils.Version;
+import ru.nord_core.client.helpers.ModModelManager;
 import ru.nord_core.common.items.*;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumFrame;
@@ -52,22 +53,24 @@ public class NordMachine {
     private static void registerItem() {
         RegisterHelper.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
         RegisterHelper.registerSingleItem(NordItems.wrench, "itemWrench");
-        RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
+//        RegisterHelper.registerSingleItem(NordItems.itemBlades, "itemblades");
          }
 
     private static void registerBlock() {
         RegisterHelper.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
         RegisterHelper.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");
+//        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock");
+//        RegisterHelper.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");
         RegisterHelper.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
-        RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
+//        RegisterHelper.registerSingleBlock(NordBloks.placeDeco, "deco_placer");
         RegisterHelper.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
         RegisterHelper.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
         RegisterHelper.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
-        RegisterHelper.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame", "frame", EnumFrame.getNames());
 
+        RegisterHelper.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame", "frame", EnumFrame.getNames());
+//        GameRegistry.registerBlock(NordBloks.frame, ItemBlockMetadata.class, "frame");
+//        ModModelManager.INSTANCE.registerAllModels();
     }
 
     private static void registerTileEntity() {

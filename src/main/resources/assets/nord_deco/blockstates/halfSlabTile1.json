@@ -25,6 +25,7 @@
             "lime":{},
             "pink":{},
             "gray":{}
-        }
+        },
+        "inventory": [{}]
     }
 }

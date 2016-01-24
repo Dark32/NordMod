@@ -12,13 +12,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.nord.common.CommonProxy;
 import ru.nord.common.events.OreDropEvent;
 import ru.nord.common.lib.dictoary.Dictoary;
 import ru.nord.common.network.PacketPipeline;
 import ru.nord.common.recipes.Recipes;
 import ru.nord.common.utils.Version;
 import ru.nord.common.utils.generator.NordOre;
+import ru.nord.common.IProxy;
 import ru.nord_core.common.handler.GuiHandler;
 import ru.nord_core.common.utils.Fuel;
 
@@ -34,7 +34,7 @@ public class Nord {
     public static Nord instance;
 
     @SidedProxy(clientSide = "ru.nord.client.ClientProxy", serverSide = "ru.nord.common.CommonProxy")
-    public static CommonProxy proxy;
+    public static IProxy proxy;
     public static Random rand = new Random(); // Не использовать. Возможен Десинк
 
     @EventHandler
@@ -47,6 +47,7 @@ public class Nord {
         NordFood.preInit();
         NordWood.preInit();
         Recipes.preInit();
+        proxy.preInit();
     }
 
     @EventHandler

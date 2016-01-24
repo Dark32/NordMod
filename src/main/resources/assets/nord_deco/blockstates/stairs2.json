@@ -9,43 +9,43 @@
     },
     "variants": {
          "half":{
-             "top":{
-                 "x": 180
-             },
-             "bottom":{
-                 "x": 0
-             }
+             "top":{"x": 180},
+             "bottom":{ "x": 0}
         },
         "facing":{
-            "east":{
-
-            },
-            "west":{
-                "y": 180
-            },
-            "south":{
-
-            },
-            "north":{
-
-            }
+            "east":{},
+            "west":{"y": 180},
+            "south":{},
+            "north":{}
         },
         "shape":{
-            "straight":{
-                "model": "nord_deco:stairs/stairs"
-            },
-            "inner_left":{
-                "model": "nord_deco:stairs/inner_stairs"
-            },
-            "inner_right":{
-                "model": "nord_deco:stairs/inner_stairs"
-            },
-            "outer_left":{
-                "model": "nord_deco:stairs/outer_stairs"
-            },
-            "outer_right":{
-                "model": "nord_deco:stairs/outer_stairs"
-            }
-        }
+            "straight":{    "model": "nord_deco:stairs/stairs"      },
+            "inner_left":{  "model": "nord_deco:stairs/inner_stairs"},
+            "inner_right":{ "model": "nord_deco:stairs/inner_stairs"},
+            "outer_left":{  "model": "nord_deco:stairs/outer_stairs"},
+            "outer_right":{ "model": "nord_deco:stairs/outer_stairs"}
+        },
+         "inventory": [            {
+                                       "transform": {
+                                           "thirdperson": {
+                                               "rotation": [ { "x": 75 }, { "y": 0 }, { "z": 180 } ],
+                                               "translation": [ 0, 0, 0 ],
+                                               "scale": 0.02
+                                           },
+                                           "gui": {
+                                               "rotation": [ { "x": -40 }, { "y": 0 }, { "z": 0 } ],
+                                               "translation": [ 0.2, -0.1, 0 ],
+                                               "scale": 0.02
+                                           },
+                                           "firstperson": {
+                                               "rotation": [ { "x": 180 }, { "y": -120 }, { "z": 170 } ],
+                                               "translation": [ 0, 0, 0 ],
+                                               "scale": 0.03
+                                           },
+                                           "ground": {
+                                               "scale": 0.03
+                       					}
+                                       }
+                                   }]
     }
 }

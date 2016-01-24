@@ -1,20 +1,106 @@
 {
+    "forge_marker": 1,
+        "defaults": {
+            "model": "nord:block_colored"
+        },
     "variants": {
-        "type=burnt"        : { "model": "nord:decoStoneBlock/burnt"  },
-        "type=smooth"       : { "model": "nord:decoStoneBlock/smooth" },
-        "type=vert_double"  : { "model": "nord:decoStoneBlock/vert_double" },
-        "type=vert_line"    : { "model": "nord:decoStoneBlock/vert_line" },
-        "type=spiral"       : { "model": "nord:decoStoneBlock/spiral" },
-        "type=vortex"       : { "model": "nord:decoStoneBlock/vortex" },
-        "type=double_small" : { "model": "nord:decoStoneBlock/double_small" },
-        "type=creep"        : { "model": "nord:decoStoneBlock/creep" },
-        "type=light"        : { "model": "nord:decoStoneBlock/light" },
-        "type=dark"         : { "model": "nord:decoStoneBlock/dark" },
-        "type=gem"          : { "model": "nord:decoStoneBlock/gem" },
-        "type=double"       : { "model": "nord:decoStoneBlock/double" },
-        "type=line"         : { "model": "nord:decoStoneBlock/line" },
-        "type=vert_small"   : { "model": "nord:decoStoneBlock/vert_small" },
-        "type=double_half"  : { "model": "nord:decoStoneBlock/double_half" },
-        "type=small"        : { "model": "nord:decoStoneBlock/small" }
+        "type":{
+            "burnt": {
+                "textures": {
+                    "all": "nord:blocks/stone/stone.burnt",
+                    "particle": "nord:blocks/stone/stone.burnt"
+                }
+            },
+            "smooth":{
+                "textures": {
+                    "all": "nord:blocks/stone/stone.smooth",
+                    "particle": "nord:blocks/stone/stone.smooth"
+                }
+            },
+            "vert_double"  :{
+                "textures": {
+                    "all": "nord:blocks/stone/stone.vert_double",
+                    "particle": "nord:blocks/stone/stone.vert_double"
+                }
+            },
+            "vert_line": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.vert_line",
+                     "particle": "nord:blocks/stone/stone.vert_line"
+                 }
+             },
+            "spiral": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.spiral",
+                     "particle": "nord:blocks/stone/stone.spiral"
+                 }
+             },
+            "vortex":{
+                "textures": {
+                    "all": "nord:blocks/stone/stone.vortex",
+                    "particle": "nord:blocks/stone/stone.vortex"
+                }
+            },
+            "double_small": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.double_small",
+                     "particle": "nord:blocks/stone/stone.double_small"
+                 }
+             },
+            "creep": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.creep",
+                     "particle": "nord:blocks/stone/stone.creep"
+                 }
+             },
+            "light":{
+                "textures": {
+                    "all": "nord:blocks/stone/stone.light",
+                    "particle": "nord:blocks/stone/stone.light"
+                }
+            },
+            "dark": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.dark",
+                     "particle": "nord:blocks/stone/stone.dark"
+                 }
+             },
+            "gem": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.gem",
+                     "particle": "nord:blocks/stone/stone.gem"
+                 }
+             },
+            "double": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.double",
+                     "particle": "nord:blocks/stone/stone.double"
+                 }
+             },
+            "line": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.line",
+                     "particle": "nord:blocks/stone/stone.line"
+                 }
+             },
+            "vert_small": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.vert_small",
+                     "particle": "nord:blocks/stone/stone.vert_small"
+                 }
+             },
+            "double_half": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.double_half",
+                     "particle": "nord:blocks/stone/stone.double_half"
+                 }
+             },
+            "small": {
+                 "textures": {
+                     "all": "nord:blocks/stone/stone.small",
+                     "particle": "nord:blocks/stone/stone.small"
+                 }
+             }
+         }
     }
 }

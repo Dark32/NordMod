@@ -17,7 +17,7 @@ public class RegisterHelper {
     }
 
     public static void registerSingleBlock(Block block, String name, String model) {
-        ru.nord_core.common.helpers.RegisterHelper.registerSingleBlock(block,name,model,Version.MODID);
+        ru.nord_core.common.helpers.RegisterHelper.registerSingleBlock(block, name, model, Version.MODID);
     }
 
     public static void registerSingleItem(Item item, String name) {
@@ -45,7 +45,7 @@ public class RegisterHelper {
             String model,
             String[] additionals
     ) {
-        ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlock(block,itemBlock,name,model,additionals,Version.MODID);
+        ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlock(block, itemBlock, name, model, additionals, Version.MODID);
     }
     public static void registerMetadataItem(
             Item itemVar,
@@ -53,7 +53,7 @@ public class RegisterHelper {
             String model,
             String[] additionals
     ){
-        ru.nord_core.common.helpers.RegisterHelper.registerMetadataItem(itemVar,name,model,additionals,Version.MODID);
+        ru.nord_core.common.helpers.RegisterHelper.registerMetadataItem(itemVar, name, model, additionals, Version.MODID);
     }
 
     public static void registerMetadataBlock(
@@ -62,7 +62,7 @@ public class RegisterHelper {
             String name,
             String model,
             int count) {
-        ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlock(block,itemBlock,name,model,count,Version.MODID);
+        ru.nord_core.common.helpers.RegisterHelper.registerMetadataBlock(block, itemBlock, name, model, count, Version.MODID);
     }
 
     public static void registerOre(boolean enableOre,int minY,int maxY,int veinSize,int frequencyOre,IBlockState block, int dimId){

@@ -60,7 +60,7 @@ public class NordMetalgury {
         RegisterHelper.registerMetadataItem(NordItems.itemIngot, "ingot", "ingot", EnumMetal.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemClearIngot, "clearIngot", "clearIngot", EnumClearMetal.getNames());
         RegisterHelper.registerMetadataItem(NordItems.itemStick, "stick", "stick", EnumDust.getNames());
-        RegisterHelper.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
+//        RegisterHelper.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
     }
 
     private static void registerBlock() {

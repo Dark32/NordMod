@@ -1,13 +1,32 @@
 package ru.nord.common;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import ru.nord_core.common.helpers.RegisterRenderHelper;
 
-public class CommonProxy {
+public class CommonProxy implements IProxy {
 
-    // Client stuff
+    @Override
     public void registerRenderers() {
-        // Nothing here as the server doesn't render graphics or entities!
+    }
+
+    @Override
+    public RegisterRenderHelper registerModel() {
+        return RegisterRenderHelper.INSTANCE;
+    }
+
+
+    @Override
+    public void preInit() {
+
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void postInit() {
+
     }
 
 }

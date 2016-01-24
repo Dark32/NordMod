@@ -1,6 +1,15 @@
 package ru.nord_deco;
 
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import ru.nord_core.NordCore;
+import ru.nord_core.client.helpers.MeshDefinitionFix;
+//import ru.nord_core.client.helpers.ModModelManager;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_deco.common.blocks.*;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
@@ -16,6 +25,7 @@ public class NordDecoration {
     public static void preInit() {
         createBlock();
         createItem();
+        registerBlock2();
     }
 
     public static void init() {
@@ -41,6 +51,9 @@ public class NordDecoration {
     public static void createItem() {
     }
 
+    public static void registerBlock2(){}
+    public static void registerItem2(){}
+
     public static void registerBlock() {
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.chairWhite,
@@ -49,7 +62,7 @@ public class NordDecoration {
                 "chairWhite",
                 EnumChairType.getNames()
         );
-
+/*
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.chairOther,
                 ItemBlockMetadata.class,
@@ -79,14 +92,13 @@ public class NordDecoration {
                 true
         );
         RegisterHelper.registerSingleBlock(NordBloksDeco.stairs, "stairs");
-
         RegisterHelper.registerMetadataBlock(
                 NordBloksDeco.abomination,
                 ItemBlockMetadata.class,
                 "abomination",
                 "abomination",
                 EnumAbomination.getNames());
-
+*/
     }
 
     public static void registerItem() {

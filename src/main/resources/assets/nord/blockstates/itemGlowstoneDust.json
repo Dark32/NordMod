@@ -1,0 +1,75 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+      "glowstonedust1": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust1"
+        }
+      },
+      "glowstonedust2": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust2"
+        }
+      },
+      "glowstonedust3": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust3"
+        }
+      },
+      "glowstonedust4": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust4"
+        }
+      },
+      "glowstonedust5": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust5"
+        }
+      },
+      "glowstonedust6": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust6"
+        }
+      },
+      "glowstonedust7": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust7"
+        }
+      },
+      "glowstonedust8": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust8"
+        }
+      },
+      "glowstonedust9": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust9"
+        }
+      },
+      "glowstonedust10": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust10"
+        }
+      },
+      "glowstonedust11": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust11"
+        }
+      },
+      "glowstonedust12": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust12"
+        }
+      },
+      "glowstonedust13": {
+        "textures": {
+          "layer0": "nord:items/stuff/glowstoneDust13"
+        }
+      }
+    }
+  }
+}
