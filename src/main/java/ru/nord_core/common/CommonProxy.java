@@ -3,6 +3,7 @@ package ru.nord_core.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import ru.nord_core.common.helpers.RegisterRenderHelper;
 
 public class CommonProxy {
 
@@ -13,4 +14,8 @@ public class CommonProxy {
     }
 
     public void registerEventHandlers() {}
+
+    public RegisterRenderHelper registerModel(){
+        return RegisterRenderHelper.INSTANCE;
+    }
 }

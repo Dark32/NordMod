@@ -91,17 +91,17 @@ public class NordWood {
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLog1, ItemBlockNordLog.class, "nordLog1");
 
         RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank2, ItemBlockNordPlank2.class, "nordPlank2");
-//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling2, ItemBlockNordSapling2.class, "nordSapling2");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling2, ItemBlockNordSapling2.class, "nordSapling2");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves2, ItemBlockNordLeaves2.class, "nordLeaves2");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLog2, ItemBlockNordLog2.class, "nordLog2");
 
         RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank3, ItemBlockNordPlank3.class, "nordPlank3");
-//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling3, ItemBlockNordSapling3.class, "nordSapling3");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling3, ItemBlockNordSapling3.class, "nordSapling3");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves3, ItemBlockNordLeaves3.class, "nordLeaves3");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLog3, ItemBlockNordLog3.class, "nordLog3");
 
         RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank4, ItemBlockNordPlank4.class, "nordPlank4");
-//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling4, ItemBlockNordSapling4.class, "nordSapling4");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling4, ItemBlockNordSapling4.class, "nordSapling4");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves4, ItemBlockNordLeaves4.class, "nordLeaves4");
         RegisterHelper2.registerMetadataBlock(NordBloks.nordLog4, ItemBlockNordLog4.class, "nordLog4");
     }

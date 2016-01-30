@@ -6,10 +6,9 @@ import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import ru.nord_core.client.event.DrawBlockHighlight;
 import ru.nord_core.client.event.RenderWorldLast;
 import ru.nord_core.common.CommonProxy;
+import ru.nord_core.client.helpers.RegisterRenderHelper;
 
 public class ClientProxy extends CommonProxy {
 
@@ -37,5 +36,8 @@ public class ClientProxy extends CommonProxy {
 
         RenderWorldLast eventHandler = new RenderWorldLast();
         MinecraftForge.EVENT_BUS.register(eventHandler);
+    }
+    public RegisterRenderHelper registerModel(){
+        return RegisterRenderHelper.INSTANCE;
     }
 }

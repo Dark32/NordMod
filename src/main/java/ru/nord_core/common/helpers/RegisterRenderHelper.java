@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import ru.nord.Nord;
+import ru.nord_core.NordCore;
 import ru.nord_core.common.utils.enums.EnumOreDrop;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
@@ -19,10 +20,10 @@ public class RegisterRenderHelper {
     public static final RegisterRenderHelper INSTANCE = new RegisterRenderHelper();
 
     public static RegisterRenderHelper modelRegister(){
-        return  Nord.proxy.registerModel();
+        return  NordCore.proxy.registerModel();
     }
     /**
-     * Регистрация модели для блока по его имени ркгистрации
+     * Регистрация модели для блока по его имени регистрации
      *
      * @param block блок
      */

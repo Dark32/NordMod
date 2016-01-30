@@ -21,8 +21,4 @@ public class ClientProxy extends CommonProxy {
 //        ModModelManager.INSTANCE.registerAllModels();
     }
 
-    @Override
-    public RegisterRenderHelper registerModel() {
-        return RegisterRenderHelper.INSTANCE;
-    }
 }

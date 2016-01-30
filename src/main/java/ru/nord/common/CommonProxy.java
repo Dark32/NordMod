@@ -8,11 +8,6 @@ public class CommonProxy implements IProxy {
     public void registerRenderers() {
     }
 
-    @Override
-    public RegisterRenderHelper registerModel() {
-        return RegisterRenderHelper.INSTANCE;
-    }
-
 
     @Override
     public void preInit() {

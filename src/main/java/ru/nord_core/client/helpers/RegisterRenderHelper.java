@@ -7,6 +7,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import ru.nord.Nord;
+import ru.nord_core.NordCore;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRenderHelper {
@@ -14,7 +15,7 @@ public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRe
     public static final RegisterRenderHelper INSTANCE = new RegisterRenderHelper();
 
     public static RegisterRenderHelper modelRegister(){
-        return (RegisterRenderHelper) Nord.proxy.registerModel();
+        return (RegisterRenderHelper) NordCore.proxy.registerModel();
     }
 
     /**

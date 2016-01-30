@@ -12,5 +12,4 @@ public interface IProxy {
 
     void registerRenderers();
 
-    RegisterRenderHelper registerModel();
 }
