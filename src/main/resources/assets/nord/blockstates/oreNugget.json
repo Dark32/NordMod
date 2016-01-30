@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "silver": { "textures": { "layer0": "nord:items/metal/nugget/silver" } },
+        "mercury": { "textures": { "layer0": "nord:items/metal/nugget/mercury" } },
+        "tin": { "textures": { "layer0": "nord:items/metal/nugget/tin" } }
+    }
+  }
+}

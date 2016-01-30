@@ -1,0 +1,22 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "uvarovite": { "textures": { "layer0": "nord:items/metal/dirty_powder/uvarovite" } },
+        "copper": { "textures": { "layer0": "nord:items/metal/dirty_powder/copper" } },
+        "magnetite": { "textures": { "layer0": "nord:items/metal/dirty_powder/magnetite" } },
+        "pentlandite": { "textures": { "layer0": "nord:items/metal/dirty_powder/pentlandite" } },
+        "galena": { "textures": { "layer0": "nord:items/metal/dirty_powder/galena" } },
+        "bauxite": { "textures": { "layer0": "nord:items/metal/dirty_powder/bauxite" } },
+        "millerite": { "textures": { "layer0": "nord:items/metal/dirty_powder/millerite" } },
+        "olivine": { "textures": { "layer0": "nord:items/metal/dirty_powder/olivine" } },
+        "limonite": { "textures": { "layer0": "nord:items/metal/dirty_powder/limonite" } },
+        "zincite": { "textures": { "layer0": "nord:items/metal/dirty_powder/zincite" } },
+        "almandine": { "textures": { "layer0": "nord:items/metal/dirty_powder/almandine" } },
+        "crocoite": { "textures": { "layer0": "nord:items/metal/dirty_powder/crocoite" } }
+    }
+  }
+}

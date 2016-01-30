@@ -1,0 +1,27 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "electrum": { "textures": { "layer0": "nord:items/metal/stick/electrum" } },
+        "nicel": { "textures": { "layer0": "nord:items/metal/stick/nicel" } },
+        "nichrome": { "textures": { "layer0": "nord:items/metal/stick/nichrome" } },
+        "silver": { "textures": { "layer0": "nord:items/metal/stick/silver" } },
+        "bronze": { "textures": { "layer0": "nord:items/metal/stick/bronze" } },
+        "iron": { "textures": { "layer0": "nord:items/metal/stick/iron" } },
+        "copper": { "textures": { "layer0": "nord:items/metal/stick/copper" } },
+        "tin": { "textures": { "layer0": "nord:items/metal/stick/tin" } },
+        "steel": { "textures": { "layer0": "nord:items/metal/stick/steel" } },
+        "chrom": { "textures": { "layer0": "nord:items/metal/stick/chrom" } },
+        "zinc": { "textures": { "layer0": "nord:items/metal/stick/zinc" } },
+        "duralumin": { "textures": { "layer0": "nord:items/metal/stick/duralumin" } },
+        "invar": { "textures": { "layer0": "nord:items/metal/stick/invar" } },
+        "gold": { "textures": { "layer0": "nord:items/metal/stick/gold" } },
+        "brass": { "textures": { "layer0": "nord:items/metal/stick/brass" } },
+        "cast_iron": { "textures": { "layer0": "nord:items/metal/stick/cast_iron" } },
+        "aluminum": { "textures": { "layer0": "nord:items/metal/stick/aluminum" } }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "crocoite": { "textures": { "layer0": "nord:items/metal/drop/crocoite" } },
+        "copper": { "textures": { "layer0": "nord:items/metal/drop/copper" } },
+        "zincite": { "textures": { "layer0": "nord:items/metal/drop/zincite" } },
+        "olivine": { "textures": { "layer0": "nord:items/metal/drop/olivine" } },
+        "limonite": { "textures": { "layer0": "nord:items/metal/drop/limonite" } },
+        "uvarovite": { "textures": { "layer0": "nord:items/metal/drop/uvarovite" } },
+        "pentlandite": { "textures": { "layer0": "nord:items/metal/drop/pentlandite" } },
+        "silver": { "textures": { "layer0": "nord:items/metal/drop/silver" } },
+        "mercury": { "textures": { "layer0": "nord:items/metal/drop/mercury" } },
+        "tin": { "textures": { "layer0": "nord:items/metal/drop/tin" } },
+        "galena": { "textures": { "layer0": "nord:items/metal/drop/galena" } },
+        "almandine": { "textures": { "layer0": "nord:items/metal/drop/almandine" } },
+        "magnetite": { "textures": { "layer0": "nord:items/metal/drop/magnetite" } },
+        "millerite": { "textures": { "layer0": "nord:items/metal/drop/millerite" } },
+        "bauxite": { "textures": { "layer0": "nord:items/metal/drop/bauxite" } }
+    }
+  }
+}

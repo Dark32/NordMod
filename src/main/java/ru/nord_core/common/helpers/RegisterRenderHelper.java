@@ -4,6 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import ru.nord.Nord;
+import ru.nord_core.common.utils.enums.EnumOreDrop;
+import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 /**
  * Заглушка. На серверной стороне нет необходимости регистрировать модели для предметов
@@ -11,8 +14,13 @@ import net.minecraft.item.Item;
  */
 public class RegisterRenderHelper {
 
+
+
     public static final RegisterRenderHelper INSTANCE = new RegisterRenderHelper();
 
+    public static RegisterRenderHelper modelRegister(){
+        return  Nord.proxy.registerModel();
+    }
     /**
      * Регистрация модели для блока по его имени ркгистрации
      *
@@ -97,6 +105,18 @@ public class RegisterRenderHelper {
     }
 
     /**
+     * Регистрируем модель для предмета с методатой по соотношению с вариантом на основе Enum
+     * Пример {@code registerBlockItemModelForMeta(NordBloks.variantTest, enumType.getMeta(), "variant=" + enumType.getName());}
+     *
+     * @param item     предмет
+     * @param enum_    Перечесление
+     * @param _prefix  вариант
+     */
+    public void registerItemModelForMeta(Item item, IMetadataEnum enum_, String _prefix) {
+        registerItemModelForMeta(item, enum_.getMetadata(), _prefix + enum_.getName());
+    }
+
+    /**
      * Регистрируем модель для предмете с методатой по ресурсу
      *
      * @param item                  предмет
@@ -105,4 +125,5 @@ public class RegisterRenderHelper {
      */
     public void registerItemModelForMeta(Item item, int metadata, ModelResourceLocation modelResourceLocation) {
     }
+
 }

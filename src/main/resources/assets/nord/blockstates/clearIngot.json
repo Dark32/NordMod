@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "aluminum": { "textures": { "layer0": "nord:items/metal/clear_ingot/aluminum" } },
+        "invar": { "textures": { "layer0": "nord:items/metal/clear_ingot/invar" } },
+        "chrom": { "textures": { "layer0": "nord:items/metal/clear_ingot/chrom" } },
+        "nichrome": { "textures": { "layer0": "nord:items/metal/clear_ingot/nichrome" } },
+        "electrum": { "textures": { "layer0": "nord:items/metal/clear_ingot/electrum" } },
+        "bronze": { "textures": { "layer0": "nord:items/metal/clear_ingot/bronze" } },
+        "steel": { "textures": { "layer0": "nord:items/metal/clear_ingot/steel" } },
+        "gold": { "textures": { "layer0": "nord:items/metal/clear_ingot/gold" } },
+        "duralumin": { "textures": { "layer0": "nord:items/metal/clear_ingot/duralumin" } },
+        "iron": { "textures": { "layer0": "nord:items/metal/clear_ingot/iron" } },
+        "brass": { "textures": { "layer0": "nord:items/metal/clear_ingot/brass" } },
+        "copper": { "textures": { "layer0": "nord:items/metal/clear_ingot/copper" } },
+        "zinc": { "textures": { "layer0": "nord:items/metal/clear_ingot/zinc" } },
+        "silver": { "textures": { "layer0": "nord:items/metal/clear_ingot/silver" } },
+        "tin": { "textures": { "layer0": "nord:items/metal/clear_ingot/tin" } },
+        "nicel": { "textures": { "layer0": "nord:items/metal/clear_ingot/nicel" } }
+    }
+  }
+}

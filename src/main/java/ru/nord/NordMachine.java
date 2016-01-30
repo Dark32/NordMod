@@ -15,7 +15,6 @@ public class NordMachine {
     public static void preInit() {
         createItem();
         createBlock();
-        createItem();
         registerBlock();
         registerItem();
         registerBlockModel();

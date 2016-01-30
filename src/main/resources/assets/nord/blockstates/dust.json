@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated"
+  },
+  "variants": {
+    "type": {
+        "zinc": { "textures": { "layer0": "nord:items/metal/dust/tin" } },
+        "tin": { "textures": { "layer0": "nord:items/metal/dust/tin" } },
+        "gold": { "textures": { "layer0": "nord:items/metal/dust/gold" } },
+        "bronze": { "textures": { "layer0": "nord:items/metal/dust/bronze" } },
+        "silver": { "textures": { "layer0": "nord:items/metal/dust/silver" } },
+        "iron": { "textures": { "layer0": "nord:items/metal/dust/iron" } },
+        "copper": { "textures": { "layer0": "nord:items/metal/dust/copper" } },
+        "electrum": { "textures": { "layer0": "nord:items/metal/dust/electrum" } },
+        "steel": { "textures": { "layer0": "nord:items/metal/dust/steel" } },
+        "brass": { "textures": { "layer0": "nord:items/metal/dust/brass" } }
+    }
+  }
+}

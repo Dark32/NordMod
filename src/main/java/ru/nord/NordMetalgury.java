@@ -6,22 +6,28 @@ import ru.nord.common.blocks.BlockCrystal;
 import ru.nord.common.blocks.BlockMetal;
 import ru.nord.common.blocks.BlockMetalOre;
 import ru.nord.common.helpers.RegisterHelper;
-import ru.nord.common.items.*;
+import ru.nord.common.items.ItemDrill;
+import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.ItemMetaData;
-import ru.nord_core.common.items.abstracts.AItemDrill;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.*;
+
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
 
 public class NordMetalgury {
     public static void preInit() {
         createItem();
         createBlock();
+
+        registerBlock();
+        registerItem();
+        registerBlockModel();
+        registerItemModel();
     }
+
 
     public static void init() {
         registerTileEntity();
-        registerItem();
-        registerBlock();
     }
 
     public static void postInit() {
@@ -39,7 +45,7 @@ public class NordMetalgury {
         NordItems.itemClearIngot = new ItemMetaData(EnumClearMetal.getNames()).setUnlocalizedName("clearIngot").setCreativeTab(NordTabs.tabMetallurgy);
         NordItems.itemStick = new ItemMetaData(EnumDust.getNames()).setUnlocalizedName("stick").setCreativeTab(NordTabs.tabMetallurgy);
 
-        NordItems.itemTestHammer = new ItemDrill(1, Item.ToolMaterial.IRON,16,16).setUnlocalizedName("itemTestHammer").setCreativeTab(NordTabs.tabMetallurgy);
+        NordItems.itemTestHammer = new ItemDrill(1, Item.ToolMaterial.IRON, 16, 16).setUnlocalizedName("itemTestHammer").setCreativeTab(NordTabs.tabMetallurgy);
     }
 
     private static void createBlock() {
@@ -51,23 +57,23 @@ public class NordMetalgury {
     }
 
     private static void registerItem() {
-        RegisterHelper.registerMetadataItem(NordItems.itemOreDrop, "oreDrop", "oreDrop", EnumOreDrop.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder", "oreDirtyPowder", EnumOreDrop.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreClearPowder, "oreClearPowder", "oreClearPowder", EnumOreDrop.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreNugget, "oreNugget", "oreNugget", EnumNugget.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemMetalDust, "metalDust", "metalDust", EnumDust.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemOreCrystal, "oreCrystal", "oreCrystal", EnumCrystal.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemIngot, "ingot", "ingot", EnumMetal.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemClearIngot, "clearIngot", "clearIngot", EnumClearMetal.getNames());
-        RegisterHelper.registerMetadataItem(NordItems.itemStick, "stick", "stick", EnumDust.getNames());
-//        RegisterHelper.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
+        RegisterHelper2.registerMetadataItem(NordItems.itemOreDrop, "oreDrop");
+        RegisterHelper2.registerMetadataItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder");
+        RegisterHelper2.registerMetadataItem(NordItems.itemOreClearPowder, "oreClearPowder");
+        RegisterHelper2.registerMetadataItem(NordItems.itemOreNugget, "oreNugget");
+        RegisterHelper2.registerMetadataItem(NordItems.itemMetalDust, "metalDust");
+        RegisterHelper2.registerMetadataItem(NordItems.itemOreCrystal, "oreCrystal");
+        RegisterHelper2.registerMetadataItem(NordItems.itemIngot, "ingot");
+        RegisterHelper2.registerMetadataItem(NordItems.itemClearIngot, "clearIngot");
+        RegisterHelper2.registerMetadataItem(NordItems.itemStick, "stick");
+//        RegisterHelper2.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
     }
 
     private static void registerBlock() {
-        RegisterHelper.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetadata.class, "metalBlock", "metalBlock", EnumMetal.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetadata.class, "metalOre", "metalOre", EnumOre.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockMetadata.class, "metalClearBlock", "metalClearBlock", EnumClearMetal.getNames());
-        RegisterHelper.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockMetadata.class, "metalCrystal", "metalCrystal", EnumCrystal.getNames());
+        RegisterHelper2.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetadata.class, "metalBlock");
+        RegisterHelper2.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetadata.class, "metalOre");
+        RegisterHelper2.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockMetadata.class, "metalClearBlock");
+        RegisterHelper2.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockMetadata.class, "metalCrystal");
 
         for (int i = 0; i < EnumOre.getNames().length; i++) {
             RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));
@@ -77,6 +83,47 @@ public class NordMetalgury {
     private static void registerTileEntity() {
     }
 
+    private static void registerItemModel() {
+        for (EnumOreDrop enumType : EnumOreDrop.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemOreDrop, enumType, "type=");
+            modelRegister().registerItemModelForMeta(NordItems.itemOreDirtyPowder, enumType, "type=");
+            modelRegister().registerItemModelForMeta(NordItems.itemOreClearPowder, enumType, "type=");
+        }
+
+        for (EnumNugget enumType : EnumNugget.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemOreNugget, enumType, "type=");
+        }
+
+        for (EnumCrystal enumType : EnumCrystal.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemOreCrystal, enumType, "type=");
+        }
+
+        for (EnumClearMetal enumType : EnumClearMetal.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemClearIngot, enumType, "type=");
+        }
+        for (EnumMetal enumType : EnumMetal.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemIngot, enumType, "type=");
+        }
+        for (EnumDust enumType : EnumDust.values()) {
+            modelRegister().registerItemModelForMeta(NordItems.itemMetalDust, enumType, "type=");
+            modelRegister().registerItemModelForMeta(NordItems.itemStick, enumType, "type=");
+        }
+    }
+
+    private static void registerBlockModel() {
+        for (EnumMetal enumType : EnumMetal.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.metalBlock, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+        for (EnumClearMetal enumType : EnumClearMetal.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.metalClearBlock, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+        for (EnumOre enumType : EnumOre.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.metalOre, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+        for (EnumCrystal enumType : EnumCrystal.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.metalCrystal, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+    }
 
 }
 
