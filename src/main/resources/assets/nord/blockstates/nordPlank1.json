@@ -1,7 +1,8 @@
 {
         "forge_marker": 1,
         "defaults": {
-            "model": "nord:block_colored"
+            "model": "nord:block_colored",
+            "transform": "forge:default-block"
         },
         "variants": {
             "variant":{

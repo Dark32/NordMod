@@ -1,0 +1,4 @@
+        "beech": { "textures": { "layer0": "nord:blocks/wood/beech/sapling" } },
+        "lemon": { "textures": { "layer0": "nord:blocks/wood/malus/sapling" } },
+        "malus": { "textures": { "layer0": "nord:blocks/wood/malus/sapling" } },
+        "coffea": { "textures": { "layer0": "nord:blocks/wood/coffea/sapling" } },

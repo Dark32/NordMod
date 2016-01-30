@@ -1,6 +1,9 @@
 package ru.nord;
 
-import ru.nord.common.blocks.wood.type1.*;
+import ru.nord.common.blocks.wood.type1.BlockNordLeaves;
+import ru.nord.common.blocks.wood.type1.BlockNordLog;
+import ru.nord.common.blocks.wood.type1.BlockPlanks;
+import ru.nord.common.blocks.wood.type1.BlockSapling;
 import ru.nord.common.blocks.wood.type2.BlockNordLeaves2;
 import ru.nord.common.blocks.wood.type2.BlockNordLog2;
 import ru.nord.common.blocks.wood.type2.BlockPlanks2;
@@ -13,7 +16,6 @@ import ru.nord.common.blocks.wood.type4.BlockNordLeaves4;
 import ru.nord.common.blocks.wood.type4.BlockNordLog4;
 import ru.nord.common.blocks.wood.type4.BlockPlanks4;
 import ru.nord.common.blocks.wood.type4.BlockSapling4;
-import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.items.wood.type1.ItemBlockNordLeaves;
 import ru.nord.common.items.wood.type1.ItemBlockNordLog;
 import ru.nord.common.items.wood.type1.ItemBlockNordPlank;
@@ -34,16 +36,22 @@ import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord.common.utils.enums.EnumNordPlank2;
 import ru.nord.common.utils.enums.EnumNordPlank3;
 import ru.nord.common.utils.enums.EnumNordPlank4;
+import ru.nord_core.common.helpers.RegisterHelper2;
+
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
 
 public class NordWood {
     public static void preInit() {
         createBlock();
         createItem();
+        registerBlock();
+        registerItem();
+        registerBlockModel();
+        registerItemModel();
     }
 
     public static void init() {
-        registerBlock();
-        registerItem();
+
     }
 
     public static void postInit() {
@@ -73,144 +81,63 @@ public class NordWood {
     }
 
     public static void createItem() {
-        }
+    }
 
 
     public static void registerBlock() {
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordPlank1,
-                ItemBlockNordPlank.class,
-                "nordPlank1",
-                "nordPlank1",
-                EnumNordPlank.getNames()
-        );
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordSapling1,
-                ItemBlockNordSapling.class,
-                "nordSapling1",
-                "nordSapling1",
-                EnumNordPlank.getNames()
-        );
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank1, ItemBlockNordPlank.class, "nordPlank1");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling1, ItemBlockNordSapling.class, "nordSapling1");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves1, ItemBlockNordLeaves.class, "nordLeaves1");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog1, ItemBlockNordLog.class, "nordLog1");
 
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLeaves1,
-                ItemBlockNordLeaves.class,
-                "nordLeaves1",
-                "nordLeaves1",
-                EnumNordPlank.getNames()
-        );
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank2, ItemBlockNordPlank2.class, "nordPlank2");
+//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling2, ItemBlockNordSapling2.class, "nordSapling2");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves2, ItemBlockNordLeaves2.class, "nordLeaves2");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog2, ItemBlockNordLog2.class, "nordLog2");
 
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLog1,
-                ItemBlockNordLog.class,
-                "nordLog1",
-                "nordLog1",
-                EnumNordPlank.getNames()
-        );
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank3, ItemBlockNordPlank3.class, "nordPlank3");
+//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling3, ItemBlockNordSapling3.class, "nordSapling3");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves3, ItemBlockNordLeaves3.class, "nordLeaves3");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog3, ItemBlockNordLog3.class, "nordLog3");
 
-
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordPlank2,
-                ItemBlockNordPlank2.class,
-                "nordPlank2",
-                "nordPlank2",
-                EnumNordPlank2.getNames()
-        );
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordSapling2,
-                ItemBlockNordSapling2.class,
-                "nordSapling2",
-                "nordSapling2",
-                EnumNordPlank2.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLeaves2,
-                ItemBlockNordLeaves2.class,
-                "nordLeaves2",
-                "nordLeaves2",
-                EnumNordPlank2.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLog2,
-                ItemBlockNordLog2.class,
-                "nordLog2",
-                "nordLog2",
-                EnumNordPlank2.getNames()
-        );
-
-
-
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordPlank3,
-                ItemBlockNordPlank3.class,
-                "nordPlank3",
-                "nordPlank3",
-                EnumNordPlank3.getNames()
-        );
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordSapling3,
-                ItemBlockNordSapling3.class,
-                "nordSapling3",
-                "nordSapling3",
-                EnumNordPlank3.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLeaves3,
-                ItemBlockNordLeaves3.class,
-                "nordLeaves3",
-                "nordLeaves3",
-                EnumNordPlank3.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLog3,
-                ItemBlockNordLog3.class,
-                "nordLog3",
-                "nordLog3",
-                EnumNordPlank3.getNames()
-        );
-
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordPlank4,
-                ItemBlockNordPlank4.class,
-                "nordPlank4",
-                "nordPlank4",
-                EnumNordPlank4.getNames()
-        );
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordSapling4,
-                ItemBlockNordSapling4.class,
-                "nordSapling4",
-                "nordSapling4",
-                EnumNordPlank4.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLeaves4,
-                ItemBlockNordLeaves4.class,
-                "nordLeaves4",
-                "nordLeaves4",
-                EnumNordPlank4.getNames()
-        );
-
-        RegisterHelper.registerMetadataBlock(
-                NordBloks.nordLog4,
-                ItemBlockNordLog4.class,
-                "nordLog4",
-                "nordLog4",
-                EnumNordPlank4.getNames()
-        );
-
-
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank4, ItemBlockNordPlank4.class, "nordPlank4");
+//        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling4, ItemBlockNordSapling4.class, "nordSapling4");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves4, ItemBlockNordLeaves4.class, "nordLeaves4");
+        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog4, ItemBlockNordLog4.class, "nordLog4");
     }
 
     public static void registerItem() {
 
+    }
+
+    private static void registerItemModel() {
+
+    }
+
+    private static void registerBlockModel() {
+        for (EnumNordPlank enumType : EnumNordPlank.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordPlank1, enumType.getMetadata(), "variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordSapling1, enumType.getMetadata(), "stage=1,type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLeaves1, enumType.getMetadata(), "check_decay=false,decayable=false,variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLog1, enumType.getMetadata(), "axis=y,variant=" + enumType.getName());
+        }
+        for (EnumNordPlank2 enumType : EnumNordPlank2.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordPlank2, enumType.getMetadata(), "variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordSapling2, enumType.getMetadata(), "stage=0,type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLeaves2, enumType.getMetadata(), "check_decay=false,decayable=false,variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLog2, enumType.getMetadata(), "axis=y,variant=" + enumType.getName());
+        }
+        for (EnumNordPlank3 enumType : EnumNordPlank3.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordPlank3, enumType.getMetadata(), "variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordSapling3, enumType.getMetadata(), "stage=0,type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLeaves3, enumType.getMetadata(), "check_decay=false,decayable=false,variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLog3, enumType.getMetadata(), "axis=y,variant=" + enumType.getName());
+        }
+        for (EnumNordPlank4 enumType : EnumNordPlank4.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordPlank4, enumType.getMetadata(), "variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordSapling4, enumType.getMetadata(), "stage=0,type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLeaves4, enumType.getMetadata(), "check_decay=false,decayable=false,variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.nordLog4, enumType.getMetadata(), "axis=y,variant=" + enumType.getName());
+        }
     }
 }

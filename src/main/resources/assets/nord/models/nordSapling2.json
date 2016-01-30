@@ -1,0 +1,4 @@
+        "orange": { "textures": { "layer0": "nord:blocks/wood/orange/sapling" } },
+        "olive": { "textures": { "layer0": "nord:blocks/wood/olive/sapling" } },
+        "mulberry": { "textures": { "layer0": "nord:blocks/wood/mulberry/sapling" } },
+        "palm_trees": { "textures": { "layer0": "nord:blocks/wood/peach/sapling" } },
