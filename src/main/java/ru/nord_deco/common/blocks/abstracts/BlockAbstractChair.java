@@ -51,11 +51,12 @@ public abstract class BlockAbstractChair extends BlockRotateble implements IVari
 
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos,
-                                    IBlockState state, EntityPlayer playerIn,
+    public boolean onBlockActivated(World world, BlockPos pos,
+                                    IBlockState state, EntityPlayer player,
                                     EnumFacing side, float hitX, float hitY, float hitZ) {
-        if (SittableUtil.sitOnBlock(worldIn, pos.getX(), pos.getY(), pos.getZ(), playerIn, 7 * 0.0625)) {
-            worldIn.updateComparatorOutputLevel(pos, this);
+        if(SittableUtil.sitOnBlock(world, pos.getX(), pos.getY(), pos.getZ(), player, 7 * 0.0625))
+        {
+            world.updateComparatorOutputLevel(pos, this);
             return true;
         }
         return false;
@@ -63,7 +64,7 @@ public abstract class BlockAbstractChair extends BlockRotateble implements IVari
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        int face = ((EnumFacing) state.getValue(FACING)).getIndex();
+        int face = state.getValue(FACING).getIndex();
         int type = ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
         return (face << 2) + (type & 15);
     }
@@ -119,13 +120,12 @@ public abstract class BlockAbstractChair extends BlockRotateble implements IVari
 
 
     @Override
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    public IBlockState onBlockPlaced(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        EnumFacing face = placer.getHorizontalFacing().getOpposite();
+        IBlockState state = super.onBlockPlaced(world, pos, facing, hitX, hitY, hitZ, meta, placer);
         Comparable type = getEnumByMetadata(meta & 3);
-        return this.getDefaultState()
-                .withProperty(FACING, face)
-                .withProperty(getVariant(),type);
+        state = state.withProperty(FACING, placer.getHorizontalFacing()).withProperty(getVariant(),type);
+        return state;
     }
 
 
@@ -156,9 +156,15 @@ public abstract class BlockAbstractChair extends BlockRotateble implements IVari
         }
     }
 
+    @Override
     public String getHarvestTool(IBlockState state)
     {
         return "axe";
     }
 
+    @Override
+    public int getComparatorInputOverride(World world, BlockPos pos)
+    {
+        return SittableUtil.isSomeoneSitting(world, pos.getX(), pos.getY(), pos.getZ()) ? 1 : 0;
+    }
 }
