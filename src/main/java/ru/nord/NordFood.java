@@ -6,6 +6,8 @@ import ru.nord.common.utils.enums.EnumGlassFood;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.*;
 
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
+
 public class NordFood {
     public static void preInit() {
         createItem();
@@ -50,10 +52,10 @@ public class NordFood {
     }
     private static void registerItemModel() {
         for (EnumFoodNord enumType : EnumFoodNord.values()) {
-            Nord.proxy.registerModel().registerItemModelForMeta(NordItems.itemFoodNord, enumType.getMetadata(),"type=" + enumType.getName());
+            modelRegister().registerItemModelForMeta(NordItems.itemFoodNord, enumType.getMetadata(),"type=" + enumType.getName());
         }
         for (EnumGlassFood enumType : EnumGlassFood.values()) {
-            Nord.proxy.registerModel().registerItemModelForMeta(NordItems.itemGlassFood, enumType.getMetadata(),"type=" + enumType.getName());
+            modelRegister().registerItemModelForMeta(NordItems.itemGlassFood, enumType.getMetadata(),"type=" + enumType.getName());
         }
     }
 

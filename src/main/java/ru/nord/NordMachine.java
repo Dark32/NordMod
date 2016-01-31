@@ -10,7 +10,7 @@ import ru.nord_core.common.items.ItemEnergyStorageDamagable;
 import ru.nord_core.common.items.ItemWrench;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumFrame;
-
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
 public class NordMachine {
     public static void preInit() {
         createItem();
@@ -64,20 +64,20 @@ public class NordMachine {
     }
 
     private static void registerItemModel() {
-        Nord.proxy.registerModel().registerItemModel(NordItems.energyStorageItem);
-        Nord.proxy.registerModel().registerItemModel(NordItems.wrench );
+        modelRegister().registerItemModel(NordItems.energyStorageItem);
+        modelRegister().registerItemModel(NordItems.wrench );
     }
 
     private static void registerBlockModel() {
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.washerBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.furnaceBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.extractorBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.smelterBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.accumulatorBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.generatorBlock, 0, "facing=north");
-        Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.flowingBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.washerBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.furnaceBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.extractorBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.smelterBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.accumulatorBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.generatorBlock, 0, "facing=north");
+        modelRegister().registerBlockItemModelForMeta(NordBloks.flowingBlock, 0, "facing=north");
         for (EnumFrame enumType : EnumFrame.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.frame, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.frame, enumType.getMetadata(), "type=" + enumType.getName());
         }
     }
 

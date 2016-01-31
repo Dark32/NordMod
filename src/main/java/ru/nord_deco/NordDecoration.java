@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord_core.NordCore;
 import ru.nord_core.client.helpers.MeshDefinitionFix;
 //import ru.nord_core.client.helpers.ModModelManager;
+import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_deco.common.blocks.*;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
@@ -21,16 +22,22 @@ import ru.nord_deco.common.utils.enums.EnumChairOther;
 import ru.nord_deco.common.utils.enums.EnumChairType;
 import ru.nord_deco.common.utils.enums.EnumTileType1;
 
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
+
 public class NordDecoration {
     public static void preInit() {
         createBlock();
         createItem();
-        registerBlock2();
-    }
-
-    public static void init() {
         registerBlock();
         registerItem();
+        registerBlockModel();
+        registerItemModel();
+    }
+
+
+
+    public static void init() {
+
     }
 
     public static void postInit() {
@@ -51,56 +58,65 @@ public class NordDecoration {
     public static void createItem() {
     }
 
-    public static void registerBlock2(){}
-    public static void registerItem2(){}
 
     public static void registerBlock() {
-        RegisterHelper.registerMetadataBlock(
+        RegisterHelper2.registerMetadataBlock(
                 NordBloksDeco.chairWhite,
                 ItemBlockMetadata.class,
-                "chairWhite",
-                "chairWhite",
-                EnumChairType.getNames()
+                "chairWhite"
         );
-/*
-        RegisterHelper.registerMetadataBlock(
+
+        RegisterHelper2.registerMetadataBlock(
                 NordBloksDeco.chairOther,
                 ItemBlockMetadata.class,
-                "chairOther",
-                "chairOther",
-                EnumChairOther.getNames()
+                "chairOther"
         );
-        RegisterHelper.registerMetadataBlockWithArgumenedItemBlock(
+        RegisterHelper2.registerMetadataBlockWithArgumenedItemBlock(
                 NordBloksDeco.halfSlabTile1,
                 ItemBlockSlabTile1.class,
                 "halfSlabTile1",
-                "halfSlabTile1",
-                EnumTileType1.getNames(),
                 NordBloksDeco.halfSlabTile1,
                 NordBloksDeco.doubleHalfSlabTile1,
                 false
         );
 
-        RegisterHelper.registerMetadataBlockWithArgumenedItemBlock(
+        RegisterHelper2.registerMetadataBlockWithArgumenedItemBlock(
                 NordBloksDeco.doubleHalfSlabTile1,
                 ItemBlockSlabTile1.class,
                 "doubleHalfSlabTile1",
-                "doubleHalfSlabTile1",
-                EnumTileType1.getNames(),
                 NordBloksDeco.halfSlabTile1,
                 NordBloksDeco.doubleHalfSlabTile1,
                 true
         );
-        RegisterHelper.registerSingleBlock(NordBloksDeco.stairs, "stairs");
-        RegisterHelper.registerMetadataBlock(
+        RegisterHelper2.registerSingleBlock(NordBloksDeco.stairs, "stairs");
+        RegisterHelper2.registerMetadataBlock(
                 NordBloksDeco.abomination,
                 ItemBlockMetadata.class,
-                "abomination",
-                "abomination",
-                EnumAbomination.getNames());
-*/
+                "abomination");
+
     }
 
     public static void registerItem() {
+    }
+
+    private static void registerItemModel() {
+
+    }
+
+    private static void registerBlockModel() {
+        for (EnumChairType enumType : EnumChairType.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.chairWhite, enumType.getMetadata(), "facing=west,type=" + enumType.getName());
+        }
+        for (EnumChairOther enumType : EnumChairOther.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.chairOther, enumType.getMetadata(), "facing=west,type=" + enumType.getName());
+        }
+        for (EnumTileType1 enumType : EnumTileType1.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.halfSlabTile1, enumType.getMetadata(), "half=bottom,variant=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.doubleHalfSlabTile1, enumType.getMetadata(), "seamless=false,variant=" + enumType.getName());
+        }
+        for (EnumAbomination enumType : EnumAbomination.values()) {
+            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.abomination, enumType.getMetadata(), "type=" + enumType.getName());
+        }
+        modelRegister().registerBlockItemModelForMeta(NordBloksDeco.stairs,0, "facing=west,half=bottom,shape=straight");
     }
 }

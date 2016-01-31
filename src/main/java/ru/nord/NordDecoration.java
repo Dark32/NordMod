@@ -17,6 +17,8 @@ import ru.nord_core.common.utils.enums.EnumOilLamp;
 import ru.nord_core.common.utils.enums.EnumState;
 import ru.nord_core.common.utils.enums.EnumStone;
 
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
+
 public class NordDecoration {
     public static void preInit() {
         createBlock();
@@ -76,31 +78,31 @@ public class NordDecoration {
     public static void registerBlockModel() {
 
         for (EnumOilLamp enumType : EnumOilLamp.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.oilLamp, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.oilLamp, enumType.getMetadata(), "type=" + enumType.getName());
         }
 
         for (EnumColors enumType : EnumColors.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.empireLamp1, enumType.getMetadata(), "type=" + enumType.getName());
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.empireFloorLamp1, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.empireLamp1, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.empireFloorLamp1, enumType.getMetadata(), "type=" + enumType.getName());
         }
 
         for (EnumState enumType : EnumState.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.floorLamp1, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.floorLamp1, enumType.getMetadata(), "type=" + enumType.getName());
         }
         for (EnumWhiteStone enumType : EnumWhiteStone.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.whiteStone, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.whiteStone, enumType.getMetadata(), "type=" + enumType.getName());
         }
         for (EnumEmpGlass enumType : EnumEmpGlass.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.empireGlass, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.empireGlass, enumType.getMetadata(), "type=" + enumType.getName());
         }
         for (EnumPaperEmp enumType : EnumPaperEmp.values()) {
-            Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.empireDecoration1, enumType.getMetadata(), "type=" + enumType.getName());
+            modelRegister().registerBlockItemModelForMeta(NordBloks.empireDecoration1, enumType.getMetadata(), "type=" + enumType.getName());
 //todo это пока не работает. Заставить работать
-//           Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.empireDecorationPanel1, enumType.getMetadata(), "north=true,east=false,south=true,west=false,type=" + enumType.getName());
+//           modelRegister()().registerBlockItemModelForMeta(NordBloks.empireDecorationPanel1, enumType.getMetadata(), "north=true,east=false,south=true,west=false,type=" + enumType.getName());
         }
         for (int i = 0; i < 16; i++) {
             for (EnumStone enumType : EnumStone.values()) {
-                Nord.proxy.registerModel().registerBlockItemModelForMeta(NordBloks.decoStoneBlock[i], enumType.getMetadata(), "type=" + enumType.getName());
+                modelRegister().registerBlockItemModelForMeta(NordBloks.decoStoneBlock[i], enumType.getMetadata(), "type=" + enumType.getName());
             }
         }
     }
@@ -111,7 +113,7 @@ public class NordDecoration {
 
     private static void registerItemModel() {
         for (EnumGlowstoneDust enumType : EnumGlowstoneDust.values()) {
-            Nord.proxy.registerModel().registerItemModelForMeta(NordItems.itemGlowstoneDust, enumType.getMetadata(),"type=" + enumType.getName());
+            modelRegister().registerItemModelForMeta(NordItems.itemGlowstoneDust, enumType.getMetadata(),"type=" + enumType.getName());
         }
     }
 }
