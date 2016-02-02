@@ -6,9 +6,14 @@ import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLLog;
+import ru.nord_core.client.event.EventForgeClient;
 import ru.nord_core.client.event.RenderWorldLast;
 import ru.nord_core.common.CommonProxy;
 import ru.nord_core.client.helpers.RegisterRenderHelper;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ClientProxy extends CommonProxy {
 
@@ -34,10 +39,21 @@ public class ClientProxy extends CommonProxy {
 //        FMLCommonHandler.instance().bus().register(eventHandler);
 //        MinecraftForge.EVENT_BUS.register(eventHandler);//
 
-        RenderWorldLast eventHandler = new RenderWorldLast();
-        MinecraftForge.EVENT_BUS.register(eventHandler);
+        MinecraftForge.EVENT_BUS.register( new RenderWorldLast());
+//        MinecraftForge.EVENT_BUS.register(new EventForgeClient());
     }
     public RegisterRenderHelper registerModel(){
         return RegisterRenderHelper.INSTANCE;
+    }
+
+    @Override
+    public File getDataDirectory() {
+        final File file = Minecraft.getMinecraft().mcDataDir;
+        try {
+            return file.getCanonicalFile();
+        } catch (final IOException e) {
+            FMLLog.getLogger().debug("Could not canonize path!", e);
+        }
+        return file;
     }
 }
