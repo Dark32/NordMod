@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord_core.NordCore;
+import ru.nord_core.common.utils.Constants;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -26,71 +27,82 @@ import java.util.zip.GZIPOutputStream;
 
 public class Schematic {
 
-    private final short VERSION = 1;
+    private final String VERSION = "NordShem_1";
     private short width;
     private short height;
     private short length;
-    private HashMap<Integer, IBlockState> blockDictoary = new HashMap<Integer, IBlockState>();
-    private int[][][] template; //lwh=xyz
+    private IBlockState[][][] template; //lwh=xyz
     private BlockPos posOrigin;
 
     public Schematic() {
     }
 
     public void readFromFile(String fileName) {
+        fileName = "schematics/" + fileName;
+        NBTTagCompound schematic;
         NBTTagCompound nbtdata;
         try {
-            nbtdata = CompressedStreamTools.readCompressed(new GZIPInputStream(new FileInputStream(new File(NordCore.proxy.getDataDirectory(), fileName))));
+            File file = new File(NordCore.proxy.getDataDirectory(), fileName);
+            FileInputStream stream = new FileInputStream(file);
+            GZIPInputStream gzip = new GZIPInputStream(stream);
+            schematic = CompressedStreamTools.readCompressed(gzip);
         } catch (Exception e) {
             e.printStackTrace();
             return;
         }
+        nbtdata = schematic.getCompoundTag(Constants.NBT.ROOT);
 
-        short version = nbtdata.getShort("version");
-        if (version != VERSION) {
+        String version = nbtdata.getString(Constants.NBT.VERSION);
+
+        if (!version.equals(Constants.NBT.NordShem)) {
             return;
         }
-        width = nbtdata.getShort("Width");
-        height = nbtdata.getShort("Height");
-        length = nbtdata.getShort("Length");
-        short x = nbtdata.getShort("originX");
-        short y = nbtdata.getShort("originY");
-        short z = nbtdata.getShort("originZ");
-        this.posOrigin = new BlockPos(x,y,z);
-        int[] blocksIndex = nbtdata.getIntArray("Blocks");
-        NBTTagCompound dictoary = (NBTTagCompound) nbtdata.getTag("Dictoary");
-        int sizeDictoary = dictoary.getInteger("Size");
+
+        width = nbtdata.getShort(Constants.NBT.WIDTH);
+        height = nbtdata.getShort(Constants.NBT.HEIGHT);
+        length = nbtdata.getShort(Constants.NBT.LENGTH);
+
+        short x = nbtdata.getShort(Constants.NBT.OriginX);
+        short y = nbtdata.getShort(Constants.NBT.OriginY);
+        short z = nbtdata.getShort(Constants.NBT.OriginZ);
+
+        this.posOrigin = new BlockPos(x, y, z);
+        int[] blocksIndex = nbtdata.getIntArray(Constants.NBT.BLOCKS);
+        int[] blocksMeta = nbtdata.getIntArray(Constants.NBT.DATA);
+        NBTTagCompound dictoary = (NBTTagCompound) nbtdata.getTag(Constants.NBT.MAPPING_SCHEMATICA);
+        int sizeDictoary = dictoary.getInteger(Constants.NBT.SIZE);
         String blockIndex;
+        HashMap<Integer, Block> blockDictoary = new HashMap<Integer, Block>();
+
         for (int d = 1; d <= sizeDictoary; d++) {
             blockIndex = dictoary.getString(String.valueOf(d));
             String[] blockID = blockIndex.split(":");
             String mod = blockID[0];
             String name = blockID[1];
-            String meta = blockID[2];
             Block block = GameRegistry.findBlock(mod, name);
-            IBlockState state = block.getStateFromMeta(Integer.parseInt(meta));
-            blockDictoary.put(d, state);
-
+            blockDictoary.put(d, block);
         }
-        this.template = new int[length][width][height];
+
+        this.template = new IBlockState[length][width][height];
         int counter = 0;
 
         for (int h = 0; h < height; h++) {
             for (int l = 0; l < length; l++) {
                 for (int w = 0; w < width; w++) {
-                    template[l][w][h] = blocksIndex[counter];
+                    template[l][w][h] =  blockDictoary.get(blocksIndex[counter]).getStateFromMeta(blocksMeta[counter]);
                     counter++;
                 }
             }
         }
-
-
     }
 
     public void writeToFile(String fileName, NBTTagCompound nbtdata) {
-        fileName = "schematics/"+fileName;
+        fileName = "schematics/" + fileName;
         try {
-            final DataOutputStream dataOutputStream = new DataOutputStream(new GZIPOutputStream(new FileOutputStream(new File(NordCore.proxy.getDataDirectory(), fileName))));
+            File file = new File(NordCore.proxy.getDataDirectory(), fileName);
+            FileOutputStream stream = new FileOutputStream(file);
+            GZIPOutputStream gzip = new GZIPOutputStream(stream);
+            final DataOutputStream dataOutputStream = new DataOutputStream(gzip);
             CompressedStreamTools.writeCompressed(nbtdata, dataOutputStream);
             System.out.println(dataOutputStream);
         } catch (final Exception ex) {
@@ -100,51 +112,63 @@ public class Schematic {
     }
 
     public NBTTagCompound getMapCuboid(AxisAlignedBB aabb, World worldIn, BlockPos pos) {
+        NBTTagCompound schematic = new NBTTagCompound();
         NBTTagCompound nbtdata = new NBTTagCompound();
         NBTTagCompound nbtDictoaryIndex = new NBTTagCompound();
         HashMap<String, Integer> blockDictoaryIndex = new HashMap<String, Integer>(10);
         List<Integer> blockMapIndexed = new ArrayList<Integer>();
-        int index = 1;
+        List<Integer> blockMetaData = new ArrayList<Integer>();
+
+        int dictoarSyze = 1;
+
         short l = (short) (aabb.maxX - aabb.minX + 1);
         short w = (short) (aabb.maxY - aabb.minY + 1);
         short h = (short) (aabb.maxZ - aabb.minZ + 1);
-        nbtdata.setShort("Width", w);
-        nbtdata.setShort("Height", h);
-        nbtdata.setShort("Length", l);
-        nbtdata.setShort("version", (short) 1);
-        nbtdata.setShort("originX", (short) pos.getX());
-        nbtdata.setShort("originY", (short) pos.getY());
-        nbtdata.setShort("originZ", (short) pos.getZ());
+
+        nbtdata.setShort(Constants.NBT.WIDTH, w);
+        nbtdata.setShort(Constants.NBT.HEIGHT, h);
+        nbtdata.setShort(Constants.NBT.LENGTH, l);
+
+        nbtdata.setString(Constants.NBT.MATERIALS, Constants.NBT.FORMAT_ALPHA);
+
+        nbtdata.setShort(Constants.NBT.VERSION, (short) 1);
+
+        nbtdata.setShort(Constants.NBT.OriginX, (short) pos.getX());
+        nbtdata.setShort(Constants.NBT.OriginY, (short) pos.getY());
+        nbtdata.setShort(Constants.NBT.OriginZ, (short) pos.getZ());
+
         for (int yi = (int) aabb.minY; yi <= aabb.maxY; yi++) {
             for (int xi = (int) aabb.minX; xi <= aabb.maxX; xi++) {
                 for (int zi = (int) aabb.minZ; zi <= aabb.maxZ; zi++) {
                     IBlockState state = worldIn.getBlockState(new BlockPos(xi, yi, zi));
                     Block block = state.getBlock();
                     int meta = block.getMetaFromState(state);
-                    int blockIndex;
                     Item item = Item.getItemFromBlock(block);
+                    int blockInd = Block.getIdFromBlock(block);
+
                     if (block != Blocks.air && item != null) {
                         String blockName = ((ResourceLocation) Item.itemRegistry.getNameForObject(item)).toString();
-                        if (blockDictoaryIndex.containsKey(blockName + ":" + meta)) {
-                            blockIndex = blockDictoaryIndex.get(blockName + ":" + meta);
-                        } else {
-                            String sBlockIndex = blockName + ":" + meta;
-                            blockDictoaryIndex.put(sBlockIndex, index);
-                            nbtDictoaryIndex.setString(String.valueOf(index), sBlockIndex);
-                            blockIndex = index;
-                            index++;
+                        if (!blockDictoaryIndex.containsKey(blockName)) {
+                            blockDictoaryIndex.put(blockName, blockInd);
+                            nbtDictoaryIndex.setString(String.valueOf(blockInd), blockName);
+                            dictoarSyze++;
                         }
-                    } else {
-                        blockIndex = 0;
+                    }else{
+                        blockInd = 0;
                     }
-                    blockMapIndexed.add(blockIndex);
+                    blockMapIndexed.add(blockInd);
+                    blockMetaData.add(meta);
                 }
             }
         }
-        nbtDictoaryIndex.setInteger("Size", index);
-        nbtdata.setIntArray("Blocks", convertIntegers(blockMapIndexed));
-        nbtdata.setTag("Dictoary", nbtDictoaryIndex);
-        return nbtdata;
+
+        nbtDictoaryIndex.setInteger(Constants.NBT.SIZE, dictoarSyze);
+        nbtdata.setIntArray(Constants.NBT.BLOCKS, convertIntegers(blockMapIndexed));
+        nbtdata.setIntArray(Constants.NBT.DATA, convertIntegers(blockMetaData));
+        nbtdata.setTag(Constants.NBT.MAPPING_SCHEMATICA, nbtDictoaryIndex);
+
+        schematic.setTag(Constants.NBT.ROOT, nbtdata);
+        return schematic;
     }
 
     private static int[] convertIntegers(List<Integer> integers) {
@@ -159,9 +183,9 @@ public class Schematic {
         for (int h = 0; h < height; h++) {
             for (int l = 0; l < length; l++) {
                 for (int w = 0; w < width; w++) {
-                    int index = this.template[l][w][h];
-                    if (index != 0) {
-                        world.setBlockState(pos.add(l, w, h).add(this.posOrigin), this.blockDictoary.get(index), 3);
+                    IBlockState blockState = this.template[l][w][h];
+                    if (blockState != null) {
+                        world.setBlockState(pos.add(l, w, h).add(this.posOrigin), blockState, 3);
                     }
                 }
             }
