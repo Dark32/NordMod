@@ -27,7 +27,6 @@ import java.util.zip.GZIPOutputStream;
 
 public class Schematic {
 
-    private final String VERSION = "NordShem_1";
     private short width;
     private short height;
     private short length;
@@ -130,8 +129,7 @@ public class Schematic {
         nbtdata.setShort(Constants.NBT.LENGTH, l);
 
         nbtdata.setString(Constants.NBT.MATERIALS, Constants.NBT.FORMAT_ALPHA);
-
-        nbtdata.setShort(Constants.NBT.VERSION, (short) 1);
+        nbtdata.setString(Constants.NBT.VERSION, Constants.NBT.NordShem);
 
         nbtdata.setShort(Constants.NBT.OriginX, (short) pos.getX());
         nbtdata.setShort(Constants.NBT.OriginY, (short) pos.getY());
