@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import ru.nord.Nord;
 import ru.nord_core.NordCore;
@@ -87,9 +88,10 @@ public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRe
      * @param fullModelLocation ресурс
      */
     @Override
-    public void registerItemModel(Item item, ModelResourceLocation fullModelLocation) {
+    public void registerItemModel(Item item, final ModelResourceLocation fullModelLocation) {
         ModelBakery.registerItemVariants(item, fullModelLocation); // Ensure the custom model is loaded and prevent the default model from being loaded
-        registerItemModel(item, MeshDefinitionFix.create(stack -> fullModelLocation));
+//        registerItemModel(item, MeshDefinitionFix.create(stack -> fullModelLocation));
+        registerItemModel(item,new ItemMesh(fullModelLocation));
     }
 
     /**
