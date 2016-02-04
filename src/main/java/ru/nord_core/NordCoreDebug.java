@@ -2,7 +2,8 @@ package ru.nord_core;
 
 
 import ru.nord_core.common.helpers.RegisterHelper;
-import ru.nord_core.common.items.ItemDebugStick;
+import ru.nord_core.common.items.ItemDebugStickSchematicLoad;
+import ru.nord_core.common.items.ItemDebugStickSchematicSave;
 import ru.nord_core.common.utils.Version;
 
 public class NordCoreDebug {
@@ -22,16 +23,18 @@ public class NordCoreDebug {
     }
 
     private static void createItem() {
-        NordCoreItems.debugStickItem= new ItemDebugStick(Version.MODID).setUnlocalizedName("debugStickItem");
-        }
+        NordCoreItems.debugStickItemSchematickSave = new ItemDebugStickSchematicSave(Version.MODID).setUnlocalizedName("debugStickItemSchematickSave");
+        NordCoreItems.debugStickItemSchematickLoad = new ItemDebugStickSchematicLoad(Version.MODID).setUnlocalizedName("debugStickItemSchematickLoad");
+    }
 
     private static void createBlock() {
 
     }
 
     private static void registerItem() {
-        RegisterHelper.registerSingleItem( NordCoreItems.debugStickItem, "debugStickItem",Version.MODID);
-         }
+        RegisterHelper.registerSingleItem(NordCoreItems.debugStickItemSchematickSave, "debugStickItemSchematickSave", Version.MODID);
+        RegisterHelper.registerSingleItem(NordCoreItems.debugStickItemSchematickLoad, "debugStickItemSchematickLoad", Version.MODID);
+    }
 
     private static void registerBlock() {
     }

@@ -21,7 +21,7 @@ public class RenderWorldLast {
     public void onBlockHighlight(RenderWorldLastEvent event) {
         EntityPlayer player = Minecraft.getMinecraft().thePlayer;
         double shift2 = 0.01d;
-        if (player.getHeldItem() != null && player.getHeldItem().getItem() == NordCoreItems.debugStickItem) {
+        if (player.getHeldItem() != null && player.getHeldItem().getItem() == NordCoreItems.debugStickItemSchematickSave) {
             double px = player.lastTickPosX + (player.posX - player.lastTickPosX) * (double) event.partialTicks;
             double py = player.lastTickPosY + (player.posY - player.lastTickPosY) * (double) event.partialTicks;
             double pz = player.lastTickPosZ + (player.posZ - player.lastTickPosZ) * (double) event.partialTicks;
