@@ -7,8 +7,10 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
 import ru.nord_core.NordCore;
+import ru.nord_core.common.helpers.NBTHelper;
 import ru.nord_core.common.utils.Constants;
 import ru.nord_core.common.utils.schematic.abstracts.ASchematic;
 
@@ -19,16 +21,22 @@ import java.util.Set;
 
 public class Schematic extends ASchematic {
 
-    private IBlockState[][][] template; //lhw=xyz
+    private IBlockState[][][] template; //whl=xyz
+    public AxisAlignedBB collusion;
+
     public Schematic() {
     }
 
     public void getFromFile(String fileName) {
         fileName = "schematics/" + fileName;
-        NBTTagCompound tagCompound;
         File file = new File(NordCore.proxy.getDataDirectory(), fileName);
+        getFromFile(file);
+    }
+
+    public void getFromFile(File file) {
+        NBTTagCompound schematicNBT;
         try {
-            tagCompound = SchematicUtils.get().readTagCompoundFromFile(file);
+            schematicNBT = SchematicUtils.get().readTagCompoundFromFile(file);
         } catch (final Exception ex) {
             ex.printStackTrace();
             return;
@@ -39,40 +47,48 @@ public class Schematic extends ASchematic {
         byte extraBlocks[] = null;
         byte extraBlocksNibble[];
 
-        String version = tagCompound.getString(Constants.NBT.VERSION);
-
-        if (!version.equals(Constants.NBT.NordShem)) {
-            return;
+        setXLayers(schematicNBT.getShort(Constants.NBT.WIDTH));
+        setYLayers(schematicNBT.getShort(Constants.NBT.HEIGHT));
+        setZLayers(schematicNBT.getShort(Constants.NBT.LENGTH));
+        if (schematicNBT.hasKey("COLLUION")) {
+            collusion = NBTHelper.getAxisAlignedBB(schematicNBT, "COLLUION");
+        } else {
+            collusion = new AxisAlignedBB(0, 0, 0, getXLayers(), getYLayers(), getZLayers());
         }
-        setXLayers(tagCompound.getShort(Constants.NBT.WIDTH));
-        setYLayers(tagCompound.getShort(Constants.NBT.HEIGHT));
-        setZLayers(tagCompound.getShort(Constants.NBT.LENGTH));
-        short ox = tagCompound.getShort(Constants.NBT.OriginX);
-        short oy = tagCompound.getShort(Constants.NBT.OriginY);
-        short oz = tagCompound.getShort(Constants.NBT.OriginZ);
+
+        short ox = 0;
+        short oy = 0;
+        short oz = 0;
+        if (schematicNBT.hasKey(Constants.NBT.OriginX) &&
+                schematicNBT.hasKey(Constants.NBT.OriginY) &&
+                schematicNBT.hasKey(Constants.NBT.OriginZ)) {
+            ox = schematicNBT.getShort(Constants.NBT.OriginX);
+            oy = schematicNBT.getShort(Constants.NBT.OriginY);
+            oz = schematicNBT.getShort(Constants.NBT.OriginZ);
+        }
 
         setOrigin(new BlockPos(ox, oy, oz));
 
-        final byte[] localBlocks = tagCompound.getByteArray(Constants.NBT.BLOCKS);
-        final byte[] localMetadata = tagCompound.getByteArray(Constants.NBT.DATA);
+        final byte[] localBlocks = schematicNBT.getByteArray(Constants.NBT.BLOCKS);
+        final byte[] localMetadata = schematicNBT.getByteArray(Constants.NBT.DATA);
 
-        if (tagCompound.hasKey(Constants.NBT.ADD_BLOCKS)) {
+        if (schematicNBT.hasKey(Constants.NBT.ADD_BLOCKS)) {
             extra = true;
-            extraBlocksNibble = tagCompound.getByteArray(Constants.NBT.ADD_BLOCKS);
+            extraBlocksNibble = schematicNBT.getByteArray(Constants.NBT.ADD_BLOCKS);
             extraBlocks = new byte[extraBlocksNibble.length * 2];
             for (int i = 0; i < extraBlocksNibble.length; i++) {
                 extraBlocks[i * 2 + 0] = (byte) ((extraBlocksNibble[i] >> 4) & 0xF);
                 extraBlocks[i * 2 + 1] = (byte) (extraBlocksNibble[i] & 0xF);
             }
-        } else if (tagCompound.hasKey(Constants.NBT.ADD_BLOCKS_SCHEMATICA)) {
+        } else if (schematicNBT.hasKey(Constants.NBT.ADD_BLOCKS_SCHEMATICA)) {
             extra = true;
-            extraBlocks = tagCompound.getByteArray(Constants.NBT.ADD_BLOCKS_SCHEMATICA);
+            extraBlocks = schematicNBT.getByteArray(Constants.NBT.ADD_BLOCKS_SCHEMATICA);
         }
 
         Short id;
         final Map<Short, Short> oldToNew = new HashMap<>();
-        if (tagCompound.hasKey(Constants.NBT.MAPPING_SCHEMATICA)) {
-            final NBTTagCompound mapping = tagCompound.getCompoundTag(Constants.NBT.MAPPING_SCHEMATICA);
+        if (schematicNBT.hasKey(Constants.NBT.MAPPING_SCHEMATICA)) {
+            final NBTTagCompound mapping = schematicNBT.getCompoundTag(Constants.NBT.MAPPING_SCHEMATICA);
             final Set<String> names = mapping.getKeySet();
             for (final String name : names) {
                 oldToNew.put(mapping.getShort(name), (short) BLOCK_REGISTRY.getId(new ResourceLocation(name)));
@@ -106,38 +122,48 @@ public class Schematic extends ASchematic {
         SchematicUtils.get().writeToFile(fileName, nbtdata);
     }
 
-    public NBTTagCompound getFromWorld(AxisAlignedBB aabb, World worldIn, BlockPos pos) {
+    public NBTTagCompound getFromWorld(AxisAlignedBB schematicBox, World worldIn, BlockPos pos) {
+        return getFromWorld(schematicBox, worldIn, pos, new AxisAlignedBB(
+                        0, 0, 0,
+                        schematicBox.maxX - schematicBox.minX,
+                        schematicBox.maxY - schematicBox.minY,
+                        schematicBox.maxZ - schematicBox.minZ)
+        );
+    }
+
+    public NBTTagCompound getFromWorld(AxisAlignedBB schematicBox, World worldIn, BlockPos posO, AxisAlignedBB collBox) {
         NBTTagCompound nbtdata = new NBTTagCompound();
         final Map<String, Short> mappings = new HashMap<>();
-        short l = (short) (aabb.maxX - aabb.minX + 1);
-        short h = (short) (aabb.maxY - aabb.minY + 1);
-        short w = (short) (aabb.maxZ - aabb.minZ + 1);
-        final int size = w * l * h;
+
+        short width = (short) (schematicBox.maxX - schematicBox.minX + 1);
+        short height = (short) (schematicBox.maxY - schematicBox.minY + 1);
+        short length = (short) (schematicBox.maxZ - schematicBox.minZ + 1);
+        final int size = width * length * height;
         final byte[] localBlocks = new byte[size];
         final byte[] localMetadata = new byte[size];
         final byte[] extraBlocks = new byte[size];
         boolean extra = false;
         final byte[] extraBlocksNibble = new byte[(int) Math.ceil(size / 2.0)];
-
-        nbtdata.setShort(Constants.NBT.WIDTH, w);
-        nbtdata.setShort(Constants.NBT.HEIGHT, h);
-        nbtdata.setShort(Constants.NBT.LENGTH, l);
+//        System.err.println("size" + size);
+        nbtdata.setShort(Constants.NBT.WIDTH, width);
+        nbtdata.setShort(Constants.NBT.HEIGHT, height);
+        nbtdata.setShort(Constants.NBT.LENGTH, length);
 
         nbtdata.setString(Constants.NBT.MATERIALS, Constants.NBT.FORMAT_ALPHA);
         nbtdata.setString(Constants.NBT.VERSION, Constants.NBT.NordShem);
 
-        nbtdata.setShort(Constants.NBT.OriginX, (short) pos.getX());
-        nbtdata.setShort(Constants.NBT.OriginY, (short) pos.getY());
-        nbtdata.setShort(Constants.NBT.OriginZ, (short) pos.getZ());
+        nbtdata.setShort(Constants.NBT.OriginX, (short) (schematicBox.minX - posO.getX()));
+        nbtdata.setShort(Constants.NBT.OriginY, (short) (schematicBox.minY - posO.getY()));
+        nbtdata.setShort(Constants.NBT.OriginZ, (short) (schematicBox.minZ - posO.getZ()));
+        NBTHelper.setAxisAlignedBB(nbtdata, "COLLUION", collBox);
 
-        for (int xi = (int) aabb.minX; xi <= aabb.maxX; xi++) {
-            final int x = xi - (int) aabb.minX;
-            for (int yi = (int) aabb.minY; yi <= aabb.maxY; yi++) {
-                final int y = yi - (int) aabb.minY;
-                for (int zi = (int) aabb.minZ; zi <= aabb.maxZ; zi++) {
-                    final int z = zi - (int) aabb.minZ;
-                    final int index = x + (y * l + z) * w;
-                    IBlockState blockState = worldIn.getBlockState(new BlockPos(xi, yi, zi));
+        final BlockPos startPos = new BlockPos(schematicBox.minX, schematicBox.minY, schematicBox.minZ);
+        for (int x = 0; x <width ; x++) {
+            for (int y = 0; y < height; y++) {
+                for (int z = 0; z <length ; z++) {
+                    final int index = x + (y * length + z) * width;
+//                    System.err.println(x + "," + y + "," + z +" / "+width+","+height+","+length+" /" + index);
+                    IBlockState blockState = worldIn.getBlockState(new BlockPos(x, y, z).add(startPos));
                     Block block = blockState.getBlock();
                     int blockId = BLOCK_REGISTRY.getId(block);
                     localBlocks[index] = (byte) blockId;
@@ -172,14 +198,29 @@ public class Schematic extends ASchematic {
         return nbtdata;
     }
 
+    public boolean isVecInside(Vec3i vec, AxisAlignedBB aabb) {
+        return vec.getX() >= aabb.minX && vec.getX() <= aabb.maxX &&
+                vec.getY() >= aabb.minY && vec.getY() <= aabb.maxY &&
+                vec.getZ() >= aabb.minZ && vec.getZ() <= aabb.maxZ;
+    }
+
     public void generate(World world, BlockPos pos) {
         pos = pos.add(getOrigin());
-        for (int x = 0; x < getYLayers(); x++) {
-            for (int y = 0; y < getXLayers(); y++) {
+        for (int x = 0; x < getXLayers(); x++) {
+            for (int y = 0; y < getYLayers(); y++) {
                 for (int z = 0; z < getZLayers(); z++) {
                     IBlockState blockState = this.template[x][y][z];
+                    BlockPos localPos = new BlockPos(x, y, z);
                     if (blockState != null && blockState.getBlock() != Blocks.air) {
-                        world.setBlockState(pos.add(x, y, z), blockState, 3);
+//                        System.err.println(localPos);
+//                        System.err.println(collusion);
+                        if (isVecInside(localPos, collusion)) {
+                            world.setBlockState(pos.add(localPos), blockState, 3);
+                        } else {
+                            if (world.getBlockState(pos.add(localPos)).getBlock().isReplaceable(world, pos)) {
+                                world.setBlockState(pos.add(localPos), blockState, 3);
+                            }
+                        }
                     }
                 }
             }

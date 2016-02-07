@@ -1,1 +1,18 @@
-item.nord_core.debugStickItem.name=[Отладка]Палка
+item.nord_core.debugStickItemSchematickSave.name=[ОТЛАДКА]Палка сохраняла
+item.nord_core.debugStickItemSchematickLoad.name=[ОТЛАДКА]Палка заргужалка
+
+debug.description.pos=Выделите 2 точки для отображения кубоида выделения
+debug.description.pos1=Первый ПКМ по блоку - установить первую точку
+debug.description.pos2=Второй ПКМ по блоку - установить вторую точку
+debug.description.poso=Третий ПКМ по блоку - установить точку начала
+debug.description.coll1=Четвёртый ПКМ по блоку - установить первую точку столкновений
+debug.description.coll2=Пятый ПКМ по блоку - установить вторую точку столкновений
+debug.description.clear=Шифт+ПКМ - очистить выделение
+debug.description.point=%s Позиция %s: %d, %d, %d
+debug.description.clear.msg=[Палка отладки] Все точки очищенны
+debug.description.save.msg=[Палка отладки] Сохраненно
+debug.description.load.msg=[Палка отладки] Загруженно
+debug.description.set.msg=%s [Палка отладки] Установленно %s: %d, %d, %d
+debug.description.notselected.msg=[Палка отладки] Схематик не выбран
+debug.description.next.msg=%s Номер следующего схематика  %d (не бери в голову)
+debug.description.name.msg=%s Имя схематика %s

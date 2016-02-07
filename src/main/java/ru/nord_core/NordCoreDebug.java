@@ -1,21 +1,23 @@
 package ru.nord_core;
 
-
-import ru.nord_core.common.helpers.RegisterHelper;
+import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.ItemDebugStickSchematicLoad;
 import ru.nord_core.common.items.ItemDebugStickSchematicSave;
 import ru.nord_core.common.utils.Version;
+
+import static ru.nord_core.common.helpers.RegisterRenderHelper.modelRegister;
 
 public class NordCoreDebug {
     public static void preInit() {
         createItem();
         createBlock();
+        registerItem();
+        registerBlock();
+        registerItemModel();
     }
 
     public static void init() {
         registerTileEntity();
-        registerItem();
-        registerBlock();
     }
 
     public static void postInit() {
@@ -32,8 +34,8 @@ public class NordCoreDebug {
     }
 
     private static void registerItem() {
-        RegisterHelper.registerSingleItem(NordCoreItems.debugStickItemSchematickSave, "debugStickItemSchematickSave", Version.MODID);
-        RegisterHelper.registerSingleItem(NordCoreItems.debugStickItemSchematickLoad, "debugStickItemSchematickLoad", Version.MODID);
+        RegisterHelper2.registerSingleItem(NordCoreItems.debugStickItemSchematickSave, "debugStickItemSchematickSave");
+        RegisterHelper2.registerSingleItem(NordCoreItems.debugStickItemSchematickLoad, "debugStickItemSchematickLoad");
     }
 
     private static void registerBlock() {
@@ -41,6 +43,10 @@ public class NordCoreDebug {
 
     private static void registerTileEntity() {
     }
-
+    private static void registerItemModel() {
+        modelRegister().registerItemModelForMeta(NordCoreItems.debugStickItemSchematickSave, 0, "#inventory");
+        modelRegister().registerItemModelForMeta(NordCoreItems.debugStickItemSchematickSave, 1, "#inventory");
+        modelRegister().registerItemModelForMeta(NordCoreItems.debugStickItemSchematickLoad, 0, "#inventory");
+    }
 }
 

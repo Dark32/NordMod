@@ -1,5 +1,6 @@
 package ru.nord_core.client.utils;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -15,6 +16,7 @@ import org.lwjgl.opengl.GL11;
 public class RenderUtils {
     /**
      * Рендерим коробку залитую
+     *
      * @param aabb коробка
      */
     public static void box(AxisAlignedBB aabb) {
@@ -72,6 +74,7 @@ public class RenderUtils {
 
     /**
      * Рендерем другим способом коробку луниями
+     *
      * @param aabb коробка
      */
     public static void lines(AxisAlignedBB aabb) {
@@ -119,4 +122,11 @@ public class RenderUtils {
         GL11.glEnd();
     }
 
+
+    public static void boxAndLine(AxisAlignedBB aabb, float r1, float g1, float b1, float a1, float r2, float g2, float b2, float a2) {
+        GlStateManager.color(r1, g1, b1, a1);
+        box(aabb);
+        GlStateManager.color(r2, g2, b2, a2);
+        lines(aabb);
+    }
 }

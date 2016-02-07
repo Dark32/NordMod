@@ -1,2 +1,18 @@
 item.nord_core.debugStickItemSchematickSave.name=[DEBUG]Stick Save
 item.nord_core.debugStickItemSchematickLoad.name=[DEBUG]Stick Load
+
+debug.description.pos=Select 2 point to draw selection box
+debug.description.pos1=First Block R Click - set position 1
+debug.description.pos2=Second Block R Click - set position 2
+debug.description.poso=Third Block R Click - set position origin
+debug.description.coll1=4 Block R Click - set collusion position 1
+debug.description.coll2=5 Block R Click - set collusion position 1
+debug.description.clear=Shift R Click - clear selection
+debug.description.point=%s Pos %s: %d, %d, %d
+debug.description.clear.msg=[debugStick] Clear all pos
+debug.description.save.msg=[debugStick] Save
+debug.description.load.msg=[debugStick] Load
+debug.description.set.msg=%s [debugStick] Set %s: %d, %d, %d
+debug.description.notselected.msg=[debugStick] Schematic not selected
+debug.description.next.msg=%s Schematic next index  %d
+debug.description.name.msg=%s Schematic Name  %s

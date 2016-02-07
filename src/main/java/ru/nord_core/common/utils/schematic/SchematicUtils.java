@@ -5,16 +5,17 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.FMLLog;
 import ru.nord_core.NordCore;
 import ru.nord_core.common.utils.Constants;
+import ru.nord_core.common.utils.schematic.abstracts.ASchematic;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.HashMap;
 
-/**
- * Created by andrew on 04.02.16.
- */
 public class SchematicUtils {
     public final FileFilterSchematic FILE_FILTER_SCHEMATIC = new FileFilterSchematic(false);
     private static File currentDirectory;
     public static SchematicUtils INSTANCE;
+    public static HashMap<String, Schematic> schemMap= new HashMap<String,Schematic>(5);
 
     public static SchematicUtils get(){
         if (INSTANCE==null){
@@ -32,7 +33,7 @@ public class SchematicUtils {
     }
 
     public File[] getSchematicks(){
-        currentDirectory = new File(currentDirectory,  "schematics/");
+        currentDirectory = new File(NordCore.proxy.getDataDirectory(),  "schematics/");
         try {
             currentDirectory = currentDirectory.getCanonicalFile();
         } catch (final IOException ioe) {
