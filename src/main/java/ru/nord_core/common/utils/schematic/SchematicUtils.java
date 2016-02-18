@@ -39,8 +39,7 @@ public class SchematicUtils {
         } catch (final IOException ioe) {
             ioe.printStackTrace();
         }
-        final File[] filesFolders = currentDirectory.listFiles(FILE_FILTER_SCHEMATIC);
-        return filesFolders;
+        return currentDirectory.listFiles(FILE_FILTER_SCHEMATIC);
     }
 
     public void writeToFile(String fileName, NBTTagCompound nbtdata) {
@@ -58,6 +57,25 @@ public class SchematicUtils {
             ex.printStackTrace();
             FMLLog.getLogger().error("Failed to write schematic!", ex);
         }
+    }
 
+
+    public Schematic loadSchematic(String name,String modid) {
+        if (SchematicUtils.schemMap.containsKey(name)) {
+            Schematic schematic = SchematicUtils.schemMap.get(name);
+            if (schematic == null) {
+                Schematic schem = new Schematic().getFromInnerStream(modid,name);
+                System.err.println(schem);
+                SchematicUtils.schemMap.put(name, schem);
+                return schem;
+            } else {
+                return schematic;
+            }
+        } else {
+            Schematic schem = new Schematic();
+            schem.getFromInnerStream(modid,name);
+            SchematicUtils.schemMap.put(name, schem);
+            return schem;
+        }
     }
 }

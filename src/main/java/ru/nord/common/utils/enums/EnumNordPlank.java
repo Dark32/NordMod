@@ -1,13 +1,17 @@
 package ru.nord.common.utils.enums;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenerator;
+import ru.nord.NordWoodStorage;
+import ru.nord.common.utils.WeightRandom;
 import ru.nord_core.common.utils.enums.interfaces.IBiomeColoredEnum;
 import ru.nord_core.common.utils.enums.interfaces.IDropItemEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_core.common.utils.enums.interfaces.IWorldGeneratorEnum;
+import ru.nord_core.common.world.generator.WorldGenSchematic;
 
-public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItemEnum,IWorldGeneratorEnum {
+public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItemEnum, IWorldGeneratorEnum {
 /*    SOME_PLANK(0, "some_plank") {
         @Override
         public WorldGenAbstractTree generate() {
@@ -22,9 +26,10 @@ public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItem
 */
 
     SAKURA(0, "sakura") {
+
         @Override
-        public WorldGenAbstractTree generate() {
-            return null;
+        public WeightRandom<String> getWeightRandom() {
+            return NordWoodStorage.sakura;
         }
 
         @Override
@@ -34,21 +39,11 @@ public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItem
     },
     PUNICA(1, "punica") {
         @Override
-        public WorldGenAbstractTree generate() {
-            return null;
-        }
-
-        @Override
         public ItemStack dropItem() {
             return null;
         }
     },
     PEAR(2, "pear") {
-        @Override
-        public WorldGenAbstractTree generate() {
-            return null;
-        }
-
         @Override
         public ItemStack dropItem() {
             return null;
@@ -56,16 +51,10 @@ public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItem
     },
     PEACH(3, "peach") {
         @Override
-        public WorldGenAbstractTree generate() {
-            return null;
-        }
-
-        @Override
         public ItemStack dropItem() {
             return null;
         }
-    },
-    ;
+    },;
     private final String name;
     private final int meta;
     private final boolean colorize;
@@ -93,14 +82,32 @@ public enum EnumNordPlank implements IMetadataEnum, IBiomeColoredEnum, IDropItem
         return this.name;
     }
 
+    public WeightRandom<String> getWeightRandom() {
+      return null;
+    }
+
     @Override
     public int getMetadata() {
         return this.meta;
     }
-    
-    public boolean getColorize(){return this.colorize;}
 
-    public abstract WorldGenAbstractTree generate();
+    public boolean getColorize() {
+        return this.colorize;
+    }
+
+    @Override
+    public WorldGenerator generate(World world) {
+        if (this.getWeightRandom() == null) {
+            return null;
+        }
+        this.getWeightRandom().setRandom(world.rand);
+        try {
+            return new WorldGenSchematic(true, this.getWeightRandom().getRandom());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public abstract ItemStack dropItem();
 }

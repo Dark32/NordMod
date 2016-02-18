@@ -7,6 +7,7 @@ import ru.nord_core.common.CommonProxy;
 import ru.nord_core.common.utils.Version;
 
 
+import java.io.File;
 import java.util.Random;
 
 @Mod(modid = Version.MODID, name = Version.NAME, version = Version.VERSION)
@@ -26,6 +27,8 @@ public class NordCore {
         FMLLog.info("Core Nord Mod start init");
         NordCoreDebug.preInit();
         proxy.registerEventHandlers();
+        getSchematic();
+
     }
 
     @EventHandler
@@ -35,13 +38,19 @@ public class NordCore {
 
     @EventHandler
     public void postInit(final FMLPostInitializationEvent event) {
-
         NordCoreDebug.postInit();
     }
 
     @EventHandler
     public void missMap(final FMLMissingMappingsEvent event) {
         FMLLog.info("Core Nord Mod start FMLMissingMappingsEvent");
+    }
 
+    private void getSchematic(){
+        File schematicDir =  new File(proxy.getDataDirectory(),"schematic/");
+        boolean create;
+        if (!schematicDir.exists()){
+            create = schematicDir.mkdirs();
+        }
     }
 }

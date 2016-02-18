@@ -9,12 +9,14 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
+import org.apache.commons.io.IOUtils;
 import ru.nord_core.NordCore;
 import ru.nord_core.common.helpers.NBTHelper;
 import ru.nord_core.common.utils.Constants;
 import ru.nord_core.common.utils.schematic.abstracts.ASchematic;
 
-import java.io.File;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -27,21 +29,37 @@ public class Schematic extends ASchematic {
     public Schematic() {
     }
 
-    public void getFromFile(String fileName) {
+    public Schematic getFromFile(String fileName) {
         fileName = "schematics/" + fileName;
         File file = new File(NordCore.proxy.getDataDirectory(), fileName);
-        getFromFile(file);
+        try {
+            getFromNBT(SchematicUtils.get().readTagCompoundFromFile(file));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return this;
     }
 
-    public void getFromFile(File file) {
-        NBTTagCompound schematicNBT;
-        try {
-            schematicNBT = SchematicUtils.get().readTagCompoundFromFile(file);
-        } catch (final Exception ex) {
-            ex.printStackTrace();
-            return;
-
+    public Schematic getFromInnerStream(String modid, String schemname) {
+        File file = new File(NordCore.proxy.getDataDirectory(), "schematics" + File.separator + schemname);
+        if (!file.exists()) {
+            InputStream initialStream = getClass().getResourceAsStream("assets/" + modid + "/schematics/" + schemname);
+            if (initialStream == null) {
+                FMLLog.getLogger().error("[NORD CORE] Ressourse assets/" + modid + "/schematics/" + schemname + " not found!");
+                return null;
+            }
+            try {
+                file.createNewFile();
+                OutputStream outStream = new FileOutputStream(file);
+                IOUtils.copy(initialStream, outStream);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        return getFromFile(schemname);
+    }
+
+    public void getFromNBT(NBTTagCompound schematicNBT) {
 
         boolean extra = false;
         byte extraBlocks[] = null;
@@ -158,9 +176,9 @@ public class Schematic extends ASchematic {
         NBTHelper.setAxisAlignedBB(nbtdata, "COLLUION", collBox);
 
         final BlockPos startPos = new BlockPos(schematicBox.minX, schematicBox.minY, schematicBox.minZ);
-        for (int x = 0; x <width ; x++) {
+        for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                for (int z = 0; z <length ; z++) {
+                for (int z = 0; z < length; z++) {
                     final int index = x + (y * length + z) * width;
 //                    System.err.println(x + "," + y + "," + z +" / "+width+","+height+","+length+" /" + index);
                     IBlockState blockState = worldIn.getBlockState(new BlockPos(x, y, z).add(startPos));
@@ -227,4 +245,32 @@ public class Schematic extends ASchematic {
         }
     }
 
+    public boolean checkGenerate(World world, BlockPos pos) {
+        if (this.getOrigin() == null) {
+            return false;
+        }
+
+
+        pos = pos.add(getOrigin());
+        int xStart = (int) (0 + collusion.minX);
+        int yStart = (int) (0 + collusion.minY);
+        int zStart = (int) (0 + collusion.minZ);
+        int xL = (int) (collusion.maxX + collusion.minX);
+        int yL = (int) (collusion.maxY + collusion.minY);
+        int zL = (int) (collusion.maxZ + collusion.minZ);
+        for (int x = xStart; x < xL; x++) {
+            for (int y = yStart; y < yL; y++) {
+                for (int z = zStart; z < zL; z++) {
+                    IBlockState blockState = this.template[x][y][z];
+                    BlockPos localPos = new BlockPos(x, y, z);
+                    if (!world.getBlockState(pos.add(localPos)).getBlock().isReplaceable(world, pos) ||
+                            !world.isAirBlock(pos.add(localPos))
+                            ) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 }

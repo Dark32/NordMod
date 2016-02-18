@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.client.utils.RenderUtils;
 import ru.nord_core.common.helpers.NBTHelper;
 import ru.nord_core.common.items.interfaces.ISelectItem;
+import ru.nord_core.common.utils.Version;
 import ru.nord_core.common.utils.schematic.Schematic;
 import ru.nord_core.common.utils.schematic.SchematicUtils;
 
@@ -64,7 +65,7 @@ public class ItemDebugStickSchematicLoad extends ItemBase implements ISelectItem
             } else if (NBTHelper.getBlockPos(tag, EnumSchematicPosition.BOX_ORIGIN.getName()).equals(pos)) {
                 if (tag.hasKey("SchematicName")) {
                     String name = tag.getString("SchematicName");
-                    Schematic schematic = loadSchematic(name);
+                    Schematic schematic = SchematicUtils.get().loadSchematic(name, Version.MODID);
                     schematic.generate(worldIn, pos);
                 } else {
                     playerIn.addChatMessage(new ChatComponentText(EnumChatFormatting.GRAY + StatCollector.translateToLocal("debug.description.notselected.msg")));
@@ -77,32 +78,13 @@ public class ItemDebugStickSchematicLoad extends ItemBase implements ISelectItem
         return false;
     }
 
-    private Schematic loadSchematic(String name) {
-        if (SchematicUtils.schemMap.containsKey(name)) {
-            Schematic schematic = SchematicUtils.schemMap.get(name);
-            if (schematic == null) {
-                Schematic schem = new Schematic();
-                schem.getFromFile(name);
-                SchematicUtils.schemMap.put(name, schem);
-                return schem;
-            } else {
-                return schematic;
-            }
-        } else {
-            Schematic schem = new Schematic();
-            schem.getFromFile(name);
-            SchematicUtils.schemMap.put(name, schem);
-            return schem;
-        }
-    }
-
     private void setAllPosition(BlockPos pos, NBTTagCompound tag, EntityPlayer playerIn) {
         EnumSchematicPosition.setPosition(tag, EnumSchematicPosition.BOX_ORIGIN, pos, playerIn);
         if (!tag.hasKey("SchematicName")) {
             return;
         }
         String schematicName = tag.getString("SchematicName");
-        Schematic schematic = loadSchematic(schematicName);
+        Schematic schematic = SchematicUtils.get().loadSchematic(schematicName, Version.MODID);
         BlockPos boxPos1 = pos.add(schematic.getOrigin());
         BlockPos boxPos2 = boxPos1.add(schematic.getXLayers(), schematic.getYLayers(), schematic.getZLayers()).add(-1, -1, -1);
 //        System.err.println(schematic.collusion);

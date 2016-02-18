@@ -53,7 +53,7 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
 
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-        WorldGenerator tree = ((IWorldGeneratorEnum) state.getValue(getVariant())).generate();
+        WorldGenerator tree = ((IWorldGeneratorEnum) state.getValue(getVariant())).generate(worldIn);
         if (tree == null) return;
         int i = 0;
         int j = 0;
