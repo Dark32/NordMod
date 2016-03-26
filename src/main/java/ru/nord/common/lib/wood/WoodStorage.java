@@ -13,8 +13,8 @@ public class WoodStorage {
 
     public WoodStorage(String name) {
         this.name = name;
-        this.woods = new ArrayList<>(2);
-        this.weights = new ArrayList<>(2);
+        this.woods = new ArrayList<String>(2);
+        this.weights = new ArrayList<Float>(2);
     }
 
     public WoodStorage add(String wood, Float weight) {

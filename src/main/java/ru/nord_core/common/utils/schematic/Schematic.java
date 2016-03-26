@@ -104,7 +104,7 @@ public class Schematic extends ASchematic {
         }
 
         Short id;
-        final Map<Short, Short> oldToNew = new HashMap<>();
+        final Map<Short, Short> oldToNew = new HashMap<Short, Short>();
         if (schematicNBT.hasKey(Constants.NBT.MAPPING_SCHEMATICA)) {
             final NBTTagCompound mapping = schematicNBT.getCompoundTag(Constants.NBT.MAPPING_SCHEMATICA);
             final Set<String> names = mapping.getKeySet();
@@ -151,7 +151,7 @@ public class Schematic extends ASchematic {
 
     public NBTTagCompound getFromWorld(AxisAlignedBB schematicBox, World worldIn, BlockPos posO, AxisAlignedBB collBox) {
         NBTTagCompound nbtdata = new NBTTagCompound();
-        final Map<String, Short> mappings = new HashMap<>();
+        final Map<String, Short> mappings = new HashMap<String, Short>();
 
         short width = (short) (schematicBox.maxX - schematicBox.minX + 1);
         short height = (short) (schematicBox.maxY - schematicBox.minY + 1);
