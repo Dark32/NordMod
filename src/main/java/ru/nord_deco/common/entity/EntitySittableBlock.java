@@ -2,7 +2,7 @@ package ru.nord_deco.common.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EntitySittableBlock extends Entity
@@ -74,7 +74,7 @@ public class EntitySittableBlock extends Entity
     {
         if (!this.worldObj.isRemote)
         {
-            if (this.riddenByEntity == null | this.worldObj.isAirBlock(new BlockPos(blockPosX, blockPosY, blockPosZ)))
+            if (this.getRidingEntity() == null | this.worldObj.isAirBlock(new BlockPos(blockPosX, blockPosY, blockPosZ)))
             {
                 this.setDead();
                 worldObj.updateComparatorOutputLevel(getPosition(), worldObj.getBlockState(getPosition()).getBlock());

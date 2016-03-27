@@ -4,13 +4,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.property.ExtendedBlockState;
@@ -45,27 +48,27 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
     }
 
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.SOLID;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.SOLID;
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public int getRenderType() {
-        return 3;
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override
-    protected BlockState createBlockState() {
+    protected BlockStateContainer createBlockState() {
         IProperty[] listedProperties = new IProperty[0]; // no listed properties
         IUnlistedProperty[] unlistedProperties = new IUnlistedProperty[]{LINK_UP, LINK_DOWN, LINK_EAST, LINK_WEST, LINK_NORTH, LINK_SOUTH};
         return new ExtendedBlockState(this, listedProperties, unlistedProperties);
@@ -108,7 +111,7 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
     }
 
 
-    @Override
+    /*@Override
     public void setBlockBoundsBasedOnState(final IBlockAccess world, final BlockPos coord) {
         final boolean connectNorth = this.canConnectTo(world, coord, EnumFacing.NORTH, coord.north());
         final boolean connectSouth = this.canConnectTo(world, coord, EnumFacing.SOUTH, coord.south());
@@ -145,14 +148,14 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
         if (connectUp) {
             y2 = 1.0f;
         }
-        this.setBlockBounds(x1, y1, z1, x2, y2, z2);
+//        this.setBlockBounds(x1, y1, z1, x2, y2, z2);
     }
-
+*/
     @Override
-    public void addCollisionBoxesToList(final World world, final BlockPos coord,
-                                        final IBlockState bs, final AxisAlignedBB box,
-                                        final List collisionBoxList,
-                                        final Entity entity) {
+    public void addCollisionBoxToList(IBlockState state, World world,
+                                      BlockPos coord, AxisAlignedBB box,
+                                      List<AxisAlignedBB> collisionBoxList, Entity entity)
+    {
         final boolean connectNorth = this.canConnectTo(world, coord, EnumFacing.NORTH, coord.north());
         final boolean connectSouth = this.canConnectTo(world, coord, EnumFacing.SOUTH, coord.south());
         final boolean connectWest = this.canConnectTo(world, coord, EnumFacing.WEST, coord.west());
@@ -164,61 +167,61 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
         float rminus = 0.5f - radius;
         float rplus = 0.5f + radius;
 
-        this.setBlockBounds(rminus, rminus, rminus, rplus, rplus, rplus);
-        super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//        this.setBlockBounds(rminus, rminus, rminus, rplus, rplus, rplus);
+        super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
 
         if (connectUp) {
-            this.setBlockBounds(rminus, rminus, rminus, rplus, 1f, rplus);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(rminus, rminus, rminus, rplus, 1f, rplus);
+            super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
         }
         if (connectDown) {
-            this.setBlockBounds(rminus, 0f, rminus, rplus, rplus, rplus);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(rminus, 0f, rminus, rplus, rplus, rplus);
+            super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
         }
         if (connectEast) {
-            this.setBlockBounds(rminus, rminus, rminus, 1f, rplus, rplus);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(rminus, rminus, rminus, 1f, rplus, rplus);
+            super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
         }
         if (connectWest) {
-            this.setBlockBounds(0f, rminus, rminus, rplus, rplus, rplus);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(0f, rminus, rminus, rplus, rplus, rplus);
+            super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
         }
         if (connectSouth) {
-            this.setBlockBounds(rminus, rminus, rminus, rplus, rplus, 1f);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(rminus, rminus, rminus, rplus, rplus, 1f);
+            super.addCollisionBoxToList(state,world, coord, box, collisionBoxList, entity);
         }
         if (connectNorth) {
-            this.setBlockBounds(rminus, rminus, 0f, rplus, rplus, rplus);
-            super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+//            this.setBlockBounds(rminus, rminus, 0f, rplus, rplus, rplus);
+            super.addCollisionBoxToList(state,world, coord,  box, collisionBoxList, entity);
         }
     }
 
     @Override
-    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public EnumActionResult wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (playerIn.isSneaking()) {
-            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.removedByPlayer(worldIn.getBlockState(pos),worldIn, pos, playerIn, true);
             this.dropBlockAsItem(worldIn, pos, state, 0);
         } else {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
             if (tileEntity == null) {
-                return false;
+                return EnumActionResult.PASS;
             }
             if (tileEntity instanceof IEnergoCable) {
                 int energy = ((IEnergoCable) tileEntity).getEnergy();
                 int maxenergy = ((IEnergoCable) tileEntity).getMaxEnergy();
                 int packet = ((IEnergoCable) tileEntity).getPacketEnergy();
                 if (!worldIn.isRemote) {
-                    playerIn.addChatComponentMessage(new ChatComponentTranslation("energy " + energy + "/" + maxenergy + "(" + packet + ")"));
+                    playerIn.addChatComponentMessage(new TextComponentTranslation("energy " + energy + "/" + maxenergy + "(" + packet + ")"));
                 }
             }
-            return true;
+            return EnumActionResult.SUCCESS;
         }
-        return true;
+        return EnumActionResult.SUCCESS;
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public boolean shouldSideBeRendered(final IBlockAccess world, final BlockPos coord, final EnumFacing face) {
-        return true;
-    }
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public boolean shouldSideBeRendered(final IBlockAccess world, final BlockPos coord, final EnumFacing face) {
+//        return true;
+//    }
 }

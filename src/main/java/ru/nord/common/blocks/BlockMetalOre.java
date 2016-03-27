@@ -7,8 +7,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import ru.nord.NordItems;
 import ru.nord.common.utils.Version;
@@ -65,15 +65,9 @@ public class BlockMetalOre extends BlockMetadata {
     }
 
     @Override
-    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos, EntityPlayer player) {
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player){
         return new ItemStack(this, 1, ((EnumOre) world.getBlockState(pos).getValue(TYPE)).getMetadata());
     }
-
-    @Override
-    public int getDamageValue(World worldIn, BlockPos pos) {
-        return 0;
-    }
-
     @Override
     public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         return true;

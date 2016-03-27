@@ -2,7 +2,7 @@ package ru.nord_core.common.helpers;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SpawnEntityHelper {

@@ -6,14 +6,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -73,7 +73,7 @@ public abstract class BlockAbstractSlab extends BlockSlab {
     }
 
     @Override
-    public Object getVariant(ItemStack stack) {
+    public Comparable<?> getTypeForItem(ItemStack stack) {
         return getEnumByMetadata(stack.getMetadata() & 7);
     }
 
@@ -117,8 +117,8 @@ public abstract class BlockAbstractSlab extends BlockSlab {
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return this.isDouble() ? new BlockState(this, SEAMLESS, getVariant()) : new BlockState(this, HALF, getVariant());
+    protected BlockStateContainer createBlockState() {
+        return this.isDouble() ? new BlockStateContainer(this, SEAMLESS, getVariant()) : new BlockStateContainer(this, HALF, getVariant());
     }
 
     @Override
@@ -129,23 +129,24 @@ public abstract class BlockAbstractSlab extends BlockSlab {
 
 
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getRenderColor(IBlockState state) {
-        Comparable colorize = state.getValue(getVariant());
-        if (colorize instanceof IColorizeEnum) {
-            return ((IColorizeEnum) colorize).getColor();
-        } else {
-            return 0xffffff;
-        }
-    }
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getRenderColor(IBlockState state) {
+//        Comparable colorize = state.getValue(getVariant());
+//        if (colorize instanceof IColorizeEnum) {
+//            return ((IColorizeEnum) colorize).getColor();
+//        } else {
+//            return 0xffffff;
+//        }
+//    }
+//
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
+//        IBlockState state = worldIn.getBlockState(pos);
+//        return this.getRenderColor(state);
+//    }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
-        IBlockState state = worldIn.getBlockState(pos);
-        return this.getRenderColor(state);
-    }
     @Override
     public IProperty getVariantProperty() {
         return getVariant();

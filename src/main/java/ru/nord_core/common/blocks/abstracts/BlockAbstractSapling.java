@@ -4,13 +4,13 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.properties.PropertyInteger;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
@@ -99,8 +99,8 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, getVariant(), STAGE);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, getVariant(), STAGE);
     }
 
     @Override

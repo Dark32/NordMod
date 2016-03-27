@@ -10,10 +10,11 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.play.client.C07PacketPlayerDigging;
-import net.minecraft.network.play.server.S23PacketBlockChange;
+//import net.minecraft.network.play.client.C07PacketPlayerDigging;
+//import net.minecraft.network.play.server.S23PacketBlockChange;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import ru.nord_core.common.helpers.ToolHelper;
@@ -28,10 +29,10 @@ public abstract class AItemDrill extends AEnergyToolNBT {
                       int energyByUse, int energyByHit) {
         super(attackDamage, material, energyByUse, energyByHit);
     }
-
+/*
     @Override
     public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, EntityPlayer player) {
-        MovingObjectPosition mop = ToolHelper.raytraceFromEntity(player.worldObj, player, false, 4.5d);
+        RayTraceResult mop = ToolHelper.raytraceFromEntity(player.worldObj, player, false, 4.5d);
         if (mop == null)
             return false;
         EnumFacing sideHit = mop.sideHit;
@@ -70,7 +71,8 @@ public abstract class AItemDrill extends AEnergyToolNBT {
         return super.onBlockStartBreak(itemstack, pos, player);
     }
 
-
+*/
+    /*
     //Right-click
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player,
@@ -127,15 +129,6 @@ public abstract class AItemDrill extends AEnergyToolNBT {
 
                     int dmg = nearbyStack.getItemDamage();
                     int count = nearbyStack.stackSize;
-                    /*if (item == TinkerTools.openBlocksDevNull)
-                    {
-                        //Openblocks uses current inventory slot, so we have to do this...
-                        player.inventory.currentItem=itemSlot;
-                        item.onItemUse(nearbyStack, player, world, x, y, z, side, clickX, clickY, clickZ);
-                        player.inventory.currentItem=hotbarSlot;
-                        player.swingItem();
-                    }
-                    else*/
                     used = item.onItemUse(nearbyStack, player, world, pos, side, hitX, hitY, hitZ);
 
                     // handle creative mode
@@ -154,6 +147,8 @@ public abstract class AItemDrill extends AEnergyToolNBT {
         return used;
     }
 
+ */
+    /*
     protected void breakExtraBlock(World world, BlockPos pos, EnumFacing facing, EntityPlayer playerEntity, BlockPos refPos) {
         // prevent calling that stuff for air blocks, could lead to unexpected behaviour since it fires events
         if (world.isAirBlock(pos))
@@ -222,7 +217,7 @@ public abstract class AItemDrill extends AEnergyToolNBT {
             // clientside we do a "this clock has been clicked on long enough to be broken" call. This should not send any new packets
             // the code above, executed on the server, sends a block-updates that give us the correct state of the block we destroy.
 
-            /** following code can be found in {@link}PlayerControllerMP.onPlayerDestroyBlock */
+            // following code can be found in {@link}PlayerControllerMP.onPlayerDestroyBlock
             world.playAuxSFX(2001, pos, Block.getStateId(state));
             if (block.removedByPlayer(world, pos, player, true)) {
                 block.onBlockDestroyedByPlayer(world, pos, state);
@@ -231,12 +226,12 @@ public abstract class AItemDrill extends AEnergyToolNBT {
             // send an update to the server, so we get an update back
             Minecraft.getMinecraft().getNetHandler().addToSendQueue(new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.ABORT_DESTROY_BLOCK, pos, Minecraft.getMinecraft().objectMouseOver.sideHit));
         }
-    }
+    }*/
 
     public boolean isEffective(IBlockState state) {
         if (this.getHarvestType().getName().equals(state.getBlock().getHarvestTool(state)))
             return true;
-        else return isEffective(state.getBlock().getMaterial());
+        else return isEffective(state.getBlock().getMaterial(state));
     }
 
     public boolean isEffective(Material material) {

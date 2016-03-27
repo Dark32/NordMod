@@ -4,6 +4,8 @@ package ru.nord.common.blocks.wood.type1;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import ru.nord.NordBloks;
 import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord_core.common.blocks.abstracts.BlockAbstractLeaves;
@@ -35,5 +37,10 @@ public class BlockNordLeaves extends BlockAbstractLeaves {
     {
         return Item.getItemFromBlock(NordBloks.nordSapling1);
     }
+
+//    @Override
+//    public int colorMultiplier(IBlockState state, IBlockAccess p_186720_2_, BlockPos pos, int tintIndex) {
+//        return 0;
+//    }
 }
 

@@ -6,7 +6,7 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -14,10 +14,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -62,27 +64,27 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
 
     @SideOnly(Side.CLIENT)
     @Override
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.SOLID;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.SOLID;
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public int getRenderType() {
-        return 3;
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override
-    protected BlockState createBlockState() {
+    protected BlockStateContainer createBlockState() {
         IProperty[] listedProperties = new IProperty[]{
                 CONNECT_UP,
                 CONNECT_DOWN,
@@ -91,9 +93,9 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
                 CONNECT_NORTH,
                 CONNECT_SOUTH
         };
-        return new BlockState(this, listedProperties);
+        return new BlockStateContainer(this, listedProperties);
     }
-
+/*
 
     @Override
     public void setBlockBoundsBasedOnState(final IBlockAccess world, final BlockPos coord) {
@@ -134,10 +136,10 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         }
 
 
-        this.setBlockBounds(x1, y1, z1, x2, y2, z2);
+       this.setBlockBounds(x1, y1, z1, x2, y2, z2);
     }
-
-    @Override
+*/
+    /*@Override
     public void addCollisionBoxesToList(final World world, final BlockPos coord,
                                         final IBlockState bs, final AxisAlignedBB box,
                                         final List collisionBoxList,
@@ -180,23 +182,26 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         }
 
     }
+*/
 
     @Override
-    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public EnumActionResult wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (playerIn.isSneaking()) {
+            /*
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.NORTH, pos.north());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.SOUTH, pos.south());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.WEST, pos.west());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.EAST, pos.east());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.UP, pos.up());
             this.disconnectBreakBlock(worldIn, pos, EnumFacing.DOWN, pos.down());
+            */
 //            worldIn.setBlockToAir(pos);
-            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.removedByPlayer(state,worldIn, pos, playerIn, true);
             this.dropBlockAsItem(worldIn, pos, state, 0);
         } else {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
             if (tileEntity == null) {
-                return false;
+                return EnumActionResult.FAIL;
             }
             if (tileEntity instanceof TileAbstractEnergyCable2) {
                  /*   playerIn.addChatComponentMessage(new ChatComponentText(
@@ -212,28 +217,29 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
 //                System.err.println(cable.getCableStateOnFacing(EnumFacing.EAST));
 //                System.err.println(cable.getCableStateOnFacing(EnumFacing.UP));
 //                System.err.println(cable.getCableStateOnFacing(EnumFacing.DOWN));
-                worldIn.markBlockForUpdate(pos);
-                this.updteCableState(worldIn,pos,state);
+//                worldIn.markBlockForUpdate(pos);
+/*
+                this.updteCableState(worldIn,pos,state);*/
             }
-            return true;
+            return EnumActionResult.SUCCESS;
         }
-        return true;
+        return EnumActionResult.SUCCESS;
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public boolean shouldSideBeRendered(final IBlockAccess world, final BlockPos coord, final EnumFacing face) {
-        return true;
-    }
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public boolean shouldSideBeRendered(final IBlockAccess world, final BlockPos coord, final EnumFacing face) {
+//        return true;
+//    }
 
     @Override
     public void onBlockPlacedBy(final World worldIn, final BlockPos pos,
                                 final IBlockState bs, final EntityLivingBase player,
                                 final ItemStack item) {
         super.onBlockPlacedBy(worldIn, pos, bs, player, item);
-        this.placeCableState(worldIn,pos);
+//        this.placeCableState(worldIn,pos);
     }
-
+/*
     private void placeCableState(final World worldIn, final BlockPos pos ) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(pos);
         final EnumCableState connectNorth = this.getConnectStateToPlace(worldIn, pos, EnumFacing.NORTH, pos.north());
@@ -249,15 +255,15 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         tile.setCableStateOnFacing(EnumFacing.UP, connectUp);
         tile.setCableStateOnFacing(EnumFacing.DOWN, connectDown);
     }
-
+*/
     @Override
     public void onNeighborChange(IBlockAccess world, BlockPos pos, BlockPos neighbor){
         super.onNeighborChange(world, pos, neighbor);
         if (world.getBlockState(pos).getBlock() instanceof BlockAbstractMachine){
-            this.updteCableState(world,pos,world.getBlockState(pos));
+//            this.updteCableState(world,pos,world.getBlockState(pos));
         }
     }
-
+/*
     private void updteCableState(final IBlockAccess worldIn, final BlockPos pos,
                                  final IBlockState state) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(pos);
@@ -274,7 +280,8 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         tile.setCableStateOnFacing(EnumFacing.UP, connectUp);
         tile.setCableStateOnFacing(EnumFacing.DOWN, connectDown);
     }
-
+*/
+    /*
     private EnumCableState getConnectStateToPlace(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         IBlockState otherState = worldIn.getBlockState(otherBlock);
         IBlockState thisState = worldIn.getBlockState(thisBlock);
@@ -288,7 +295,8 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         }
         return EnumCableState.UNDEFINED;
     }
-
+*/
+    /*
     private EnumCableState checkConnectState(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         IBlockState otherState = worldIn.getBlockState(otherBlock);
         IBlockState thisState = worldIn.getBlockState(thisBlock);
@@ -324,10 +332,13 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         }
         return EnumCableState.UNDEFINED;
     }
+    */
+    /*
     private EnumCableState getConnectState(IBlockAccess worldIn, BlockPos thisBlock, EnumFacing face) {
         TileAbstractEnergyCable2 tile = (TileAbstractEnergyCable2) worldIn.getTileEntity(thisBlock);
         return tile.getCableStateOnFacing(face);
     }
+    */
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
@@ -339,6 +350,7 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         return 0;
     }
 
+   /*
     @Override
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return this.getDefaultState()
@@ -351,17 +363,18 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
                 ;
     }
 
-
-
+*/
+/*
     private void disconnectBreakBlock(World worldIn, BlockPos thisBlock, EnumFacing face, BlockPos otherBlock) {
         IBlockState otherState = worldIn.getBlockState(otherBlock);
         if (otherState.getBlock() instanceof BlockAbstractEnergyCable2) {
             TileAbstractEnergyCable2 otherTile = (TileAbstractEnergyCable2) worldIn.getTileEntity(otherBlock);
             otherTile.setCableStateOnFacing(face.getOpposite(), EnumCableState.UNDEFINED);
-            worldIn.markBlockForUpdate(otherBlock);
+//            worldIn.markBlockForUpdate(otherBlock);
            }
     }
-
+*/
+    /*
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
@@ -373,7 +386,7 @@ public abstract class BlockAbstractEnergyCable2 extends BlockBase implements IWr
         this.disconnectBreakBlock(worldIn, pos, EnumFacing.DOWN, pos.down());
        super.breakBlock(worldIn, pos, state);
     }
-
+*/
 
 
 }

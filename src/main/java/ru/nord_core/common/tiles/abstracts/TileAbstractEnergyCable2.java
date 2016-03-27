@@ -4,8 +4,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.util.BlockPos;
+//import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
@@ -17,7 +17,7 @@ import ru.nord_core.common.utils.enums.EnumCableState;
 public abstract class TileAbstractEnergyCable2 extends TileAbstractEnergyBlockWithOutContainer /*TileAbstractEnergyBlock*/
         implements ITickable {
     protected String machineCustomName;
-
+/*
     protected EnumCableState[] state = new EnumCableState[6];
 //    protected EnumColors color = EnumColors.BLACK;
 
@@ -93,7 +93,7 @@ public abstract class TileAbstractEnergyCable2 extends TileAbstractEnergyBlockWi
 
 //        compound.setByte("Color", (byte) this.color.getMetadata());
     }
-
+*/
     /**
      * Updates the JList with a new model.
      */
@@ -121,13 +121,13 @@ public abstract class TileAbstractEnergyCable2 extends TileAbstractEnergyBlockWi
         return true;
     }
 
-    public void setCableStateOnFacing(EnumFacing face, EnumCableState state) {
-        this.state[face.getIndex()] = state;
-    }
-
-    public EnumCableState getCableStateOnFacing(EnumFacing face) {
-        return this.state[face.getIndex()];
-    }
+//    public void setCableStateOnFacing(EnumFacing face, EnumCableState state) {
+//        this.state[face.getIndex()] = state;
+//    }
+//
+//    public EnumCableState getCableStateOnFacing(EnumFacing face) {
+//        return this.state[face.getIndex()];
+//    }
 
     //    public EnumColors getColor(){
 //        return color;

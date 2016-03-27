@@ -5,6 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.relauncher.FMLSecurityManager;
+import net.minecraftforge.fml.server.FMLServerHandler;
 import ru.nord_core.common.helpers.RegisterRenderHelper;
 
 import java.io.File;
@@ -25,7 +27,7 @@ public class CommonProxy {
     }
 
     public File getDataDirectory() {
-        final File file = MinecraftServer.getServer().getFile(".");
+        final File file = FMLServerHandler.instance().getServer().getFile(".");
         try {
             return file.getCanonicalFile();
         } catch (final IOException e) {

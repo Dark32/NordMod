@@ -1,7 +1,7 @@
 package ru.nord_core.common.tiles.interfaces;
 
 import net.minecraft.inventory.IInventory;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import ru.nord_core.common.utils.enums.*;
 
 public interface IEnergoCable extends IInventory, IEnergyTile {

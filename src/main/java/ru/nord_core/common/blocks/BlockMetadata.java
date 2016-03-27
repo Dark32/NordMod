@@ -3,7 +3,7 @@ package ru.nord_core.common.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -54,8 +54,8 @@ public abstract class BlockMetadata extends Block  implements IVariantMetadata {
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, getVariant());
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, getVariant());
     }
     @Override
     public int damageDropped(IBlockState state)

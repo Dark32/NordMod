@@ -1,7 +1,10 @@
 package ru.nord.common.items.wood.type1;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.item.ItemColored;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.ColorizerFoliage;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.blocks.wood.type1.BlockNordLeaves;
@@ -9,7 +12,7 @@ import ru.nord.common.utils.enums.EnumNordPlank;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_core.common.utils.enums.EnumMetal;
 
-public class ItemBlockNordLeaves extends ItemBlockMetadata {
+public class ItemBlockNordLeaves extends ItemBlockMetadata implements IItemColor {
     private final BlockNordLeaves leaves;
 
     public ItemBlockNordLeaves(Block block)
@@ -20,12 +23,12 @@ public class ItemBlockNordLeaves extends ItemBlockMetadata {
         this.setHasSubtypes(true);
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getColorFromItemStack(ItemStack stack, int renderPass)
-    {
-        return this.leaves.getRenderColor(this.leaves.getStateFromMeta(stack.getMetadata()));
-    }
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getColorFromItemStack(ItemStack stack, int renderPass)
+//    {
+//        return ColorizerFoliage.getFoliageColorBasic();
+//    }
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
@@ -35,5 +38,11 @@ public class ItemBlockNordLeaves extends ItemBlockMetadata {
         } else {
             return super.getUnlocalizedName() + ".errorData";
         }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getColorFromItemstack(ItemStack stack, int tintIndex) {
+        return ColorizerFoliage.getFoliageColorBasic();
     }
 }

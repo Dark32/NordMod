@@ -52,7 +52,9 @@ public class SchematicUtils {
              * Метод по умолчанию приватный
              * http://www.minecraftforge.net/wiki/Using_Access_Transformers
              */
-            NBTTagCompound.writeEntry(Constants.NBT.ROOT, nbtdata, dataOutputStream);
+        //todo fix it
+//            NBTTagCompound.writeEntry(Constants.NBT.ROOT, nbtdata, dataOutputStream);
+
         } catch (final Exception ex) {
             ex.printStackTrace();
             FMLLog.getLogger().error("Failed to write schematic!", ex);

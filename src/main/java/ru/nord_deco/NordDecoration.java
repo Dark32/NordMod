@@ -1,20 +1,11 @@
 package ru.nord_deco;
 
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.nord_core.NordCore;
-//import ru.nord_core.client.helpers.MeshDefinitionFix;
-//import ru.nord_core.client.helpers.ModModelManager;
+
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_deco.common.blocks.*;
 import ru.nord_deco.common.blocks.abstracts.BlockAbstractStairs;
-import ru.nord_deco.common.helpers.RegisterHelper;
 import ru.nord_deco.common.items.ItemBlockSlabTile1;
 import ru.nord_deco.common.utils.Version;
 import ru.nord_deco.common.utils.enums.EnumAbomination;

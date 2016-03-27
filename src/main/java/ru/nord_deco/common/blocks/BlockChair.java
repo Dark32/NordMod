@@ -12,7 +12,7 @@ public class BlockChair extends BlockAbstractChair {
     public BlockChair(String modid) {
         super(modid, Material.cloth);
         setHardness(1.0F);
-        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+//        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
     }
 
     @Override

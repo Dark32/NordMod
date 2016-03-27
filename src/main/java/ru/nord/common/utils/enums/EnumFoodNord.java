@@ -1,8 +1,8 @@
 package ru.nord.common.utils.enums;
 
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import ru.nord.NordItems;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
@@ -41,18 +41,18 @@ public enum EnumFoodNord implements IMetadataEnum {
 
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
-                    new PotionEffect(Potion.poison.id, 10, 1),
-                    new PotionEffect(Potion.blindness.id, 10, 1),
-                    new PotionEffect(Potion.hunger.id, 10, 1),
+                    new PotionEffect(MobEffects.poison, 10, 1),
+                    new PotionEffect(MobEffects.blindness, 10, 1),
+                    new PotionEffect(MobEffects.hunger, 10, 1),
             };
         }
     },
     dough2(29, "dough2", 1, 1, 20) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
-                    new PotionEffect(Potion.poison.id, 40, 1),
-                    new PotionEffect(Potion.blindness.id, 40, 1),
-                    new PotionEffect(Potion.hunger.id, 40, 1),
+                    new PotionEffect(MobEffects.poison, 40, 1),
+                    new PotionEffect(MobEffects.blindness, 40, 1),
+                    new PotionEffect(MobEffects.hunger, 40, 1),
             };
         }
 
@@ -64,7 +64,7 @@ public enum EnumFoodNord implements IMetadataEnum {
     clabberfull(31, "clabberfull", 2, 6, 80) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
-                    new PotionEffect(Potion.absorption.id, 100, 1),
+                    new PotionEffect(MobEffects.absorption, 100, 1),
             };
         }
 
@@ -78,7 +78,7 @@ public enum EnumFoodNord implements IMetadataEnum {
     PitcherFull(32, "PitcherFull", 4, 8, 99) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
-                    new PotionEffect(Potion.absorption.id, 200, 2),
+                    new PotionEffect(MobEffects.absorption, 200, 2),
             };
         }
 

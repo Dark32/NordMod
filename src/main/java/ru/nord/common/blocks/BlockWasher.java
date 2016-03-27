@@ -2,12 +2,12 @@ package ru.nord.common.blocks;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -29,7 +29,7 @@ public class BlockWasher extends BlockAbstractMachine {
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (tileEntity == null || playerIn.isSneaking()) {
@@ -40,7 +40,7 @@ public class BlockWasher extends BlockAbstractMachine {
             return true;
         }
 
-        ItemStack item = playerIn.getCurrentEquippedItem();
+        ItemStack item = playerIn.getHeldItemMainhand();
         if (item != null && FluidContainerRegistry.isContainer(item)) {
             IFluidTankBlock te = (IFluidTankBlock) tileEntity;
             FluidStack fluid = FluidContainerRegistry.getFluidForFilledItem(item);
@@ -63,7 +63,7 @@ public class BlockWasher extends BlockAbstractMachine {
             }
         }
         playerIn.openGui(Nord.instance, 2, worldIn, pos.getX(), pos.getY(), pos.getZ());
-        return super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
+        return super.onBlockActivated(worldIn, pos, state, playerIn,hand,heldItem, side, hitX, hitY, hitZ);
     }
 
     @Override

@@ -10,14 +10,18 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
-import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyAccumulator;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyBlock;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
 import ru.nord_core.common.utils.Constants;
@@ -42,8 +46,8 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-//        this.wrenche(worldIn,pos,state,playerIn,side,hitX,hitY,hitZ);
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+        // this.wrenche(worldIn,pos,state,playerIn,side,hitX,hitY,hitZ);
         return true;
     }
 
@@ -87,9 +91,9 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
     @Override
     public void onBlockPlacedBy(final World world, final BlockPos coord, final IBlockState bs, final EntityLivingBase player, final ItemStack item) {
         super.onBlockPlacedBy(world, coord, bs, player, item);
-        if( item.hasTagCompound() && item.getTagCompound().hasKey("energy")){
-            TileAbstractEnergyBlock st = (TileAbstractEnergyBlock)world.getTileEntity(coord);
-             st.setEnergy(item.getTagCompound().getInteger("energy"));
+        if (item.hasTagCompound() && item.getTagCompound().hasKey("energy")) {
+            TileAbstractEnergyBlock st = (TileAbstractEnergyBlock) world.getTileEntity(coord);
+            st.setEnergy(item.getTagCompound().getInteger("energy"));
         }
     }
 
@@ -103,25 +107,25 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
         return item;
     }
 
-    public void doItemDrop(final World world, final BlockPos coord, TileEntity te ) {
+    public void doItemDrop(final World world, final BlockPos coord, TileEntity te) {
         if (!world.isRemote && !world.restoringBlockSnapshots) {
-            if(te instanceof TileAbstractEnergyBlock){
-                ItemStack item = createItem((TileAbstractEnergyBlock)te);
+            if (te instanceof TileAbstractEnergyBlock) {
+                ItemStack item = createItem((TileAbstractEnergyBlock) te);
                 spawnAsEntity(world, coord, item);
             } else {
-                ItemStack item = new ItemStack(this,1);
+                ItemStack item = new ItemStack(this, 1);
                 spawnAsEntity(world, coord, item);
             }
         }
     }
 
-    public void displayInformation(ItemStack stack){
+    public void displayInformation(ItemStack stack) {
         NBTTagCompound dataTag = !stack.hasTagCompound() ? new NBTTagCompound() : stack.getTagCompound();
-        String message = dataTag.hasKey("energy") && dataTag.hasKey("maxEnergy") ? "Energy: " + EnumChatFormatting.RED + dataTag.getInteger("energy") / Constants.SHARE_MULTIPLE
+        String message = dataTag.hasKey("energy") && dataTag.hasKey("maxEnergy") ? "Energy: " + TextFormatting.RED + dataTag.getInteger("energy") / Constants.SHARE_MULTIPLE
                 + "/" + dataTag.getInteger("maxEnergy") / Constants.SHARE_MULTIPLE + " " + Constants.ENERGY : "Energy: 0/0 " + Constants.ENERGY;
 
         NBTTagCompound displayTag;
-        if(dataTag.hasKey("display")){
+        if (dataTag.hasKey("display")) {
             displayTag = dataTag.getCompoundTag("display");
         } else {
             displayTag = new NBTTagCompound();
@@ -129,30 +133,30 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
         }
 
         NBTTagList loreTag;
-        if(dataTag.hasKey("Lore")){
+        if (dataTag.hasKey("Lore")) {
             loreTag = displayTag.getTagList("Lore", net.minecraftforge.common.util.Constants.NBT.TAG_STRING);
         } else {
             loreTag = new NBTTagList();
             displayTag.setTag("Lore", loreTag);
         }
         loreTag.appendTag(new NBTTagString(message));
-        if(!stack.hasTagCompound()){
+        if (!stack.hasTagCompound()) {
             stack.setTagCompound(new NBTTagCompound());
         }
     }
 
     @Override
-    public boolean wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public EnumActionResult wrenche(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (playerIn.isSneaking()) {
             this.harvesters.set(playerIn);
             TileAbstractEnergyBlock tile = (TileAbstractEnergyBlock) worldIn.getTileEntity(pos);
-            InventoryHelper.dropInventoryItems(worldIn, pos,tile);
+            InventoryHelper.dropInventoryItems(worldIn, pos, tile);
             this.doItemDrop(worldIn, pos, tile);
-            this.removedByPlayer(worldIn, pos, playerIn, true);
+            this.removedByPlayer(state, worldIn, pos, playerIn, true);
             this.harvesters.set(null);
-            return true;
+            return EnumActionResult.SUCCESS;
         } else {
-            return false;
+            return EnumActionResult.FAIL;
         }
     }
 }

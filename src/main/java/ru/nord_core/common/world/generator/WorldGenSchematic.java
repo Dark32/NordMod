@@ -1,6 +1,7 @@
 package ru.nord_core.common.world.generator;
 
-import net.minecraft.util.BlockPos;
+
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.FMLLog;

@@ -4,8 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
@@ -65,6 +64,6 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
         if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
             list.add("Power: " + currectEnergy(itemStack) +"/" + maxEnergy(itemStack) + " share");
-        } else list.add(StatCollector.translateToLocal("information.ShiftDialog"));
+        } else list.add(new TextComponentTranslation("information.ShiftDialog"));
     }
 }

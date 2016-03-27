@@ -2,19 +2,18 @@ package ru.nord.client.lib.models.iModel;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.renderer.block.model.IBakedModel;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.vertex.VertexFormat;
 import net.minecraft.client.resources.IResourceManager;
-import net.minecraft.client.resources.model.IBakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.IFlexibleBakedModel;
 import net.minecraftforge.client.model.IModel;
-import net.minecraftforge.client.model.IModelState;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
+import net.minecraftforge.common.model.IModelState;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord.client.lib.models.iSmartBlockModel.SmartEnergyCable;
+//import ru.nord.client.lib.models.iSmartBlockModel.SmartEnergyCable;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -49,8 +48,8 @@ public class ModelEnergyCable implements IModel {
 
     @SuppressWarnings("deprecated") // подавляем сообщение об использование устаревшего метода
     @Override
-    public IFlexibleBakedModel bake(IModelState state, VertexFormat format, Function<ResourceLocation, TextureAtlasSprite> bakedTextureGetter) {
-        try {
+    public net.minecraft.client.renderer.block.model.IBakedModel bake(IModelState state, VertexFormat format, Function<ResourceLocation, TextureAtlasSprite> bakedTextureGetter) {
+       /* try {
             IModel subComponent = ModelLoaderRegistry.getModel(MODEL_CORE);
             IBakedModel bakedModelCore = subComponent.bake(state, format, bakedTextureGetter);
 
@@ -77,7 +76,7 @@ public class ModelEnergyCable implements IModel {
                     bakedModelWest, bakedModelEast, bakedModelNorth, bakedModelSouth);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         return null;
     }
 

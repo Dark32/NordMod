@@ -1,6 +1,7 @@
 package ru.nord.common.utils.generator;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
@@ -15,8 +16,9 @@ public class NordOre implements IWorldGenerator {
     public static List<Ore> listOre = new ArrayList<Ore>();;
     // Which dimension to generate in by dimension ID (Nether -1, Overworld 0, End 1, etc)
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-        switch (world.provider.getDimensionId()) {
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+
+        switch (world.provider.getDimension()) {
             case -1:
                 generateAllNetherOre(world, random, chunkX * 16, chunkZ * 16);
                 break;
@@ -82,6 +84,8 @@ public class NordOre implements IWorldGenerator {
             }
         }
     }
+
+
     //The actual generation method.
    /* private void generateCopper(World world, Random rand, int chunkX, int chunkZ) {
         for (int k = 0; k < 16; k++)

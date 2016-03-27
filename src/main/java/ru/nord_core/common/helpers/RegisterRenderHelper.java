@@ -2,7 +2,7 @@ package ru.nord_core.common.helpers;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import ru.nord.Nord;
 import ru.nord_core.NordCore;

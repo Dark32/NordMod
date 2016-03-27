@@ -4,13 +4,13 @@ import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.properties.PropertyInteger;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.fml.relauncher.Side;
@@ -30,9 +30,9 @@ public class BlockSapling3 extends BlockAbstractSapling {
     {
         this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumNordPlank3.COFFEA).withProperty(STAGE, Integer.valueOf(0)));
         float f = 0.4F;
-        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
+//        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(NordTabs.tabWood);
-        this.setStepSound(soundTypeGrass);
+        this.setStepSound(SoundType.GROUND);
     }
 
     @Override

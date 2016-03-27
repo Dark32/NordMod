@@ -1,21 +1,21 @@
 package ru.nord_core.common.items;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.StatList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.NordTabs;
 import ru.nord.common.utils.enums.EnumFoodNord;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class ItemFoodNord extends ItemFood {
@@ -47,22 +47,23 @@ public class ItemFoodNord extends ItemFood {
         }
     }
 
-    @Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
-    {
+    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         EnumFoodNord num = EnumFoodNord.values()[stack.getMetadata()];
         --stack.stackSize;
-        playerIn.getFoodStats().addStats(this, stack);
-        this.onFoodEaten(stack, worldIn,playerIn);
-        worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-        if (!playerIn.capabilities.isCreativeMode && num.getContainer()!=null)
-        {
-            if (stack.stackSize <= 0)
-            {
-                return num.getContainer();
-            }
+        --stack.stackSize;
 
-            playerIn.inventory.addItemStackToInventory(num.getContainer());
+        if (entityLiving instanceof EntityPlayer) {
+            EntityPlayer entityplayer = (EntityPlayer) entityLiving;
+            entityplayer.getFoodStats().addStats(this, stack);
+            this.onFoodEaten(stack, worldIn, entityplayer);
+            worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.entity_player_burp, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            if (!entityplayer.capabilities.isCreativeMode && num.getContainer() != null) {
+                if (stack.stackSize <= 0) {
+                    return num.getContainer();
+                }
+
+                entityplayer.inventory.addItemStackToInventory(num.getContainer());
+            }
         }
         return stack;
     }
@@ -85,8 +86,8 @@ public class ItemFoodNord extends ItemFood {
             subItems.add(new ItemStack(itemIn, 1, i));
         }
     }
-    public EnumAction getItemUseAction(ItemStack stack)
-    {
+
+    public EnumAction getItemUseAction(ItemStack stack) {
         EnumFoodNord num = EnumFoodNord.values()[stack.getMetadata()];
         return num.getAnimation();
     }

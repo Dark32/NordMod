@@ -132,7 +132,7 @@ public class Fuel {
      * @param last   - сгорает до конца
      * @return истина, если новое, ложь, если перезапись
      */
-    public boolean addFuel(Item item, int energy, int packet,boolean last) {
+    public boolean addFuel(Item item, int energy, int packet, boolean last) {
         for (int i = 0; i < itemFuelDamagable.size(); i++) {
             FuelDamagable fuel = itemFuelDamagable.get(i);
             boolean check = fuel.item == item;
@@ -141,7 +141,7 @@ public class Fuel {
                 return false;
             }
         }
-        itemFuelDamagable.add(new FuelDamagable(item, energy,packet, last));
+        itemFuelDamagable.add(new FuelDamagable(item, energy, packet, last));
         return true;
 
     }
@@ -156,7 +156,7 @@ public class Fuel {
         if (itemStack == null) return NOT_FUEL;
         Item item = itemStack.getItem();
         int metadata = itemStack.getItemDamage();
-        if (getFuelDamagable(itemStack)!=null) return DAMAGABLE;
+        if (getFuelDamagable(itemStack) != null) return DAMAGABLE;
         for (FuelMetadata fuel : itemFuelMetadata) {
             if (fuel.item == item && fuel.metadata == metadata) {
                 return METADATA;
@@ -167,7 +167,8 @@ public class Fuel {
         }
         if (item instanceof ItemBlock
                 && Block.getBlockFromItem(item) != Blocks.air) {
-            Material material = Block.getBlockFromItem(item).getMaterial();
+            Block block = Block.getBlockFromItem(item);
+            Material material = block.getMaterial(block.getStateFromMeta(itemStack.getMetadata()));
             if (itemFuelMaterial.containsKey(material)) {
                 return MATERIAL;
             }
@@ -192,11 +193,12 @@ public class Fuel {
 
     /**
      * Получаем повреждаемое топливо
+     *
      * @param itemStack предмет
      * @return топливо
      */
-    private FuelDamagable getFuelDamagable(ItemStack itemStack){
-        if(itemStack == null) return null;
+    private FuelDamagable getFuelDamagable(ItemStack itemStack) {
+        if (itemStack == null) return null;
         for (FuelDamagable fuel : itemFuelDamagable) {
             if (fuel.item == itemStack.getItem()) {
                 return fuel;
@@ -237,7 +239,7 @@ public class Fuel {
             return null;
         if (isFuelCode(itemStack) == DAMAGABLE && hasBurn(itemStack)) {
             FuelDamagable fuel = getFuelDamagable(itemStack);
-            burn(itemStack,fuel);
+            burn(itemStack, fuel);
             //itemStack.setItemDamage(itemStack.getItemDamage() + fuel.packet);
         } else {
             itemStack.stackSize--;
@@ -247,17 +249,19 @@ public class Fuel {
         }
         return itemStack;
     }
+
     /**
      * Сжигаем повреждаемое топливо
      */
     public ItemStack burn(ItemStack itemStack, FuelDamagable fuel) {
-         if(itemStack.getItemDamage()> fuel.packet){
-             itemStack.setItemDamage(itemStack.getItemDamage() + fuel.packet);
-         }else{
-             itemStack.setItemDamage(itemStack.getMaxDamage());
-         }
+        if (itemStack.getItemDamage() > fuel.packet) {
+            itemStack.setItemDamage(itemStack.getItemDamage() + fuel.packet);
+        } else {
+            itemStack.setItemDamage(itemStack.getMaxDamage());
+        }
         return itemStack;
     }
+
     /**
      * Энергия от сгорания
      *
@@ -270,7 +274,7 @@ public class Fuel {
         int metadata = itemStack.getItemDamage();
 
         FuelDamagable fuel_d = getFuelDamagable(itemStack);
-        if (fuel_d!=null) return fuel_d.energy;
+        if (fuel_d != null) return fuel_d.energy;
 
         for (FuelMetadata fuel : itemFuelMetadata) {
             if (fuel.item == item && fuel.metadata == metadata) {
@@ -280,9 +284,11 @@ public class Fuel {
         if (itemFuel.containsKey(item)) {
             return itemFuel.get(item);
         }
+
         if (item instanceof ItemBlock
                 && Block.getBlockFromItem(item) != Blocks.air) {
-            Material material = Block.getBlockFromItem(item).getMaterial();
+            Block block = Block.getBlockFromItem(item);
+            Material material = block.getMaterial(block.getStateFromMeta(itemStack.getMetadata()));
             if (itemFuelMaterial.containsKey(material)) {
                 return itemFuelMaterial.get(material);
             }
@@ -324,7 +330,7 @@ public class Fuel {
         public int packet;
         public boolean last;
 
-        public FuelDamagable(Item item, int energy, int packet,boolean last) {
+        public FuelDamagable(Item item, int energy, int packet, boolean last) {
             this.item = item;
             this.energy = energy;
             this.packet = packet;
@@ -348,6 +354,7 @@ public class Fuel {
             this.last = last;
             return this;
         }
+
         /**
          * @param packet сколько урона наносить предмету за тик сгорания
          * @return себя же

@@ -4,8 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -14,10 +15,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
@@ -27,24 +29,24 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 import java.util.*;
 
-public abstract class BlockAbstractLeaves extends BlockLeaves implements IVariantMetadata {
+public abstract class BlockAbstractLeaves extends BlockLeaves implements IVariantMetadata, IBlockColor {
 
 
     public abstract PropertyEnum getVariant();
 
     public abstract Comparable getEnumByMetadata(int meta);
 
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getRenderColor(IBlockState state) {
+//        return super.getRenderColor(state);
+//    }
+//
     @Override
     @SideOnly(Side.CLIENT)
-    public int getRenderColor(IBlockState state) {
-        return super.getRenderColor(state);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
+    public int colorMultiplier(IBlockState state, IBlockAccess worldIn, BlockPos pos, int tintIndex) {
         if (((IBiomeColoredEnum) worldIn.getBlockState(pos).getValue(getVariant())).getColorize()) {
-            return super.colorMultiplier(worldIn, pos, renderPass);
+            return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
         } else {
             return 0xffffff;
         }
@@ -104,17 +106,17 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, getVariant(), CHECK_DECAY, DECAYABLE);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, getVariant(), CHECK_DECAY, DECAYABLE);
     }
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
@@ -123,14 +125,14 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
         return ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
     }
 
-    @Override
-    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te) {
-        if (!worldIn.isRemote && player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == Items.shears) {
-            player.triggerAchievement(StatList.mineBlockStatArray[Block.getIdFromBlock(this)]);
-        } else {
-            super.harvestBlock(worldIn, player, pos, state, te);
-        }
-    }
+//    @Override
+//    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te) {
+//        if (!worldIn.isRemote && player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == Items.shears) {
+//            player.triggerAchievement(StatList.mineBlockStatArray[Block.getIdFromBlock(this)]);
+//        } else {
+//            super.harvestBlock(worldIn, player, pos, state, te);
+//        }
+//    }
 
     @Override
     public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
@@ -140,7 +142,7 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
 
     @Override
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer() {
+    public BlockRenderLayer getBlockLayer() {
         return Blocks.leaves.getBlockLayer();
     }
 

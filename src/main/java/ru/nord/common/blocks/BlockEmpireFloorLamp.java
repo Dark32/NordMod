@@ -1,8 +1,10 @@
 package ru.nord.common.blocks;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,9 +18,9 @@ public class BlockEmpireFloorLamp extends BlockAbstractRoofLamp {
 
     public BlockEmpireFloorLamp() {
         super(Version.MODID);
-        this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 0.1F, 0.812F);
+//        this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 0.1F, 0.812F);
         setLightLevel(0.9375F);
-        setStepSound(soundTypeWood);
+        setStepSound(SoundType.WOOD);
         setHardness(0.0F);
     }
 
@@ -41,7 +43,7 @@ public class BlockEmpireFloorLamp extends BlockAbstractRoofLamp {
 
     private boolean canPlaceOn(World worldIn, BlockPos pos)
     {
-        return World.doesBlockHaveSolidTopSurface(worldIn, pos);
+        return worldIn.isSideSolid( pos, EnumFacing.UP);
     }
 
     @Override

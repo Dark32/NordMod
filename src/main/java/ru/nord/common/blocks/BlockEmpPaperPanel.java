@@ -4,13 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import ru.nord.common.utils.Version;
@@ -25,10 +25,27 @@ public class BlockEmpPaperPanel extends BlockMetadata {
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumPaperEmp.class);
+    protected static final AxisAlignedBB[] aabbs = new AxisAlignedBB[]{
+            new AxisAlignedBB(0.4375D, 0.0D, 0.4375D, 0.5625D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.4375D, 0.5625D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.4375D, 0.5625D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.4375D, 0.5625D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.0D, 0.5625D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.0D, 0.5625D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.5625D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.5625D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.4375D, 1.0D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.4375D, 1.0D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.4375D, 1.0D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.4375D, 1.0D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.0D, 1.0D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.4375D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.5625D),
+            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
 
 
     public BlockEmpPaperPanel(String[] names) {
-        super(Material.iron, names,  Version.MODID);
+        super(Material.iron, names, Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
     }
@@ -44,9 +61,10 @@ public class BlockEmpPaperPanel extends BlockMetadata {
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, NORTH, EAST, WEST, SOUTH, getVariant());
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, NORTH, EAST, WEST, SOUTH, getVariant());
     }
+
     /**
      * Get the actual Block state of this Block at the given position. This applies properties not visible in the
      * metadata, such as fence connections.
@@ -67,106 +85,76 @@ public class BlockEmpPaperPanel extends BlockMetadata {
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
-//        return worldIn.getBlockState(pos).getBlock() != this && super.shouldSideBeRendered(worldIn, pos, side);
-//    }
-
     @Override
-    public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List list, Entity collidingEntity) {
-        boolean N = this.canPaneConnectTo(worldIn, pos, EnumFacing.NORTH);
-        boolean S = this.canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH);
-        boolean W = this.canPaneConnectTo(worldIn, pos, EnumFacing.WEST);
-        boolean E = this.canPaneConnectTo(worldIn, pos, EnumFacing.EAST);
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB p_185477_4_, List<AxisAlignedBB> p_185477_5_, Entity p_185477_6_) {
+        state = this.getActualState(state, worldIn, pos);
+        addCollisionBoxToList(pos, p_185477_4_, p_185477_5_, aabbs[0]);
 
-        if ((!W || !E) && (W || E || N || S)) {
-            if (W) {
-                this.setBlockBounds(0.0F, 0.0F, 0.4375F, 0.5F, 1.0F, 0.5625F);
-                super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
-            } else if (E) {
-                this.setBlockBounds(0.5F, 0.0F, 0.4375F, 1.0F, 1.0F, 0.5625F);
-                super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
-            }
-        } else {
-            this.setBlockBounds(0.0F, 0.0F, 0.4375F, 1.0F, 1.0F, 0.5625F);
-            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        if ((Boolean) state.getValue(NORTH)) {
+            addCollisionBoxToList(pos, p_185477_4_, p_185477_5_, aabbs[getBoundingBoxIndex(EnumFacing.NORTH)]);
         }
 
-        if ((!N || !S) && (W || E || N || S)) {
-            if (N) {
-                this.setBlockBounds(0.4375F, 0.0F, 0.0F, 0.5625F, 1.0F, 0.5F);
-                super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
-            } else if (S) {
-                this.setBlockBounds(0.4375F, 0.0F, 0.5F, 0.5625F, 1.0F, 1.0F);
-                super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
-            }
-        } else {
-            this.setBlockBounds(0.4375F, 0.0F, 0.0F, 0.5625F, 1.0F, 1.0F);
-            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        if ((Boolean) state.getValue(SOUTH)) {
+            addCollisionBoxToList(pos, p_185477_4_, p_185477_5_, aabbs[getBoundingBoxIndex(EnumFacing.SOUTH)]);
+        }
+
+        if ((Boolean) state.getValue(EAST)) {
+            addCollisionBoxToList(pos, p_185477_4_, p_185477_5_, aabbs[getBoundingBoxIndex(EnumFacing.EAST)]);
+        }
+
+        if ((Boolean) state.getValue(WEST)) {
+            addCollisionBoxToList(pos, p_185477_4_, p_185477_5_, aabbs[getBoundingBoxIndex(EnumFacing.WEST)]);
         }
     }
 
-    /**
-     * Sets the block's bounds for rendering it as an item
-     */
-//    @Override
-//    public void setBlockBoundsForItemRender() {
-//        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-//    }
-
-    @Override
-    public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos) {
-        float f = 0.4375F;
-        float f1 = 0.5625F;
-        float f2 = 0.4375F;
-        float f3 = 0.5625F;
-        boolean N = this.canPaneConnectToBlock(worldIn.getBlockState(pos.north()).getBlock());
-        boolean S = this.canPaneConnectToBlock(worldIn.getBlockState(pos.south()).getBlock());
-        boolean W = this.canPaneConnectToBlock(worldIn.getBlockState(pos.west()).getBlock());
-        boolean E = this.canPaneConnectToBlock(worldIn.getBlockState(pos.east()).getBlock());
-
-        if ((!W || !E) && (W || E || N || S)) {
-            if (W) {
-                f = 0.0F;
-            } else if (E) {
-                f1 = 1.0F;
-            }
-        } else {
-            f = 0.0F;
-            f1 = 1.0F;
-        }
-
-        if ((!N || !S) && (W || E || N || S)) {
-            if (N) {
-                f2 = 0.0F;
-            } else if (S) {
-                f3 = 1.0F;
-            }
-        } else {
-            f2 = 0.0F;
-            f3 = 1.0F;
-        }
-
-        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
-    }
 
     public final boolean canPaneConnectToBlock(Block blockIn) {
-        return blockIn.isFullBlock() || blockIn == this || blockIn == Blocks.glass || blockIn == Blocks.stained_glass || blockIn instanceof BlockEmpPaperPanel;
+        return blockIn.getDefaultState().isFullCube() || blockIn == this || blockIn == Blocks.glass || blockIn == Blocks.stained_glass || blockIn == Blocks.stained_glass_pane || blockIn instanceof BlockEmpPaperPanel;
     }
 
     public boolean canPaneConnectTo(IBlockAccess world, BlockPos pos, EnumFacing dir) {
         BlockPos off = pos.offset(dir);
-        Block block = world.getBlockState(off).getBlock();
-        return canPaneConnectToBlock(block) || block.isSideSolid(world, off, dir.getOpposite());
+        IBlockState state = world.getBlockState(off);
+        return canPaneConnectToBlock(state.getBlock()) || state.isSideSolid(world, off, dir.getOpposite());
+    }
+
+    private static int getBoundingBoxIndex(IBlockState p_185728_0_) {
+        int i = 0;
+
+        if ((Boolean) p_185728_0_.getValue(NORTH)) {
+            i |= getBoundingBoxIndex(EnumFacing.NORTH);
+        }
+
+        if ((Boolean) p_185728_0_.getValue(EAST)) {
+            i |= getBoundingBoxIndex(EnumFacing.EAST);
+        }
+
+        if ((Boolean) p_185728_0_.getValue(SOUTH)) {
+            i |= getBoundingBoxIndex(EnumFacing.SOUTH);
+        }
+
+        if ((Boolean) p_185728_0_.getValue(WEST)) {
+            i |= getBoundingBoxIndex(EnumFacing.WEST);
+        }
+
+        return i;
+    }
+
+    private static int getBoundingBoxIndex(EnumFacing face) {
+        return 1 << face.getHorizontalIndex();
+    }
+
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        state = this.getActualState(state, source, pos);
+        return aabbs[getBoundingBoxIndex(state)];
     }
 }

@@ -3,7 +3,7 @@ package ru.nord_core.common.blocks.abstracts;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -73,8 +73,8 @@ public abstract class BlockAbstractLog extends BlockLog implements IVariantMetad
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, getVariant(), LOG_AXIS);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, getVariant(), LOG_AXIS);
     }
 
     @Override

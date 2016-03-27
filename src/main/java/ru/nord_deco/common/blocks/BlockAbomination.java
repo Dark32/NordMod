@@ -1,6 +1,7 @@
 package ru.nord_deco.common.blocks;
 
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 
@@ -14,7 +15,7 @@ public class BlockAbomination extends BlockMetadata {
     public BlockAbomination(String[] names){
         super(Material.cloth,names, Version.MODID);
         this.setHardness(3F);
-        setStepSound(SLIME_SOUND);
+        setStepSound(SoundType.SLIME);
     }
 
     @Override

@@ -2,14 +2,13 @@ package ru.nord_core.common.items.abstracts;
 
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,19 +22,19 @@ import java.util.Set;
 public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
     protected int powerOnUse = 1;
     protected int poweOnHit = 1;
-    private static final Set EFFECTIVE_ON = Sets.newHashSet();
+    private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet();
 
     protected AEnergyTool(float attackDamage,
                           ToolMaterial material,
                           int energyByUse,
                           int energyByHit) {
-        super(attackDamage, material, EFFECTIVE_ON);
+        super(attackDamage, -2.8F,material, EFFECTIVE_ON);
         this.powerOnUse = energyByUse;
         this.poweOnHit = energyByHit;
     }
 
     @Override
-    public float getStrVsBlock(ItemStack stack, Block block) {
+    public float getStrVsBlock(ItemStack stack, IBlockState state) {
         if (canUse(stack)) {
             return this.efficiencyOnProperMaterial;
         } else {
@@ -62,8 +61,8 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, Block blockIn, BlockPos pos, EntityLivingBase playerIn) {
-        if ((double) blockIn.getBlockHardness(worldIn, pos) != 0.0D) {
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState blockIn, BlockPos pos, EntityLivingBase entityLiving){
+    if ((double) blockIn.getBlockHardness(worldIn, pos) != 0.0D) {
             doUse(stack);
         }
 
@@ -86,13 +85,13 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
         return this.toolMaterial.getHarvestLevel();
     }
 
-    @Override
-    public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state) {
-        if (state.getBlock().isToolEffective(getHarvestType().getName(), state))
-            return efficiencyOnProperMaterial;
-
-        return 1.0F;
-    }
+//    @Override
+//    public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state) {
+//        if (state.getBlock().isToolEffective(getHarvestType().getName(), state))
+//            return efficiencyOnProperMaterial;
+//
+//        return 1.0F;
+//    }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -101,7 +100,7 @@ public abstract class AEnergyTool extends ItemTool implements IEnergyTool {
             list.add("Power: " + currectEnergy(itemStack) + "/" + maxEnergy(itemStack) + " share");
             list.add("Harvest Level: " + toolMaterial.getHarvestLevel());
             list.add("Efficiency: " + toolMaterial.getEfficiencyOnProperMaterial());
-        } else list.add(StatCollector.translateToLocal("information.ShiftDialog"));
+        } else list.add(new TextComponentTranslation("information.ShiftDialog"));
     }
 
 

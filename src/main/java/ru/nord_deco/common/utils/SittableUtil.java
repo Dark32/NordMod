@@ -3,8 +3,7 @@ package ru.nord_deco.common.utils;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import ru.nord_deco.common.entity.EntitySittableBlock;
 
@@ -17,7 +16,7 @@ public class SittableUtil {
         {
             EntitySittableBlock nemb = new EntitySittableBlock(par1World, x, y, z, par6);
             par1World.spawnEntityInWorld(nemb);
-            par5EntityPlayer.mountEntity(nemb);
+            par5EntityPlayer.startRiding(nemb);
         }
         return true;
     }
@@ -28,7 +27,7 @@ public class SittableUtil {
         {
             EntitySittableBlock nemb = new EntitySittableBlock(par1World, x, y, z, par6, metadata, offset);
             par1World.spawnEntityInWorld(nemb);
-            par5EntityPlayer.mountEntity(nemb);
+            par5EntityPlayer.startRiding(nemb);
         }
         return true;
     }
@@ -40,9 +39,9 @@ public class SittableUtil {
         {
             if (mount.blockPosX == x && mount.blockPosY == y && mount.blockPosZ == z)
             {
-                if (mount.riddenByEntity == null)
+                if (mount.getRidingEntity() == null)
                 {
-                    par5EntityPlayer.mountEntity(mount);
+                    par5EntityPlayer.startRiding(mount);
                 }
                 return true;
             }
@@ -57,7 +56,7 @@ public class SittableUtil {
         {
             if (mount.blockPosX == x && mount.blockPosY == y && mount.blockPosZ == z)
             {
-                return mount.riddenByEntity != null;
+                return mount.getRidingEntity() != null;
             }
         }
         return false;

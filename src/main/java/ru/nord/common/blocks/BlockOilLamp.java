@@ -2,7 +2,7 @@ package ru.nord.common.blocks;
 
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import ru.nord.common.utils.Version;
@@ -17,11 +17,12 @@ public class BlockOilLamp extends BlockAbstractRoofLamp {
 
     public BlockOilLamp() {
         super(Version.MODID);
-        this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
+//        this.setBlockBounds(0.187F, 0.0F, 0.187F, 0.812F, 1.0F, 0.812F);
     }
 
     @Override
-    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+    public void randomDisplayTick(IBlockState state , World worldIn , BlockPos pos, Random rand)
+    {
         final double a = (double) pos.getX() + 0.5F;
         final double b = (double) pos.getY() + (rand.nextFloat() * 0.2F) + 0.3F;
         final double c = (double) pos.getZ() + 0.5F;
