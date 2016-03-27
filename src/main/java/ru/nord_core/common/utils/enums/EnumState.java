@@ -3,10 +3,10 @@ package ru.nord_core.common.utils.enums;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumState implements IMetadataEnum {
-    ON(0, "ON", 1),
-    OFF(1, "OFF", 1),
-    INVERTED_ON(2, "INVERTED_ON", 2),
-    INVERTED_OFF(3, "INVERTED_OFF", 2);
+    ON(0, "on", 1),
+    OFF(1, "off", 1),
+    INVERTED_ON(2, "inverted_on", 2),
+    INVERTED_OFF(3, "inverted_off", 2);
     private final int meta;
     private final int drop;
     private final String name;

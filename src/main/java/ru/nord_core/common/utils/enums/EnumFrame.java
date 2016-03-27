@@ -3,9 +3,9 @@ package ru.nord_core.common.utils.enums;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumFrame implements IMetadataEnum {
-    IRON(0, "IRON", "nord:frame_wood"),
-    WOOD(1, "WOOD", "nord:frame_metall"),
-    GOLD(2, "GOLD", "nord:frame_gold");
+    IRON(0, "iron", "nord:frame_wood"),
+    WOOD(1, "wood", "nord:frame_metall"),
+    GOLD(2, "gold", "nord:frame_gold");
     private final int meta;
     private final String name;
     private final String model;

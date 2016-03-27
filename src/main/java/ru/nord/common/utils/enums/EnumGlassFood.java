@@ -5,7 +5,7 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 public enum EnumGlassFood implements IMetadataEnum {
 
     CLABBEREMPTY(0, "clabberempty"),
-    PITCHER_EMPTY(1, "PitcherEmpty");
+    PITCHER_EMPTY(1, "pitcherempty");
     private final String name;
     private final int meta;
 

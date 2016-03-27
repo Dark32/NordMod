@@ -4,19 +4,19 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumGlowstoneDust implements IMetadataEnum {
 
-    DUST1(0, "glowstoneDust1"),
-    DUST2(1, "glowstoneDust2"),
-    DUST3(2, "glowstoneDust3"),
-    DUST4(3, "glowstoneDust4"),
-    DUST5(4, "glowstoneDust5"),
-    DUST6(5, "glowstoneDust6"),
-    DUST7(6, "glowstoneDust7"),
-    DUST8(7, "glowstoneDust8"),
-    DUST9(8, "glowstoneDust9"),
-    DUST10(9, "glowstoneDust10"),
-    DUST11(10, "glowstoneDust11"),
-    DUST12(11, "glowstoneDust12"),
-    DUST13(12, "glowstoneDust13"),
+    DUST1(0, "glowstonedust1"),
+    DUST2(1, "glowstonedust2"),
+    DUST3(2, "glowstonedust3"),
+    DUST4(3, "glowstonedust4"),
+    DUST5(4, "glowstonedust5"),
+    DUST6(5, "glowstonedust6"),
+    DUST7(6, "glowstonedust7"),
+    DUST8(7, "glowstonedust8"),
+    DUST9(8, "glowstonedust9"),
+    DUST10(9, "glowstonedust10"),
+    DUST11(10, "glowstonedust11"),
+    DUST12(11, "glowstonedust12"),
+    DUST13(12, "glowstonedust13"),
 
     ;
 

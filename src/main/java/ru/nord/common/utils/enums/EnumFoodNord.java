@@ -10,12 +10,12 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 public enum EnumFoodNord implements IMetadataEnum {
 
     a_lot_of_pancakes(0, "a_lot_of_pancakes", 8, 4),
-    Pancake(1, "Pancake", 2, 1),
-    Pancakeswithcottagecheese(2, "Pancakeswithcottagecheese", 4, 2),
+    Pancake(1, "pancake", 2, 1),
+    Pancakeswithcottagecheese(2, "pancakeswithcottagecheese", 4, 2),
     pancakeswithcurd(3, "pancakeswithcurd", 4, 2),
     pancakeswithfish(4, "pancakeswithfish", 6, 3),
-    Pancakeswithjam(5, "Pancakeswithjam", 4, 2),
-    Pancakeswithjam2(6, "Pancakeswithjam2", 5, 2),
+    Pancakeswithjam(5, "pancakeswithjam", 4, 2),
+    Pancakeswithjam2(6, "pancakeswithjam2", 5, 2),
     pancakeswithmeat(7, "pancakeswithmeat", 8, 4),
     pancakeswithonionsandeggs(8, "pancakeswithonionsandeggs", 5, 2),
     pancakeswithpotatoes(9, "pancakeswithpotatoes", 8, 4),
@@ -26,18 +26,18 @@ public enum EnumFoodNord implements IMetadataEnum {
     cheesecake(14, "cheesecake", 2, 2),
     curd(15, "curd", 4, 4),
     dough(16, "dough", 1, 1, 10),
-    apricotfruit(17, "apricotFruit", 1, 1, 10),
+    apricotfruit(17, "apricotfruit", 1, 1, 10),
     berry1(18, "berry1", 1, 1, 10),
     berry2(19, "berry2", 1, 1, 10),
-    coffeaFruit(20, "coffeaFruit", 1, 1, 10),
-    coffeaGrain(21, "coffeaGrain", 1, 1, 10),
-    lemonFruit(22, "lemonFruit", 1, 1, 10),
-    oliveFruit(23, "oliveFruit", 1, 1, 10),
-    orangeFruit(24, "orangeFruit", 1, 1, 10),
-    peachFruit(25, "peachFruit", 1, 1, 10),
-    pearFruit(26, "pearFruit", 1, 1, 10),
-    punicaFruit(27, "punicaFruit", 1, 1, 10),
-    sakuraFruit(28, "sakuraFruit", 1, 1, 10) {
+    coffeaFruit(20, "coffeafruit", 1, 1, 10),
+    coffeaGrain(21, "coffeagrain", 1, 1, 10),
+    lemonFruit(22, "lemonfruit", 1, 1, 10),
+    oliveFruit(23, "olivefruit", 1, 1, 10),
+    orangeFruit(24, "orangefruit", 1, 1, 10),
+    peachFruit(25, "peachfruit", 1, 1, 10),
+    pearFruit(26, "pearfruit", 1, 1, 10),
+    punicaFruit(27, "punicafruit", 1, 1, 10),
+    sakuraFruit(28, "sakurafruit", 1, 1, 10) {
 
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
@@ -75,7 +75,7 @@ public enum EnumFoodNord implements IMetadataEnum {
             return EnumAction.DRINK;
         }
     },
-    PitcherFull(32, "PitcherFull", 4, 8, 99) {
+    PitcherFull(32, "pitcherfull", 4, 8, 99) {
         public PotionEffect[] getEffect() {
             return new PotionEffect[]{
                     new PotionEffect(MobEffects.absorption, 200, 2),
@@ -90,13 +90,13 @@ public enum EnumFoodNord implements IMetadataEnum {
         }
     },
     onion(33, "onion", 2, 2),
-    FishPie(34, "FishPie", 8, 4),
-    JamPie(35, "JamPie", 8, 4),
-    MeatPie(36, "MeatPie", 8, 4),
-    Piewithonionsandeggs(37, "Piewithonionsandeggs", 8, 4),
-    PotatoesPie(38, "PotatoesPie", 8, 4),
-    SorrelPie(39, "SorrelPie", 8, 4),
-    Sorrel(40, "Sorrel", 8, 4),;
+    FishPie(34, "fishpie", 8, 4),
+    JamPie(35, "jampie", 8, 4),
+    MeatPie(36, "meatpie", 8, 4),
+    Piewithonionsandeggs(37, "piewithonionsandeggs", 8, 4),
+    PotatoesPie(38, "potatoespie", 8, 4),
+    SorrelPie(39, "sorrelpie", 8, 4),
+    Sorrel(40, "sorrel", 8, 4),;
 
     private final String name;
     private final int meta;

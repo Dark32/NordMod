@@ -6,14 +6,14 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumTileType2 implements IMetadataEnum, IColorizeEnum {
 
-    LIGHT_GRAY(0, "LIGHT_GRAY", 8),
-    CYAN(1, "CYAN", 9),
-    PURPLE(2, "PURPLE", 10),
-    BLUE(3, "BLUE", 11),
-    BROWN(4, "BROWN", 12),
-    GREEN(5, "GREEN", 13),
-    RED(6, "RED", 14),
-    BLACK(7, "BLACK", 15);
+    LIGHT_GRAY(0, "light_gray", 8),
+    CYAN(1, "cyan", 9),
+    PURPLE(2, "purple", 10),
+    BLUE(3, "blue", 11),
+    BROWN(4, "brown", 12),
+    GREEN(5, "green", 13),
+    RED(6, "red", 14),
+    BLACK(7, "black", 15);
 
     private final String name;
     private final int meta;

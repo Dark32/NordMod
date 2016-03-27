@@ -4,7 +4,7 @@ import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
 public enum EnumChairOther implements IMetadataEnum {
     // не больше 4 типов, т.к. 4 бита на поворот уже занято
-   STREETCHAIR(0, "streetChair")
+   STREET_CHAIR(0, "streetchair")
    ;
     private final String name;
     private final int meta;

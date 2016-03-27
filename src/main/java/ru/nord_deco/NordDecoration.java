@@ -57,11 +57,11 @@ public class NordDecoration {
                 "chairWhite"
         );
 
-        RegisterHelper2.registerMetadataBlock(
-                NordBloksDeco.chairOther,
-                ItemBlockMetadata.class,
-                "chairOther"
-        );
+//        RegisterHelper2.registerMetadataBlock(
+//                NordBloksDeco.chairOther,
+//                ItemBlockMetadata.class,
+//                "chairOther"
+//        );
         RegisterHelper2.registerMetadataBlockWithArgumenedItemBlock(
                 NordBloksDeco.halfSlabTile1,
                 ItemBlockSlabTile1.class,
@@ -99,7 +99,7 @@ public class NordDecoration {
             modelRegister().registerBlockItemModelForMeta(NordBloksDeco.chairWhite, enumType.getMetadata(), "facing=west,type=" + enumType.getName());
         }
         for (EnumChairOther enumType : EnumChairOther.values()) {
-            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.chairOther, enumType.getMetadata(), "facing=west,type=" + enumType.getName());
+//            modelRegister().registerBlockItemModelForMeta(NordBloksDeco.chairOther, enumType.getMetadata(), "facing=west,type=" + enumType.getName());
         }
         for (EnumTileType1 enumType : EnumTileType1.values()) {
             modelRegister().registerBlockItemModelForMeta(NordBloksDeco.halfSlabTile1, enumType.getMetadata(), "half=bottom,variant=" + enumType.getName());
