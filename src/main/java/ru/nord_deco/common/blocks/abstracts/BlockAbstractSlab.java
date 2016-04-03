@@ -18,6 +18,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.nord_core.client.utils.IColorizeBlock;
 import ru.nord_core.common.utils.enums.interfaces.IColorizeEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 import ru.nord_deco.common.utils.Version;
@@ -26,7 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-public abstract class BlockAbstractSlab extends BlockSlab {
+public abstract class BlockAbstractSlab extends BlockSlab implements IColorizeBlock {
 
     public static final PropertyBool SEAMLESS = PropertyBool.create("seamless");
     private String unlocalizedName;
@@ -150,5 +151,26 @@ public abstract class BlockAbstractSlab extends BlockSlab {
     @Override
     public IProperty getVariantProperty() {
         return getVariant();
+    }
+
+    @Override
+    public int getColorForStack(ItemStack stack, Block block) {
+        IBlockState state = block.getStateFromMeta(stack.getMetadata());
+        Comparable colorize = state.getValue(getVariant());
+        if (colorize instanceof IColorizeEnum) {
+            return ((IColorizeEnum) colorize).getColor();
+        } else {
+            return 0xffffff;
+        }
+    }
+
+    @Override
+    public int colorMultiplier(IBlockState state, IBlockAccess p_186720_2_, BlockPos pos, int tintIndex) {
+        Comparable colorize = state.getValue(getVariant());
+        if (colorize instanceof IColorizeEnum) {
+            return ((IColorizeEnum) colorize).getColor();
+        } else {
+            return 0xffffff;
+        }
     }
 }

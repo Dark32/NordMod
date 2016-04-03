@@ -2,6 +2,7 @@ package ru.nord_deco;
 
 
 
+import ru.nord_core.common.helpers.RegisterColorHelper;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
 import ru.nord_deco.common.blocks.*;
@@ -28,7 +29,7 @@ public class NordDecoration {
 
 
     public static void init() {
-
+             registerColor();
     }
 
     public static void postInit() {
@@ -109,5 +110,11 @@ public class NordDecoration {
             modelRegister().registerBlockItemModelForMeta(NordBloksDeco.abomination, enumType.getMetadata(), "type=" + enumType.getName());
         }
         modelRegister().registerBlockItemModelForMeta(NordBloksDeco.stairs,0, "facing=west,half=bottom,shape=straight");
+    }
+    private static void registerColor(){
+        RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloksDeco.halfSlabTile1);
+        RegisterColorHelper.registerColor().registerItemColorHandler(NordBloksDeco.halfSlabTile1);
+        RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloksDeco.doubleHalfSlabTile1);
+        RegisterColorHelper.registerColor().registerItemColorHandler(NordBloksDeco.doubleHalfSlabTile1);
     }
 }
