@@ -17,7 +17,6 @@ public class RenderWorldLast {
     public void onBlockHighlight(RenderWorldLastEvent event) {
         EntityPlayer player = Minecraft.getMinecraft().thePlayer;
         double shift2 = 0.01d;
-//        if (player.getHeldItem() != null && player.getHeldItem().getItem() == NordCoreItems.debugStickItemSchematickSave) {
         if (player.getHeldItem(EnumHand.MAIN_HAND) != null && player.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof ISelectItem) {
             ItemStack itemStack = player.getHeldItem(EnumHand.MAIN_HAND);
             ((ISelectItem)itemStack.getItem()).renderSelectArea(itemStack, player,event.getPartialTicks());

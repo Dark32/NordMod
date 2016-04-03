@@ -40,11 +40,10 @@ public class NordMachine {
         NordBloks.flowingBlock = new BlockFlowing().setUnlocalizedName("flowingBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.generatorBlock = new BlockGenerator().setUnlocalizedName("generatorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.accumulatorBlock = new BlockAccumulator().setUnlocalizedName("accumulatorBlock").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.energyCableBlock2 = new BlockEnergoCable2().setUnlocalizedName("energyCableBlock2").setCreativeTab(NordTabs.tabMachine);
+//        NordBloks.energyCableBlock = new BlockEnergoCable().setUnlocalizedName("energyCableBlock").setCreativeTab(NordTabs.tabMachine);
+//        NordBloks.energyCableBlock2 = new BlockEnergoCable2().setUnlocalizedName("energyCableBlock2").setCreativeTab(NordTabs.tabMachine);
         NordBloks.frame = new BlockFrame().setUnlocalizedName("frame").setCreativeTab(NordTabs.tabMachine);
         NordBloks.smelterBlock = new BlockSmelter().setUnlocalizedName("smelterBlock").setCreativeTab(NordTabs.tabMachine);
-        NordBloks.placeDeco = new BlockDecoPlacer().setUnlocalizedName("deco_placer").setCreativeTab(NordTabs.tabColorStone);
         NordBloks.extractorBlock = new BlockExtractor().setUnlocalizedName("extractorBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.furnaceBlock = new BlockFurnace().setUnlocalizedName("furnaceBlock").setCreativeTab(NordTabs.tabMachine);
         NordBloks.washerBlock = new BlockWasher().setUnlocalizedName("washerBlock").setCreativeTab(NordTabs.tabMachine);
@@ -94,7 +93,6 @@ public class NordMachine {
 //        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock"); //todo
 //        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");//todo
         RegisterHelper2.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
-//        RegisterHelper2.registerSingleBlock(NordBloks.placeDeco, "deco_placer");//todo
         RegisterHelper2.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
         RegisterHelper2.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
         RegisterHelper2.registerSingleBlock(NordBloks.washerBlock, "washerBlock");

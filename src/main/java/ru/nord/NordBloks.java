@@ -19,8 +19,6 @@ public class NordBloks {
     public static Block metalBlock;
     public static Block metalOre;
     public static Block smelterBlock;
-    public static Block diggerWell;
-    public static Block placeDeco;
     public static Block metalClearBlock;
     public static Block metalCrystal;
     public static Block extractorBlock;

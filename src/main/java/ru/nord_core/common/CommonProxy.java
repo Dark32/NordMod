@@ -7,6 +7,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.FMLSecurityManager;
 import net.minecraftforge.fml.server.FMLServerHandler;
+import ru.nord_core.common.helpers.RegisterColorHelper;
 import ru.nord_core.common.helpers.RegisterRenderHelper;
 
 import java.io.File;
@@ -24,6 +25,9 @@ public class CommonProxy {
 
     public RegisterRenderHelper registerModel(){
         return RegisterRenderHelper.INSTANCE;
+    }
+    public RegisterColorHelper registerColor(){
+        return RegisterColorHelper.INSTANCE;
     }
 
     public File getDataDirectory() {

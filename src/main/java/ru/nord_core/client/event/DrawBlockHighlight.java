@@ -19,7 +19,7 @@ import org.lwjgl.opengl.GL11;
 import ru.nord.NordBloks;
 
 public class DrawBlockHighlight {
-
+//todo rewrite
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public void onBlockHighlight(DrawBlockHighlightEvent event) {

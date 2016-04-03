@@ -1,6 +1,5 @@
 package ru.nord;
 
-
 import ru.nord.common.blocks.*;
 import ru.nord.common.items.ItemBlockWithRenderColorFromBlock;
 import ru.nord.common.utils.Version;
@@ -8,6 +7,7 @@ import ru.nord.common.utils.enums.EnumEmpGlass;
 import ru.nord.common.utils.enums.EnumGlowstoneDust;
 import ru.nord.common.utils.enums.EnumPaperEmp;
 import ru.nord.common.utils.enums.EnumWhiteStone;
+import ru.nord_core.common.helpers.RegisterColorHelper;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.ItemGlowstoneDust;
@@ -31,7 +31,7 @@ public class NordDecoration {
 
 
     public static void init() {
-
+        registerColor();
     }
 
     public static void postInit() {
@@ -113,7 +113,19 @@ public class NordDecoration {
 
     private static void registerItemModel() {
         for (EnumGlowstoneDust enumType : EnumGlowstoneDust.values()) {
-            modelRegister().registerItemModelForMeta(NordItems.itemGlowstoneDust, enumType.getMetadata(),"type=" + enumType.getName());
+            modelRegister().registerItemModelForMeta(NordItems.itemGlowstoneDust, enumType.getMetadata(), "type=" + enumType.getName());
         }
+    }
+
+    private static void registerColor(){
+        for (int i = 0; i < 16; i++) {
+            RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloks.decoStoneBlock[i]);
+            RegisterColorHelper.registerColor().registerItemColorHandler(NordBloks.decoStoneBlock[i]);
+        }
+        RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloks.empireFloorLamp1);
+        RegisterColorHelper.registerColor().registerItemColorHandler(NordBloks.empireFloorLamp1);
+        RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloks.empireLamp1);
+        RegisterColorHelper.registerColor().registerItemColorHandler(NordBloks.empireLamp1);
+
     }
 }

@@ -1,4 +1,5 @@
 {
+    "parent": "block/orientable",
     "ambientocclusion": false,
     "textures": {
         "inner": "nord:blocks/accumulator/inner",

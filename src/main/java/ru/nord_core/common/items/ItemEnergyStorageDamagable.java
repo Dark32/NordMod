@@ -4,10 +4,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
+import ru.nord_core.common.helpers.TextHelper;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
 import ru.nord_core.common.utils.Constants;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharges {
     private int _maxEnergy;
 
-    public ItemEnergyStorageDamagable(int maxEnergy,String modid) {
+    public ItemEnergyStorageDamagable(int maxEnergy, String modid) {
         super(modid);
         this._maxEnergy = maxEnergy;
         this.setMaxStackSize(1);
@@ -51,11 +51,9 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
     }
 
 
-
-
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List subItems) {
-        subItems.add(new ItemStack(itemIn, 1,_maxEnergy));
+        subItems.add(new ItemStack(itemIn, 1, _maxEnergy));
         subItems.add(new ItemStack(itemIn, 1, 0));
     }
 
@@ -63,7 +61,7 @@ public class ItemEnergyStorageDamagable extends ItemBase implements IEnergyCharg
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
         if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-            list.add("Power: " + currectEnergy(itemStack) +"/" + maxEnergy(itemStack) + " share");
-        } else list.add(new TextComponentTranslation("information.ShiftDialog"));
+            list.add(TextHelper.translateFormat("power.count", currectEnergy(itemStack), maxEnergy(itemStack)));
+        } else list.add(TextHelper.translate("information.ShiftDialog"));
     }
 }

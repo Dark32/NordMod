@@ -16,3 +16,6 @@ debug.description.set.msg=%s [debugStick] Set %s: %d, %d, %d
 debug.description.notselected.msg=[debugStick] Schematic not selected
 debug.description.next.msg=%s Schematic next index  %d
 debug.description.name.msg=%s Schematic Name  %s
+
+power.count=Power: %d/%d EEC
+power.name=EEC

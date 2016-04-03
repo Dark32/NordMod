@@ -7,10 +7,10 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLLog;
-import ru.nord_core.client.event.EventForgeClient;
 import ru.nord_core.client.event.RenderWorldLast;
-import ru.nord_core.common.CommonProxy;
+import ru.nord_core.client.helpers.RegisterColorHelper;
 import ru.nord_core.client.helpers.RegisterRenderHelper;
+import ru.nord_core.common.CommonProxy;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.io.IOException;
 public class ClientProxy extends CommonProxy {
 
     @Override
-    public void registerItemRender(Item item, int sub, String name,String modid) {
+    public void registerItemRender(Item item, int sub, String name, String modid) {
         ModelResourceLocation itemModelResourceLocation =
                 new ModelResourceLocation(modid + ":" + name, "inventory");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, sub, itemModelResourceLocation);
@@ -26,12 +26,13 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void registerBlockRender(Block block, int sub, String model,String modid) {
+    public void registerBlockRender(Block block, int sub, String model, String modid) {
         ModelResourceLocation itemModelResourceLocation =
                 new ModelResourceLocation(modid + ":" + model, "inventory");
         ModelBakery.registerItemVariants(Item.getItemFromBlock(block), itemModelResourceLocation);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), sub, itemModelResourceLocation);
     }
+
     @Override
     public void registerEventHandlers() {
         super.registerEventHandlers();
@@ -39,11 +40,18 @@ public class ClientProxy extends CommonProxy {
 //        FMLCommonHandler.instance().bus().register(eventHandler);
 //        MinecraftForge.EVENT_BUS.register(eventHandler);//
 
-        MinecraftForge.EVENT_BUS.register( new RenderWorldLast());
+        MinecraftForge.EVENT_BUS.register(new RenderWorldLast());
 //        MinecraftForge.EVENT_BUS.register(new EventForgeClient());
     }
-    public RegisterRenderHelper registerModel(){
+
+    @Override
+    public RegisterRenderHelper registerModel() {
         return RegisterRenderHelper.INSTANCE;
+    }
+
+    @Override
+    public RegisterColorHelper registerColor() {
+        return RegisterColorHelper.INSTANCE;
     }
 
     @Override

@@ -16,3 +16,6 @@ debug.description.set.msg=%s [Палка отладки] Установленн�
 debug.description.notselected.msg=[Палка отладки] Схематик не выбран
 debug.description.next.msg=%s Номер следующего схематика  %d (не бери в голову)
 debug.description.name.msg=%s Имя схематика %s
+
+power.count=Энергии: %d/%d EEC
+power.name=EEC

@@ -1,4 +1,5 @@
 {
+    "parent": "block/cube_all",
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
