@@ -15,7 +15,7 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;
-import ru.nord_core.common.utils.ChargeHelper;
+import ru.nord_core.common.helpers.ChargeHelper;
 import ru.nord_core.common.utils.Fuel;
 import ru.nord_core.common.tiles.interfaces.IGenerator;
 

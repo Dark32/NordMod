@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 import ru.nord_core.common.items.interfaces.IEnergyTool;
-import ru.nord_core.common.utils.ChargeHelper;
+import ru.nord_core.common.helpers.ChargeHelper;
 
 import java.util.List;
 import java.util.Set;

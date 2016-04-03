@@ -23,6 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.client.utils.RenderUtils;
 import ru.nord_core.common.helpers.NBTHelper;
+import ru.nord_core.common.helpers.TextHelper;
 import ru.nord_core.common.items.interfaces.ISelectItem;
 import ru.nord_core.common.utils.schematic.Schematic;
 
@@ -118,8 +119,8 @@ public class ItemDebugStickSchematicSave extends ItemBase implements ISelectItem
                     schem.save(time, schem.getFromWorld(schematicBox, worldIn, boxO));
                 }
                 playerIn.addChatComponentMessage(
-                        new TextComponentString(
-                                TextFormatting.GRAY + String.format(I18n.translateToLocal("debug.description.save.msg"), time)));
+                        TextHelper.componentTranslateFormatColor(
+                                TextFormatting.GRAY ,"debug.description.save.msg", time));
             }
             stack.setTagCompound(tag);
         }
@@ -143,8 +144,8 @@ public class ItemDebugStickSchematicSave extends ItemBase implements ISelectItem
                         tag.removeTag(_enum.getName());
                     }
                 }
-                playerIn.addChatMessage(new TextComponentString(
-                        TextFormatting.GRAY + String.format(I18n.translateToLocal("debug.description.clear.msg"))));
+                playerIn.addChatMessage(TextHelper.componentTranslateFormatColor(
+                        TextFormatting.GRAY , "debug.description.clear.msg"));
             }
         }
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
@@ -158,7 +159,8 @@ public class ItemDebugStickSchematicSave extends ItemBase implements ISelectItem
             for (EnumSchematicPosition _enum : EnumSchematicPosition.values()) {
                 if (tag.hasKey(_enum.getName(), Constants.NBT.TAG_COMPOUND)) {
                     BlockPos pos = EnumSchematicPosition.getPosition(tag, _enum);
-                    tooltip.add(String.format(I18n.translateToLocal("debug.description.point"),
+                    tooltip.add(
+                            String.format(I18n.translateToLocal("debug.description.point"),
                                     TextFormatting.WHITE, _enum.getName(), pos.getX(), pos.getY(), pos.getZ())
                     );
                 }

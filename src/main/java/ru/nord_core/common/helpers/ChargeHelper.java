@@ -1,4 +1,4 @@
-package ru.nord_core.common.utils;
+package ru.nord_core.common.helpers;
 
 import net.minecraft.item.ItemStack;
 import ru.nord_core.common.items.interfaces.IEnergyCharges;

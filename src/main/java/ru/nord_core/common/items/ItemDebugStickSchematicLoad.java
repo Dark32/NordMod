@@ -13,16 +13,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.client.utils.RenderUtils;
 import ru.nord_core.common.helpers.NBTHelper;
+import ru.nord_core.common.helpers.TextHelper;
 import ru.nord_core.common.items.interfaces.ISelectItem;
 import ru.nord_core.common.utils.Version;
 import ru.nord_core.common.utils.schematic.Schematic;
@@ -62,9 +60,8 @@ public class ItemDebugStickSchematicLoad extends ItemBase implements ISelectItem
             schem.getFromFile(file.getName());
             SchematicUtils.schemMap.put(file.getName(), schem);
             tag.setString("SchematicName", file.getName());
-            playerIn.addChatComponentMessage(new TextComponentString(
-                    TextFormatting.GRAY + String.format(
-                            I18n.translateToLocal("debug.description.load.msg"), file.getName())));
+            playerIn.addChatComponentMessage(
+                    TextHelper.componentTranslateFormatColor(TextFormatting.GRAY, "debug.description.load.msg", file.getName()));
             index = list.length - 1 > index ? index + 1 : 0;
             tag.setInteger("SchematicIndex", index);
             for (EnumSchematicPosition _enum : EnumSchematicPosition.values()) {
@@ -82,9 +79,8 @@ public class ItemDebugStickSchematicLoad extends ItemBase implements ISelectItem
                     Schematic schematic = SchematicUtils.get().loadSchematic(name, Version.MODID);
                     schematic.generate(worldIn, pos);
                 } else {
-                    playerIn.addChatComponentMessage(new TextComponentString(
-                            TextFormatting.GRAY + String.format(
-                                    I18n.translateToLocal("debug.description.notselected.msg"))));
+                    playerIn.addChatComponentMessage(
+                            TextHelper.componentTranslateFormatColor(TextFormatting.GRAY, "debug.description.notselected.msg"));
                 }
 
             } else {
@@ -126,15 +122,17 @@ public class ItemDebugStickSchematicLoad extends ItemBase implements ISelectItem
         }
         NBTTagCompound tag = stack.getTagCompound();
         if (tag.hasKey("SchematicIndex")) {
-            tooltip.add(String.format(I18n.translateToLocal("debug.description.next.msg"), TextFormatting.WHITE.toString(), tag.getInteger("SchematicIndex")));
+            tooltip.add(
+                    TextHelper.translateFormat("debug.description.next.msg", TextFormatting.WHITE.toString(), tag.getInteger("SchematicIndex")));
         }
         if (tag.hasKey("SchematicName")) {
-            tooltip.add(String.format(I18n.translateToLocal("debug.description.name.msg"), TextFormatting.WHITE.toString(), tag.getString("SchematicName")));
+            tooltip.add(
+                    TextHelper.translateFormat("debug.description.name.msg", TextFormatting.WHITE.toString(), tag.getString("SchematicName")));
         }
         for (EnumSchematicPosition _enum : EnumSchematicPosition.values()) {
             if (tag.hasKey(_enum.getName(), Constants.NBT.TAG_COMPOUND)) {
                 BlockPos pos = EnumSchematicPosition.getPosition(tag, _enum);
-                tooltip.add(String.format(I18n.translateToLocal("debug.description.point"),
+                tooltip.add(TextHelper.translateFormat("debug.description.point",
                                 TextFormatting.WHITE.toString(), _enum.getName(), pos.getX(), pos.getY(), pos.getZ())
                 );
             }

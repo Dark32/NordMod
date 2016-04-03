@@ -20,7 +20,7 @@ import ru.nord_core.common.recipes.interfaces.IAbstractRecipes;
 import ru.nord_core.common.recipes.interfaces.IRecipe2I2O;
 import ru.nord_core.common.recipes.interfaces.IRecipes2I2O;
 import ru.nord_core.common.tiles.interfaces.IMachine;
-import ru.nord_core.common.utils.ChargeHelper;
+import ru.nord_core.common.helpers.ChargeHelper;
 import ru.nord_core.common.utils.Fuel;
 
 /**
