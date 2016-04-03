@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import ru.nord.Nord;
 import ru.nord_core.NordCore;
 import ru.nord_core.common.utils.enums.EnumOreDrop;
@@ -36,7 +37,7 @@ public class RegisterRenderHelper {
      * @param block         блок
      * @param modelLocation путь к ресурсу
      */
-    public void registerBlockItemModel(Block block, String modelLocation) {
+    public void registerBlockItemModel(Block block, ResourceLocation modelLocation) {
     }
 
     /**
@@ -73,7 +74,7 @@ public class RegisterRenderHelper {
      * @param item          предмет
      * @param modelLocation путь к ресурсу
      */
-    public void registerItemModel(Item item, String modelLocation) {
+    public void registerItemModel(Item item, ResourceLocation modelLocation) {
     }
 
     /**

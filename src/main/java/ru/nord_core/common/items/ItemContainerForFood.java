@@ -10,8 +10,8 @@ import ru.nord.common.utils.enums.EnumGlassFood;
 
 import java.util.List;
 
-public class ItemGlassFood extends ItemBase {
-    public ItemGlassFood(String modid) {
+public class ItemContainerForFood extends ItemBase {
+    public ItemContainerForFood(String modid) {
         super(modid);
         this.setHasSubtypes(true);
 

@@ -34,7 +34,7 @@ public class NordFood {
 
     private static void createItem() {
         NordItems.itemFoodNord = new ItemFoodNord().setUnlocalizedName("itemFood");
-        NordItems.itemGlassFood = new ItemGlassFood(Version.MODID).setUnlocalizedName("itemGlassFood");
+        NordItems.itemGlassFood = new ItemContainerForFood(Version.MODID).setUnlocalizedName("itemGlassFood");
     }
 
     private static void createBlock() {

@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import ru.nord.Nord;
 import ru.nord_core.NordCore;
@@ -37,7 +38,7 @@ public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRe
      * @param modelLocation путь к ресурсу
      */
     @Override
-    public void registerBlockItemModel(Block block, String modelLocation) {
+    public void registerBlockItemModel(Block block, ResourceLocation modelLocation) {
         registerItemModel(Item.getItemFromBlock(block), modelLocation);
     }
 
@@ -77,7 +78,7 @@ public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRe
      * @param modelLocation путь к ресурсу
      */
     @Override
-    public void registerItemModel(Item item, String modelLocation) {
+    public void registerItemModel(Item item, ResourceLocation modelLocation) {
         final ModelResourceLocation fullModelLocation = new ModelResourceLocation(modelLocation, "inventory");
         registerItemModel(item, fullModelLocation);
     }

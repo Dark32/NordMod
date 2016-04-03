@@ -13,6 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -211,7 +212,7 @@ public abstract class BlockAbstractEnergyCable extends BlockAbstractContainer im
                 int maxenergy = ((IEnergoCable) tileEntity).getMaxEnergy();
                 int packet = ((IEnergoCable) tileEntity).getPacketEnergy();
                 if (!worldIn.isRemote) {
-                    playerIn.addChatComponentMessage(new TextComponentTranslation("energy " + energy + "/" + maxenergy + "(" + packet + ")"));
+                    playerIn.addChatComponentMessage(new TextComponentString("energy " + energy + "/" + maxenergy + "(" + packet + ")"));
                 }
             }
             return EnumActionResult.SUCCESS;

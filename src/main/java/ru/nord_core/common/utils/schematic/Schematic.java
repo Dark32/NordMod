@@ -233,10 +233,9 @@ public class Schematic extends ASchematic {
 //                        System.err.println(localPos);
 //                        System.err.println(collusion);
                         if (isVecInside(localPos, collusion)) {
-                            world.setBlockState(pos.add(localPos), blockState, 3);
-                        } else {
+                            world.setBlockState(pos.add(localPos), blockState);
                             if (world.getBlockState(pos.add(localPos)).getBlock().isReplaceable(world, pos)) {
-                                world.setBlockState(pos.add(localPos), blockState, 3);
+                                world.setBlockState(pos.add(localPos), blockState);
                             }
                         }
                     }

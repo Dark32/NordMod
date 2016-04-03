@@ -47,7 +47,7 @@ public class NordCore {
     }
 
     private void getSchematic(){
-        File schematicDir =  new File(proxy.getDataDirectory(),"schematic/");
+        File schematicDir =  new File(proxy.getDataDirectory(),"schematics/");
         boolean create;
         if (!schematicDir.exists()){
             create = schematicDir.mkdirs();

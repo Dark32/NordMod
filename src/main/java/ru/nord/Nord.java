@@ -40,20 +40,20 @@ public class Nord {
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
         FMLLog.info("Nord Mod start preInit");
-        NordConfig.preInit();
+       /* NordConfig.preInit();
         NordMachine.preInit();
         NordMetalgury.preInit();
         NordDecoration.preInit();
         NordFood.preInit();
         NordWood.preInit();
         Recipes.preInit();
-        NordWoodStorage.preInit();
+        NordWoodStorage.preInit();*/
         proxy.preInit();
     }
 
     @EventHandler
     public void init(final FMLInitializationEvent event) {
-        NordMachine.init();
+      /*  NordMachine.init();
         NordMetalgury.init();
         NordDecoration.init();
         NordFood.init();
@@ -65,11 +65,13 @@ public class Nord {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         GameRegistry.registerWorldGenerator(new NordOre(), 2);
         Recipes.init();
+        */
     }
 
     @EventHandler
     public void postInit(final FMLPostInitializationEvent event) {
         packetPipeline.postInitialise();
+        /*
         NordTabs.postInit();
         NordMachine.postInit();
         NordMetalgury.postInit();
@@ -80,6 +82,7 @@ public class Nord {
         Fuel.postInit();
         Dictoary.postInit();
         Recipes.postInit();
+        */
     }
 
     public void setupModInfo(ModMetadata meta) {

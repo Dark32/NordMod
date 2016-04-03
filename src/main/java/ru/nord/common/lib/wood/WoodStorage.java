@@ -44,7 +44,7 @@ public class WoodStorage {
         if (this.asValue == null) {
             this.asValue = new String[this.woods.size()];
             for (int i = 0; i < this.woods.size(); i++) {
-                this.asValue[i] = this.name + "." + this.woods.get(i) + ".schematic";
+                this.asValue[i] = this.name + "." + this.woods.get(i) + ".schematics";
             }
 
         }

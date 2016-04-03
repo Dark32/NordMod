@@ -32,18 +32,18 @@ public class NordDeco {
     public void preInit(final FMLPreInitializationEvent event)
     {
         FMLLog.info("Deco Nord Mod start init");
-        NordDecoration.preInit();
+//        NordDecoration.preInit();
     }
 
     @EventHandler
     public void init(final FMLInitializationEvent event) {
-        NordDecoration.init();
-        EntityRegistry.registerModEntity(EntitySittableBlock.class, "MountableBlock", 0, this, 80, 1, false);
+//        NordDecoration.init();
+//        EntityRegistry.registerModEntity(EntitySittableBlock.class, "MountableBlock", 0, this, 80, 1, false);
     }
 
     @EventHandler
     public void postInit(final FMLPostInitializationEvent event) {
-        NordDecoration.postInit();
+//        NordDecoration.postInit();
 
     }
 }
