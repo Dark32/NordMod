@@ -40,36 +40,23 @@ public class BlockFrame extends BlockMetadata {
 
 
     @Override
-    public boolean isOpaqueCube( IBlockState state) {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube( IBlockState state) {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
-//    @SideOnly(Side.CLIENT)
-//    public AxisAlignedBB getCollisionBoundingBox(IBlockState worldIn, World pos, BlockPos state)
-//    {
-//        float f = 0.1f;
-//        return new AxisAlignedBB(
-//                (double) pos.getX() + f,
-//                (double) pos.getY(),
-//                (double) pos.getZ() + f,
-//                (double) pos.getX() + 1 - f,
-//                (double) pos.getY() + 1.0f,
-//                (double) pos.getZ() + 1 - f
-//        );
-//    }
-
+    @Override
     @SideOnly(Side.CLIENT)
-    public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
-    {
-//        this.setBlockBoundsBasedOnState(worldIn, pos);
-        return super.getSelectedBoundingBox(blockState,worldIn, pos);
+    public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+
+        return super.getSelectedBoundingBox(blockState, worldIn, pos);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT;

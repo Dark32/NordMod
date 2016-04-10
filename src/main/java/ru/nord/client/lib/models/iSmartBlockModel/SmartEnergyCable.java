@@ -11,7 +11,7 @@ import net.minecraftforge.client.model.Attributes;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractEnergyCable;
+import ru.nord_core.common.blocks.abstracts.bak.BlockAbstractEnergyCable;
 
 import java.util.LinkedList;
 import java.util.List;

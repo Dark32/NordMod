@@ -1,4 +1,4 @@
-package ru.nord.common.blocks;
+package ru.nord.common.blocks.bak;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -7,9 +7,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord.common.tiles.TileEnergyCable2;
-import ru.nord_core.common.blocks.abstracts.BlockAbstractEnergyCable2;
+import ru.nord_core.common.blocks.abstracts.bak.BlockAbstractEnergyCable2;
 
-public class BlockEnergoCable2 extends BlockAbstractEnergyCable2 {
+public  class BlockEnergoCable2 extends BlockAbstractEnergyCable2 {
 
     public BlockEnergoCable2() {
         setHardness(2.0F);
@@ -28,4 +28,8 @@ public class BlockEnergoCable2 extends BlockAbstractEnergyCable2 {
     }
 
 
+    @Override
+    public void doItemDrop(World world, BlockPos pos, TileEntity tile) {
+
+    }
 }

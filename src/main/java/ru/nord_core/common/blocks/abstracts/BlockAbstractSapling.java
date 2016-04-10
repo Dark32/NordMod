@@ -26,9 +26,9 @@ import java.util.Random;
 public abstract class BlockAbstractSapling extends BlockBush implements IGrowable, IVariantMetadata {
 
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
-
+    @Override
     public abstract PropertyEnum getVariant();
-
+    @Override
     public abstract Comparable getEnumByMetadata(int meta);
 
     @Override
@@ -37,17 +37,8 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
             super.updateTick(worldIn, pos, state, rand);
 
             if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0) {
-                this.grow(worldIn, pos, state, rand);
+                this.grow(worldIn,rand, pos, state);
             }
-        }
-    }
-
-
-    public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        if ((Integer) state.getValue(STAGE) == 0) {
-            worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
-        } else {
-            this.generateTree(worldIn, pos, state, rand);
         }
     }
 
@@ -57,7 +48,6 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
         if (tree == null) return;
         int i = 0;
         int j = 0;
-        boolean flag = false;
         IBlockState iblockstate1 = Blocks.air.getDefaultState();
         worldIn.setBlockState(pos, iblockstate1, 4);
         if (!tree.generate(worldIn, rand, pos.add(i, 0, j))) {
@@ -82,7 +72,11 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
 
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        this.grow(worldIn, pos, state, rand);
+        if (state.getValue(STAGE) == 0) {
+            worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
+        } else {
+            this.generateTree(worldIn, pos, state, rand);
+        }
     }
 
     @Override
@@ -94,7 +88,7 @@ public abstract class BlockAbstractSapling extends BlockBush implements IGrowabl
     public int getMetaFromState(IBlockState state) {
         byte b0 = 0;
         int i = b0 | ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
-        i |= (Integer) state.getValue(STAGE) << 3;
+        i |= state.getValue(STAGE) << 3;
         return i;
     }
 

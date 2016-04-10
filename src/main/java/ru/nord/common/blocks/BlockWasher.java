@@ -48,13 +48,13 @@ public class BlockWasher extends BlockAbstractMachine {
                 if (te.getTank().getFluidAmount() <= 0 && te.getTank().getCapacity() >= fluid.amount) {
                     // В пустой танк
                     te.getTank().setFluid(fluid);
-                    FluidHelper.bucktDrain(playerIn,item,worldIn);
+                    FluidHelper.bucktDrain(playerIn, item, worldIn);
                     return true;
                 } else if (te.getTank().getFluid().getFluid().equals(fluid.getFluid())
                         && (te.getTank().getFluidAmount() + fluid.amount) <= te.getTank().getCapacity()) {
                     //В не пустой танк
                     te.getTank().fill(fluid, true);
-                    FluidHelper.bucktDrain(playerIn,item,worldIn);
+                    FluidHelper.bucktDrain(playerIn, item, worldIn);
                     tileEntity.markDirty();
                     return true;
                 } else {
@@ -63,7 +63,7 @@ public class BlockWasher extends BlockAbstractMachine {
             }
         }
         playerIn.openGui(Nord.instance, 2, worldIn, pos.getX(), pos.getY(), pos.getZ());
-        return super.onBlockActivated(worldIn, pos, state, playerIn,hand,heldItem, side, hitX, hitY, hitZ);
+        return super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ);
     }
 
     @Override
@@ -71,7 +71,8 @@ public class BlockWasher extends BlockAbstractMachine {
         return new TileWasher();
     }
 
-    protected boolean getWork(IBlockAccess world, BlockPos pos) {
+    @Override
+    public boolean hasWorking(IBlockAccess world, BlockPos pos) {
         TileAbstractEnergyMachine tile = (TileAbstractEnergyMachine) world.getTileEntity(pos);
         return tile != null && tile.isWork();
     }

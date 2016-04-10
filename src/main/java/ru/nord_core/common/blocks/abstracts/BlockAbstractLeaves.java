@@ -1,56 +1,35 @@
 package ru.nord_core.common.blocks.abstracts;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
-import ru.nord_core.common.utils.enums.interfaces.IBiomeColoredEnum;
 import ru.nord_core.common.utils.enums.interfaces.IDropItemEnum;
 import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
-public abstract class BlockAbstractLeaves extends BlockLeaves implements IVariantMetadata, IBlockColor {
+public abstract class BlockAbstractLeaves extends BlockLeaves implements IVariantMetadata {
 
 
     public abstract PropertyEnum getVariant();
 
     public abstract Comparable getEnumByMetadata(int meta);
-
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public int getRenderColor(IBlockState state) {
-//        return super.getRenderColor(state);
-//    }
-//
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int colorMultiplier(IBlockState state, IBlockAccess worldIn, BlockPos pos, int tintIndex) {
-        if (((IBiomeColoredEnum) worldIn.getBlockState(pos).getValue(getVariant())).getColorize()) {
-            return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
-        } else {
-            return 0xffffff;
-        }
-    }
 
     @Override
     protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
@@ -88,15 +67,12 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
     public int getMetaFromState(IBlockState state) {
         byte b0 = 0;
         int i = b0 | ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
-
-        if (!(Boolean) state.getValue(DECAYABLE)) {
+        if (!state.getValue(DECAYABLE)) {
             i |= 4;
         }
-
-        if ((Boolean) state.getValue(CHECK_DECAY)) {
+        if (state.getValue(CHECK_DECAY)) {
             i |= 8;
         }
-
         return i;
     }
 
@@ -125,14 +101,6 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
         return ((IMetadataEnum) state.getValue(getVariant())).getMetadata();
     }
 
-//    @Override
-//    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te) {
-//        if (!worldIn.isRemote && player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == Items.shears) {
-//            player.triggerAchievement(StatList.mineBlockStatArray[Block.getIdFromBlock(this)]);
-//        } else {
-//            super.harvestBlock(worldIn, player, pos, state, te);
-//        }
-//    }
 
     @Override
     public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
@@ -150,9 +118,8 @@ public abstract class BlockAbstractLeaves extends BlockLeaves implements IVarian
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
         Iterator iterator = getVariant().getAllowedValues().iterator();
-        while (iterator.hasNext())
-        {
-            IMetadataEnum oenum = (IMetadataEnum)iterator.next();
+        while (iterator.hasNext()) {
+            IMetadataEnum oenum = (IMetadataEnum) iterator.next();
             list.add(new ItemStack(itemIn, 1, oenum.getMetadata()));
         }
     }

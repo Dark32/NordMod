@@ -10,13 +10,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
-import ru.nord_core.common.items.ItemBase;
 import ru.nord_core.common.items.interfaces.IWrench;
 
 public class ItemWrench extends ItemBase implements IWrench {
     public ItemWrench(String modid) {
         super(modid);
     }
+
     @Override
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {

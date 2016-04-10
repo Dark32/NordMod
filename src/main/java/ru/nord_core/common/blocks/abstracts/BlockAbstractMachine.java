@@ -12,7 +12,6 @@ import net.minecraft.nbt.NBTTagString;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -21,6 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
+import ru.nord_core.common.blocks.interfaces.IWorkable;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyBlock;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyMachine;
@@ -28,7 +28,8 @@ import ru.nord_core.common.utils.Constants;
 
 import java.util.Random;
 
-abstract public class BlockAbstractMachine extends BlockRotatebleContainer implements IWrenchable {
+abstract public class BlockAbstractMachine extends BlockRotatebleContainer
+        implements IWrenchable, IWorkable {
 
     protected BlockAbstractMachine(Material mat) {
         super(mat, Version.MODID);
@@ -46,22 +47,17 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-        // this.wrenche(worldIn,pos,state,playerIn,side,hitX,hitY,hitZ);
-        return true;
-    }
-
-    protected boolean getWork(IBlockAccess world, BlockPos pos) {
+    public boolean hasWorking(IBlockAccess world, BlockPos pos) {
         TileAbstractEnergyMachine tile = (TileAbstractEnergyMachine) world.getTileEntity(pos);
         return tile != null && tile.isWork();
     }
 
-
+    @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        boolean isActive = getWork(worldIn, pos);
+    public void randomDisplayTick(IBlockState state, World worldIn, BlockPos pos, Random rand) {
+        boolean isActive = hasWorking(worldIn, pos);
         if (isActive) {
-            EnumFacing enumfacing = (EnumFacing) state.getValue(FACING);
+            EnumFacing enumfacing = state.getValue(FACING);
             double d0 = (double) pos.getX() + 0.5D;
             double d1 = (double) pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
             double d2 = (double) pos.getZ() + 0.5D;
@@ -70,20 +66,20 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
 
             switch (SwitchEnumFacing.FACING_LOOKUP[enumfacing.ordinal()]) {
                 case 1:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case 2:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case 3:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D);
                     break;
                 case 4:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -97,7 +93,13 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
         }
     }
 
-    public ItemStack createItem(TileAbstractEnergyBlock te) {
+    /**
+     * Создаём предмет с NBT. вызывается в {@link #doItemDrop}
+     *
+     * @param te тайл
+     * @return стак
+     */
+    private ItemStack createItem(TileAbstractEnergyBlock te) {
         ItemStack item = new ItemStack(this, 1);
         NBTTagCompound dataTag = new NBTTagCompound();
         dataTag.setInteger("energy", te.getEnergy());
@@ -107,19 +109,25 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
         return item;
     }
 
-    public void doItemDrop(final World world, final BlockPos coord, TileEntity te) {
+    @Override
+    public void doItemDrop(final World world, final BlockPos pos, TileEntity tile) {
         if (!world.isRemote && !world.restoringBlockSnapshots) {
-            if (te instanceof TileAbstractEnergyBlock) {
-                ItemStack item = createItem((TileAbstractEnergyBlock) te);
-                spawnAsEntity(world, coord, item);
+            if (tile instanceof TileAbstractEnergyBlock) {
+                ItemStack item = createItem((TileAbstractEnergyBlock) tile);
+                spawnAsEntity(world, pos, item);
             } else {
                 ItemStack item = new ItemStack(this, 1);
-                spawnAsEntity(world, coord, item);
+                spawnAsEntity(world, pos, item);
             }
         }
     }
 
-    public void displayInformation(ItemStack stack) {
+    /**
+     * Информация для отображения, вызывается в {@link #createItem}
+     *
+     * @param stack стак
+     */
+    private void displayInformation(ItemStack stack) {
         NBTTagCompound dataTag = !stack.hasTagCompound() ? new NBTTagCompound() : stack.getTagCompound();
         String message = dataTag.hasKey("energy") && dataTag.hasKey("maxEnergy") ? "Energy: " + TextFormatting.RED + dataTag.getInteger("energy") / Constants.SHARE_MULTIPLE
                 + "/" + dataTag.getInteger("maxEnergy") / Constants.SHARE_MULTIPLE + " " + Constants.ENERGY : "Energy: 0/0 " + Constants.ENERGY;
@@ -156,6 +164,7 @@ abstract public class BlockAbstractMachine extends BlockRotatebleContainer imple
             this.harvesters.set(null);
             return EnumActionResult.SUCCESS;
         } else {
+            worldIn.setBlockState(pos, state.withProperty(FACING, side));
             return EnumActionResult.FAIL;
         }
     }

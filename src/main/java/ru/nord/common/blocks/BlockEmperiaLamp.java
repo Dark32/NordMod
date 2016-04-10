@@ -21,12 +21,6 @@ public class BlockEmperiaLamp extends BlockAbstractRoofLamp implements IColorize
         super(Version.MODID);
     }
 
-    @SideOnly(Side.CLIENT)
-    public int getRenderColor(IBlockState state)
-    {
-        return ((EnumColors)(state.getValue(COLOR))).getSecondColor();
-    }
-
     @Override
     public PropertyEnum getVariant() {
         return COLOR;

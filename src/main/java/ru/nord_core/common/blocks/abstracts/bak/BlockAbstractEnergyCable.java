@@ -1,4 +1,4 @@
-package ru.nord_core.common.blocks.abstracts;
+package ru.nord_core.common.blocks.abstracts.bak;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,7 +14,6 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.property.ExtendedBlockState;
@@ -24,6 +23,8 @@ import net.minecraftforge.common.property.Properties;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractContainer;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.interfaces.IEnergoCable;
 

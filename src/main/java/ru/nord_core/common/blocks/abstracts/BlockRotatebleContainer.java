@@ -28,77 +28,45 @@ public abstract class BlockRotatebleContainer extends BlockAbstractContainer {
 
     @Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-        this.setDefaultFacing(worldIn, pos, state);
-    }
-
-    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state) {
         if (!worldIn.isRemote) {
-            Block block = worldIn.getBlockState(pos.north()).getBlock();
-            Block block1 = worldIn.getBlockState(pos.south()).getBlock();
-            Block block2 = worldIn.getBlockState(pos.west()).getBlock();
-            Block block3 = worldIn.getBlockState(pos.east()).getBlock();
-            EnumFacing enumfacing = (EnumFacing) state.getValue(FACING);
-
-
-            if (enumfacing == EnumFacing.NORTH && block.isFullBlock(state) && !block1.isFullBlock(state))
-            {
+            Block north = worldIn.getBlockState(pos.north()).getBlock();
+            Block south = worldIn.getBlockState(pos.south()).getBlock();
+            Block west = worldIn.getBlockState(pos.west()).getBlock();
+            Block east = worldIn.getBlockState(pos.east()).getBlock();
+            EnumFacing enumfacing = state.getValue(FACING);
+            if (enumfacing == EnumFacing.NORTH && north.isFullBlock(state) && !south.isFullBlock(state)) {
                 enumfacing = EnumFacing.SOUTH;
-            }
-            else if (enumfacing == EnumFacing.SOUTH && block1.isFullBlock(state) && !block.isFullBlock(state))
-            {
+            } else if (enumfacing == EnumFacing.SOUTH && south.isFullBlock(state) && !north.isFullBlock(state)) {
                 enumfacing = EnumFacing.NORTH;
-            }
-            else if (enumfacing == EnumFacing.WEST && block2.isFullBlock(state) && !block3.isFullBlock(state))
-            {
+            } else if (enumfacing == EnumFacing.WEST && west.isFullBlock(state) && !east.isFullBlock(state)) {
                 enumfacing = EnumFacing.EAST;
-            }
-            else if (enumfacing == EnumFacing.EAST && block3.isFullBlock(state) && !block2.isFullBlock(state))
-            {
+            } else if (enumfacing == EnumFacing.EAST && east.isFullBlock(state) && !west.isFullBlock(state)) {
                 enumfacing = EnumFacing.WEST;
             }
-
             worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
     }
 
     @Override
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
         worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
-
         if (stack.hasDisplayName()) {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-
             if (tileentity instanceof TileAbstractEnergyMachine) {
                 ((TileAbstractEnergyMachine) tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
     }
 
-    /**
-     * Possibly modify the given BlockStateContainer before rendering it on an Entity (Minecarts, Endermen, ...)
-     */
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public IBlockState getStateForEntityRender(IBlockState state)
-//    {
-//        return this.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
-//    }
-    /**
-     * Convert the given metadata into a BlockStateContainer for this Block
-     */
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         EnumFacing enumfacing = EnumFacing.getFront(meta);
-
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-        {
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
             enumfacing = EnumFacing.NORTH;
         }
         return this.getDefaultState().withProperty(FACING, enumfacing);
@@ -108,42 +76,33 @@ public abstract class BlockRotatebleContainer extends BlockAbstractContainer {
      * Convert the BlockState into the correct metadata value
      */
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        return ((EnumFacing)state.getValue(FACING)).getIndex();
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(FACING).getIndex();
     }
+
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {FACING});
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{FACING});
     }
 
 
     @SideOnly(Side.CLIENT)
     static final class SwitchEnumFacing {
         static final int[] FACING_LOOKUP = new int[EnumFacing.values().length];
-
         static {
             try {
                 FACING_LOOKUP[EnumFacing.WEST.ordinal()] = 1;
-            } catch (NoSuchFieldError ignored) {;}
-
-            try {
                 FACING_LOOKUP[EnumFacing.EAST.ordinal()] = 2;
-            } catch (NoSuchFieldError ignored) {;}
-
-            try {
                 FACING_LOOKUP[EnumFacing.NORTH.ordinal()] = 3;
-            } catch (NoSuchFieldError ignored) {;}
-
-            try {
                 FACING_LOOKUP[EnumFacing.SOUTH.ordinal()] = 4;
-            } catch (NoSuchFieldError ignored) {;}
+            } catch (NoSuchFieldError ignored) {
+                ;
+            }
         }
     }
+
     @Override
-    public EnumBlockRenderType getRenderType(IBlockState state)
-    {
+    public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
 }

@@ -17,9 +17,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class BlockAbstractLog extends BlockLog implements IVariantMetadata{
-
+    @Override
     public abstract PropertyEnum getVariant();
-
+    @Override
     public abstract Comparable getEnumByMetadata(int meta);
 
     public static final class SwitchEnumAxis {

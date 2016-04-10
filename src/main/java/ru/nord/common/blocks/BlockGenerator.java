@@ -42,7 +42,7 @@ public class BlockGenerator extends BlockAbstractMachine {
     }
 
     @Override
-    protected boolean getWork(IBlockAccess world, BlockPos pos) {
+    public boolean hasWorking(IBlockAccess world, BlockPos pos) {
         TileAbstractEnergyGenerator tile = (TileAbstractEnergyGenerator) world.getTileEntity(pos);
         return tile != null && tile.isBurning();
     }

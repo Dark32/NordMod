@@ -1,4 +1,4 @@
-package ru.nord_core.common.blocks.abstracts;
+package ru.nord_core.common.blocks.abstracts.bak;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -26,6 +26,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.nord.common.utils.Version;
 import ru.nord_core.common.blocks.BlockBase;
+import ru.nord_core.common.blocks.abstracts.BlockAbstractMachine;
 import ru.nord_core.common.blocks.interfaces.IWrenchable;
 import ru.nord_core.common.tiles.abstracts.TileAbstractEnergyCable2;
 import ru.nord_core.common.utils.enums.EnumCableState;
