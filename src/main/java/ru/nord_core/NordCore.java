@@ -3,7 +3,9 @@ package ru.nord_core;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.nord_core.common.CommonProxy;
+import ru.nord_core.common.tiles.abstracts.TileMetadata;
 import ru.nord_core.common.utils.Version;
 
 
@@ -28,7 +30,7 @@ public class NordCore {
         NordCoreDebug.preInit();
         proxy.registerEventHandlers();
         getSchematic();
-
+        GameRegistry.registerTileEntity(TileMetadata.class, "TileMetadata");
     }
 
     @EventHandler

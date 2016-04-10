@@ -44,8 +44,8 @@ public class NordDecoration {
         NordBloks.empireLamp1 = new BlockEmperiaLamp().setUnlocalizedName("empireLamp1").setCreativeTab(NordTabs.tabLamp);
         NordBloks.oilLamp = new BlockOilLamp().setUnlocalizedName("oilLamp").setCreativeTab(NordTabs.tabLamp);
         NordBloks.floorLamp1 = new BlockFloorLamp().setUnlocalizedName("floorLamp1").setCreativeTab(NordTabs.tabLamp);
-        NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabDecoration);
-        NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
+//        NordBloks.empireDecoration1 = new BlockEmpPaper(EnumPaperEmp.getNames()).setUnlocalizedName("empPaper").setCreativeTab(NordTabs.tabDecoration);
+//        NordBloks.empireDecorationPanel1 = new BlockEmpPaperPanel(EnumPaperEmp.getNames()).setUnlocalizedName("empPaperPanel").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.empireGlass = new BlockEmpGlass(EnumEmpGlass.getNames()).setUnlocalizedName("empGlass").setCreativeTab(NordTabs.tabDecoration);
         NordBloks.whiteStone = new BlockWhiteStone(EnumWhiteStone.getNames()).setUnlocalizedName("whiteStone").setCreativeTab(NordTabs.tabDecoration);
         for (int i = 0; i < 16; i++) {
@@ -65,8 +65,8 @@ public class NordDecoration {
         RegisterHelper2.registerMetadataBlock(NordBloks.empireLamp1, ItemBlockWithRenderColorFromBlock.class, "empireLamp1");
         RegisterHelper2.registerMetadataBlock(NordBloks.empireFloorLamp1, ItemBlockWithRenderColorFromBlock.class, "empireFloorLamp1");
         RegisterHelper2.registerMetadataBlock(NordBloks.floorLamp1, ItemBlockMetadata.class, "floorLamp1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecoration1, ItemBlockMetadata.class, "empPaper");
-        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecorationPanel1, ItemBlockMetadata.class, "empPaperPanel");
+//        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecoration1, ItemBlockMetadata.class, "empPaper");
+//        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecorationPanel1, ItemBlockMetadata.class, "empPaperPanel");
         RegisterHelper2.registerMetadataBlock(NordBloks.empireGlass, ItemBlockMetadata.class, "empGlass");
         RegisterHelper2.registerMetadataBlock(NordBloks.whiteStone, ItemBlockMetadata.class, "whiteStone");
         for (int i = 0; i < 16; i++) {
@@ -96,7 +96,7 @@ public class NordDecoration {
             modelRegister().registerBlockItemModelForMeta(NordBloks.empireGlass, enumType.getMetadata(), "type=" + enumType.getName());
         }
         for (EnumPaperEmp enumType : EnumPaperEmp.values()) {
-            modelRegister().registerBlockItemModelForMeta(NordBloks.empireDecoration1, enumType.getMetadata(), "type=" + enumType.getName());
+//            modelRegister().registerBlockItemModelForMeta(NordBloks.empireDecoration1, enumType.getMetadata(), "type=" + enumType.getName());
 //todo это пока не работает. Заставить работать
 //           modelRegister()().registerBlockItemModelForMeta(NordBloks.empireDecorationPanel1, enumType.getMetadata(), "north=true,east=false,south=true,west=false,type=" + enumType.getName());
         }

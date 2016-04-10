@@ -75,7 +75,7 @@ public class Nord {
         NordTabs.postInit();
         NordMachine.postInit();
         NordMetalgury.postInit();
-        NordDecoration.postInit();
+//        NordDecoration.postInit();
         NordFood.postInit();
         NordWood.postInit();
         NordWoodStorage.postInit();

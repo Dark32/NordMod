@@ -1,6 +1,9 @@
 {
     "parent": "block/cube_all",
     "ambientocclusion": false,
+    "textures": {
+        "all": "nord:blocks/test"
+     },
     "elements": [
         {
             "from": [13,0,14],
