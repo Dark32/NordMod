@@ -1,6 +1,7 @@
 package ru.nord;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -40,6 +41,7 @@ public class Nord {
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
         FMLLog.info("Nord Mod start preInit");
+//        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         NordConfig.preInit();
         NordMachine.preInit();
         NordMetalgury.preInit();

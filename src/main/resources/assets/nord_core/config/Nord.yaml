@@ -1,0 +1,281 @@
+ore:
+  SILVER:
+    name: silver
+    nuggents: true
+  GALENA:
+    name: galena
+    washing:
+      2: { t: SULFUR , q: 1}
+    separator:
+      1: { t: LEAD , q: 1}
+      2: { t: SILVER , q: 1}
+      3: { t: SULFUR , q: 0.5}
+    centrifuge:
+      1: { t: LEAD , q: 1}
+      2: { t: SILVER , q: 0.5}
+      3: { t: SULFUR , q: 1}
+    electrolyzer:
+      1: { t: LEAD , q: 2}
+      2: { t: SILVER , q: 1}
+      3: { t: SILVER , q: 0.25}
+      4: { t: SULFUR , q: 1}
+  TIN:
+    name: tin
+    nuggents: true
+  ZINCITE:
+    name: zincite
+    separator:
+      1: { t: ZINC , q: 0.5}
+      2: { t: LEAD , q: 2}
+      3: { t: IRON , q: 0.25}
+    centrifuge:
+      1: { t: ZINC , q: 2}
+      2: { t: LEAD , q: 0.25}
+      3: { t: IRON , q: 0.25}
+    electrolyzer:
+      1: { t: ZINC , q: 0.25}
+      2: { t: LEAD , q: 0.25}
+      3: { t: IRON , q: 2}
+  BAUXITE:
+    name: bauxite
+    washing:
+      1: { q: 1, t:  BAUXITE}
+      2: { q: 0.25 , t:  ALUMINUM}
+    separator:
+      1: { q: 1, t:  ALUMINUM}
+      2: { q: 1, t: FLINT}
+      3: { q: 0.25, t: FLINT}
+    centrifuge:
+      1: { q: 1, t:  ALUMINUM}
+      2: { q: 0.25, t:  IRON}
+      3: { q: 0.05, t:  IRON}
+      4: { q: 0.05, t:  IRON}
+    electrolyzer:
+      1: { q: 2, t:  ALUMINUM}
+      2: { q: 0.25, t:  IRON}
+      3: { q: 0.05, t:  IRON}
+      4: { q: 0.05, t:  IRON}
+  UVAROVITE:
+    name: uvarovite
+    crystal: true
+    infusibilit: true
+    washing:
+      2: { t: FLINT , q: 0.25}
+    separator:
+      1: { t: CHROM , q: 1}
+    centrifuge:
+      1: { t: CHROM , q: 1}
+      2: { t: FLINT , q: 3}
+    electrolyzer:
+      1: { t: CHROM , q: 1}
+      2: { t: CHROM , q: 0.75}
+      3: { t: CHROM , q: 0.25}
+  CROCOITE:
+    name: crocoite
+    crystal: true
+    separator:
+      1: { t: CHROM , q: 1}
+      2: { t: LEAD , q: 1}
+    centrifuge:
+      1: { t: CHROM , q: 1}
+      2: { t: LEAD , q: 1}
+      3: { t: CHROM , q: 0.5}
+      4: { t: LEAD , q: 0.5}
+    electrolyzer:
+      1: { t: CHROM , q: 1}
+      2: { t: LEAD , q: 1}
+      3: { t: CHROM , q: 0.25}
+      4: { t: LEAD , q: 0.25}
+  COPPER:
+    name: copper
+    washing:
+      2: { t: GOLD , q: 0.25}
+    separator:
+      1: { t: COPPER , q: 1}
+      2: { t: GOLD , q: 0.05}
+      3: { t: GOLD , q: 0.25}
+    centrifuge:
+      1: { t: COPPER , q: 1}
+      2: { t: GOLD , q: 0.25}
+      3: { t: GOLD , q: 0.05}
+    electrolyzer:
+      1: { t: COPPER , q: 1}
+  OLIVINE:
+    name: olivine
+    crystal: true
+    infusibilit: true
+    washing:
+      2: { t: FLINT , q: 1}
+    separator:
+      1: { t: IRON , q: 2}
+      2: { t: FLINT , q: 0.25}
+    centrifuge:
+      1: { t: IRON , q: 2}
+      2: { t: IRON , q: 0.25}
+    electrolyzer:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.75}
+  MAGNETITE:
+    name: magnetite
+    separator:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.25}
+    centrifuge:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.25}
+    electrolyzer:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.75}
+  HEMATITE:
+    name: hematite
+    washing:
+      2: { t: QUARTZ , q: 0.5}
+    separator:
+      1: { t: IRON , q: 3}
+      2: { t: QUARTZ , q: 0.25}
+    centrifuge:
+      1: { t: IRON , q: 2}
+      2: { t: QUARTZ , q: 0.5}
+      3: { t: QUARTZ , q: 0.25}
+      4: { t: QUARTZ , q: 0.25}
+    electrolyzer:
+      1: { t: IRON , q: 4}
+      2: { t: IRON , q: 0.75}
+  LIMONITE:
+    name: limonite
+    separator:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.25}
+    centrifuge:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.25}
+    electrolyzer:
+      1: { t: IRON , q: 3}
+      2: { t: IRON , q: 0.75}
+  ALMANDINE:
+    name: almandine
+    crystal: true
+    infusibilit: true
+    washing:
+      2: { t: FLINT , q: 1}
+    separator:
+      1: { t: IRON , q: 2}
+      2: { t: ALUMINUM , q: 2}
+      3: { t: FLINT , q: 5}
+    centrifuge:
+      1: { t: IRON , q: 3}
+      2: { t: ALUMINUM , q: 2}
+      3: { t: FLINT , q: 3}
+    electrolyzer:
+      1: { t: IRON , q: 5}
+      2: { t: ALUMINUM , q: 1}
+  PENTLANDITE:
+    name: pentlandite
+    washing:
+      2: { t: SULFUR , q: 5}
+    separator:
+      1: { t: NICEL , q: 3}
+      2: { t: IRON , q: 3}
+      3: { t: SULFUR , q: 10}
+    centrifuge:
+      1: { t: NICEL , q: 4}
+      2: { t: IRON , q: 4}
+      3: { t: SULFUR , q: 8}
+    electrolyzer:
+      1: { t: NICEL , q: 4}
+      2: { t: IRON , q: 4}
+      3: { t: SULFUR , q: 1}
+  MILLERITE:
+    name: millerite
+    washing:
+      2: { t: SULFUR , q: 1}
+    separator:
+      1: { t: NICEL , q: 1}
+      2: { t: IRON , q: 0.05}
+      3: { t: SULFUR , q: 0.7}
+    centrifuge:
+      1: { t: NICEL , q: 1}
+      2: { t: SULFUR , q: 1}
+      3: { t: IRON , q: 0.05}
+    electrolyzer:
+      1: { t: NICEL , q: 1}
+      2: { t: NICEL , q: 0.25}
+      3: { t: SULFUR , q: 2}
+  MERCURY:
+    name: mercury
+    nuggents: true
+  CINNABAR:
+    name: cinnabar
+    washing:
+      2: { t: SULFUR , q: 0.25}
+    separator:
+      1: { t: MERCURY , q: 1}
+      2: { t: SULFUR , q: 0.25}
+    centrifuge:
+      1: { t: MERCURY , q: 1}
+      2: { t: SULFUR , q: 0.75}
+    electrolyzer:
+      1: { t: MERCURY , q: 2}
+      2: { t: SULFUR , q: 5}
+  IRON:
+    name: iron
+    vanila: true
+  GOLD:
+    name: gold
+    vanila: true
+  MALACHITE:
+    name: malachite
+    washing:
+      2: { t: IRON , q: 0.05}
+    separator:
+      1: { t: COPPER , q: 2}
+      2: { t: IRON , q: 0.05}
+    centrifuge:
+      1: { t: COPPER , q: 2}
+      2: { t: IRON , q: 0.25}
+    electrolyzer:
+      1: { t: COPPER , q: 2}
+      2: { t: IRON , q: 0.25}
+      3: { t: COPPER , q: 0.75}
+      4: { t: IRON , q: 0.05}
+metal:
+  IRON:
+    name: iron
+    vanila: true
+  GOLD:
+    name: gold
+    vanila: true
+  SILVER:
+    name: silver
+  COPPER:
+    name: copper
+  TIN:
+    name: tin
+  ZINC:
+    name: zinc
+  BRONZE:
+    name: bronze
+  ELECTRUM:
+    name: electrum
+  STEEL:
+    name: steel
+  BRASS:
+    name: brass
+  ALUMINUM:
+    name: aluminum
+  CHROM:
+    name: chrom
+  NICEL:
+    name: nicel
+  NICHROME:
+    name: nichrome
+  INVAR:
+    name: invar
+  DURALUMIN:
+    name: duralumin
+  CAST_IRON:
+    name: cast_iron
+  MERCURY:
+    name: mercury
+  LEAD:
+    name: lead

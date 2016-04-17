@@ -94,7 +94,15 @@ public enum EnumOreDrop implements IMetadataEnum {
         public EnumDust getDust() {
             return EnumDust.NICEL;
         }
-    },;
+    },
+    CINNABAR(12, "cinnabar", "mercury") {
+        @Override
+        public EnumDust getDust() {
+            return EnumDust.NICEL;
+        }
+    },
+
+    ;
 
 
     private final String name;

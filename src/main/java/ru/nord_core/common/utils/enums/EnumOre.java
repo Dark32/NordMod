@@ -92,7 +92,14 @@ public enum EnumOre implements IMetadataEnum {
         public EnumNugget getNugget() {
             return EnumNugget.MERCURY;
         }
-    },;
+    },
+    CINNABAR(15, "cinnabar", "mercury") {
+        @Override
+        public EnumOreDrop getOreDrop() {
+            return EnumOreDrop.MILLERITE;
+        }
+    },
+    ;
 
 
     private final String name;

@@ -105,7 +105,14 @@ public enum EnumDust implements IMetadataEnum {
         public EnumMetal getMetal() {
             return EnumMetal.CAST_IRON;
         }
-    },;
+    },
+    CINNABAR(17, "cinnabar", false) {
+        @Override
+        public EnumMetal getMetal() {
+            return EnumMetal.CAST_IRON;
+        }
+    },
+    ;
 
     private final String name;
     private final int meta;
