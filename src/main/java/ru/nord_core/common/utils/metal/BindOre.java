@@ -23,102 +23,40 @@ public class BindOre {
     }
 
     public EnumOre getDrop(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        JsonElement jsone = json.get("nuggents");
-        if (jsone == null || !jsone.getAsBoolean()) {
-            return ore;
-        } else {
-            return null;
-        }
+        JsonElement jsone = getFlag(ore, "nuggents");
+        return jsone == null || !jsone.getAsBoolean() ? ore : null;
     }
 
     public EnumOre getNuggents(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        JsonElement jsone = json.get("nuggents");
-        if (jsone != null && jsone.getAsBoolean()) {
-            return ore;
-        } else {
-            return null;
-        }
+        JsonElement jsone = getFlag(ore, "nuggents");
+        return jsone != null && jsone.getAsBoolean() ? ore : null;
     }
 
     public String getName(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        JsonElement jsone = json.get("name");
-        if (jsone != null) {
-            return jsone.getAsString();
-        } else {
-            return "";
-        }
+        JsonElement jsone = getFlag(ore, "name");
+        return (jsone != null) ? jsone.getAsString() : "";
+
     }
+
     public Boolean getVanila(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        JsonElement jsone = json.get("vanila");
+        JsonElement jsone = getFlag(ore, "vanila");
         return jsone != null && jsone.getAsBoolean();
     }
 
     public Map<Integer, Map<String, ?>> getCentrifuge(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        json = json.getAsJsonObject("centrifuge");
-        if (json != null) {
-            return new Gson().fromJson(json, type);
-        } else {
-            return null;
-        }
+        return getProcessing(ore, "centrifuge");
     }
 
     public Map<Integer, Map<String, ?>> getWashing(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        json = json.getAsJsonObject("washing");
-        if (json != null) {
-            return new Gson().fromJson(json, type);
-        } else {
-            return null;
-        }
+        return getProcessing(ore, "washing");
     }
 
     public Map<Integer, Map<String, ?>> getSeparator(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        json = json.getAsJsonObject("separator");
-        if (json != null) {
-            return new Gson().fromJson(json, type);
-        } else {
-            return null;
-        }
+        return getProcessing(ore, "separator");
     }
 
     public Map<Integer, Map<String, ?>> getElectrolyzer(EnumOre ore) {
-        JsonObject json = getOre(ore);
-        if (json == null) {
-            return null;
-        }
-        json = json.getAsJsonObject("electrolyzer");
-        if (json != null) {
-            return new Gson().fromJson(json, type);
-        } else {
-            return null;
-        }
+        return getProcessing(ore, "electrolyzer");
     }
 
     private JsonObject getOre(EnumOre ore) {
@@ -128,7 +66,7 @@ public class BindOre {
         return json;
     }
 
-    public Map<Integer, Map<String, ?>> getOther(EnumOre ore, String other) {
+    public Map<Integer, Map<String, ?>> getProcessing(EnumOre ore, String other) {
         JsonObject json = getOre(ore);
         if (json == null) {
             return null;
@@ -139,5 +77,14 @@ public class BindOre {
         } else {
             return null;
         }
+    }
+
+    public JsonElement getFlag(EnumOre ore, String flag) {
+        JsonObject json = getOre(ore);
+        if (json == null) {
+            return null;
+        }
+        JsonElement jsone = json.get(flag);
+        return json.get(flag);
     }
 }
