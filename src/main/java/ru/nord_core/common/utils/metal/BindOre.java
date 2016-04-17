@@ -10,14 +10,14 @@ import ru.nord_core.NordCore;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public class BindMetal {
-    private static BindMetal instance;
+public class BindOre {
+    private static BindOre instance;
     private Type type = new TypeToken<Map<Integer, Map<String, ?>>>() {
     }.getType();
 
-    public static BindMetal INSTANCE() {
+    public static BindOre INSTANCE() {
         if (instance == null) {
-            instance = new BindMetal();
+            instance = new BindOre();
         }
         return instance;
     }
@@ -59,6 +59,14 @@ public class BindMetal {
         } else {
             return "";
         }
+    }
+    public Boolean getVanila(EnumOre ore) {
+        JsonObject json = getOre(ore);
+        if (json == null) {
+            return null;
+        }
+        JsonElement jsone = json.get("vanila");
+        return jsone != null && jsone.getAsBoolean();
     }
 
     public Map<Integer, Map<String, ?>> getCentrifuge(EnumOre ore) {

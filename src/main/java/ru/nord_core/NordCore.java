@@ -1,8 +1,6 @@
 package ru.nord_core;
 
-import net.minecraft.client.util.JsonException;
 import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -16,10 +14,8 @@ import ru.nord_core.common.CommonProxy;
 import ru.nord_core.common.tiles.abstracts.TileMetadata;
 import ru.nord_core.common.utils.JsonConfig;
 import ru.nord_core.common.utils.Version;
-import ru.nord_core.common.utils.metal.BindMetal;
-import ru.nord_core.common.utils.metal.EnumOre;
 
-import java.io.*;
+import java.io.File;
 import java.util.Random;
 
 @Mod(modid = Version.MODID, name = Version.NAME, version = Version.VERSION)
@@ -43,8 +39,6 @@ public class NordCore {
         proxy.registerEventHandlers();
         getSchematic();
         GameRegistry.registerTileEntity(TileMetadata.class, "TileMetadata");
-//        FMLLog.info(conf.getJSON().getAsJsonArray("ore").toString());
-//        System.err.println(BindMetal.INSTANCE().getCentrifuge(EnumOre.COPPER));
     }
 
     @EventHandler
@@ -69,7 +63,8 @@ public class NordCore {
             create = schematicDir.mkdirs();
         }
     }
-    public static JsonConfig getJSONConfig(){
+
+    public static JsonConfig getJSONConfig() {
         return JSONconfig;
     }
 
