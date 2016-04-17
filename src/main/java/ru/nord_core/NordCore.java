@@ -16,6 +16,8 @@ import ru.nord_core.common.CommonProxy;
 import ru.nord_core.common.tiles.abstracts.TileMetadata;
 import ru.nord_core.common.utils.JsonConfig;
 import ru.nord_core.common.utils.Version;
+import ru.nord_core.common.utils.metal.BindMetal;
+import ru.nord_core.common.utils.metal.EnumOre;
 
 import java.io.*;
 import java.util.Random;
@@ -36,12 +38,13 @@ public class NordCore {
     @EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
         FMLLog.info("Core Nord Mod start init");
+        JSONconfig = new JsonConfig("Nord.json");
         NordCoreDebug.preInit();
         proxy.registerEventHandlers();
         getSchematic();
         GameRegistry.registerTileEntity(TileMetadata.class, "TileMetadata");
-        JSONconfig = new JsonConfig("Nord.json");
 //        FMLLog.info(conf.getJSON().getAsJsonArray("ore").toString());
+//        System.err.println(BindMetal.INSTANCE().getCentrifuge(EnumOre.COPPER));
     }
 
     @EventHandler
