@@ -51,7 +51,8 @@ public class RegisterRenderHelper extends ru.nord_core.common.helpers.RegisterRe
      */
     @Override
     public void registerBlockItemModelForMeta(Block block, int metadata, String variant) {
-        registerItemModelForMeta(Item.getItemFromBlock(block), metadata, variant);
+        Item item = Item.getItemFromBlock(block);
+        registerItemModelForMeta(item, metadata, variant);
     }
 
     /**

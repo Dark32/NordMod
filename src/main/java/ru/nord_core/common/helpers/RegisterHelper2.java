@@ -12,19 +12,8 @@ public class RegisterHelper2 {
      * @param block блок
      * @param name  имя регистрации
      */
-    public static void registerSingleBlock(Block block, String name) {
-        GameRegistry.registerBlock(block, name);
-    }
-
-    /**
-     * Регистрируем блок с ItemBlock и с дополнительными аргументами
-     *
-     * @param block        блок
-     * @param name         имя регистрации
-     * @param itemCtorArgs аргумент для ItemBlock
-     */
-    public static void registerSingleBlockWithArgumenedItemBlock(Block block, String name, Object... itemCtorArgs) {
-        GameRegistry.registerBlock(block, ItemBlock.class, name, itemCtorArgs);
+    public static void registerBlock(Block block, String name) {
+        registerBlock(block, new ItemBlock(block),name);
     }
 
     /**
@@ -33,8 +22,9 @@ public class RegisterHelper2 {
      * @param item предмет
      * @param name имя регистрации
      */
-    public static void registerSingleItem(Item item, String name) {
-        GameRegistry.registerItem(item, name);
+    public static void registerItem(Item item, String name) {
+        item.setRegistryName(name);
+        GameRegistry.register(item);
     }
 
     /**
@@ -44,32 +34,11 @@ public class RegisterHelper2 {
      * @param itemBlock предмет для блока
      * @param name      имя регистрации
      */
-    public static void registerMetadataBlock(Block block, Class<? extends ItemBlock> itemBlock, String name) {
-        GameRegistry.registerBlock(block, itemBlock, name);
-    }
-
-    /**
-     * Регистрируем блок с ItemBlock и с дополнительными аргументами
-     *
-     * @param block        блок
-     * @param itemBlock    предмет для блока
-     * @param name         имя регистрации
-     * @param itemCtorArgs аргумент для ItemBlock
-     */
-    public static void registerMetadataBlockWithArgumenedItemBlock(
-            Block block, Class<? extends ItemBlock> itemBlock, String name, Object... itemCtorArgs) {
-        GameRegistry.registerBlock(block, itemBlock, name, itemCtorArgs);
-
-    }
-
-    /**
-     * Регистрируем предмет с методатой
-     *
-     * @param item предмет
-     * @param name имя регистрации
-     */
-    public static void registerMetadataItem(Item item, String name) {
-        GameRegistry.registerItem(item, name);
+    public static <ITEM_BLOCK extends ItemBlock> void registerBlock(Block block, ITEM_BLOCK itemBlock, String name) {
+        block.setRegistryName(name);
+        GameRegistry.register(block);
+        itemBlock.setRegistryName(name);
+        GameRegistry.register(itemBlock);
     }
 
 

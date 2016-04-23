@@ -85,25 +85,25 @@ public class NordWood {
 
 
     public static void registerBlock() {
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank1, ItemBlockNordPlank.class, "nordPlank1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling1, ItemBlockNordSapling.class, "nordSapling1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves1, ItemBlockNordLeaves.class, "nordLeaves1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog1, ItemBlockNordLog.class, "nordLog1");
+        RegisterHelper2.registerBlock(NordBloks.nordPlank1, new  ItemBlockNordPlank(NordBloks.nordPlank1), "nordPlank1");
+        RegisterHelper2.registerBlock(NordBloks.nordSapling1, new  ItemBlockNordSapling(NordBloks.nordSapling1), "nordSapling1");
+        RegisterHelper2.registerBlock(NordBloks.nordLeaves1, new  ItemBlockNordLeaves(NordBloks.nordLeaves1), "nordLeaves1");
+        RegisterHelper2.registerBlock(NordBloks.nordLog1, new  ItemBlockNordLog(NordBloks.nordLog1), "nordLog1");
 
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank2, ItemBlockNordPlank2.class, "nordPlank2");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling2, ItemBlockNordSapling2.class, "nordSapling2");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves2, ItemBlockNordLeaves2.class, "nordLeaves2");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog2, ItemBlockNordLog2.class, "nordLog2");
+        RegisterHelper2.registerBlock(NordBloks.nordPlank2, new  ItemBlockNordPlank2(NordBloks.nordPlank2), "nordPlank2");
+        RegisterHelper2.registerBlock(NordBloks.nordSapling2, new  ItemBlockNordSapling2(NordBloks.nordSapling2), "nordSapling2");
+        RegisterHelper2.registerBlock(NordBloks.nordLeaves2, new  ItemBlockNordLeaves2(NordBloks.nordLeaves2), "nordLeaves2");
+        RegisterHelper2.registerBlock(NordBloks.nordLog2, new  ItemBlockNordLog2(NordBloks.nordLog2), "nordLog2");
 
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank3, ItemBlockNordPlank3.class, "nordPlank3");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling3, ItemBlockNordSapling3.class, "nordSapling3");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves3, ItemBlockNordLeaves3.class, "nordLeaves3");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog3, ItemBlockNordLog3.class, "nordLog3");
+        RegisterHelper2.registerBlock(NordBloks.nordPlank3, new  ItemBlockNordPlank3(NordBloks.nordPlank3), "nordPlank3");
+        RegisterHelper2.registerBlock(NordBloks.nordSapling3, new  ItemBlockNordSapling3(NordBloks.nordSapling3), "nordSapling3");
+        RegisterHelper2.registerBlock(NordBloks.nordLeaves3, new  ItemBlockNordLeaves3(NordBloks.nordLeaves3), "nordLeaves3");
+        RegisterHelper2.registerBlock(NordBloks.nordLog3, new  ItemBlockNordLog3(NordBloks.nordLog3), "nordLog3");
 
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordPlank4, ItemBlockNordPlank4.class, "nordPlank4");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordSapling4, ItemBlockNordSapling4.class, "nordSapling4");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLeaves4, ItemBlockNordLeaves4.class, "nordLeaves4");
-        RegisterHelper2.registerMetadataBlock(NordBloks.nordLog4, ItemBlockNordLog4.class, "nordLog4");
+        RegisterHelper2.registerBlock(NordBloks.nordPlank4, new  ItemBlockNordPlank4(NordBloks.nordPlank4), "nordPlank4");
+        RegisterHelper2.registerBlock(NordBloks.nordSapling4, new  ItemBlockNordSapling4(NordBloks.nordSapling4), "nordSapling4");
+        RegisterHelper2.registerBlock(NordBloks.nordLeaves4, new  ItemBlockNordLeaves4(NordBloks.nordLeaves4), "nordLeaves4");
+        RegisterHelper2.registerBlock(NordBloks.nordLog4, new  ItemBlockNordLog4(NordBloks.nordLog4), "nordLog4");
     }
 
     public static void registerItem() {

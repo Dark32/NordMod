@@ -61,17 +61,17 @@ public class NordDecoration {
     }
 
     public static void registerBlock() {
-        RegisterHelper2.registerMetadataBlock(NordBloks.oilLamp, ItemBlockMetadata.class, "oilLamp");
-        RegisterHelper2.registerMetadataBlock(NordBloks.empireLamp1, ItemBlockWithRenderColorFromBlock.class, "empireLamp1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.empireFloorLamp1, ItemBlockWithRenderColorFromBlock.class, "empireFloorLamp1");
-        RegisterHelper2.registerMetadataBlock(NordBloks.floorLamp1, ItemBlockMetadata.class, "floorLamp1");
-//        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecoration1, ItemBlockMetadata.class, "empPaper");
-//        RegisterHelper2.registerMetadataBlock(NordBloks.empireDecorationPanel1, ItemBlockMetadata.class, "empPaperPanel");
-        RegisterHelper2.registerMetadataBlock(NordBloks.empireGlass, ItemBlockMetadata.class, "empGlass");
-        RegisterHelper2.registerMetadataBlock(NordBloks.whiteStone, ItemBlockMetadata.class, "whiteStone");
+        RegisterHelper2.registerBlock(NordBloks.oilLamp, new ItemBlockMetadata(NordBloks.oilLamp), "oilLamp");
+        RegisterHelper2.registerBlock(NordBloks.empireLamp1, new ItemBlockWithRenderColorFromBlock(NordBloks.empireLamp1), "empireLamp1");
+        RegisterHelper2.registerBlock(NordBloks.empireFloorLamp1, new ItemBlockWithRenderColorFromBlock(NordBloks.empireFloorLamp1), "empireFloorLamp1");
+        RegisterHelper2.registerBlock(NordBloks.floorLamp1, new ItemBlockMetadata(NordBloks.floorLamp1), "floorLamp1");
+//        RegisterHelper2.registerBlock(NordBloks.empireDecoration1, new ItemBlockMetadata(NordBloks.empireDecoration1), "empPaper");
+//        RegisterHelper2.registerBlock(NordBloks.empireDecorationPanel1, new ItemBlockMetadata(NordBloks.empireDecorationPanel1), "empPaperPanel");
+        RegisterHelper2.registerBlock(NordBloks.empireGlass, new ItemBlockMetadata(NordBloks.empireGlass), "empGlass");
+        RegisterHelper2.registerBlock(NordBloks.whiteStone, new ItemBlockMetadata(NordBloks.whiteStone), "whiteStone");
         for (int i = 0; i < 16; i++) {
             EnumColors color = EnumColors.values()[i];
-            RegisterHelper2.registerMetadataBlock(NordBloks.decoStoneBlock[i], ItemBlockWithRenderColorFromBlock.class, "decoStoneBlock." + color.name());
+            RegisterHelper2.registerBlock(NordBloks.decoStoneBlock[i], new ItemBlockWithRenderColorFromBlock(NordBloks.decoStoneBlock[i]), "decoStoneBlock." + color.name());
         }
     }
 
@@ -108,7 +108,7 @@ public class NordDecoration {
     }
 
     public static void registerItem() {
-        RegisterHelper2.registerMetadataItem(NordItems.itemGlowstoneDust, "itemGlowstoneDust");
+        RegisterHelper2.registerItem(NordItems.itemGlowstoneDust, "itemGlowstoneDust");
     }
 
     private static void registerItemModel() {

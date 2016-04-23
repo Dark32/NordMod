@@ -1,7 +1,6 @@
 package ru.nord_deco;
 
 
-
 import ru.nord_core.common.helpers.RegisterColorHelper;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
@@ -27,9 +26,8 @@ public class NordDecoration {
     }
 
 
-
     public static void init() {
-             registerColor();
+        registerColor();
     }
 
     public static void postInit() {
@@ -52,38 +50,42 @@ public class NordDecoration {
 
 
     public static void registerBlock() {
-        RegisterHelper2.registerMetadataBlock(
+        RegisterHelper2.registerBlock(
                 NordBloksDeco.chairWhite,
-                ItemBlockMetadata.class,
+                new ItemBlockMetadata(NordBloksDeco.chairWhite),
                 "chairWhite"
         );
 
-//        RegisterHelper2.registerMetadataBlock(
+//        RegisterHelper2.registerBlock(
 //                NordBloksDeco.chairOther,
-//                ItemBlockMetadata.class,
+//                new ItemBlockMetadata( NordBloksDeco.chairOther),
 //                "chairOther"
 //        );
-        RegisterHelper2.registerMetadataBlockWithArgumenedItemBlock(
+        RegisterHelper2.registerBlock(
                 NordBloksDeco.halfSlabTile1,
-                ItemBlockSlabTile1.class,
-                "halfSlabTile1",
-                NordBloksDeco.halfSlabTile1,
-                NordBloksDeco.doubleHalfSlabTile1,
-                false
+                new ItemBlockSlabTile1(
+                        NordBloksDeco.halfSlabTile1,
+                        (BlockHalfSlabTile) NordBloksDeco.halfSlabTile1,
+                        (BlockDoubleHalfSlabTile) NordBloksDeco.doubleHalfSlabTile1,
+                        false),
+                "halfSlabTile1"
         );
 
-        RegisterHelper2.registerMetadataBlockWithArgumenedItemBlock(
+        RegisterHelper2.registerBlock(
                 NordBloksDeco.doubleHalfSlabTile1,
-                ItemBlockSlabTile1.class,
-                "doubleHalfSlabTile1",
-                NordBloksDeco.halfSlabTile1,
-                NordBloksDeco.doubleHalfSlabTile1,
-                true
+                new ItemBlockSlabTile1(
+                        NordBloksDeco.doubleHalfSlabTile1,
+                        (BlockHalfSlabTile) NordBloksDeco.halfSlabTile1,
+                        (BlockDoubleHalfSlabTile) NordBloksDeco.doubleHalfSlabTile1,
+                        true
+                ),
+                "doubleHalfSlabTile1"
+
         );
-        RegisterHelper2.registerSingleBlock(NordBloksDeco.stairs, "stairs");
-        RegisterHelper2.registerMetadataBlock(
+        RegisterHelper2.registerBlock(NordBloksDeco.stairs, "stairs");
+        RegisterHelper2.registerBlock(
                 NordBloksDeco.abomination,
-                ItemBlockMetadata.class,
+                new ItemBlockMetadata(NordBloksDeco.abomination),
                 "abomination");
 
     }
@@ -109,9 +111,10 @@ public class NordDecoration {
         for (EnumAbomination enumType : EnumAbomination.values()) {
             modelRegister().registerBlockItemModelForMeta(NordBloksDeco.abomination, enumType.getMetadata(), "type=" + enumType.getName());
         }
-        modelRegister().registerBlockItemModelForMeta(NordBloksDeco.stairs,0, "facing=west,half=bottom,shape=straight");
+        modelRegister().registerBlockItemModelForMeta(NordBloksDeco.stairs, 0, "facing=west,half=bottom,shape=straight");
     }
-    private static void registerColor(){
+
+    private static void registerColor() {
         RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloksDeco.halfSlabTile1);
         RegisterColorHelper.registerColor().registerItemColorHandler(NordBloksDeco.halfSlabTile1);
         RegisterColorHelper.registerColor().registerBlockColorHandler(NordBloksDeco.doubleHalfSlabTile1);

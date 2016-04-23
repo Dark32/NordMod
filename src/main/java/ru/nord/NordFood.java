@@ -41,8 +41,8 @@ public class NordFood {
     }
 
     private static void registerItem() {
-        RegisterHelper2.registerMetadataItem(NordItems.itemFoodNord, "itemFood");
-        RegisterHelper2.registerMetadataItem(NordItems.itemGlassFood, "itemGlassFood");
+        RegisterHelper2.registerItem(NordItems.itemFoodNord, "itemFood");
+        RegisterHelper2.registerItem(NordItems.itemGlassFood, "itemGlassFood");
     }
 
     private static void registerBlock() {

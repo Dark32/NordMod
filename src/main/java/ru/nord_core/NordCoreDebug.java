@@ -34,8 +34,8 @@ public class NordCoreDebug {
     }
 
     private static void registerItem() {
-        RegisterHelper2.registerSingleItem(NordCoreItems.debugStickItemSchematickSave, "debugStickItemSchematickSave");
-        RegisterHelper2.registerSingleItem(NordCoreItems.debugStickItemSchematickLoad, "debugStickItemSchematickLoad");
+        RegisterHelper2.registerItem(NordCoreItems.debugStickItemSchematickSave, "debugStickItemSchematickSave");
+        RegisterHelper2.registerItem(NordCoreItems.debugStickItemSchematickLoad, "debugStickItemSchematickLoad");
     }
 
     private static void registerBlock() {

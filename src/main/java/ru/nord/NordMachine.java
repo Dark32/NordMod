@@ -81,22 +81,22 @@ public class NordMachine {
     }
 
     private static void registerItem() {
-        RegisterHelper2.registerSingleItem(NordItems.energyStorageItem, "itemEnergyStorage");
-        RegisterHelper2.registerSingleItem(NordItems.wrench, "itemWrench");
-//        RegisterHelper2.registerSingleItem(NordItems.itemBlades, "itemblades");//todo
+        RegisterHelper2.registerItem(NordItems.energyStorageItem, "itemEnergyStorage");
+        RegisterHelper2.registerItem(NordItems.wrench, "itemWrench");
+//        RegisterHelper2.registerItem(NordItems.itemBlades, "itemblades");//todo
     }
 
     private static void registerBlock() {
-        RegisterHelper2.registerSingleBlock(NordBloks.flowingBlock, "flowingBlock");
-        RegisterHelper2.registerSingleBlock(NordBloks.generatorBlock, "generatorBlock");
-        RegisterHelper2.registerSingleBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
-//        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock, "energyCableBlock"); //todo
-//        RegisterHelper2.registerSingleBlock(NordBloks.energyCableBlock2, "energyCableBlock2");//todo
-        RegisterHelper2.registerSingleBlock(NordBloks.smelterBlock, "smelterBlock");
-        RegisterHelper2.registerSingleBlock(NordBloks.extractorBlock, "extractorBlock");
-        RegisterHelper2.registerSingleBlock(NordBloks.furnaceBlock, "furnaceBlock");
-        RegisterHelper2.registerSingleBlock(NordBloks.washerBlock, "washerBlock");
-        RegisterHelper2.registerMetadataBlock(NordBloks.frame, ItemBlockMetadata.class, "frame");
+        RegisterHelper2.registerBlock(NordBloks.flowingBlock, "flowingBlock");
+        RegisterHelper2.registerBlock(NordBloks.generatorBlock, "generatorBlock");
+        RegisterHelper2.registerBlock(NordBloks.accumulatorBlock, "accumulatorBlock");
+//        RegisterHelper2.registerBlock(NordBloks.energyCableBlock, "energyCableBlock"); //todo
+//        RegisterHelper2.registerBlock(NordBloks.energyCableBlock2, "energyCableBlock2");//todo
+        RegisterHelper2.registerBlock(NordBloks.smelterBlock, "smelterBlock");
+        RegisterHelper2.registerBlock(NordBloks.extractorBlock, "extractorBlock");
+        RegisterHelper2.registerBlock(NordBloks.furnaceBlock, "furnaceBlock");
+        RegisterHelper2.registerBlock(NordBloks.washerBlock, "washerBlock");
+        RegisterHelper2.registerBlock(NordBloks.frame, new ItemBlockMetadata(NordBloks.frame), "frame");
     }
 }
 

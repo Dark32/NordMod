@@ -6,9 +6,7 @@ import ru.nord.common.blocks.BlockClearMetal;
 import ru.nord.common.blocks.BlockCrystal;
 import ru.nord.common.blocks.BlockMetal;
 import ru.nord.common.blocks.BlockMetalOre;
-import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.items.ItemDrill;
-import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
 import ru.nord_core.common.blocks.interfaces.IVariantMetadata2;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.ItemMetaData;
@@ -60,27 +58,27 @@ public class NordMetalgury {
     }
 
     private static void registerItem() {
-        RegisterHelper2.registerMetadataItem(NordItems.itemOreDrop, "oreDrop");
-        RegisterHelper2.registerMetadataItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder");
-        RegisterHelper2.registerMetadataItem(NordItems.itemOreClearPowder, "oreClearPowder");
-        RegisterHelper2.registerMetadataItem(NordItems.itemOreNugget, "oreNugget");
-        RegisterHelper2.registerMetadataItem(NordItems.itemMetalDust, "metalDust");
-        RegisterHelper2.registerMetadataItem(NordItems.itemOreCrystal, "oreCrystal");
-        RegisterHelper2.registerMetadataItem(NordItems.itemIngot, "ingot");
-        RegisterHelper2.registerMetadataItem(NordItems.itemClearIngot, "clearIngot");
-        RegisterHelper2.registerMetadataItem(NordItems.itemStick, "stick");
-//        RegisterHelper2.registerSingleItem(NordItems.itemTestHammer, "itemTestHammer");
+        RegisterHelper2.registerItem(NordItems.itemOreDrop, "oreDrop");
+        RegisterHelper2.registerItem(NordItems.itemOreDirtyPowder, "oreDirtyPowder");
+        RegisterHelper2.registerItem(NordItems.itemOreClearPowder, "oreClearPowder");
+        RegisterHelper2.registerItem(NordItems.itemOreNugget, "oreNugget");
+        RegisterHelper2.registerItem(NordItems.itemMetalDust, "metalDust");
+        RegisterHelper2.registerItem(NordItems.itemOreCrystal, "oreCrystal");
+        RegisterHelper2.registerItem(NordItems.itemIngot, "ingot");
+        RegisterHelper2.registerItem(NordItems.itemClearIngot, "clearIngot");
+        RegisterHelper2.registerItem(NordItems.itemStick, "stick");
+//        RegisterHelper2.registerItem(NordItems.itemTestHammer, "itemTestHammer");
     }
 
     private static void registerBlock() {
-        RegisterHelper2.registerMetadataBlock(NordBloks.metalBlock, ItemBlockMetadata.class, "metalBlock");
-        RegisterHelper2.registerMetadataBlock(NordBloks.metalOre, ItemBlockMetadata.class, "metalOre");
-        RegisterHelper2.registerMetadataBlock(NordBloks.metalClearBlock, ItemBlockMetadata.class, "metalClearBlock");
-        RegisterHelper2.registerMetadataBlock(NordBloks.metalCrystal, ItemBlockMetadata.class, "metalCrystal");
+        RegisterHelper2.registerBlock(NordBloks.metalBlock, new  ItemBlockMetadata(NordBloks.metalBlock), "metalBlock");
+        RegisterHelper2.registerBlock(NordBloks.metalOre, new  ItemBlockMetadata(NordBloks.metalOre), "metalOre");
+        RegisterHelper2.registerBlock(NordBloks.metalClearBlock, new  ItemBlockMetadata(NordBloks.metalClearBlock), "metalClearBlock");
+        RegisterHelper2.registerBlock(NordBloks.metalCrystal, new  ItemBlockMetadata(NordBloks.metalCrystal), "metalCrystal");
 
-        for (int i = 0; i < EnumOre.getNames().length; i++) {
-            RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));
-        }
+//        for (int i = 0; i < EnumOre.getNames().length; i++) {
+//            RegisterHelper.registerOreInOverWithString(EnumOre.getNames()[i], NordBloks.metalOre.getStateFromMeta(i));
+//        }
     }
 
     private static void registerTileEntity() {
