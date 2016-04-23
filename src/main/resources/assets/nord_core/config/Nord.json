@@ -352,7 +352,8 @@
       "name": "duralumin"
     }, 
     "MERCURY": {
-      "name": "mercury"
+      "name": "mercury",
+      "cleanable":false
     }, 
     "IRON": {
       "name": "iron", 
@@ -368,7 +369,8 @@
       "name": "brass"
     }, 
     "CAST_IRON": {
-      "name": "cast_iron"
+      "name": "cast_iron",
+      "cleanable":false
     }, 
     "CHROM": {
       "name": "chrom"

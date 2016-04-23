@@ -1,11 +1,13 @@
 package ru.nord_core.common.utils.metal;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.Block;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata2;
 import ru.nord_core.common.utils.enums.interfaces.IMetadata2Enum;
 
 public enum EnumMetal implements IMetadata2Enum {
-    IRON("iron", true),
-    GOLD("gold", true),
+    IRON("iron"),
+    GOLD("gold"),
     SILVER("silver"),
     COPPER("copper"),
     TIN("tin"),
@@ -22,21 +24,12 @@ public enum EnumMetal implements IMetadata2Enum {
     DURALUMIN("duralumin"),
     CAST_IRON("cast_iron"),
     MERCURY("mercury"),
-    LEAD("lead"),
-
-    ;
+    LEAD("lead"),;
 
     private final String name;
-    private final boolean vanila;
 
     EnumMetal(String _name) {
         this.name = _name;
-        this.vanila = false;
-    }
-
-    EnumMetal(String _name, boolean vanila) {
-        this.name = _name;
-        this.vanila = vanila;
     }
 
     @Override
@@ -50,7 +43,11 @@ public enum EnumMetal implements IMetadata2Enum {
     }
 
     public boolean getVanila() {
-        return this.vanila;
+        return BindMetall.INSTANCE().getVanila(this);
+    }
+
+    public boolean getCleanable() {
+        return BindMetall.INSTANCE().getCleanable(this);
     }
 
     public static EnumMetal byMetadata(int meta) {
@@ -64,5 +61,10 @@ public enum EnumMetal implements IMetadata2Enum {
     @Override
     public int getReIndexMetadata(ImmutableList list) {
         return list.indexOf(this);
+    }
+
+    @Override
+    public int getReIndexMetadata(Block block) {
+        return ((IVariantMetadata2) block).getAllowedValues().indexOf(this);
     }
 }

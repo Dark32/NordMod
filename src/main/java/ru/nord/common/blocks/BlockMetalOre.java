@@ -1,6 +1,7 @@
 package ru.nord.common.blocks;
 
 
+import com.google.common.base.Predicate;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
@@ -12,15 +13,23 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import ru.nord.NordItems;
 import ru.nord.common.utils.Version;
-import ru.nord_core.common.blocks.BlockMetadata;
+import ru.nord_core.common.blocks.BlockMetadata2;
 import ru.nord_core.common.utils.enums.EnumOre;
 import java.util.Random;
 
-public class BlockMetalOre extends BlockMetadata {
+public class BlockMetalOre extends BlockMetadata2 {
 
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumOre.class);
-    public BlockMetalOre(String[] names) {
-        super(Material.iron,names, Version.MODID);
+    public static final PropertyEnum TYPE = PropertyEnum.create("type", ru.nord_core.common.utils.metal.EnumOre.class, new Predicate<ru.nord_core.common.utils.metal.EnumOre>()
+    {
+        @Override
+        public boolean apply(ru.nord_core.common.utils.metal.EnumOre _enum)
+        {
+            return !_enum.getVanila();
+        }
+    });
+
+    public BlockMetalOre() {
+        super(Material.iron, Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
     }
@@ -30,10 +39,12 @@ public class BlockMetalOre extends BlockMetadata {
         return TYPE;
     }
 
+
     @Override
     public Comparable getEnumByMetadata(int meta) {
-        return EnumOre.byMetadata(meta);
+        return ru.nord_core.common.utils.metal.EnumOre.byReIndexMetadata(getAllowedValues(), meta);
     }
+
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {

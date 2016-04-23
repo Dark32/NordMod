@@ -42,6 +42,10 @@ public class BindOre {
         JsonElement jsone = getFlag(ore, "vanila");
         return jsone != null && jsone.getAsBoolean();
     }
+    public Boolean getCrystal(EnumOre ore) {
+        JsonElement jsone = getFlag(ore, "crystal");
+        return jsone != null && jsone.getAsBoolean();
+    }
 
     public Map<Integer, Map<String, ?>> getCentrifuge(EnumOre ore) {
         return getProcessing(ore, "centrifuge");
