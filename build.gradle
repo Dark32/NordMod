@@ -25,7 +25,7 @@ group= "ru.nord"  // http://maven.apache.org/guides/mini/guide-naming-convention
 archivesBaseName = "Nord-Mod"
 
 minecraft {
-    version = "1.9-12.16.0.1830-1.9"
+    version = "1.9-12.16.0.1864-1.9"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
