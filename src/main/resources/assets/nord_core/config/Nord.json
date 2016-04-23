@@ -1,0 +1,380 @@
+{
+  "ore": {
+    "MERCURY": {
+      "nuggents": true, 
+      "name": "mercury"
+    }, 
+    "COPPER": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "COPPER" },
+        "2": { "q": 0.25, "t": "GOLD" },
+        "3": { "q": 0.05, "t": "GOLD" }
+      }, 
+      "washing": {
+        "2": { "q": 0.25, "t": "GOLD" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "COPPER" },
+        "2": { "q": 0.05, "t": "GOLD" },
+        "3": { "q": 0.25, "t": "GOLD" }
+      }, 
+      "name": "copper", 
+      "electrolyzer": {
+        "1": { "q": 1, "t": "COPPER" }
+      }
+    }, 
+    "GOLD": {
+      "name": "gold", 
+      "vanila": true
+    }, 
+    "BAUXITE": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "ALUMINUM" },
+        "2": { "q": 0.25, "t": "IRON" },
+        "3": { "q": 0.05, "t": "IRON" },
+        "4": { "q": 0.05, "t": "IRON" }
+             },
+      "washing": {
+        "1": { "q": 1, "t": "BAUXITE" },
+        "2": { "q": 0.25, "t": "ALUMINUM" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "ALUMINUM" },
+        "2": { "q": 1, "t": "FLINT" },
+        "3": { "q": 0.25, "t": "FLINT" }
+      }, 
+      "name": "bauxite", 
+      "electrolyzer": {
+        "1": { "q": 2, "t": "ALUMINUM" },
+        "2": { "q": 0.25, "t": "IRON" },
+        "3": { "q": 0.05, "t": "IRON" },
+        "4": { "q": 0.05, "t": "IRON" }
+      }
+    }, 
+    "MALACHITE": {
+      "centrifuge": {
+        "1": { "q": 2, "t": "COPPER" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "washing": {
+        "2": { "q": 0.05, "t": "IRON" }
+      }, 
+      "separator": {
+        "1": { "q": 2, "t": "COPPER" }, 
+        "2": { "q": 0.05, "t": "IRON" }
+      }, 
+      "name": "malachite", 
+      "electrolyzer": {
+        "1": { "q": 2, "t": "COPPER" }, 
+        "2": { "q": 0.25, "t": "IRON" }, 
+        "3": { "q": 0.75, "t": "COPPER" }, 
+        "4": { "q": 0.05, "t": "IRON" }
+      }
+    }, 
+    "TIN": {
+      "nuggents": true, 
+      "name": "tin"
+    }, 
+    "GALENA": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "LEAD" }, 
+        "2": { "q": 0.5, "t": "SILVER" }, 
+        "3": { "q": 1, "t": "SULFUR" }
+      }, 
+      "washing": {
+        "2": { "q": 1, "t": "SULFUR" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "LEAD" }, 
+        "2": { "q": 1, "t": "SILVER" }, 
+        "3": { "q": 0.5, "t": "SULFUR" }
+      }, 
+      "name": "galena", 
+      "electrolyzer": {
+        "1": { "q": 2, "t": "LEAD" }, 
+        "2": { "q": 1, "t": "SILVER" }, 
+        "3": { "q": 0.25, "t": "SILVER" }, 
+        "4": { "q": 1, "t": "SULFUR" }
+      }
+    }, 
+    "OLIVINE": {
+      "centrifuge": {
+        "1": { "q": 2, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "crystal": true, 
+      "washing": {
+        "2": { "q": 1, "t": "FLINT" }
+      }, 
+      "name": "olivine", 
+      "electrolyzer": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.75, "t": "IRON" }
+      }, 
+      "separator": {
+        "1": { "q": 2, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "FLINT" }
+      }, 
+      "infusibilit": true
+    }, 
+    "HEMATITE": {
+      "centrifuge": {
+        "1": { "q": 2, "t": "IRON" }, 
+        "2": { "q": 0.5, "t": "QUARTZ" }, 
+        "3": { "q": 0.25, "t": "QUARTZ" }, 
+        "4": { "q": 0.25, "t": "QUARTZ" }
+      }, 
+      "washing": {
+        "2": { "q": 0.5, "t": "QUARTZ" }
+      }, 
+      "separator": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "QUARTZ" }
+      }, 
+      "name": "hematite", 
+      "electrolyzer": {
+        "1": { "q": 4, "t": "IRON" }, 
+        "2": { "q": 0.75, "t": "IRON" }
+      }
+    }, 
+    "CROCOITE": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "CHROM" }, 
+        "2": { "q": 1, "t": "LEAD" }, 
+        "3": { "q": 0.5, "t": "CHROM" }, 
+        "4": { "q": 0.5, "t": "LEAD" }
+      }, 
+      "crystal": true, 
+      "separator": {
+        "1": { "q": 1, "t": "CHROM" }, 
+        "2": { "q": 1, "t": "LEAD" }
+      }, 
+      "name": "crocoite", 
+      "electrolyzer": {
+        "1": { "q": 1, "t": "CHROM" }, 
+        "2": { "q": 1, "t": "LEAD" }, 
+        "3": { "q": 0.25, "t": "CHROM" }, 
+        "4": { "q": 0.25, "t": "LEAD" }
+      }
+    }, 
+    "SILVER": {
+      "nuggents": true, 
+      "name": "silver"
+    }, 
+    "MILLERITE": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "NICEL" }, 
+        "2": { "q": 1, "t": "SULFUR" }, 
+        "3": { "q": 0.05, "t": "IRON" }
+      }, 
+      "washing": {
+        "2": { "q": 1, "t": "SULFUR" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "NICEL" }, 
+        "2": { "q": 0.05, "t": "IRON" }, 
+        "3": { "q": 0.7, "t": "SULFUR" }
+      }, 
+      "name": "millerite", 
+      "electrolyzer": {
+        "1": { "q": 1, "t": "NICEL" }, 
+        "2": { "q": 0.25, "t": "NICEL" }, 
+        "3": { "q": 2, "t": "SULFUR" }
+      }
+    }, 
+    "ALMANDINE": {
+      "centrifuge": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 2, "t": "ALUMINUM" }, 
+        "3": { "q": 3, "t": "FLINT" }
+      }, 
+      "crystal": true, 
+      "washing": {
+        "2": { "q": 1, "t": "FLINT" }
+      }, 
+      "name": "almandine", 
+      "electrolyzer": {
+        "1": { "q": 5, "t": "IRON" }, 
+        "2": { "q": 1, "t": "ALUMINUM" }
+      }, 
+      "separator": {
+        "1": { "q": 2, "t": "IRON" }, 
+        "2": { "q": 2, "t": "ALUMINUM" }, 
+        "3": { "q": 5, "t": "FLINT" }
+      }, 
+      "infusibilit": true
+    }, 
+    "LIMONITE": {
+      "centrifuge": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "separator": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "electrolyzer": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.75, "t": "IRON" }
+      }, 
+      "name": "limonite"
+    }, 
+    "UVAROVITE": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "CHROM" }, 
+        "2": { "q": 3, "t": "FLINT" }
+      }, 
+      "crystal": true, 
+      "washing": {
+        "2": { "q": 0.25, "t": "FLINT" }
+      }, 
+      "name": "uvarovite", 
+      "electrolyzer": {
+        "1": { "q": 1, "t": "CHROM" }, 
+        "2": { "q": 0.75, "t": "CHROM" }, 
+        "3": { "q": 0.25, "t": "CHROM" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "CHROM" }
+      }, 
+      "infusibilit": true
+    }, 
+    "PENTLANDITE": {
+      "centrifuge": {
+        "1": { "q": 4, "t": "NICEL" }, 
+        "2": { "q": 4, "t": "IRON" }, 
+        "3": { "q": 8, "t": "SULFUR" }
+      }, 
+      "washing": {
+        "2": { "q": 5, "t": "SULFUR" }
+      }, 
+      "separator": {
+        "1": { "q": 3, "t": "NICEL" }, 
+        "2": { "q": 3, "t": "IRON" }, 
+        "3": { "q": 10, "t": "SULFUR" }
+      }, 
+      "name": "pentlandite", 
+      "electrolyzer": {
+        "1": { "q": 4, "t": "NICEL" }, 
+        "2": { "q": 4, "t": "IRON" }, 
+        "3": { "q": 1, "t": "SULFUR" }
+      }
+    }, 
+    "CINNABAR": {
+      "centrifuge": {
+        "1": { "q": 1, "t": "MERCURY" }, 
+        "2": { "q": 0.75, "t": "SULFUR" }
+      }, 
+      "washing": {
+        "2": { "q": 0.25, "t": "SULFUR" }
+      }, 
+      "separator": {
+        "1": { "q": 1, "t": "MERCURY" }, 
+        "2": { "q": 0.25, "t": "SULFUR" }
+      }, 
+      "name": "cinnabar", 
+      "electrolyzer": {
+        "1": { "q": 2, "t": "MERCURY" }, 
+        "2": { "q": 5, "t": "SULFUR" }
+      }
+    }, 
+    "MAGNETITE": {
+      "centrifuge": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "separator": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.25, "t": "IRON" }
+      }, 
+      "electrolyzer": {
+        "1": { "q": 3, "t": "IRON" }, 
+        "2": { "q": 0.75, "t": "IRON" }
+      }, 
+      "name": "magnetite"
+    }, 
+    "IRON": {
+      "name": "iron", 
+      "vanila": true
+    }, 
+    "ZINCITE": {
+      "centrifuge": {
+        "1": { "q": 2, "t": "ZINC" }, 
+        "2": { "q": 0.25, "t": "LEAD" }, 
+        "3": { "q": 0.25, "t": "IRON" }
+      }, 
+      "separator": {
+        "1": { "q": 0.5, "t": "ZINC" }, 
+        "2": { "q": 2, "t": "LEAD" }, 
+        "3": { "q": 0.25, "t": "IRON" }
+      }, 
+      "electrolyzer": {
+        "1": { "q": 0.25, "t": "ZINC" }, 
+        "2": { "q": 0.25, "t": "LEAD" }, 
+        "3": { "q": 2, "t": "IRON" }
+      }, 
+      "name": "zincite"
+    }
+  }, 
+  "metal": {
+    "STEEL": {
+      "name": "steel"
+    }, 
+    "COPPER": {
+      "name": "copper"
+    }, 
+    "GOLD": {
+      "name": "gold", 
+      "vanila": true
+    }, 
+    "TIN": {
+      "name": "tin"
+    }, 
+    "ZINC": {
+      "name": "zinc"
+    }, 
+    "ELECTRUM": {
+      "name": "electrum"
+    }, 
+    "SILVER": {
+      "name": "silver"
+    }, 
+    "BRONZE": {
+      "name": "bronze"
+    }, 
+    "LEAD": {
+      "name": "lead"
+    }, 
+    "ALUMINUM": {
+      "name": "aluminum"
+    }, 
+    "DURALUMIN": {
+      "name": "duralumin"
+    }, 
+    "MERCURY": {
+      "name": "mercury"
+    }, 
+    "IRON": {
+      "name": "iron", 
+      "vanila": true
+    }, 
+    "NICEL": {
+      "name": "nicel"
+    }, 
+    "INVAR": {
+      "name": "invar"
+    }, 
+    "BRASS": {
+      "name": "brass"
+    }, 
+    "CAST_IRON": {
+      "name": "cast_iron"
+    }, 
+    "CHROM": {
+      "name": "chrom"
+    }, 
+    "NICHROME": {
+      "name": "nichrome"
+    }
+  }
+}

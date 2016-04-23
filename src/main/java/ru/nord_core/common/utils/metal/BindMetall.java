@@ -176,22 +176,22 @@ public class BindMetall {
                         new Pair<EnumOre, Integer>(EnumOre.ALMANDINE, 1),
                         new Pair<EnumMetal, Float>(EnumMetal.ALUMINUM, 0.25f))
         );
-        setWashing(EnumOre.GALENA, new Washing(
-                        new Pair<EnumOre, Integer>(EnumOre.GALENA, 1),
-                        new Pair<EnumMetal, Float>(EnumMetal.SULFUR, 0.05f))
-        );
+//        setWashing(EnumOre.GALENA, new Washing(
+//                        new Pair<EnumOre, Integer>(EnumOre.GALENA, 1),
+//                        new Pair<EnumMetal, Float>(EnumMetal.SULFUR, 0.05f))
+//        );
         setWashing(EnumOre.ZINCITE, new Washing(
                         new Pair<EnumOre, Integer>(EnumOre.ZINCITE, 1),
                         new Pair<EnumMetal, Float>(EnumMetal.LEAD, 0.25f))
         );
-        setWashing(EnumOre.BAUXITE, new Washing(
-                        new Pair<EnumOre, Integer>(EnumOre.BAUXITE, 1),
-                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 0.05f))
-        );
-        setWashing(EnumOre.UVAROVITE, new Washing(
-                        new Pair<EnumOre, Integer>(EnumOre.UVAROVITE, 1),
-                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 1f))
-        );
+//        setWashing(EnumOre.BAUXITE, new Washing(
+//                        new Pair<EnumOre, Integer>(EnumOre.BAUXITE, 1),
+//                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 0.05f))
+//        );
+//        setWashing(EnumOre.UVAROVITE, new Washing(
+//                        new Pair<EnumOre, Integer>(EnumOre.UVAROVITE, 1),
+//                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 1f))
+//        );
         setWashing(EnumOre.CROCOITE, new Washing(
                         new Pair<EnumOre, Integer>(EnumOre.CROCOITE, 1),
                         new Pair<EnumMetal, Float>(EnumMetal.CHROM, 0.5f))
@@ -200,10 +200,10 @@ public class BindMetall {
                         new Pair<EnumOre, Integer>(EnumOre.COPPER, 1),
                         new Pair<EnumMetal, Float>(EnumMetal.GOLD, 0.05f))
         );
-        setWashing(EnumOre.OLIVINE, new Washing(
-                        new Pair<EnumOre, Integer>(EnumOre.OLIVINE, 1),
-                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 0.25f))
-        );
+//        setWashing(EnumOre.OLIVINE, new Washing(
+//                        new Pair<EnumOre, Integer>(EnumOre.OLIVINE, 1),
+//                        new Pair<EnumMetal, Float>(EnumMetal.FLINT, 0.25f))
+//        );
         setWashing(EnumOre.MAGNETITE, new Washing(
                         new Pair<EnumOre, Integer>(EnumOre.MAGNETITE, 1),
                         new Pair<EnumMetal, Float>(EnumMetal.NICEL, 0.05f))

@@ -1,10 +1,11 @@
 package ru.nord_core.common.utils.metal;
 
-import ru.nord_core.common.utils.enums.interfaces.IMetadataEnum;
+import com.google.common.collect.ImmutableList;
+import ru.nord_core.common.utils.enums.interfaces.IMetadata2Enum;
 
-public enum EnumMetal implements IMetadataEnum {
-    IRON("iron"),
-    GOLD("gold"),
+public enum EnumMetal implements IMetadata2Enum {
+    IRON("iron", true),
+    GOLD("gold", true),
     SILVER("silver"),
     COPPER("copper"),
     TIN("tin"),
@@ -23,22 +24,19 @@ public enum EnumMetal implements IMetadataEnum {
     MERCURY("mercury"),
     LEAD("lead"),
 
-    SULFUR("sulfur", false),
-    FLINT("flint", false),
-
     ;
 
     private final String name;
-    private final boolean metal;
+    private final boolean vanila;
 
     EnumMetal(String _name) {
         this.name = _name;
-        this.metal = true;
+        this.vanila = false;
     }
 
-    EnumMetal(String _name, boolean metal) {
+    EnumMetal(String _name, boolean vanila) {
         this.name = _name;
-        this.metal = metal;
+        this.vanila = vanila;
     }
 
     @Override
@@ -51,7 +49,20 @@ public enum EnumMetal implements IMetadataEnum {
         return this.name;
     }
 
-    public boolean getMetal() {
-        return this.metal;
+    public boolean getVanila() {
+        return this.vanila;
+    }
+
+    public static EnumMetal byMetadata(int meta) {
+        return meta < EnumMetal.values().length ? EnumMetal.values()[meta] : EnumMetal.values()[0];
+    }
+
+    public static EnumMetal byReIndexMetadata(ImmutableList list, int meta) {
+        return (EnumMetal) list.get(meta);
+    }
+
+    @Override
+    public int getReIndexMetadata(ImmutableList list) {
+        return list.indexOf(this);
     }
 }

@@ -1,5 +1,6 @@
 package ru.nord;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.item.Item;
 import ru.nord.common.blocks.BlockClearMetal;
 import ru.nord.common.blocks.BlockCrystal;
@@ -7,6 +8,8 @@ import ru.nord.common.blocks.BlockMetal;
 import ru.nord.common.blocks.BlockMetalOre;
 import ru.nord.common.helpers.RegisterHelper;
 import ru.nord.common.items.ItemDrill;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata;
+import ru.nord_core.common.blocks.interfaces.IVariantMetadata2;
 import ru.nord_core.common.helpers.RegisterHelper2;
 import ru.nord_core.common.items.ItemMetaData;
 import ru.nord_core.common.items.abstracts.ItemBlockMetadata;
@@ -49,8 +52,8 @@ public class NordMetalgury {
     }
 
     private static void createBlock() {
-        NordBloks.metalBlock = new BlockMetal(EnumMetal.getNames()).setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
-        NordBloks.metalClearBlock = new BlockClearMetal(EnumClearMetal.getNames()).setUnlocalizedName("metalClearBlock").setCreativeTab(NordTabs.tabMetallurgy);
+        NordBloks.metalBlock = new BlockMetal().setUnlocalizedName("metalBlock").setCreativeTab(NordTabs.tabMetallurgy);
+        NordBloks.metalClearBlock = new BlockClearMetal().setUnlocalizedName("metalClearBlock").setCreativeTab(NordTabs.tabMetallurgy);
         NordBloks.metalOre = new BlockMetalOre(EnumOre.getNames()).setUnlocalizedName("metalOre").setCreativeTab(NordTabs.tabMetallurgy);
         NordBloks.metalCrystal = new BlockCrystal(EnumCrystal.getNames()).setUnlocalizedName("metalCrystal").setCreativeTab(NordTabs.tabMetallurgy);
 
@@ -111,9 +114,13 @@ public class NordMetalgury {
     }
 
     private static void registerBlockModel() {
-        for (EnumMetal enumType : EnumMetal.values()) {
-            modelRegister().registerBlockItemModelForMeta(NordBloks.metalBlock, enumType.getMetadata(), "type=" + enumType.getName());
+
+        ImmutableList list = ((IVariantMetadata2)NordBloks.metalBlock).getAllowedValues();
+        for (Object v : list) {
+            ru.nord_core.common.utils.metal.EnumMetal enumType = (ru.nord_core.common.utils.metal.EnumMetal) v;
+            modelRegister().registerBlockItemModelForMeta(NordBloks.metalBlock, enumType.getReIndexMetadata(list), "type=" + enumType.getName());
         }
+
         for (EnumClearMetal enumType : EnumClearMetal.values()) {
             modelRegister().registerBlockItemModelForMeta(NordBloks.metalClearBlock, enumType.getMetadata(), "type=" + enumType.getName());
         }

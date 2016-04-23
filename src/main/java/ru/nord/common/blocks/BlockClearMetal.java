@@ -7,11 +7,10 @@ import ru.nord_core.common.blocks.BlockMetadata;
 import ru.nord_core.common.blocks.BlockMetadata2;
 import ru.nord_core.common.utils.enums.EnumClearMetal;
 
-public class BlockClearMetal extends BlockMetadata2 {
+public class BlockClearMetal extends BlockMetadata {
     public static final PropertyEnum TYPE = PropertyEnum.create("type", EnumClearMetal.class);
 
-    public BlockClearMetal(String[] names) {
-//        super(Material.iron, names, Version.MODID);
+    public BlockClearMetal() {
         super(Material.iron,  Version.MODID);
         this.setHardness(3F);
         this.setHarvestLevel("pickaxe", 1);
